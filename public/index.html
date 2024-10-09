@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>PDF Cropper</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            flex-direction: column;
+         }
+
+         h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+         }
+
+         .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+         }
+
+         input[type="file"] {
+            display: none; /* Hide the default file input */
+         }
+
+         .file-upload {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+         }
+
+         .file-upload:hover {
+            background-color: #2980b9;
+         }
+
+         button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+            width: 100%;
+         }
+
+         button[type="submit"]:hover {
+            background-color: #219653;
+         }
+
+         .upload-label {
+            margin-top: 15px;
+            display: block;
+            font-size: 14px;
+            color: #555;
+         }
+
+         footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <h1>Upload a PDF to Crop</h1>
+         <form action="/upload" method="post" enctype="multipart/form-data">
+            <label class="file-upload" for="file-upload">Choose PDF</label>
+            <input
+               type="file"
+               id="file-upload"
+               name="pdf"
+               accept=".pdf"
+               required
+            />
+            <button type="submit">Upload and Crop</button>
+            <p class="upload-label">* Only PDF files allowed</p>
+         </form>
+      </div>
+
+      <footer>&copy; 2024 SouravBarui. All Rights Reserved.</footer>
+   </body>
+</html>
