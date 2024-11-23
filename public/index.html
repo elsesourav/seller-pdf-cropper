@@ -7,36 +7,62 @@
       <style>
          body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: light-dark(white, #000);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            color: #333;
+            color: light-dark(#222, #ddd);
             flex-direction: column;
+
+         }
+
+         :root {
+            color-scheme: light dark;
+         }
+
+         *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
          }
 
          h1 {
             margin-bottom: 20px;
             text-align: center;
-            color: #2c3e50;
+            color: #ff8010;
+            text-shadow: 0 0 1px #000;
          }
 
          .container {
-            background: white;
+            background: light-dark(white, #1a1a1a);
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            text-align: center;
+            padding: 40px 30px;
+            width: 360px;
+            display: grid;
+            place-items: center;
+            gap: 10px;
          }
 
          input[type="file"] {
-            display: none; /* Hide the default file input */
+            display: none; 
+         }
+
+         form {
+            position: relative;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            gap: 10px;
          }
 
          .file-upload {
+            position: relative;
             display: inline-block;
             padding: 10px 20px;
             background-color: #3498db;
@@ -81,60 +107,83 @@
             text-align: center;
          }
 
-         select {
-            padding: 10px 15px;
-            font-size: 16px;
-            border: 2px solid #3498db;
-            border-radius: 5px;
-            background-color: white;
-            color: #2c3e50;
-            cursor: pointer;
-            margin: 10px 0;
-            width: 200px;
-            appearance: none; /* Removes default browser styling */
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233498db' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 16px;
-         }
-
-         select:hover {
-            border-color: #2980b9;
-            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
-         }
-
-         select:focus {
-            outline: none;
-            border-color: #2980b9;
-            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-         }
-
-         /* Optional: Style for the select container */
          .select-container {
-            margin: 15px 0;
+            position: relative;
+            width: 100%;
+            display: grid;
+            gap: 10px;
+            place-items: center;
          }
 
-         /* Optional: Style for the label if you have one */
-         .select-container label {
-            display: block;
-            margin-bottom: 5px;
-            color: #2c3e50;
-            font-weight: bold;
+         .select-container > label {
+            font-size: 0.9rem;
+            font-weight: 900;
+         }
+
+         .toggle-container {
+            position: relative;
+            width: 160px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: light-dark(#eee, #333);
+            border-radius: 25px;
+            padding: 3px;
+         }
+
+         .toggle-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(50% - 6px);
+            height: calc(100% - 6px);
+            margin: 3px;
+            background: #2980b9;
+            border-radius: inherit;
+            transition: left 300ms ease-in-out;
+            z-index: 1;
+         }
+
+         .toggle-label {
+            position: relative;
+            width: 100%;
+            padding: 8px 20px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: inherit;
+            transition: color 300ms ease;
+            z-index: 2;
+         }
+
+         .toggle-container input[type="radio"]:checked + .toggle-label {
+            color: white;
+         }
+
+         .toggle-container:has( input[type="radio"]:first-child:checked)::before {
+            left: 0;
+         }
+
+         .toggle-container:has( input[type="radio"]:nth-child(3):checked)::before {
+            left: 50%;
+         }
+
+         .toggle-container input[type="radio"] {
+            display: none;
          }
 
          #selectedFileName {
             display: block;
-            margin-top: 10px;
-            color: #666;
+            height: 20px;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            color: #777;
             font-size: 0.9em;
          }
       </style>
    </head>
    <body>
       <div class="container">
-         <h1>Upload a PDF to Crop</h1>
+         <h1>Seller PDF Cropper</h1>
          <form action="/upload" method="post" enctype="multipart/form-data">
             <label class="file-upload" for="file-upload">Choose PDF</label>
             <input
@@ -146,11 +195,13 @@
             />
             <span id="selectedFileName"></span>
             <div class="select-container">
-               <label for="cropType">Select Crop Section:</label>
-               <select name="cropType" id="cropType" required>
-                  <option value="type1">Left Section</option>
-                  <option value="type2">Right Section</option>
-               </select>
+                <label>Select Type</label>
+                <div class="toggle-container">
+                    <input type="radio" id="type1" name="cropType" value="type1" required checked>
+                    <label for="type1" class="toggle-label">Label</label>
+                    <input type="radio" id="type2" name="cropType" value="type2" required>
+                    <label for="type2" class="toggle-label">Bill</label>
+                </div>
             </div>
             <button type="submit">Upload and Crop</button>
             <p class="upload-label">* Only PDF files allowed</p>
@@ -160,27 +211,6 @@
       <footer>&copy; 2024 SouravBarui. All Rights Reserved.</footer>
 
       <script>
-         // Store the filename in localStorage when a file is selected
-         document.getElementById('pdfInput').addEventListener('change', function() {
-            const fileName = this.files[0]?.name || 'No file selected';
-            document.getElementById('selectedFileName').textContent = fileName;
-            localStorage.setItem('lastFileName', fileName);
-         });
-
-         // Check for stored filename when page loads
-         window.onload = function() {
-            const lastFileName = localStorage.getItem('lastFileName');
-            if (lastFileName) {
-               document.getElementById('selectedFileName').textContent = lastFileName;
-            }
-         };
-
-         // Clear the stored filename when form is submitted
-         document.querySelector('form').addEventListener('submit', function() {
-            localStorage.removeItem('lastFileName');
-         });
-
-         // Update the file input event listener
          document.getElementById('file-upload').addEventListener('change', function() {
             const fileName = this.files[0]?.name || 'No file selected';
             document.getElementById('selectedFileName').textContent = fileName;

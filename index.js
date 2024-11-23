@@ -25,26 +25,81 @@ app.get("/", (req, res) => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>PDF Cropper</title>
             <style>
+                :root {
+                    color-scheme: light dark;
+                }
+
                 body {
                     font-family: Arial, sans-serif;
+                    background-color: light-dark(white, #000);
+                    color: light-dark(#222, #ddd);
                     padding: 20px;
                     max-width: 800px;
                     margin: 0 auto;
                 }
+
+                h1 {
+                    color: #ff8010;
+                    text-shadow: 0 0 1px #000;
+                    text-align: center;
+                }
+
+                .form-group {
+                    margin-bottom: 15px;
+                    background: light-dark(white, #1a1a1a);
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+
                 #preview {
                     margin-top: 20px;
                     width: 100%;
                     height: 500px;
-                    border: 1px solid #ccc;
+                    border: 1px solid light-dark(#ccc, #333);
+                    border-radius: 8px;
                     display: none;
                 }
-                .form-group {
-                    margin-bottom: 15px;
-                }
+
                 #fileName {
                     margin-top: 5px;
-                    color: #666;
+                    color: light-dark(#666, #999);
                     font-size: 0.9em;
+                }
+
+                select, button {
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+
+                select {
+                    background-color: #3498db;
+                    color: white;
+                }
+
+                select:hover {
+                    background-color: #2980b9;
+                }
+
+                button {
+                    background-color: #27ae60;
+                    color: white;
+                    width: 100%;
+                    margin-top: 15px;
+                }
+
+                button:hover {
+                    background-color: #219653;
+                }
+
+                footer {
+                    margin-top: 20px;
+                    font-size: 14px;
+                    color: #999;
+                    text-align: center;
                 }
             </style>
         </head>
@@ -156,26 +211,37 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Cropped PDF Ready</title>
             <style>
+                :root {
+                    color-scheme: light dark;
+                }
+
                 body {
                     font-family: Arial, sans-serif;
-                    background-color: #f4f4f4;
+                    background-color: light-dark(white, #000);
+                    color: light-dark(#222, #ddd);
                     margin: 0;
                     padding: 20px;
                     text-align: center;
                 }
+
                 h1 {
-                    color: #2c3e50;
+                    color: #ff8010;
+                    text-shadow: 0 0 1px #000;
                     margin-bottom: 20px;
                 }
+
                 p {
-                    color: #333;
+                    color: light-dark(#333, #ddd);
                     margin-bottom: 20px;
                 }
+
                 iframe {
                     border: 2px solid #3498db;
                     border-radius: 8px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    background: light-dark(white, #1a1a1a);
                 }
+
                 a {
                     display: inline-block;
                     margin-top: 20px;
@@ -186,9 +252,11 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
                     text-decoration: none;
                     transition: background-color 0.3s;
                 }
+
                 a:hover {
                     background-color: #219653;
                 }
+
                 footer {
                     margin-top: 40px;
                     font-size: 14px;
