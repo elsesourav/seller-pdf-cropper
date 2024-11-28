@@ -3,7 +3,8 @@
 A web application that helps sellers crop PDF files into specific dimensions for labels and bills. The application provides an easy-to-use interface for uploading PDFs and automatically crops them based on predefined dimensions.
 
 ## 🌐 Live On
-[https://seller-pdf-cropper.onrender.com/](https://seller-pdf-cropper.onrender.com/)
+- [https://seller-pdf-cropper.vercel.app/](https://seller-pdf-cropper.vercel.app/)
+- [https://seller-pdf-cropper.onrender.com/](https://seller-pdf-cropper.onrender.com/)
 
 ## ✨ Features
 
