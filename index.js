@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>PDF Cropper</title>
+            <link rel="icon" type="image/png" href="/icon.png">
             <style>
                 :root {
                     color-scheme: light dark;
@@ -183,6 +184,9 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
 
         const dimensions = cropDimensions[cropType];
         
+        // Get showSerialNumber from form
+        const showSerialNumber = req.body.showSerialNumber === 'on';
+        
         // Adjusting each page for cropping
         for (let i = 0; i < pdfDoc.getPageCount(); i++) {
             const page = pdfDoc.getPage(i);
@@ -193,12 +197,15 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
                 dimensions.height
             );
 
-            page.drawText(`${i + 1}`, {
-                x: dimensions.left + (dimensions.type === 2 ? 6 : dimensions.width / 2 - 10),
-                y: dimensions.bottom + 1 * (dimensions.type === 2 ? 4 : 1),
-                size: 3 + 3 * dimensions.type,
-                color: rgb(0, 0, 0),
-            });
+            // Only draw text if showSerialNumber is checked
+            if (showSerialNumber) {
+                page.drawText(`${i + 1}`, {
+                    x: dimensions.left + (dimensions.type === 2 ? 6 : dimensions.width / 2 - 10),
+                    y: dimensions.bottom + 1 * (dimensions.type === 2 ? 4 : 1),
+                    size: 3 + 3 * dimensions.type,
+                    color: rgb(0, 0, 0),
+                });
+            }
         }
 
         const pdfBytes = await pdfDoc.save();
@@ -219,6 +226,7 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Cropped PDF Ready</title>
+            <link rel="icon" type="image/png" href="./public/icon.png">
             <style>
                 :root {
                     color-scheme: light dark;
