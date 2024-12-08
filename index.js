@@ -1,12 +1,12 @@
 const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
-const { PDFDocument } = require("pdf-lib");
+const { PDFDocument, rgb } = require("pdf-lib");
 const path = require("path");
 const app = express();
 const PORT = 3000;
 
-// Set up Multer for file uploadsn
+// Set up Multer for file uploads
 const upload = multer({ 
     storage: multer.memoryStorage(),
     limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit
@@ -166,16 +166,18 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
         const sideMargin = 30;
         const cropDimensions = {
             type1: {
-                bottom: 460,
+                bottom: 459,
                 left: 188,
                 width: 219,
-                height: 356
+                height: 356,
+                type: 1
             },
             type2: {
                 bottom: 70,
                 left: sideMargin,
                 width: width - 2 * sideMargin,
-                height: 390
+                height: 390,
+                type: 2
             }
         };
 
@@ -190,6 +192,13 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
                 dimensions.width,
                 dimensions.height
             );
+
+            page.drawText(`${i + 1}`, {
+                x: dimensions.left + (dimensions.type === 2 ? 6 : dimensions.width / 2 - 10),
+                y: dimensions.bottom + 1 * (dimensions.type === 2 ? 4 : 1),
+                size: 3 + 3 * dimensions.type,
+                color: rgb(0, 0, 0),
+            });
         }
 
         const pdfBytes = await pdfDoc.save();
