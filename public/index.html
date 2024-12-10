@@ -5,7 +5,7 @@
    <meta charset="UTF-8" />
    <link rel="icon" type="image/png" href="./icon.png">
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>PDF Cropper</title>
+   <title>Seller PDF Cropper</title>
    <style>
       :root {
          color-scheme: light dark;
@@ -27,6 +27,7 @@
 
          /* outline: 1px solid #f00; */
       }
+
       body {
          font-family: Arial, sans-serif;
          background-color: light-dark(white, #000);
@@ -247,7 +248,6 @@
       .checkbox-container p {
          font-size: 1.1rem;
       }
-
    </style>
 </head>
 
@@ -282,6 +282,14 @@
       document.getElementById('file-upload').addEventListener('change', function () {
          const fileName = this.files[0]?.name || 'No file selected';
          document.getElementById('selectedFileName').textContent = fileName;
+      });
+
+      const serialNumberCheckbox = document.getElementById("showSerialNumber");
+      serialNumberCheckbox.checked = localStorage.getItem("showSerialNumber") !== "false";
+
+      // Save state when checkbox changes
+      serialNumberCheckbox.addEventListener("change", function () {
+         localStorage.setItem("showSerialNumber", this.checked);
       });
    </script>
 </body>

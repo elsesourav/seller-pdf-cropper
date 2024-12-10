@@ -200,9 +200,9 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             // Only draw text if showSerialNumber is checked
             if (showSerialNumber) {
                 page.drawText(`${i + 1}`, {
-                    x: dimensions.left + (dimensions.type === 2 ? 6 : dimensions.width / 2 - 10),
-                    y: dimensions.bottom + 1 * (dimensions.type === 2 ? 4 : 1),
-                    size: 6 * dimensions.type,
+                    x: dimensions.left + (dimensions.type === 2 ? 10 : dimensions.width / 2 - 10),
+                    y: dimensions.bottom + 1 * (dimensions.type === 2 ? 8 : 1),
+                    size: 8 * (dimensions.type === 2 ? 1.5 : 1),
                     color: rgb(0, 0, 0),
                 });
             }
