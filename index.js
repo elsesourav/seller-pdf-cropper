@@ -202,7 +202,7 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
                 page.drawText(`${i + 1}`, {
                     x: dimensions.left + (dimensions.type === 2 ? 6 : dimensions.width / 2 - 10),
                     y: dimensions.bottom + 1 * (dimensions.type === 2 ? 4 : 1),
-                    size: 3 + 3 * dimensions.type,
+                    size: 6 * dimensions.type,
                     color: rgb(0, 0, 0),
                 });
             }
