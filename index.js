@@ -5,7 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import fs from "fs";
-import * as pdfjs from "pdfjs-dist/build/pdf.mjs";
+import pkg from 'pdfjs-dist/build/pdf.js';
+const { getDocument } = pkg;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,7 +15,10 @@ const app = express();
 const PORT = 3000;
 
 // Initialize PDF.js
-pdfjs.GlobalWorkerOptions.workerSrc = "pdfjs-dist/build/pdf.worker.mjs";
+const pdfjsLib = { getDocument };
+
+const pdfWorkerPath = new URL('pdfjs-dist/build/pdf.worker.js', import.meta.url).toString();
+pdfjsLib.GlobalWorkerOptions = { workerSrc: pdfWorkerPath };
 
 // Load products.json
 const productsPath = path.join(__dirname, "products.json");
@@ -89,7 +93,7 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
 
       // Load PDF for text extraction
       const pdfData = new Uint8Array(req.file.buffer);
-      const loadingTask = pdfjs.getDocument({ data: pdfData });
+      const loadingTask = pdfjsLib.getDocument({ data: pdfData });
       const pdfDocument = await loadingTask.promise;
 
       const isBill = dimensions.type === 2;
