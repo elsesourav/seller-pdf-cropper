@@ -1,20 +1,29 @@
-const express = require("express");
-const multer = require("multer");
-const fs = require("fs");
-const { PDFDocument, rgb } = require("pdf-lib");
-const path = require("path");
-const pdfjsLib = require("pdfjs-dist");
+import express from "express";
+import multer from "multer";
+import { PDFDocument, rgb } from "pdf-lib";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import fs from "fs";
+import * as pdfjs from "pdfjs-dist/build/pdf.mjs";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const app = express();
 const PORT = 3000;
 
+// Initialize PDF.js
+pdfjs.GlobalWorkerOptions.workerSrc = "pdfjs-dist/build/pdf.worker.mjs";
+
 // Load products.json
-const productsPath = path.join(__dirname, 'products.json');
+const productsPath = path.join(__dirname, "products.json");
 let products = {};
 try {
-  const productsData = fs.readFileSync(productsPath, 'utf8');
-  products = JSON.parse(productsData);
+   const productsData = fs.readFileSync(productsPath, "utf8");
+   products = JSON.parse(productsData);
 } catch (error) {
-  console.log('Error loading products.json:', error);
+   console.log("Error loading products.json:", error);
 }
 
 // Set up Multer for file uploads
@@ -80,13 +89,14 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
 
       // Load PDF for text extraction
       const pdfData = new Uint8Array(req.file.buffer);
-      const loadingTask = pdfjsLib.getDocument({ data: pdfData });
+      const loadingTask = pdfjs.getDocument({ data: pdfData });
       const pdfDocument = await loadingTask.promise;
 
       const isBill = dimensions.type === 2;
       const baseFontSize = 6;
       const size = baseFontSize * (isBill ? 1.5 : 1);
-      const serialFontX = dimensions.left + (isBill ? 10 : dimensions.width - 14);
+      const serialFontX =
+         dimensions.left + (isBill ? 10 : dimensions.width - 14);
       const serialFontY = dimensions.bottom + 1 * (isBill ? 8 : 1);
       const productFontX = dimensions.left + 10;
       const productFontY = serialFontY;
@@ -122,7 +132,8 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             sku = products[sku] ? products[sku].NEW_SKU_ID.toUpperCase() : sku;
             const newSku = sku?.split("__");
             const name = newSku?.[0]?.split("-");
-            const newName = name?.length > 1 ? `*${name[name.length - 1]}` : newSku?.[0];
+            const newName =
+               name?.length > 1 ? `*${name[name.length - 1]}` : newSku?.[0];
             const type = newSku[2] == "PIECE" ? "P" : newSku[2];
             const quantityAndType = `${newSku[1]} ${type}`;
             const multiple = lastNumber > 1 ? ` *${lastNumber}` : "";
@@ -178,7 +189,12 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
       console.log(`Cropped PDF saved as ${outputFilePath}`);
 
       // Redirect to upload.html with parameters
-      res.redirect(303, `/upload.html?filename=${outputFileName}&originalName=${encodeURIComponent(originalFilename)}`);
+      res.redirect(
+         303,
+         `/upload.html?filename=${outputFileName}&originalName=${encodeURIComponent(
+            originalFilename
+         )}`
+      );
    } catch (err) {
       console.error(err);
       res.status(500).send("Error cropping PDF.");

@@ -500,30 +500,50 @@
          const customAlert = document.getElementById("customAlert");
          const alertOverlay = document.getElementById("alertOverlay");
          const alertMessage = document.getElementById("alertMessage");
-         const serialInputContainer = document.getElementById("serialInputContainer");
-         const productNameContainer = document.getElementById("productNameContainer");
-         const serialNumberCheckbox = document.getElementById("showSerialNumber");
-         const typeSelect = document.querySelector('input[name="cropType"]:checked');
+         const serialInputContainer = document.getElementById(
+            "serialInputContainer"
+         );
+         const productNameContainer = document.getElementById(
+            "productNameContainer"
+         );
+         const serialNumberCheckbox =
+            document.getElementById("showSerialNumber");
+         const typeSelect = document.querySelector(
+            'input[name="cropType"]:checked'
+         );
 
          // Handle serial number checkbox change
-         serialNumberCheckbox.addEventListener("change", function() {
-            serialInputContainer.classList.toggle('hidden', !this.checked);
+         serialNumberCheckbox.addEventListener("change", function () {
+            serialInputContainer.classList.toggle("hidden", !this.checked);
          });
 
          // Handle type select change
-         document.querySelectorAll('input[name="cropType"]').forEach(function(radio) {
-            radio.addEventListener("change", function() {
-               productNameContainer.classList.toggle('hidden', this.value === "type2");
+         document
+            .querySelectorAll('input[name="cropType"]')
+            .forEach(function (radio) {
+               radio.addEventListener("change", function () {
+                  productNameContainer.classList.toggle(
+                     "hidden",
+                     this.value === "type2"
+                  );
+               });
             });
-         });
 
          // Initialize visibility on page load
-         serialInputContainer.classList.toggle('hidden', !serialNumberCheckbox.checked);
-         productNameContainer.classList.toggle('hidden', typeSelect.value === "type2");
+         serialInputContainer.classList.toggle(
+            "hidden",
+            !serialNumberCheckbox.checked
+         );
+         productNameContainer.classList.toggle(
+            "hidden",
+            typeSelect.value === "type2"
+         );
 
          // Load saved states
-         serialNumberCheckbox.checked = localStorage.getItem("showSerialNumber") !== "false";
-         productNameContainer.querySelector('input[type="checkbox"]').checked = localStorage.getItem("showProductName") === "true";
+         serialNumberCheckbox.checked =
+            localStorage.getItem("showSerialNumber") !== "false";
+         productNameContainer.querySelector('input[type="checkbox"]').checked =
+            localStorage.getItem("showProductName") === "true";
 
          // Save state when serial number checkbox changes
          serialNumberCheckbox.addEventListener("change", function () {
@@ -531,9 +551,11 @@
          });
 
          // Save state when product name checkbox changes
-         productNameContainer.querySelector('input[type="checkbox"]').addEventListener("change", function () {
-            localStorage.setItem("showProductName", this.checked);
-         });
+         productNameContainer
+            .querySelector('input[type="checkbox"]')
+            .addEventListener("change", function () {
+               localStorage.setItem("showProductName", this.checked);
+            });
 
          // Custom alert function
          function showAlert(message) {
