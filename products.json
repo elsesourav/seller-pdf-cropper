@@ -1,0 +1,6481 @@
+{
+   "lo_tu_s8": {
+      "SKU_ID": "lo_tu_s8",
+      "NEW_SKU_ID": "LOTUS__8__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "ho-lud_250G_1": {
+      "SKU_ID": "ho-lud_250G_1",
+      "NEW_SKU_ID": "TURMERIC__250__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 250
+   },
+   "lo-6_tu_s": {
+      "SKU_ID": "lo-6_tu_s",
+      "NEW_SKU_ID": "LOTUS__6__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 6
+   },
+   "t_oma_100_to": {
+      "SKU_ID": "t_oma_100_to",
+      "NEW_SKU_ID": "TOMATO__100__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "pa_py 100": {
+      "SKU_ID": "pa_py 100",
+      "NEW_SKU_ID": "PAPAYA__100__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "lo_t_u_s10": {
+      "SKU_ID": "lo_t_u_s10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "pa-la-ng_100P_1": {
+      "SKU_ID": "pa-la-ng_100P_1",
+      "NEW_SKU_ID": "SPINACH__100__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "lo_tus_p11": {
+      "SKU_ID": "lo_tus_p11",
+      "NEW_SKU_ID": "LOTUS__11__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 11
+   },
+   "lo_tu_s1p": {
+      "SKU_ID": "lo_tu_s1p",
+      "NEW_SKU_ID": "LOTUS__1__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 1
+   },
+
+   "ful_ko_phi_20p_5": {
+      "SKU_ID": "ful_ko_phi_20p_5",
+      "NEW_SKU_ID": "CAULIFLOWER__20__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "u2_c_28_che": {
+      "SKU_ID": "u2_c_28_che",
+      "NEW_SKU_ID": "BITTER GOURD__28__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+
+   "lo_tus_pcs-46": {
+      "SKU_ID": "lo_tus_pcs-46",
+      "NEW_SKU_ID": "LOTUS__46__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 46
+   },
+   "pe-pe_75p_1": {
+      "SKU_ID": "pe-pe_75p_1",
+      "NEW_SKU_ID": "PAPAYA__75__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "lal-shak_2500p_1": {
+      "SKU_ID": "lal-shak_2500p_1",
+      "NEW_SKU_ID": "RED SPINACH__2500__PIECE__MODIFY",
+      "NAME": "RED SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 2500
+   },
+   "t_o_ma_to_1000_": {
+      "SKU_ID": "t_o_ma_to_1000_",
+      "NEW_SKU_ID": "TOMATO__1000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "BOR-BOTI_107P_1": {
+      "SKU_ID": "BOR-BOTI_107P_1",
+      "NEW_SKU_ID": "BEAN__107__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 107
+   },
+   "ful_ko_phi_25p": {
+      "SKU_ID": "ful_ko_phi_25p",
+      "NEW_SKU_ID": "CAULIFLOWER__25__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "da_liy_a_pcs-10": {
+      "SKU_ID": "da_liy_a_pcs-10",
+      "NEW_SKU_ID": "DAHLIA__10__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "ho-lud_10P_1": {
+      "SKU_ID": "ho-lud_10P_1",
+      "NEW_SKU_ID": "TURMERIC__10__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "HALUD__250__G__SN52B7": {
+      "SKU_ID": "HALUD__250__G__SN52B7",
+      "NEW_SKU_ID": "TURMERIC__250__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 250
+   },
+   "ho-lud_10P_2": {
+      "SKU_ID": "ho-lud_10P_2",
+      "NEW_SKU_ID": "TURMERIC__10__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "HALUD__80__G__SN52A3": {
+      "SKU_ID": "HALUD__80__G__SN52A3",
+      "NEW_SKU_ID": "TURMERIC__80__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 80
+   },
+   "HOLUD_15P_1": {
+      "SKU_ID": "HOLUD_15P_1",
+      "NEW_SKU_ID": "TURMERIC__15__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "br_in_250_jal": {
+      "SKU_ID": "br_in_250_jal",
+      "NEW_SKU_ID": "BRINJAL__250__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "HALUD__100__G__SN4V6M": {
+      "SKU_ID": "HALUD__100__G__SN4V6M",
+      "NEW_SKU_ID": "TURMERIC__100__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 100
+   },
+   "ho-lud_100G_2": {
+      "SKU_ID": "ho-lud_100G_2",
+      "NEW_SKU_ID": "TURMERIC__100__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 100
+   },
+   "ca_bb_age_4000p": {
+      "SKU_ID": "ca_bb_age_4000p",
+      "NEW_SKU_ID": "CABBAGE__4000__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 4000
+   },
+   "HALUD__50__G__SN525R": {
+      "SKU_ID": "HALUD__50__G__SN525R",
+      "NEW_SKU_ID": "TURMERIC__50__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 50
+   },
+   "l_ot_u_s2pcs": {
+      "SKU_ID": "l_ot_u_s2pcs",
+      "NEW_SKU_ID": "LOTUS__2__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 2
+   },
+   "lo_tu_s245": {
+      "SKU_ID": "lo_tu_s245",
+      "NEW_SKU_ID": "LOTUS__245__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 245
+   },
+   "lo_tu_s6": {
+      "SKU_ID": "lo_tu_s6",
+      "NEW_SKU_ID": "LOTUS__6__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 6
+   },
+   "lo_tu_s318": {
+      "SKU_ID": "lo_tu_s318",
+      "NEW_SKU_ID": "LOTUS__318__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 318
+   },
+   "lo_t_220_us": {
+      "SKU_ID": "lo_t_220_us",
+      "NEW_SKU_ID": "LOTUS__220__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 220
+   },
+   "lo_tus_pcs-20": {
+      "SKU_ID": "lo_tus_pcs-20",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "l_ot_u_s6pcs": {
+      "SKU_ID": "l_ot_u_s6pcs",
+      "NEW_SKU_ID": "LOTUS__6__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 6
+   },
+   "lo_tu_s_15": {
+      "SKU_ID": "lo_tu_s_15",
+      "NEW_SKU_ID": "LOTUS__14__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 14
+   },
+   "lo_tus_p30": {
+      "SKU_ID": "lo_tus_p30",
+      "NEW_SKU_ID": "LOTUS__30__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "l_ot_u_s7pcs": {
+      "SKU_ID": "l_ot_u_s7pcs",
+      "NEW_SKU_ID": "LOTUS__7__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 7
+   },
+   "lo_t_u_s15": {
+      "SKU_ID": "lo_t_u_s15",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "l_ot_u_s27pcs": {
+      "SKU_ID": "l_ot_u_s27pcs",
+      "NEW_SKU_ID": "LOTUS__27__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 27
+   },
+   "lo_tu_s140": {
+      "SKU_ID": "lo_tu_s140",
+      "NEW_SKU_ID": "LOTUS__140__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 140
+   },
+   "lo_t39u_s": {
+      "SKU_ID": "lo_t39u_s",
+      "NEW_SKU_ID": "LOTUS__39__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 39
+   },
+   "lo_tu_s25p": {
+      "SKU_ID": "lo_tu_s25p",
+      "NEW_SKU_ID": "LOTUS__25__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "l_ot_u_s17pcs": {
+      "SKU_ID": "l_ot_u_s17pcs",
+      "NEW_SKU_ID": "LOTUS__16__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "lo_tu_s10": {
+      "SKU_ID": "lo_tu_s10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "l_ot_u_s15pcs": {
+      "SKU_ID": "l_ot_u_s15pcs",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "39lo_t39pu_s": {
+      "SKU_ID": "39lo_t39pu_s",
+      "NEW_SKU_ID": "LOTUS__39__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 39
+   },
+   "lo_tus_p10": {
+      "SKU_ID": "lo_tus_p10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "lo-20_tu_s": {
+      "SKU_ID": "lo-20_tu_s",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "lo_tu_s20": {
+      "SKU_ID": "lo_tu_s20",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ma_ri_230_go_ld": {
+      "SKU_ID": "ma_ri_230_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__230__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 230
+   },
+   "lo_tu_s39s": {
+      "SKU_ID": "lo_tu_s39s",
+      "NEW_SKU_ID": "LOTUS__39__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 39
+   },
+   "llo_tu_s10": {
+      "SKU_ID": "llo_tu_s10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "lo_tu_s25": {
+      "SKU_ID": "lo_tu_s25",
+      "NEW_SKU_ID": "LOTUS__25__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "BEGUN_25P_1": {
+      "SKU_ID": "BEGUN_25P_1",
+      "NEW_SKU_ID": "BRINJAL__25__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "r_ch_illi_275": {
+      "SKU_ID": "r_ch_illi_275",
+      "NEW_SKU_ID": "CHILLI__275__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 275
+   },
+   "l_ot_u_s30pcs": {
+      "SKU_ID": "l_ot_u_s30pcs",
+      "NEW_SKU_ID": "LOTUS__30__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "lo_tus_p5": {
+      "SKU_ID": "lo_tus_p5",
+      "NEW_SKU_ID": "LOTUS__5__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "t_o_ma_to_125": {
+      "SKU_ID": "t_o_ma_to_125",
+      "NEW_SKU_ID": "TOMATO__125__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 125
+   },
+   "l_ot_u_s15ps": {
+      "SKU_ID": "l_ot_u_s15ps",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "t_oma_650_to": {
+      "SKU_ID": "t_oma_650_to",
+      "NEW_SKU_ID": "TOMATO__650__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 650
+   },
+   "ful_ko_phi_25p_3": {
+      "SKU_ID": "ful_ko_phi_25p_3",
+      "NEW_SKU_ID": "CAULIFLOWER__25__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "t_o_ma_to200p": {
+      "SKU_ID": "t_o_ma_to200p",
+      "NEW_SKU_ID": "TOMATO__200__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "s_im_25p": {
+      "SKU_ID": "s_im_25p",
+      "NEW_SKU_ID": "RUNNER BEANS__25__PIECE__MODIFY",
+      "NAME": "RUNNER BEANS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "t_o_ma_to_100_": {
+      "SKU_ID": "t_o_ma_to_100_",
+      "NEW_SKU_ID": "TOMATO__100__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ch_il_l_in15": {
+      "SKU_ID": "ch_il_l_in15",
+      "NEW_SKU_ID": "CHILLI__15__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "r_ch_illi_20": {
+      "SKU_ID": "r_ch_illi_20",
+      "NEW_SKU_ID": "CHILLI__20__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ful_ko_phi_16p": {
+      "SKU_ID": "ful_ko_phi_16p",
+      "NEW_SKU_ID": "CAULIFLOWER__16__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "t_o_ma_to_1200": {
+      "SKU_ID": "t_o_ma_to_1200",
+      "NEW_SKU_ID": "TOMATO__1200__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1200
+   },
+   "tomato seed 50": {
+      "SKU_ID": "tomato seed 50",
+      "NEW_SKU_ID": "TOMATO__30__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "t_o_ma_to_130pcs": {
+      "SKU_ID": "t_o_ma_to_130pcs",
+      "NEW_SKU_ID": "TOMATO__130__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 130
+   },
+   "jhi_nge 35": {
+      "SKU_ID": "jhi_nge 35",
+      "NEW_SKU_ID": "RIDGE GOURD__35__PIECE__MODIFY",
+      "NAME": "RIDGE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "ch_il_l_in50": {
+      "SKU_ID": "ch_il_l_in50",
+      "NEW_SKU_ID": "CHILLI__50__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "t_o_ma_to50+p": {
+      "SKU_ID": "t_o_ma_to50+p",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "t_o_ma_to1000p": {
+      "SKU_ID": "t_o_ma_to1000p",
+      "NEW_SKU_ID": "TOMATO__1000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "ma_ri_50_go_ld": {
+      "SKU_ID": "ma_ri_50_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__50__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "t_o_ma_to50__": {
+      "SKU_ID": "t_o_ma_to50__",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ful_ko_phi_100p_3": {
+      "SKU_ID": "ful_ko_phi_100p_3",
+      "NEW_SKU_ID": "CAULIFLOWER__1000__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "t_o_ma_to500-": {
+      "SKU_ID": "t_o_ma_to500-",
+      "NEW_SKU_ID": "TOMATO__500__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "t_o_ma_to100": {
+      "SKU_ID": "t_o_ma_to100",
+      "NEW_SKU_ID": "TOMATO__100__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "t_o_ma_to50p_Cs": {
+      "SKU_ID": "t_o_ma_to50p_Cs",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "t_o_ma_to300": {
+      "SKU_ID": "t_o_ma_to300",
+      "NEW_SKU_ID": "TOMATO__300__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "t_o_ma_to_50": {
+      "SKU_ID": "t_o_ma_to_50",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "t_o_ma_to50H": {
+      "SKU_ID": "t_o_ma_to50H",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "t_o_ma_to2_5": {
+      "SKU_ID": "t_o_ma_to2_5",
+      "NEW_SKU_ID": "TOMATO__25__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "t_o_ma_t_o300": {
+      "SKU_ID": "t_o_ma_t_o300",
+      "NEW_SKU_ID": "TOMATO__300__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "l_o_t_u_s28pcs": {
+      "SKU_ID": "l_o_t_u_s28pcs",
+      "NEW_SKU_ID": "LOTUS__28__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+   "lo_tu_20s": {
+      "SKU_ID": "lo_tu_20s",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+
+   "br2_in_1000_jal": {
+      "SKU_ID": "br2_in_1000_jal",
+      "NEW_SKU_ID": "BRINJAL__1000__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "da_li_y_a_pcs-150": {
+      "SKU_ID": "da_li_y_a_pcs-150",
+      "NEW_SKU_ID": "DAHLIA__150__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "ful_ko_phi_20p_4": {
+      "SKU_ID": "ful_ko_phi_20p_4",
+      "NEW_SKU_ID": "CAULIFLOWER__20__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ful_ko_phi_157p": {
+      "SKU_ID": "ful_ko_phi_157p",
+      "NEW_SKU_ID": "CAULIFLOWER__175__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "t_oma_500_to": {
+      "SKU_ID": "t_oma_500_to",
+      "NEW_SKU_ID": "TOMATO__500__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "ca_bb_age_10p": {
+      "SKU_ID": "ca_bb_age_10p",
+      "NEW_SKU_ID": "CABBAGE__10__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "da_liy_a_pcs-20": {
+      "SKU_ID": "da_liy_a_pcs-20",
+      "NEW_SKU_ID": "DAHLIA__20__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ful_ko_phi_10p": {
+      "SKU_ID": "ful_ko_phi_10p",
+      "NEW_SKU_ID": "CAULIFLOWER__10__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "lo_tu_s16": {
+      "SKU_ID": "lo_tu_s16",
+      "NEW_SKU_ID": "LOTUS__16__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "u_c_70_che": {
+      "SKU_ID": "u_c_70_che",
+      "NEW_SKU_ID": "BITTER GOURD__70__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "ful_ko_phi_70p": {
+      "SKU_ID": "ful_ko_phi_70p",
+      "NEW_SKU_ID": "CAULIFLOWER__70__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "ful_ko_phi_40p": {
+      "SKU_ID": "ful_ko_phi_40p",
+      "NEW_SKU_ID": "CAULIFLOWER__40__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "t_o_ma_to250pcs": {
+      "SKU_ID": "t_o_ma_to250pcs",
+      "NEW_SKU_ID": "TOMATO__250__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "lo_t_us_pcs-50": {
+      "SKU_ID": "lo_t_us_pcs-50",
+      "NEW_SKU_ID": "LOTUS__50__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "cu_cum_125_ber": {
+      "SKU_ID": "cu_cum_125_ber",
+      "NEW_SKU_ID": "CUCUMBER__125__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 125
+   },
+   "ful_ko_phi_26p": {
+      "SKU_ID": "ful_ko_phi_26p",
+      "NEW_SKU_ID": "CAULIFLOWER__26__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 26
+   },
+   "be-75gu-n": {
+      "SKU_ID": "be-75gu-n",
+      "NEW_SKU_ID": "BRINJAL__75__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "br_in_400_jal": {
+      "SKU_ID": "br_in_400_jal",
+      "NEW_SKU_ID": "BRINJAL__400__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "t_o_ma_to25": {
+      "SKU_ID": "t_o_ma_to25",
+      "NEW_SKU_ID": "TOMATO__25__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "br_in_60_jal": {
+      "SKU_ID": "br_in_60_jal",
+      "NEW_SKU_ID": "BRINJAL__60__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 60
+   },
+   "da_liy_a_pcs-15": {
+      "SKU_ID": "da_liy_a_pcs-15",
+      "NEW_SKU_ID": "DAHLIA__15__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "lo_tu_s_25": {
+      "SKU_ID": "lo_tu_s_25",
+      "NEW_SKU_ID": "LOTUS__25__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "t_o_ma_to50p_c": {
+      "SKU_ID": "t_o_ma_to50p_c",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "u2_c_70_che": {
+      "SKU_ID": "u2_c_70_che",
+      "NEW_SKU_ID": "BITTER GOURD__70__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "ful_ko_phi_35p": {
+      "SKU_ID": "ful_ko_phi_35p",
+      "NEW_SKU_ID": "CAULIFLOWER__35__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "ful_ko_phi_37p": {
+      "SKU_ID": "ful_ko_phi_37p",
+      "NEW_SKU_ID": "CAULIFLOWER__37__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 37
+   },
+   "t_oma_25_to": {
+      "SKU_ID": "t_oma_25_to",
+      "NEW_SKU_ID": "TOMATO__25__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "ful_ko_phi_3g": {
+      "SKU_ID": "ful_ko_phi_3g",
+      "NEW_SKU_ID": "CAULIFLOWER__3__G__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "G",
+      "QUANTITY": 3
+   },
+   "ful_ko_phi_347p": {
+      "SKU_ID": "ful_ko_phi_347p",
+      "NEW_SKU_ID": "CAULIFLOWER__347__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 347
+   },
+   "lo_tus_pcs-16": {
+      "SKU_ID": "lo_tus_pcs-16",
+      "NEW_SKU_ID": "LOTUS__16__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "cu_cum_80_ber": {
+      "SKU_ID": "cu_cum_80_ber",
+      "NEW_SKU_ID": "CUCUMBER__80__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 80
+   },
+   "ca_bb_age_27p": {
+      "SKU_ID": "ca_bb_age_27p",
+      "NEW_SKU_ID": "CABBAGE__27__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 27
+   },
+   "da_liy_a_pcs-22": {
+      "SKU_ID": "da_liy_a_pcs-22",
+      "NEW_SKU_ID": "DAHLIA__22__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "ful_ko_phi_200p_4": {
+      "SKU_ID": "ful_ko_phi_200p_4",
+      "NEW_SKU_ID": "CAULIFLOWER__200__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "cu_cum_68_ber": {
+      "SKU_ID": "cu_cum_68_ber",
+      "NEW_SKU_ID": "CUCUMBER__68__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 68
+   },
+   "lo_tu_s9": {
+      "SKU_ID": "lo_tu_s9",
+      "NEW_SKU_ID": "LOTUS__9__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 9
+   },
+   "t_oma_20_to": {
+      "SKU_ID": "t_oma_20_to",
+      "NEW_SKU_ID": "TOMATO__20__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "t_oma_600_to": {
+      "SKU_ID": "t_oma_600_to",
+      "NEW_SKU_ID": "TOMATO__600__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 600
+   },
+   "cu_cum_100_ber": {
+      "SKU_ID": "cu_cum_100_ber",
+      "NEW_SKU_ID": "CUCUMBER__100__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "t_o_ma_to_35": {
+      "SKU_ID": "t_o_ma_to_35",
+      "NEW_SKU_ID": "TOMATO__35__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "br_in_75_jal": {
+      "SKU_ID": "br_in_75_jal",
+      "NEW_SKU_ID": "BRINJAL__75__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "ful_ko_phi_22p": {
+      "SKU_ID": "ful_ko_phi_22p",
+      "NEW_SKU_ID": "CAULIFLOWER__22__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "t_o_ma_to40": {
+      "SKU_ID": "t_o_ma_to40",
+      "NEW_SKU_ID": "TOMATO__40__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "t_o_ma_to_25": {
+      "SKU_ID": "t_o_ma_to_25",
+      "NEW_SKU_ID": "TOMATO__25__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "ca_bb_age_200p": {
+      "SKU_ID": "ca_bb_age_200p",
+      "NEW_SKU_ID": "CABBAGE__200__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "br_in_290_jal": {
+      "SKU_ID": "br_in_290_jal",
+      "NEW_SKU_ID": "BRINJAL__290__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 290
+   },
+   "t_o_ma_to-300": {
+      "SKU_ID": "t_o_ma_to-300",
+      "NEW_SKU_ID": "TOMATO__300__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "t_o_ma_to100_": {
+      "SKU_ID": "t_o_ma_to100_",
+      "NEW_SKU_ID": "TOMATO__100__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ful_ko_phi_40p_3": {
+      "SKU_ID": "ful_ko_phi_40p_3",
+      "NEW_SKU_ID": "CAULIFLOWER__40__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "ful_ko_phi_23p": {
+      "SKU_ID": "ful_ko_phi_23p",
+      "NEW_SKU_ID": "CAULIFLOWER__23__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 23
+   },
+   "ful_ko_phi_30p": {
+      "SKU_ID": "ful_ko_phi_30p",
+      "NEW_SKU_ID": "CAULIFLOWER__30__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "ful_ko_phi_1000p": {
+      "SKU_ID": "ful_ko_phi_1000p",
+      "NEW_SKU_ID": "CAULIFLOWER__1000__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "ful_ko_phi_500p": {
+      "SKU_ID": "ful_ko_phi_500p",
+      "NEW_SKU_ID": "CAULIFLOWER__500__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "br2_in_32_jal": {
+      "SKU_ID": "br2_in_32_jal",
+      "NEW_SKU_ID": "BRINJAL__32__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 32
+   },
+   "t_o_ma_to30pc_s": {
+      "SKU_ID": "t_o_ma_to30pc_s",
+      "NEW_SKU_ID": "TOMATO__30__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "ful_ko_phi_100p_4": {
+      "SKU_ID": "ful_ko_phi_100p_4",
+      "NEW_SKU_ID": "CAULIFLOWER__100__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "br_in_100_jal": {
+      "SKU_ID": "br_in_100_jal",
+      "NEW_SKU_ID": "BRINJAL__100__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ful_ko_phi_10p_2": {
+      "SKU_ID": "ful_ko_phi_10p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__10__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "t_o_ma_to50ta": {
+      "SKU_ID": "t_o_ma_to50ta",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ca_bb_age_100p": {
+      "SKU_ID": "ca_bb_age_100p",
+      "NEW_SKU_ID": "CABBAGE__100__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "t_o_ma_to30": {
+      "SKU_ID": "t_o_ma_to30",
+      "NEW_SKU_ID": "TOMATO__30__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "SOSA_130P_1": {
+      "SKU_ID": "SOSA_130P_1",
+      "NEW_SKU_ID": "CUCUMBER__130__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 130
+   },
+   "ONI-ON_300P_1": {
+      "SKU_ID": "ONI-ON_300P_1",
+      "NEW_SKU_ID": "ONION__300__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "ful_ko_phi_400p": {
+      "SKU_ID": "ful_ko_phi_400p",
+      "NEW_SKU_ID": "CAULIFLOWER__400__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "SOSA_108P_1": {
+      "SKU_ID": "SOSA_108P_1",
+      "NEW_SKU_ID": "CUCUMBER__108__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 108
+   },
+
+   "ONI-ON_200P_2": {
+      "SKU_ID": "ONI-ON_200P_2",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "da_liy_a_pcs-21": {
+      "SKU_ID": "da_liy_a_pcs-21",
+      "NEW_SKU_ID": "DAHLIA__21__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 21
+   },
+   "ONI-ON_200P_20": {
+      "SKU_ID": "ONI-ON_200P_20",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "t_o_ma_toh700": {
+      "SKU_ID": "t_o_ma_toh700",
+      "NEW_SKU_ID": "TOMATO__700__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 700
+   },
+   "ful_ko_phi_24p_2": {
+      "SKU_ID": "ful_ko_phi_24p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__24__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 24
+   },
+   "t_o_ma_to-300p": {
+      "SKU_ID": "t_o_ma_to-300p",
+      "NEW_SKU_ID": "TOMATO__300__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "t_o_ma_to44": {
+      "SKU_ID": "t_o_ma_to44",
+      "NEW_SKU_ID": "TOMATO__44__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 44
+   },
+   "t_o_ma_to_2000p": {
+      "SKU_ID": "t_o_ma_to_2000p",
+      "NEW_SKU_ID": "TOMATO__2000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 2000
+   },
+   "ch_il_l_in25": {
+      "SKU_ID": "ch_il_l_in25",
+      "NEW_SKU_ID": "CHILLI__25__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "ful_ko_phi_32p": {
+      "SKU_ID": "ful_ko_phi_32p",
+      "NEW_SKU_ID": "CAULIFLOWER__32__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 32
+   },
+   "ga-jo-r_100p_1": {
+      "SKU_ID": "ga-jo-r_100p_1",
+      "NEW_SKU_ID": "CARROT__100__PIECE__MODIFY",
+      "NAME": "CARROT",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "r_ch_illi_871": {
+      "SKU_ID": "r_ch_illi_871",
+      "NEW_SKU_ID": "CHILLI__871__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 871
+   },
+   "br2_in_500_jal": {
+      "SKU_ID": "br2_in_500_jal",
+      "NEW_SKU_ID": "BRINJAL__500__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "t_o_ma_to1200_": {
+      "SKU_ID": "t_o_ma_to1200_",
+      "NEW_SKU_ID": "TOMATO__1200__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1200
+   },
+   "ca_bb_age_26p": {
+      "SKU_ID": "ca_bb_age_26p",
+      "NEW_SKU_ID": "CABBAGE__26__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 26
+   },
+   "ONI-ON_200P_17": {
+      "SKU_ID": "ONI-ON_200P_17",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "l_ot_u_s20pc_s": {
+      "SKU_ID": "l_ot_u_s20pc_s",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "t_o_ma_to1000": {
+      "SKU_ID": "t_o_ma_to1000",
+      "NEW_SKU_ID": "TOMATO__1000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "lo_t_32_us": {
+      "SKU_ID": "lo_t_32_us",
+      "NEW_SKU_ID": "LOTUS__32__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 32
+   },
+   "d_a_li_y_a_pcs-150": {
+      "SKU_ID": "d_a_li_y_a_pcs-150",
+      "NEW_SKU_ID": "DAHLIA__150__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+
+   "BOR-BOTI_65P_1": {
+      "SKU_ID": "BOR-BOTI_65P_1",
+      "NEW_SKU_ID": "BEAN__65__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 65
+   },
+   "BEGUN_200P_1": {
+      "SKU_ID": "BEGUN_200P_1",
+      "NEW_SKU_ID": "BRINJAL__200__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "SOJ-NE_11P_1": {
+      "SKU_ID": "SOJ-NE_11P_1",
+      "NEW_SKU_ID": "MORINGA__11__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 11
+   },
+   "l_ot_u_s14pcs": {
+      "SKU_ID": "l_ot_u_s14pcs",
+      "NEW_SKU_ID": "LOTUS__14__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 14
+   },
+   "TOM-ATO_501P_1": {
+      "SKU_ID": "TOM-ATO_501P_1",
+      "NEW_SKU_ID": "TOMATO__501__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 501
+   },
+   "t_o_ma_to10pc_s": {
+      "SKU_ID": "t_o_ma_to10pc_s",
+      "NEW_SKU_ID": "TOMATO__10__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "ca_bb_age_205p": {
+      "SKU_ID": "ca_bb_age_205p",
+      "NEW_SKU_ID": "CABBAGE__225__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 225
+   },
+   "lo_t_100_us": {
+      "SKU_ID": "lo_t_100_us",
+      "NEW_SKU_ID": "LOTUS__100__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ful_ko_phi_20p_3": {
+      "SKU_ID": "ful_ko_phi_20p_3",
+      "NEW_SKU_ID": "CAULIFLOWER__20__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ful_ko_phi_25p_2": {
+      "SKU_ID": "ful_ko_phi_25p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__25__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "t_o_ma_to_1000p": {
+      "SKU_ID": "t_o_ma_to_1000p",
+      "NEW_SKU_ID": "TOMATO__1000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "TOM-ATO_325P_1": {
+      "SKU_ID": "TOM-ATO_325P_1",
+      "NEW_SKU_ID": "TOMATO__325__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 325
+   },
+   "ma_ri_30_go_ld": {
+      "SKU_ID": "ma_ri_30_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__30__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "lo_tu_s20pcs": {
+      "SKU_ID": "lo_tu_s20pcs",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ful_ko_phi_75p": {
+      "SKU_ID": "ful_ko_phi_75p",
+      "NEW_SKU_ID": "CAULIFLOWER__75__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "da_liy_a_pcs-60": {
+      "SKU_ID": "da_liy_a_pcs-60",
+      "NEW_SKU_ID": "DAHLIA__60__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 60
+   },
+   "pa-la-ng_140P_1": {
+      "SKU_ID": "pa-la-ng_140P_1",
+      "NEW_SKU_ID": "SPINACH__140__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 140
+   },
+   "l_ot_u_s_20pcs": {
+      "SKU_ID": "l_ot_u_s_20pcs",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "UCH-CHHE_85P_1": {
+      "SKU_ID": "UCH-CHHE_85P_1",
+      "NEW_SKU_ID": "BITTER GOURD__85__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 85
+   },
+   "ful_ko_phi_20p": {
+      "SKU_ID": "ful_ko_phi_20p",
+      "NEW_SKU_ID": "CAULIFLOWER__20__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "da_liy_a_pcs-30": {
+      "SKU_ID": "da_liy_a_pcs-30",
+      "NEW_SKU_ID": "DAHLIA__30__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "lo_tu_s23": {
+      "SKU_ID": "lo_tu_s23",
+      "NEW_SKU_ID": "LOTUS__23__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 23
+   },
+   "ful_ko_phi_100p_5": {
+      "SKU_ID": "ful_ko_phi_100p_5",
+      "NEW_SKU_ID": "CAULIFLOWER__100__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "l_ot_u_s7p_cs": {
+      "SKU_ID": "l_ot_u_s7p_cs",
+      "NEW_SKU_ID": "LOTUS__7__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 7
+   },
+   "t_oma_220_to": {
+      "SKU_ID": "t_oma_220_to",
+      "NEW_SKU_ID": "TOMATO__220__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 220
+   },
+   "da_liy_a_pcs-25": {
+      "SKU_ID": "da_liy_a_pcs-25",
+      "NEW_SKU_ID": "DAHLIA__25__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "MARI-GOLD_25P_2": {
+      "SKU_ID": "MARI-GOLD_25P_2",
+      "NEW_SKU_ID": "MARIGOLD__25__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "ch_il_l_in10pp": {
+      "SKU_ID": "ch_il_l_in10pp",
+      "NEW_SKU_ID": "CHILLI__10__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "ch_il_l_in41": {
+      "SKU_ID": "ch_il_l_in41",
+      "NEW_SKU_ID": "CHILLI__41__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 41
+   },
+   "ONI-ON_1200P_1": {
+      "SKU_ID": "ONI-ON_1200P_1",
+      "NEW_SKU_ID": "ONION__1200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 1200
+   },
+   "pe-pe_280p_1": {
+      "SKU_ID": "pe-pe_280p_1",
+      "NEW_SKU_ID": "PAPAYA__280__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 280
+   },
+
+   "lo_tu_s13": {
+      "SKU_ID": "lo_tu_s13",
+      "NEW_SKU_ID": "LOTUS__13__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 13
+   },
+   "LOTUS_22P_1": {
+      "SKU_ID": "LOTUS_22P_1",
+      "NEW_SKU_ID": "LOTUS__22__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "l_ot_u_s24p_c_s": {
+      "SKU_ID": "l_ot_u_s24p_c_s",
+      "NEW_SKU_ID": "LOTUS__24__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 24
+   },
+
+   "pe-pe_10G_1": {
+      "SKU_ID": "pe-pe_10G_1",
+      "NEW_SKU_ID": "PAPAYA__10__G__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "G",
+      "QUANTITY": 10
+   },
+   "lo_tu_s7": {
+      "SKU_ID": "lo_tu_s7",
+      "NEW_SKU_ID": "LOTUS__7__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 7
+   },
+   "be-gu-n_1851p_1": {
+      "SKU_ID": "be-gu-n_1851p_1",
+      "NEW_SKU_ID": "BRINJAL__1851__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 1851
+   },
+   "l_ot_u_s29pcs": {
+      "SKU_ID": "l_ot_u_s29pcs",
+      "NEW_SKU_ID": "LOTUS__29__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 29
+   },
+
+   "da_li_y_a_pcs-10": {
+      "SKU_ID": "da_li_y_a_pcs-10",
+      "NEW_SKU_ID": "DAHLIA__10__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "lo_tus_pcs-51": {
+      "SKU_ID": "lo_tus_pcs-51",
+      "NEW_SKU_ID": "LOTUS__51__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 51
+   },
+   "da_liy_a_pcs-19": {
+      "SKU_ID": "da_liy_a_pcs-19",
+      "NEW_SKU_ID": "DAHLIA__19__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 19
+   },
+   "lo_t_us_pcs-10": {
+      "SKU_ID": "lo_t_us_pcs-10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "lo_tus-10grm": {
+      "SKU_ID": "lo_tus-10grm",
+      "NEW_SKU_ID": "LOTUS__10__G__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "G",
+      "QUANTITY": 10
+   },
+   "l_ot_u_s15p_cs": {
+      "SKU_ID": "l_ot_u_s15p_cs",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "t_o_ma_to_10grm": {
+      "SKU_ID": "t_o_ma_to_10grm",
+      "NEW_SKU_ID": "TOMATO__10__G__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "G",
+      "QUANTITY": 10
+   },
+   "SOSA_121P_1": {
+      "SKU_ID": "SOSA_121P_1",
+      "NEW_SKU_ID": "CUCUMBER__121__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 121
+   },
+   "l_ot_u_s27p_cs": {
+      "SKU_ID": "l_ot_u_s27p_cs",
+      "NEW_SKU_ID": "LOTUS__27__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 27
+   },
+   "ga-jar_50P_1": {
+      "SKU_ID": "ga-jar_50P_1",
+      "NEW_SKU_ID": "CARROT__50__PIECE__MODIFY",
+      "NAME": "CARROT",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "da_liy_a_pcs-23": {
+      "SKU_ID": "da_liy_a_pcs-23",
+      "NEW_SKU_ID": "DAHLIA__23__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 23
+   },
+   "LOTUS_9P_1": {
+      "SKU_ID": "LOTUS_9P_1",
+      "NEW_SKU_ID": "LOTUS__9__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 9
+   },
+   "da_liy_a_pcs-16": {
+      "SKU_ID": "da_liy_a_pcs-16",
+      "NEW_SKU_ID": "DAHLIA__16__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "LOTUS_11P_1": {
+      "SKU_ID": "LOTUS_11P_1",
+      "NEW_SKU_ID": "LOTUS__11__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 11
+   },
+   "lo_tus_pcs-25": {
+      "SKU_ID": "lo_tus_pcs-25",
+      "NEW_SKU_ID": "LOTUS__25__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "pa-la-ng_70P_3": {
+      "SKU_ID": "pa-la-ng_70P_3",
+      "NEW_SKU_ID": "SPINACH__70__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "lo_tus_pcs-50": {
+      "SKU_ID": "lo_tus_pcs-50",
+      "NEW_SKU_ID": "LOTUS__50__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ONI-ON_200P_6": {
+      "SKU_ID": "ONI-ON_200P_6",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "lo_6tu_s": {
+      "SKU_ID": "lo_6tu_s",
+      "NEW_SKU_ID": "LOTUS__6__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 6
+   },
+   "t_o_ma_to-1200": {
+      "SKU_ID": "t_o_ma_to-1200",
+      "NEW_SKU_ID": "TOMATO__1200__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1200
+   },
+   "pa-la-ng_800P_1": {
+      "SKU_ID": "pa-la-ng_800P_1",
+      "NEW_SKU_ID": "SPINACH__800__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 800
+   },
+   "lo_tus_pcs-15": {
+      "SKU_ID": "lo_tus_pcs-15",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "t_o_ma_to_292": {
+      "SKU_ID": "t_o_ma_to_292",
+      "NEW_SKU_ID": "TOMATO__292__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 292
+   },
+   "t_o_m_a_to-600_": {
+      "SKU_ID": "t_o_m_a_to-600_",
+      "NEW_SKU_ID": "TOMATO__600__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 600
+   },
+   "ONI-ON_200P_14": {
+      "SKU_ID": "ONI-ON_200P_14",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "pa-la-ng_250P_13": {
+      "SKU_ID": "pa-la-ng_250P_13",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+
+   "ga-da-ph-ul-Y_80p_1": {
+      "SKU_ID": "ga-da-ph-ul-Y_80p_1",
+      "NEW_SKU_ID": "MARIGOLD__80__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 80
+   },
+   "LOTUS_33P_1": {
+      "SKU_ID": "LOTUS_33P_1",
+      "NEW_SKU_ID": "LOTUS__33__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 33
+   },
+   "BEGUN_180P_1": {
+      "SKU_ID": "BEGUN_180P_1",
+      "NEW_SKU_ID": "BRINJAL__180__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 180
+   },
+
+   "u_c_10_che": {
+      "SKU_ID": "u_c_10_che",
+      "NEW_SKU_ID": "BITTER GOURD__10__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "MARIGOLD_50P_1": {
+      "SKU_ID": "MARIGOLD_50P_1",
+      "NEW_SKU_ID": "MARIGOLD__50__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ma_ri_150_go_ld": {
+      "SKU_ID": "ma_ri_150_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__150__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "BADHA-KOPI_25P_2": {
+      "SKU_ID": "BADHA-KOPI_25P_2",
+      "NEW_SKU_ID": "CABBAGE__25__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+
+   "lo-tu-s_18p_1": {
+      "SKU_ID": "lo-tu-s_18p_1",
+      "NEW_SKU_ID": "LOTUS__18__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 18
+   },
+   "l_ot_u_s22pcs": {
+      "SKU_ID": "l_ot_u_s22pcs",
+      "NEW_SKU_ID": "LOTUS__22__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "t_o_ma_to30_": {
+      "SKU_ID": "t_o_ma_to30_",
+      "NEW_SKU_ID": "TOMATO__30__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "l_ot_u_s16pcs": {
+      "SKU_ID": "l_ot_u_s16pcs",
+      "NEW_SKU_ID": "LOTUS__16__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "t_o_ma_to50_pp": {
+      "SKU_ID": "t_o_ma_to50_pp",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "LOTUS_25P_1": {
+      "SKU_ID": "LOTUS_25P_1",
+      "NEW_SKU_ID": "LOTUS__25__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "ful_ko_phi_50p": {
+      "SKU_ID": "ful_ko_phi_50p",
+      "NEW_SKU_ID": "CAULIFLOWER__50__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "CAPSICUM_20P_1": {
+      "SKU_ID": "CAPSICUM_20P_1",
+      "NEW_SKU_ID": "CAPSICUM__20__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+
+   "ful_ko_phi_200p_5": {
+      "SKU_ID": "ful_ko_phi_200p_5",
+      "NEW_SKU_ID": "CAULIFLOWER__200__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "lo-tu-s_5p_1": {
+      "SKU_ID": "lo-tu-s_5p_1",
+      "NEW_SKU_ID": "LOTUS__5__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "SOSA_156P_1": {
+      "SKU_ID": "SOSA_156P_1",
+      "NEW_SKU_ID": "CUCUMBER__156__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 156
+   },
+   "pe-pe_130p_1": {
+      "SKU_ID": "pe-pe_130p_1",
+      "NEW_SKU_ID": "PAPAYA__130__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 130
+   },
+   "l_ot_u_s18p_cs": {
+      "SKU_ID": "l_ot_u_s18p_cs",
+      "NEW_SKU_ID": "LOTUS__18__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 18
+   },
+   "lo-tu-s_7p_1": {
+      "SKU_ID": "lo-tu-s_7p_1",
+      "NEW_SKU_ID": "LOTUS__7__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 7
+   },
+
+   "SOSA_200P_1": {
+      "SKU_ID": "SOSA_200P_1",
+      "NEW_SKU_ID": "CUCUMBER__200__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "SOSA_175P_1": {
+      "SKU_ID": "SOSA_175P_1",
+      "NEW_SKU_ID": "CUCUMBER__175__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "MARIGOLD_45P_1": {
+      "SKU_ID": "MARIGOLD_45P_1",
+      "NEW_SKU_ID": "MARIGOLD__45__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 45
+   },
+   "ful_ko_phi_200p": {
+      "SKU_ID": "ful_ko_phi_200p",
+      "NEW_SKU_ID": "CAULIFLOWER__200__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+
+   "da_liy_a_pcs-66": {
+      "SKU_ID": "da_liy_a_pcs-66",
+      "NEW_SKU_ID": "DAHLIA__66__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 66
+   },
+   "pa-la-ng_250P_4": {
+      "SKU_ID": "pa-la-ng_250P_4",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "BADHA-KOPI_25P_1": {
+      "SKU_ID": "BADHA-KOPI_25P_1",
+      "NEW_SKU_ID": "CABBAGE__25__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "to-ma-to_135p_1": {
+      "SKU_ID": "to-ma-to_135p_1",
+      "NEW_SKU_ID": "TOMATO__135__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 135
+   },
+   "pa-la-ng_100p_1": {
+      "SKU_ID": "pa-la-ng_100p_1",
+      "NEW_SKU_ID": "SPINACH__100__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MARI-GOLD_105_1": {
+      "SKU_ID": "MARI-GOLD_105_1",
+      "NEW_SKU_ID": "MARIGOLD__105__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 105
+   },
+   "TOM-ATO_125P_1": {
+      "SKU_ID": "TOM-ATO_125P_1",
+      "NEW_SKU_ID": "TOMATO__125__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 125
+   },
+   "pe-pe_100p_1": {
+      "SKU_ID": "pe-pe_100p_1",
+      "NEW_SKU_ID": "PAPAYA__100__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ONI-ON_200P_4": {
+      "SKU_ID": "ONI-ON_200P_4",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "pa-la-ng_270P_1": {
+      "SKU_ID": "pa-la-ng_270P_1",
+      "NEW_SKU_ID": "SPINACH__270__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 270
+   },
+   "lal-shak_250p_1": {
+      "SKU_ID": "lal-shak_250p_1",
+      "NEW_SKU_ID": "RED SPINACH__250__PIECE__MODIFY",
+      "NAME": "RED SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "BADHA-KOPI_15P_1": {
+      "SKU_ID": "BADHA-KOPI_15P_1",
+      "NEW_SKU_ID": "CABBAGE__15__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "pa-la-ng_190P_1": {
+      "SKU_ID": "pa-la-ng_190P_1",
+      "NEW_SKU_ID": "SPINACH__190__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 190
+   },
+   "PEPE-LAL_75P_1": {
+      "SKU_ID": "PEPE-LAL_75P_1",
+      "NEW_SKU_ID": "PAPAYA__75__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "TOM-ATO_500P_1": {
+      "SKU_ID": "TOM-ATO_500P_1",
+      "NEW_SKU_ID": "TOMATO__500__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "t_o_ma_to800": {
+      "SKU_ID": "t_o_ma_to800",
+      "NEW_SKU_ID": "TOMATO__800__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 800
+   },
+   "lal-shak_150p_1": {
+      "SKU_ID": "lal-shak_150p_1",
+      "NEW_SKU_ID": "RED SPINACH__150__PIECE__MODIFY",
+      "NAME": "RED SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "t_o_ma_to125": {
+      "SKU_ID": "t_o_ma_to125",
+      "NEW_SKU_ID": "TOMATO__125__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 125
+   },
+   "UCH-CHHE_108P_1": {
+      "SKU_ID": "UCH-CHHE_108P_1",
+      "NEW_SKU_ID": "BITTER GOURD__108__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 108
+   },
+   "lo-tu-s_15p_1": {
+      "SKU_ID": "lo-tu-s_15p_1",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "TOM-ATO_350P_1": {
+      "SKU_ID": "TOM-ATO_350P_1",
+      "NEW_SKU_ID": "TOMATO__350__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 350
+   },
+   "pa-la-ng_160P_1": {
+      "SKU_ID": "pa-la-ng_160P_1",
+      "NEW_SKU_ID": "SPINACH__160__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 160
+   },
+   "SOSA_152P_1": {
+      "SKU_ID": "SOSA_152P_1",
+      "NEW_SKU_ID": "CUCUMBER__152__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 152
+   },
+   "pa-la-ng_250P_11": {
+      "SKU_ID": "pa-la-ng_250P_11",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "BEGUN_300P_1": {
+      "SKU_ID": "BEGUN_300P_1",
+      "NEW_SKU_ID": "BRINJAL__300__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "BADHA-KOPI_250P_2": {
+      "SKU_ID": "BADHA-KOPI_250P_2",
+      "NEW_SKU_ID": "CABBAGE__250__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "pa-la-ng_800P_4": {
+      "SKU_ID": "pa-la-ng_800P_4",
+      "NEW_SKU_ID": "SPINACH__800__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 800
+   },
+   "SOSA_150P_1": {
+      "SKU_ID": "SOSA_150P_1",
+      "NEW_SKU_ID": "CUCUMBER__150__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "BEGUN_45P_2": {
+      "SKU_ID": "BEGUN_45P_2",
+      "NEW_SKU_ID": "BRINJAL__45__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 45
+   },
+   "BEGUN_145P_1": {
+      "SKU_ID": "BEGUN_145P_1",
+      "NEW_SKU_ID": "BRINJAL__145__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 145
+   },
+   "SOSA_76P_1": {
+      "SKU_ID": "SOSA_76P_1",
+      "NEW_SKU_ID": "CUCUMBER__76__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 76
+   },
+   "pa-la-ng_250P_15": {
+      "SKU_ID": "pa-la-ng_250P_15",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "SOSA_250P_1": {
+      "SKU_ID": "SOSA_250P_1",
+      "NEW_SKU_ID": "CUCUMBER__250__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "SOSA_250P_2": {
+      "SKU_ID": "SOSA_250P_2",
+      "NEW_SKU_ID": "CUCUMBER__250__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "gha-sh_16000_2": {
+      "SKU_ID": "gha-sh_16000_2",
+      "NEW_SKU_ID": "CARPET GRASS__16000__PIECE__MODIFY",
+      "NAME": "CARPET GRASS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16000
+   },
+   "l_o_t_u_s20p_cs": {
+      "SKU_ID": "l_o_t_u_s20p_cs",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "da_liy_a_pcs-40": {
+      "SKU_ID": "da_liy_a_pcs-40",
+      "NEW_SKU_ID": "DAHLIA__40__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "pa-la-ng_250P_17": {
+      "SKU_ID": "pa-la-ng_250P_17",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "SOJ-NE_36P_1": {
+      "SKU_ID": "SOJ-NE_36P_1",
+      "NEW_SKU_ID": "MORINGA__36__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 36
+   },
+
+   "ONI-ON_200P_19": {
+      "SKU_ID": "ONI-ON_200P_19",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "gha-sh_16000p_1": {
+      "SKU_ID": "gha-sh_16000p_1",
+      "NEW_SKU_ID": "CARPET GRASS__16000__PIECE__MODIFY",
+      "NAME": "CARPET GRASS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16000
+   },
+
+   "BADHA-KOPI_130P_1": {
+      "SKU_ID": "BADHA-KOPI_130P_1",
+      "NEW_SKU_ID": "CABBAGE__130__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 130
+   },
+   "SOJ-NE_17P_1": {
+      "SKU_ID": "SOJ-NE_17P_1",
+      "NEW_SKU_ID": "MORINGA__17__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+
+   "BADHA-KOPI_449P_1": {
+      "SKU_ID": "BADHA-KOPI_449P_1",
+      "NEW_SKU_ID": "CABBAGE__240__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 240
+   },
+   "CHILLI_250P_1": {
+      "SKU_ID": "CHILLI_250P_1",
+      "NEW_SKU_ID": "CHILLI__250__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "da_l_iy_a_pcs-20": {
+      "SKU_ID": "da_l_iy_a_pcs-20",
+      "NEW_SKU_ID": "DAHLIA__20__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ONI-ON_250P_1": {
+      "SKU_ID": "ONI-ON_250P_1",
+      "NEW_SKU_ID": "ONION__250__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "MARIGOLD_30P_1": {
+      "SKU_ID": "MARIGOLD_30P_1",
+      "NEW_SKU_ID": "MARIGOLD__30__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "pa-la-ng_250P_2": {
+      "SKU_ID": "pa-la-ng_250P_2",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "pa-la-ng_175P_2": {
+      "SKU_ID": "pa-la-ng_175P_2",
+      "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "ONI-ON_200P_1": {
+      "SKU_ID": "ONI-ON_200P_1",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "da_liy_a_pcs-32": {
+      "SKU_ID": "da_liy_a_pcs-32",
+      "NEW_SKU_ID": "DAHLIA__32__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 32
+   },
+   "lo_t_10_us": {
+      "SKU_ID": "lo_t_10_us",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "SOSA_170P_1": {
+      "SKU_ID": "SOSA_170P_1",
+      "NEW_SKU_ID": "CUCUMBER__170__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 170
+   },
+   "ga-da-ph-ul-Y_155p_1": {
+      "SKU_ID": "ga-da-ph-ul-Y_155p_1",
+      "NEW_SKU_ID": "MARIGOLD__155__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 155
+   },
+   "lo_10-tu_s": {
+      "SKU_ID": "lo_10-tu_s",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "ga-da-ph-ul-Y_135p_1": {
+      "SKU_ID": "ga-da-ph-ul-Y_135p_1",
+      "NEW_SKU_ID": "MARIGOLD__135__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 135
+   },
+   "t_o_ma_to-600_": {
+      "SKU_ID": "t_o_ma_to-600_",
+      "NEW_SKU_ID": "TOMATO__600__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 600
+   },
+   "pa-la-ng_250P_7": {
+      "SKU_ID": "pa-la-ng_250P_7",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "ca_bb_ag_e_50p": {
+      "SKU_ID": "ca_bb_ag_e_50p",
+      "NEW_SKU_ID": "CABBAGE__50__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "lo-tu-s_22p_1": {
+      "SKU_ID": "lo-tu-s_22p_1",
+      "NEW_SKU_ID": "LOTUS__22__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "lo_tu_22s": {
+      "SKU_ID": "lo_tu_22s",
+      "NEW_SKU_ID": "LOTUS__22__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "lo_tus_p_15p": {
+      "SKU_ID": "lo_tus_p_15p",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "BADHA-KOPI_29P_1": {
+      "SKU_ID": "BADHA-KOPI_29P_1",
+      "NEW_SKU_ID": "CABBAGE__29__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 29
+   },
+   "DA-LIYA_50P_1": {
+      "SKU_ID": "DA-LIYA_50P_1",
+      "NEW_SKU_ID": "DAHLIA__50__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "SOJ-NE_16P_1": {
+      "SKU_ID": "SOJ-NE_16P_1",
+      "NEW_SKU_ID": "MORINGA__16__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+
+   "pa-la-ng_175P_3": {
+      "SKU_ID": "pa-la-ng_175P_3",
+      "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "BADHA-KOPI_10P_2": {
+      "SKU_ID": "BADHA-KOPI_10P_2",
+      "NEW_SKU_ID": "CABBAGE__10__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "CHILLI_72P_1": {
+      "SKU_ID": "CHILLI_72P_1",
+      "NEW_SKU_ID": "CHILLI__72__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 72
+   },
+   "ONI-ON_200P_15": {
+      "SKU_ID": "ONI-ON_200P_15",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "ful_ko_phi_24p": {
+      "SKU_ID": "ful_ko_phi_24p",
+      "NEW_SKU_ID": "CAULIFLOWER__24__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 24
+   },
+   "LOTUS_14P_1": {
+      "SKU_ID": "LOTUS_14P_1",
+      "NEW_SKU_ID": "LOTUS__14__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 14
+   },
+   "BADHA-KOPI_240P_1": {
+      "SKU_ID": "BADHA-KOPI_240P_1",
+      "NEW_SKU_ID": "CABBAGE__240__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 240
+   },
+   "BADHA-KOPI_250P_1": {
+      "SKU_ID": "BADHA-KOPI_250P_1",
+      "NEW_SKU_ID": "CABBAGE__250__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "lo_tu_s10pc": {
+      "SKU_ID": "lo_tu_s10pc",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "pe-pe_240p_1": {
+      "SKU_ID": "pe-pe_240p_1",
+      "NEW_SKU_ID": "PAPAYA__240__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 240
+   },
+   "pa-la-ng_800P_2": {
+      "SKU_ID": "pa-la-ng_800P_2",
+      "NEW_SKU_ID": "SPINACH__800__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 800
+   },
+   "LOTUS_10P_4": {
+      "SKU_ID": "LOTUS_10P_4",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "BADHA-KOPI_60P_1": {
+      "SKU_ID": "BADHA-KOPI_60P_1",
+      "NEW_SKU_ID": "CABBAGE__60__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 60
+   },
+   "pa-la-ng_230P_1": {
+      "SKU_ID": "pa-la-ng_230P_1",
+      "NEW_SKU_ID": "SPINACH__230__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 230
+   },
+   "l_ot_u_s8pcs": {
+      "SKU_ID": "l_ot_u_s8pcs",
+      "NEW_SKU_ID": "LOTUS__8__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "SOSA_166P_1": {
+      "SKU_ID": "SOSA_166P_1",
+      "NEW_SKU_ID": "CUCUMBER__166__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 166
+   },
+   "BEGUN_50P_3": {
+      "SKU_ID": "BEGUN_50P_3",
+      "NEW_SKU_ID": "BRINJAL__50__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "SOJ-NE_23P_1": {
+      "SKU_ID": "SOJ-NE_23P_1",
+      "NEW_SKU_ID": "MORINGA__23__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 23
+   },
+   "t_o_ma_toH_5grm": {
+      "SKU_ID": "t_o_ma_toH_5grm",
+      "NEW_SKU_ID": "TOMATO__5__G__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "G",
+      "QUANTITY": 5
+   },
+   "pa-la-ng_250P_19": {
+      "SKU_ID": "pa-la-ng_250P_19",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "pa-la-ng_50P_1": {
+      "SKU_ID": "pa-la-ng_50P_1",
+      "NEW_SKU_ID": "SPINACH__50__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+
+   "ONI-ON_200P_10": {
+      "SKU_ID": "ONI-ON_200P_10",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "BADHA-KOPI_50P_2": {
+      "SKU_ID": "BADHA-KOPI_50P_2",
+      "NEW_SKU_ID": "CABBAGE__50__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "pa-la-ng_2G_1": {
+      "SKU_ID": "pa-la-ng_2G_1",
+      "NEW_SKU_ID": "SPINACH__2__G__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "G",
+      "QUANTITY": 2
+   },
+   "BEGUN_50P_2": {
+      "SKU_ID": "BEGUN_50P_2",
+      "NEW_SKU_ID": "BRINJAL__50__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "da_liy_a_pcs-56": {
+      "SKU_ID": "da_liy_a_pcs-56",
+      "NEW_SKU_ID": "DAHLIA__56__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 56
+   },
+   "LOTUS_27P_1": {
+      "SKU_ID": "LOTUS_27P_1",
+      "NEW_SKU_ID": "LOTUS__27__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 27
+   },
+   "da-li-ya_35p_1": {
+      "SKU_ID": "da-li-ya_35p_1",
+      "NEW_SKU_ID": "DAHLIA__35__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "BADHA-KOPI_100P_2": {
+      "SKU_ID": "BADHA-KOPI_100P_2",
+      "NEW_SKU_ID": "CABBAGE__100__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "PEPE_110P_1": {
+      "SKU_ID": "PEPE_110P_1",
+      "NEW_SKU_ID": "PAPAYA__110__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 110
+   },
+   "ONION_300P_1": {
+      "SKU_ID": "ONION_300P_1",
+      "NEW_SKU_ID": "ONION__300__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "pe-pe_156P_1": {
+      "SKU_ID": "pe-pe_156P_1",
+      "NEW_SKU_ID": "PAPAYA__156__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 156
+   },
+   "SOSA_150P_2": {
+      "SKU_ID": "SOSA_150P_2",
+      "NEW_SKU_ID": "CUCUMBER__150__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "ONI-ON_1000P_1": {
+      "SKU_ID": "ONI-ON_1000P_1",
+      "NEW_SKU_ID": "ONION__1000__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "BOR-BOTI_111P_1": {
+      "SKU_ID": "BOR-BOTI_111P_1",
+      "NEW_SKU_ID": "BEAN__111__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 111
+   },
+   "pa-la-ng_250P_18": {
+      "SKU_ID": "pa-la-ng_250P_18",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "ONI-ON_500P_4": {
+      "SKU_ID": "ONI-ON_500P_4",
+      "NEW_SKU_ID": "ONION__500__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "t_o_ma_to_2000P": {
+      "SKU_ID": "t_o_ma_to_2000P",
+      "NEW_SKU_ID": "TOMATO__2000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 2000
+   },
+   "pa-la-ng_175P_5": {
+      "SKU_ID": "pa-la-ng_175P_5",
+      "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "pe-pe_60p_1": {
+      "SKU_ID": "pe-pe_60p_1",
+      "NEW_SKU_ID": "PAPAYA__60__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 60
+   },
+   "BEGUN_220P_1": {
+      "SKU_ID": "BEGUN_220P_1",
+      "NEW_SKU_ID": "BRINJAL__220__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 220
+   },
+   "pa-la-ng_15P_1": {
+      "SKU_ID": "pa-la-ng_15P_1",
+      "NEW_SKU_ID": "SPINACH__15__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "pa-la-ng_250P_24": {
+      "SKU_ID": "pa-la-ng_250P_24",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "SOSA_108P_2": {
+      "SKU_ID": "SOSA_108P_2",
+      "NEW_SKU_ID": "CUCUMBER__108__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 108
+   },
+   "pa-la-ng_500p_2": {
+      "SKU_ID": "pa-la-ng_500p_2",
+      "NEW_SKU_ID": "SPINACH__500__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "pa-la-ng_250P_3": {
+      "SKU_ID": "pa-la-ng_250P_3",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "SOSA_125P_1": {
+      "SKU_ID": "SOSA_125P_1",
+      "NEW_SKU_ID": "CUCUMBER__125__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 125
+   },
+   "ONI-ON_800P_1": {
+      "SKU_ID": "ONI-ON_800P_1",
+      "NEW_SKU_ID": "ONION__800__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 800
+   },
+   "l-o-t-u-s_22p": {
+      "SKU_ID": "l-o-t-u-s_22p",
+      "NEW_SKU_ID": "LOTUS__22__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "CAPSICUM_10P_1": {
+      "SKU_ID": "CAPSICUM_10P_1",
+      "NEW_SKU_ID": "CAPSICUM__10__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "LOTUS_18P_1": {
+      "SKU_ID": "LOTUS_18P_1",
+      "NEW_SKU_ID": "LOTUS__18__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 18
+   },
+   "BEGUN_1000P_1": {
+      "SKU_ID": "BEGUN_1000P_1",
+      "NEW_SKU_ID": "BRINJAL__1000__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "LOTUS369P_1": {
+      "SKU_ID": "LOTUS369P_1",
+      "NEW_SKU_ID": "LOTUS__28__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+   "DALIYA_10P_1": {
+      "SKU_ID": "DALIYA_10P_1",
+      "NEW_SKU_ID": "DAHLIA__10__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "MARIGOLD_10P_1": {
+      "SKU_ID": "MARIGOLD_10P_1",
+      "NEW_SKU_ID": "MARIGOLD__10__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "pe-pe_120p_1": {
+      "SKU_ID": "pe-pe_120p_1",
+      "NEW_SKU_ID": "PAPAYA__120__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 120
+   },
+   "ga-da-ph-ul-Y_150p_1": {
+      "SKU_ID": "ga-da-ph-ul-Y_150p_1",
+      "NEW_SKU_ID": "MARIGOLD__150__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "BADHA-KOPI_70P_1": {
+      "SKU_ID": "BADHA-KOPI_70P_1",
+      "NEW_SKU_ID": "CABBAGE__70__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "BADHA-KOPI_40P_1": {
+      "SKU_ID": "BADHA-KOPI_40P_1",
+      "NEW_SKU_ID": "CABBAGE__40__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "ca_bb_age_375p": {
+      "SKU_ID": "ca_bb_age_375p",
+      "NEW_SKU_ID": "CABBAGE__375__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 375
+   },
+   "BEGUN_130P_1": {
+      "SKU_ID": "BEGUN_130P_1",
+      "NEW_SKU_ID": "BRINJAL__130__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 130
+   },
+   "BADHA-KOPI_290P_1": {
+      "SKU_ID": "BADHA-KOPI_290P_1",
+      "NEW_SKU_ID": "CABBAGE__290__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 290
+   },
+   "pa-la-ng_250P_9": {
+      "SKU_ID": "pa-la-ng_250P_9",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "BADHA-KOPI_10P_3": {
+      "SKU_ID": "BADHA-KOPI_10P_3",
+      "NEW_SKU_ID": "CABBAGE__10__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "pe-pe_145p_1": {
+      "SKU_ID": "pe-pe_145p_1",
+      "NEW_SKU_ID": "PAPAYA__145__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 145
+   },
+   "ful_ko_phi_1p": {
+      "SKU_ID": "ful_ko_phi_1p",
+      "NEW_SKU_ID": "CAULIFLOWER__500__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "lo_tus_pcs-31": {
+      "SKU_ID": "lo_tus_pcs-31",
+      "NEW_SKU_ID": "LOTUS__31__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 31
+   },
+   "pa-la-ng_75P_1": {
+      "SKU_ID": "pa-la-ng_75P_1",
+      "NEW_SKU_ID": "SPINACH__75__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "LOTUS_31P_1": {
+      "SKU_ID": "LOTUS_31P_1",
+      "NEW_SKU_ID": "LOTUS__31__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 31
+   },
+   "BADHA-KOPI_20P_1": {
+      "SKU_ID": "BADHA-KOPI_20P_1",
+      "NEW_SKU_ID": "CABBAGE__20__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "LOTUS_17P_1": {
+      "SKU_ID": "LOTUS_17P_1",
+      "NEW_SKU_ID": "LOTUS__17__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+   "c-ar-r-ot_300p_1": {
+      "SKU_ID": "c-ar-r-ot_300p_1",
+      "NEW_SKU_ID": "CARROT__300__PIECE__MODIFY",
+      "NAME": "CARROT",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "lo-tu-s_23p_1": {
+      "SKU_ID": "lo-tu-s_23p_1",
+      "NEW_SKU_ID": "LOTUS__23__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 23
+   },
+   "lo_tus_pcs-8": {
+      "SKU_ID": "lo_tus_pcs-8",
+      "NEW_SKU_ID": "LOTUS__8__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "ONI-ON_200P_8": {
+      "SKU_ID": "ONI-ON_200P_8",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "pa-la-ng_175P_4": {
+      "SKU_ID": "pa-la-ng_175P_4",
+      "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "pa-la-ng_250P_16": {
+      "SKU_ID": "pa-la-ng_250P_16",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "SOSA_350P_1": {
+      "SKU_ID": "SOSA_350P_1",
+      "NEW_SKU_ID": "CUCUMBER__350__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 350
+   },
+   "BEGUN_100P_1": {
+      "SKU_ID": "BEGUN_100P_1",
+      "NEW_SKU_ID": "BRINJAL__100__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "BEGUN-GL_50P_1": {
+      "SKU_ID": "BEGUN-GL_50P_1",
+      "NEW_SKU_ID": "BRINJAL__50__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ONI-ON_200P_11": {
+      "SKU_ID": "ONI-ON_200P_11",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "BEGUN_240P_1": {
+      "SKU_ID": "BEGUN_240P_1",
+      "NEW_SKU_ID": "BRINJAL__240__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 240
+   },
+   "pa-la-ng_250P_20": {
+      "SKU_ID": "pa-la-ng_250P_20",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "pe-pe_2G_1": {
+      "SKU_ID": "pe-pe_2G_1",
+      "NEW_SKU_ID": "PAPAYA__2__G__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "G",
+      "QUANTITY": 2
+   },
+   "LOTUS_12P_1": {
+      "SKU_ID": "LOTUS_12P_1",
+      "NEW_SKU_ID": "LOTUS__12__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 12
+   },
+   "BADHA-KOPI_30P_1": {
+      "SKU_ID": "BADHA-KOPI_30P_1",
+      "NEW_SKU_ID": "CABBAGE__30__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "da_liy_a_pcs-849": {
+      "SKU_ID": "da_liy_a_pcs-849",
+      "NEW_SKU_ID": "DAHLIA__74__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 74
+   },
+   "CHIM_10P_1": {
+      "SKU_ID": "CHIM_10P_1",
+      "NEW_SKU_ID": "Dolichos__10__PIECE__MODIFY",
+      "NAME": "Dolichos",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "l-o-t-u-s_21p": {
+      "SKU_ID": "l-o-t-u-s_21p",
+      "NEW_SKU_ID": "LOTUS__21__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 21
+   },
+   "pa-la-ng_250P_21": {
+      "SKU_ID": "pa-la-ng_250P_21",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "VENDI_300G_1": {
+      "SKU_ID": "VENDI_300G_1",
+      "NEW_SKU_ID": "Okra__300__G__MODIFY",
+      "NAME": "Okra",
+      "TYPE": "G",
+      "QUANTITY": 300
+   },
+   "BEGUN_40P_1": {
+      "SKU_ID": "BEGUN_40P_1",
+      "NEW_SKU_ID": "BRINJAL__40__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "BEGUN_100P_3": {
+      "SKU_ID": "BEGUN_100P_3",
+      "NEW_SKU_ID": "BRINJAL__100__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+
+   "BEGUN_500P_3": {
+      "SKU_ID": "BEGUN_500P_3",
+      "NEW_SKU_ID": "BRINJAL__500__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "ga-jo-r_186p_1": {
+      "SKU_ID": "ga-jo-r_186p_1",
+      "NEW_SKU_ID": "CARROT__186__PIECE__MODIFY",
+      "NAME": "CARROT",
+      "TYPE": "PIECE",
+      "QUANTITY": 186
+   },
+   "SOSA_17P_1": {
+      "SKU_ID": "SOSA_17P_1",
+      "NEW_SKU_ID": "CUCUMBER__17__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+   "MARI-GOLD_70P_1": {
+      "SKU_ID": "MARI-GOLD_70P_1",
+      "NEW_SKU_ID": "MARIGOLD__70__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "BADHA-KOPI_190P_1": {
+      "SKU_ID": "BADHA-KOPI_190P_1",
+      "NEW_SKU_ID": "CABBAGE__190__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 190
+   },
+   "pa-la-ng_250P_12": {
+      "SKU_ID": "pa-la-ng_250P_12",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "CAPSICUM_20P_2": {
+      "SKU_ID": "CAPSICUM_20P_2",
+      "NEW_SKU_ID": "CAPSICUM__20__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "BADHA-KOPI_240P_2": {
+      "SKU_ID": "BADHA-KOPI_240P_2",
+      "NEW_SKU_ID": "CABBAGE__240__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 240
+   },
+   "BEGUN_130P_2": {
+      "SKU_ID": "BEGUN_130P_2",
+      "NEW_SKU_ID": "BRINJAL__130__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 130
+   },
+   "pa-la-ng_400P_2": {
+      "SKU_ID": "pa-la-ng_400P_2",
+      "NEW_SKU_ID": "SPINACH__400__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "BEGUN_399P_1": {
+      "SKU_ID": "BEGUN_399P_1",
+      "NEW_SKU_ID": "BRINJAL__100__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "PEPE-LAL_60P_1": {
+      "SKU_ID": "PEPE-LAL_60P_1",
+      "NEW_SKU_ID": "PAPAYA__60__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 60
+   },
+   "l_ot_u_s35p": {
+      "SKU_ID": "l_ot_u_s35p",
+      "NEW_SKU_ID": "LOTUS__35__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "pa-la-ng_250P_23": {
+      "SKU_ID": "pa-la-ng_250P_23",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "BADHA-KOPI_300P_1": {
+      "SKU_ID": "BADHA-KOPI_300P_1",
+      "NEW_SKU_ID": "CABBAGE__300__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "DALIYA_28P_1": {
+      "SKU_ID": "DALIYA_28P_1",
+      "NEW_SKU_ID": "DAHLIA__28__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+   "lo-tu-s_12p_1": {
+      "SKU_ID": "lo-tu-s_12p_1",
+      "NEW_SKU_ID": "LOTUS__12__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 12
+   },
+   "pa-la-ng_200P_2": {
+      "SKU_ID": "pa-la-ng_200P_2",
+      "NEW_SKU_ID": "SPINACH__200__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "BADHA-KOPI_50P_1": {
+      "SKU_ID": "BADHA-KOPI_50P_1",
+      "NEW_SKU_ID": "CABBAGE__50__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "BADHA-KOPI_180P_1": {
+      "SKU_ID": "BADHA-KOPI_180P_1",
+      "NEW_SKU_ID": "CABBAGE__180__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 180
+   },
+   "LOTUS_32P_1": {
+      "SKU_ID": "LOTUS_32P_1",
+      "NEW_SKU_ID": "LOTUS__32__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 32
+   },
+   "SOJ-NE_28P_1": {
+      "SKU_ID": "SOJ-NE_28P_1",
+      "NEW_SKU_ID": "MORINGA__28__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+
+   "ONI-ON_200P_12": {
+      "SKU_ID": "ONI-ON_200P_12",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "LAL-SHAK_120P_1": {
+      "SKU_ID": "LAL-SHAK_120P_1",
+      "NEW_SKU_ID": "Amaranthus__120__PIECE__MODIFY",
+      "NAME": "Amaranthus",
+      "TYPE": "PIECE",
+      "QUANTITY": 120
+   },
+   "pa-la-ng_235P_1": {
+      "SKU_ID": "pa-la-ng_235P_1",
+      "NEW_SKU_ID": "SPINACH__235__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 235
+   },
+
+   "pa-la-ng_260p_1": {
+      "SKU_ID": "pa-la-ng_260p_1",
+      "NEW_SKU_ID": "SPINACH__260__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 260
+   },
+   "ONI-ON_200P_7": {
+      "SKU_ID": "ONI-ON_200P_7",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "pe-pe_370P_1": {
+      "SKU_ID": "pe-pe_370P_1",
+      "NEW_SKU_ID": "PAPAYA__370__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 370
+   },
+   "pa-la-ng_30P_1": {
+      "SKU_ID": "pa-la-ng_30P_1",
+      "NEW_SKU_ID": "SPINACH__30__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+
+   "pe-pe_200p_1": {
+      "SKU_ID": "pe-pe_200p_1",
+      "NEW_SKU_ID": "PAPAYA__200__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "LOTUS_7P_1": {
+      "SKU_ID": "LOTUS_7P_1",
+      "NEW_SKU_ID": "LOTUS__7__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 7
+   },
+   "TOM-ATO_115P_1": {
+      "SKU_ID": "TOM-ATO_115P_1",
+      "NEW_SKU_ID": "TOMATO__115__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 115
+   },
+   "SOJ-NE_8P_1": {
+      "SKU_ID": "SOJ-NE_8P_1",
+      "NEW_SKU_ID": "MORINGA__8__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "pa-la-ng_250P_8": {
+      "SKU_ID": "pa-la-ng_250P_8",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "da_liy_a_pcs-44": {
+      "SKU_ID": "da_liy_a_pcs-44",
+      "NEW_SKU_ID": "DAHLIA__44__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 44
+   },
+   "ONI-ON_200P_5": {
+      "SKU_ID": "ONI-ON_200P_5",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "TOM-ATO_150P_2": {
+      "SKU_ID": "TOM-ATO_150P_2",
+      "NEW_SKU_ID": "TOMATO__150__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "CAPSICUM_25P_1": {
+      "SKU_ID": "CAPSICUM_25P_1",
+      "NEW_SKU_ID": "CAPSICUM__25__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+
+   "lo_tu_s10pcs": {
+      "SKU_ID": "lo_tu_s10pcs",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "pa-la-ng_250P_10": {
+      "SKU_ID": "pa-la-ng_250P_10",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "lo-tu-s_17p_1": {
+      "SKU_ID": "lo-tu-s_17p_1",
+      "NEW_SKU_ID": "LOTUS__17__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+   "DA-LIYA_36P_1": {
+      "SKU_ID": "DA-LIYA_36P_1",
+      "NEW_SKU_ID": "Zinnia__36__PIECE__MODIFY",
+      "NAME": "Zinnia",
+      "TYPE": "PIECE",
+      "QUANTITY": 36
+   },
+   "LOTUS_21P_1": {
+      "SKU_ID": "LOTUS_21P_1",
+      "NEW_SKU_ID": "LOTUS__21__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 21
+   },
+
+   "BEGUN_45P_1": {
+      "SKU_ID": "BEGUN_45P_1",
+      "NEW_SKU_ID": "BRINJAL__45__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 45
+   },
+
+   "pa-la-ng_360P_1": {
+      "SKU_ID": "pa-la-ng_360P_1",
+      "NEW_SKU_ID": "SPINACH__360__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 360
+   },
+   "BOR-BOTI_355P_1": {
+      "SKU_ID": "BOR-BOTI_355P_1",
+      "NEW_SKU_ID": "BEAN__355__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 355
+   },
+   "BEGUN_50P_1": {
+      "SKU_ID": "BEGUN_50P_1",
+      "NEW_SKU_ID": "BRINJAL__50__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "da_liy_a_pcs-150": {
+      "SKU_ID": "da_liy_a_pcs-150",
+      "NEW_SKU_ID": "DAHLIA__150__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+
+   "l_ot_u_s20p_cs": {
+      "SKU_ID": "l_ot_u_s20p_cs",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "lo_tu_s8pcs": {
+      "SKU_ID": "lo_tu_s8pcs",
+      "NEW_SKU_ID": "LOTUS__8__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "pa-la-ng_55P_1": {
+      "SKU_ID": "pa-la-ng_55P_1",
+      "NEW_SKU_ID": "SPINACH__55__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "lo-tu-s_16p_1": {
+      "SKU_ID": "lo-tu-s_16p_1",
+      "NEW_SKU_ID": "LOTUS__16__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "pa-la-ng_250P_22": {
+      "SKU_ID": "pa-la-ng_250P_22",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "l_ot_u_s20pcs": {
+      "SKU_ID": "l_ot_u_s20pcs",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ful_ko_phi_200p_2": {
+      "SKU_ID": "ful_ko_phi_200p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__200__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "TOM-ATO_400P_1": {
+      "SKU_ID": "TOM-ATO_400P_1",
+      "NEW_SKU_ID": "TOMATO__400__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "TOM-ATO_455P_1": {
+      "SKU_ID": "TOM-ATO_455P_1",
+      "NEW_SKU_ID": "TOMATO__455__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 455
+   },
+   "TOM-ATO_150P_3": {
+      "SKU_ID": "TOM-ATO_150P_3",
+      "NEW_SKU_ID": "TOMATO__150__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+
+   "SOSA_155P_1": {
+      "SKU_ID": "SOSA_155P_1",
+      "NEW_SKU_ID": "CUCUMBER__155__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 155
+   },
+   "BOR-BOTI_444P_1": {
+      "SKU_ID": "BOR-BOTI_444P_1",
+      "NEW_SKU_ID": "BEAN__444__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 444
+   },
+
+   "ONI-ON_200P_16": {
+      "SKU_ID": "ONI-ON_200P_16",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+
+   "CHILLI_300P_1": {
+      "SKU_ID": "CHILLI_300P_1",
+      "NEW_SKU_ID": "CHILLI__300__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "t_o_ma_to_1200_p": {
+      "SKU_ID": "t_o_ma_to_1200_p",
+      "NEW_SKU_ID": "TOMATO__1200__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1200
+   },
+   "CHIM_16P_1": {
+      "SKU_ID": "CHIM_16P_1",
+      "NEW_SKU_ID": "Dolichos__16__PIECE__MODIFY",
+      "NAME": "Dolichos",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "pa-la-ng_250P_5": {
+      "SKU_ID": "pa-la-ng_250P_5",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+
+   "pa-la-ng_175P_1": {
+      "SKU_ID": "pa-la-ng_175P_1",
+      "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "lo-tu-s_20p_1": {
+      "SKU_ID": "lo-tu-s_20p_1",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+
+   "BADHA-KOPI_290P_2": {
+      "SKU_ID": "BADHA-KOPI_290P_2",
+      "NEW_SKU_ID": "CABBAGE__290__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 290
+   },
+   "ONION_270P_1": {
+      "SKU_ID": "ONION_270P_1",
+      "NEW_SKU_ID": "ONION__270__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 270
+   },
+   "ONI-ON_500P_2": {
+      "SKU_ID": "ONI-ON_500P_2",
+      "NEW_SKU_ID": "ONION__500__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "lo_tu_s22": {
+      "SKU_ID": "lo_tu_s22",
+      "NEW_SKU_ID": "LOTUS__22__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 22
+   },
+   "pa-la-ng_700P_1": {
+      "SKU_ID": "pa-la-ng_700P_1",
+      "NEW_SKU_ID": "SPINACH__700__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 700
+   },
+   "pa-la-ng_116P_1": {
+      "SKU_ID": "pa-la-ng_116P_1",
+      "NEW_SKU_ID": "SPINACH__116__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 116
+   },
+   "ga-jo-r_1000p_1": {
+      "SKU_ID": "ga-jo-r_1000p_1",
+      "NEW_SKU_ID": "CARROT__1000__PIECE__MODIFY",
+      "NAME": "CARROT",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "BADHA-KOPI_200P_3": {
+      "SKU_ID": "BADHA-KOPI_200P_3",
+      "NEW_SKU_ID": "CABBAGE__200__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "lo_tus_pcs-11": {
+      "SKU_ID": "lo_tus_pcs-11",
+      "NEW_SKU_ID": "LOTUS__11__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 11
+   },
+   "BADHA-KOPI_199P_1": {
+      "SKU_ID": "BADHA-KOPI_199P_1",
+      "NEW_SKU_ID": "CABBAGE__199__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 199
+   },
+   "SOSA_550P_1": {
+      "SKU_ID": "SOSA_550P_1",
+      "NEW_SKU_ID": "CUCUMBER__550__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 550
+   },
+   "LOTUS_14P_2": {
+      "SKU_ID": "LOTUS_14P_2",
+      "NEW_SKU_ID": "LOTUS__14__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 14
+   },
+   "LOTUS_20P_3": {
+      "SKU_ID": "LOTUS_20P_3",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "CHILLI_150P_1": {
+      "SKU_ID": "CHILLI_150P_1",
+      "NEW_SKU_ID": "CHILLI__150__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+
+   "t_o_ma_to50p": {
+      "SKU_ID": "t_o_ma_to50p",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "lo_tu_s10s": {
+      "SKU_ID": "lo_tu_s10s",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+
+   "ONI-ON_500P_3": {
+      "SKU_ID": "ONI-ON_500P_3",
+      "NEW_SKU_ID": "ONION__500__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "BADHA-KOPI_200P_2": {
+      "SKU_ID": "BADHA-KOPI_200P_2",
+      "NEW_SKU_ID": "CABBAGE__200__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "BADHA-KOPI_120P_1": {
+      "SKU_ID": "BADHA-KOPI_120P_1",
+      "NEW_SKU_ID": "CABBAGE__120__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 120
+   },
+   "LOTUS_30P_2": {
+      "SKU_ID": "LOTUS_30P_2",
+      "NEW_SKU_ID": "LOTUS__30__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+
+   "pa-la-ng_2G_2": {
+      "SKU_ID": "pa-la-ng_2G_2",
+      "NEW_SKU_ID": "SPINACH__2__G__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "G",
+      "QUANTITY": 2
+   },
+   "lo-tu-s_13p_1": {
+      "SKU_ID": "lo-tu-s_13p_1",
+      "NEW_SKU_ID": "LOTUS__13__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 13
+   },
+   "br_in_1000_jal": {
+      "SKU_ID": "br_in_1000_jal",
+      "NEW_SKU_ID": "BRINJAL__1000__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "MARI-GOLD_84P_1": {
+      "SKU_ID": "MARI-GOLD_84P_1",
+      "NEW_SKU_ID": "MARIGOLD__84__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 84
+   },
+   "pa-la-ng_175P_6": {
+      "SKU_ID": "pa-la-ng_175P_6",
+      "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "pa-la-ng_175P_16": {
+      "SKU_ID": "pa-la-ng_175P_16",
+      "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 175
+   },
+   "LOTUS_16P_1": {
+      "SKU_ID": "LOTUS_16P_1",
+      "NEW_SKU_ID": "LOTUS__16__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "MARI-GOLD_100P_1": {
+      "SKU_ID": "MARI-GOLD_100P_1",
+      "NEW_SKU_ID": "MARIGOLD__100__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "DA-LIYA_48P_1": {
+      "SKU_ID": "DA-LIYA_48P_1",
+      "NEW_SKU_ID": "DAHLIA__48__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 48
+   },
+   "MARI-GOLD_64P_1": {
+      "SKU_ID": "MARI-GOLD_64P_1",
+      "NEW_SKU_ID": "MARIGOLD__64__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 64
+   },
+   "lo_tus_pcs-30": {
+      "SKU_ID": "lo_tus_pcs-30",
+      "NEW_SKU_ID": "LOTUS__30__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "da_liy_a_pcs-91": {
+      "SKU_ID": "da_liy_a_pcs-91",
+      "NEW_SKU_ID": "DAHLIA__91__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 91
+   },
+   "r_ch_illi_1200": {
+      "SKU_ID": "r_ch_illi_1200",
+      "NEW_SKU_ID": "CHILLI__1200__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 1200
+   },
+   "VENDI_300P_1": {
+      "SKU_ID": "VENDI_300P_1",
+      "NEW_SKU_ID": "CHILLI__300__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "ONI-ON_200P_18": {
+      "SKU_ID": "ONI-ON_200P_18",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "BOR-BOTI_125P_1": {
+      "SKU_ID": "BOR-BOTI_125P_1",
+      "NEW_SKU_ID": "BEAN__125__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 125
+   },
+   "lo_tu_s39pcs": {
+      "SKU_ID": "lo_tu_s39pcs",
+      "NEW_SKU_ID": "LOTUS__39__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 39
+   },
+   "pa-la-ng_200P_1": {
+      "SKU_ID": "pa-la-ng_200P_1",
+      "NEW_SKU_ID": "SPINACH__200__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "pa-la-ng_250P_6": {
+      "SKU_ID": "pa-la-ng_250P_6",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "KUMRO_40P_1": {
+      "SKU_ID": "KUMRO_40P_1",
+      "NEW_SKU_ID": "Pumpkin__40__PIECE__MODIFY",
+      "NAME": "Pumpkin",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "ful_ko_phi_5g": {
+      "SKU_ID": "ful_ko_phi_5g",
+      "NEW_SKU_ID": "CAULIFLOWER__5__G__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "G",
+      "QUANTITY": 5
+   },
+   "BOR-BOTI_400P_1": {
+      "SKU_ID": "BOR-BOTI_400P_1",
+      "NEW_SKU_ID": "BEAN__400__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "LOTUS_20P_1": {
+      "SKU_ID": "LOTUS_20P_1",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "da_liy_a-pcs-40": {
+      "SKU_ID": "da_liy_a-pcs-40",
+      "NEW_SKU_ID": "DAHLIA__40__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "pa-la-ng_250P_1": {
+      "SKU_ID": "pa-la-ng_250P_1",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "pa-la-ng_2G_3": {
+      "SKU_ID": "pa-la-ng_2G_3",
+      "NEW_SKU_ID": "SPINACH__2__G__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "G",
+      "QUANTITY": 2
+   },
+   "SOSA_55P_1": {
+      "SKU_ID": "SOSA_55P_1",
+      "NEW_SKU_ID": "CUCUMBER__55__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "ful_ko_phi_55p": {
+      "SKU_ID": "ful_ko_phi_55p",
+      "NEW_SKU_ID": "CAULIFLOWER__55__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "l_ot_u_s8p_cs": {
+      "SKU_ID": "l_ot_u_s8p_cs",
+      "NEW_SKU_ID": "LOTUS__8__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "t_oma_1500_to": {
+      "SKU_ID": "t_oma_1500_to",
+      "NEW_SKU_ID": "TOMATO__1500__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1500
+   },
+   "TOM-ATO_375P_1": {
+      "SKU_ID": "TOM-ATO_375P_1",
+      "NEW_SKU_ID": "TOMATO__375__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 375
+   },
+   "lo_tu_s40": {
+      "SKU_ID": "lo_tu_s40",
+      "NEW_SKU_ID": "LOTUS__40__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "u_c_30_che": {
+      "SKU_ID": "u_c_30_che",
+      "NEW_SKU_ID": "BITTER GOURD__30__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "ch_il_l_in200n": {
+      "SKU_ID": "ch_il_l_in200n",
+      "NEW_SKU_ID": "CHILLI__200__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "BEGUN_500P_2": {
+      "SKU_ID": "BEGUN_500P_2",
+      "NEW_SKU_ID": "BRINJAL__500__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "BADHA-KOPI_200P_4": {
+      "SKU_ID": "BADHA-KOPI_200P_4",
+      "NEW_SKU_ID": "CABBAGE__200__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "CHILLI_150P_2": {
+      "SKU_ID": "CHILLI_150P_2",
+      "NEW_SKU_ID": "CHILLI__150__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+
+   "jhi_nge50": {
+      "SKU_ID": "jhi_nge50",
+      "NEW_SKU_ID": "RIDGE GOURD__50__PIECE__MODIFY",
+      "NAME": "RIDGE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MARI-GOLD_76P_1": {
+      "SKU_ID": "MARI-GOLD_76P_1",
+      "NEW_SKU_ID": "MARIGOLD__76__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 76
+   },
+   "MARI-GOLD_50P_1": {
+      "SKU_ID": "MARI-GOLD_50P_1",
+      "NEW_SKU_ID": "MARIGOLD__50__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "LOTUS_13P_1": {
+      "SKU_ID": "LOTUS_13P_1",
+      "NEW_SKU_ID": "LOTUS__13__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 13
+   },
+   "lo_tu_s_7": {
+      "SKU_ID": "lo_tu_s_7",
+      "NEW_SKU_ID": "LOTUS__7__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 7
+   },
+   "BEGUN_25P_2": {
+      "SKU_ID": "BEGUN_25P_2",
+      "NEW_SKU_ID": "BRINJAL__25__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "l_ot_u_s28pcs": {
+      "SKU_ID": "l_ot_u_s28pcs",
+      "NEW_SKU_ID": "LOTUS__28__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+   "t_o_ma_to60pc": {
+      "SKU_ID": "t_o_ma_to60pc",
+      "NEW_SKU_ID": "TOMATO__60__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 60
+   },
+   "lo_tu_s(8)": {
+      "SKU_ID": "lo_tu_s(8)",
+      "NEW_SKU_ID": "LOTUS__8__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "r_ch_illi_150": {
+      "SKU_ID": "r_ch_illi_150",
+      "NEW_SKU_ID": "CHILLI__150__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "BADHA-KOPI_100P_1": {
+      "SKU_ID": "BADHA-KOPI_100P_1",
+      "NEW_SKU_ID": "CABBAGE__100__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ch_il_l_in250": {
+      "SKU_ID": "ch_il_l_in250",
+      "NEW_SKU_ID": "CHILLI__250__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "LOTUS_35P_1": {
+      "SKU_ID": "LOTUS_35P_1",
+      "NEW_SKU_ID": "LOTUS__35__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "ga-jo-r_50p_1": {
+      "SKU_ID": "ga-jo-r_50p_1",
+      "NEW_SKU_ID": "CARROT__50__PIECE__MODIFY",
+      "NAME": "CARROT",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "BEGUN_300P_2": {
+      "SKU_ID": "BEGUN_300P_2",
+      "NEW_SKU_ID": "BRINJAL__300__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+
+   "TOMATO SEED 50P": {
+      "SKU_ID": "TOMATO SEED 50P",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "SOSA_200P_2": {
+      "SKU_ID": "SOSA_200P_2",
+      "NEW_SKU_ID": "CUCUMBER__200__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+
+   "t_o_ma_to_1000pcs": {
+      "SKU_ID": "t_o_ma_to_1000pcs",
+      "NEW_SKU_ID": "TOMATO__1000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "CAPSICUM_100P_2": {
+      "SKU_ID": "CAPSICUM_100P_2",
+      "NEW_SKU_ID": "CAPSICUM__100__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "DA-LIYA_55P_1": {
+      "SKU_ID": "DA-LIYA_55P_1",
+      "NEW_SKU_ID": "DAHLIA__55__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "ONION_230P_1": {
+      "SKU_ID": "ONION_230P_1",
+      "NEW_SKU_ID": "ONION__230__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 230
+   },
+   "pa-la-ng_250P_14": {
+      "SKU_ID": "pa-la-ng_250P_14",
+      "NEW_SKU_ID": "SPINACH__250__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "cu2_cum_20_ber": {
+      "SKU_ID": "cu2_cum_20_ber",
+      "NEW_SKU_ID": "CUCUMBER__20__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "pa-la-ng_1500P_1": {
+      "SKU_ID": "pa-la-ng_1500P_1",
+      "NEW_SKU_ID": "SPINACH__1500__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 1500
+   },
+   "lo_t_us_pcs-51": {
+      "SKU_ID": "lo_t_us_pcs-51",
+      "NEW_SKU_ID": "LOTUS__51__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 51
+   },
+   "lo_tus_pcs-6": {
+      "SKU_ID": "lo_tus_pcs-6",
+      "NEW_SKU_ID": "LOTUS__6__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 6
+   },
+   "lo_tu_s11": {
+      "SKU_ID": "lo_tu_s11",
+      "NEW_SKU_ID": "LOTUS__11__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 11
+   },
+   "pa-la-ng_10G_1": {
+      "SKU_ID": "pa-la-ng_10G_1",
+      "NEW_SKU_ID": "SPINACH__10__G__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "G",
+      "QUANTITY": 10
+   },
+   "lo_t_u_s1p": {
+      "SKU_ID": "lo_t_u_s1p",
+      "NEW_SKU_ID": "LOTUS__1__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 1
+   },
+   "lo_tu_s5p": {
+      "SKU_ID": "lo_tu_s5p",
+      "NEW_SKU_ID": "LOTUS__5__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "lal-shak_250p_2": {
+      "SKU_ID": "lal-shak_250p_2",
+      "NEW_SKU_ID": "RED SPINACH__250__PIECE__MODIFY",
+      "NAME": "RED SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "LOTUS_15P_1": {
+      "SKU_ID": "LOTUS_15P_1",
+      "NEW_SKU_ID": "LOTUS__15__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "br_in_32_jal": {
+      "SKU_ID": "br_in_32_jal",
+      "NEW_SKU_ID": "BRINJAL__32__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 32
+   },
+   "BEGUN_50P_4": {
+      "SKU_ID": "BEGUN_50P_4",
+      "NEW_SKU_ID": "BRINJAL__50__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "lo_t_6_us": {
+      "SKU_ID": "lo_t_6_us",
+      "NEW_SKU_ID": "LOTUS__6__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 6
+   },
+   "BOR-BOTI_100P_1": {
+      "SKU_ID": "BOR-BOTI_100P_1",
+      "NEW_SKU_ID": "BEAN__100__PIECE__MODIFY",
+      "NAME": "BEAN",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "cu_cum_30_ber": {
+      "SKU_ID": "cu_cum_30_ber",
+      "NEW_SKU_ID": "CUCUMBER__30__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "lo_tu_s39p": {
+      "SKU_ID": "lo_tu_s39p",
+      "NEW_SKU_ID": "LOTUS__39__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 39
+   },
+   "ma2_ri_10_go_ld": {
+      "SKU_ID": "ma2_ri_10_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__10__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "BEGUN_20P_1": {
+      "SKU_ID": "BEGUN_20P_1",
+      "NEW_SKU_ID": "BRINJAL__20__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "lo_tu_s17": {
+      "SKU_ID": "lo_tu_s17",
+      "NEW_SKU_ID": "LOTUS__17__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+   "ONI-ON_200P_13": {
+      "SKU_ID": "ONI-ON_200P_13",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "MARIGOLD_40P_1": {
+      "SKU_ID": "MARIGOLD_40P_1",
+      "NEW_SKU_ID": "MARIGOLD__40__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+
+   "BEGUN_100P_2": {
+      "SKU_ID": "BEGUN_100P_2",
+      "NEW_SKU_ID": "BRINJAL__100__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "LOTUS_25P_2": {
+      "SKU_ID": "LOTUS_25P_2",
+      "NEW_SKU_ID": "LOTUS__25__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "ONI-ON_2000P_1": {
+      "SKU_ID": "ONI-ON_2000P_1",
+      "NEW_SKU_ID": "ONION__2000__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 2000
+   },
+   "LAL-CHANDAN_17P_1": {
+      "SKU_ID": "LAL-CHANDAN_17P_1",
+      "NEW_SKU_ID": "RED SANDALWOOD__17__PIECE__MODIFY",
+      "NAME": "RED SANDALWOOD",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+   "MARI-GOLD_25P_1": {
+      "SKU_ID": "MARI-GOLD_25P_1",
+      "NEW_SKU_ID": "MARIGOLD__25__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "ma_ri_10_go_ld": {
+      "SKU_ID": "ma_ri_10_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__10__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "MARI-GOLD_80P_1": {
+      "SKU_ID": "MARI-GOLD_80P_1",
+      "NEW_SKU_ID": "MARIGOLD__80__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 80
+   },
+   "lo_24-tu_s": {
+      "SKU_ID": "lo_24-tu_s",
+      "NEW_SKU_ID": "LOTUS__24__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 24
+   },
+   "ful_ko_phi_100p": {
+      "SKU_ID": "ful_ko_phi_100p",
+      "NEW_SKU_ID": "CAULIFLOWER__100__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+
+   "CAPSICUM_95P_1": {
+      "SKU_ID": "CAPSICUM_95P_1",
+      "NEW_SKU_ID": "CAPSICUM__95__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 95
+   },
+   "u_c_14_che": {
+      "SKU_ID": "u_c_14_che",
+      "NEW_SKU_ID": "BITTER GOURD__14__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 14
+   },
+   "CAPSICUM_100P_1": {
+      "SKU_ID": "CAPSICUM_100P_1",
+      "NEW_SKU_ID": "CAPSICUM__100__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "CAPSICUM_40P_1": {
+      "SKU_ID": "CAPSICUM_40P_1",
+      "NEW_SKU_ID": "CAPSICUM__40__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "ful_ko_phi_40p_2": {
+      "SKU_ID": "ful_ko_phi_40p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__40__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "ful_ko_phi_30p_2": {
+      "SKU_ID": "ful_ko_phi_30p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__30__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "TOMATO_125P_1": {
+      "SKU_ID": "TOMATO_125P_1",
+      "NEW_SKU_ID": "TOMATO__125__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 125
+   },
+   "lo_tu_s44": {
+      "SKU_ID": "lo_tu_s44",
+      "NEW_SKU_ID": "LOTUS__44__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 44
+   },
+   "pa-la-ng_100p_2": {
+      "SKU_ID": "pa-la-ng_100p_2",
+      "NEW_SKU_ID": "SPINACH__100__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ONI-ON_200P_9": {
+      "SKU_ID": "ONI-ON_200P_9",
+      "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "t_o_ma_to50pcs": {
+      "SKU_ID": "t_o_ma_to50pcs",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "LOTUS_30P_1": {
+      "SKU_ID": "LOTUS_30P_1",
+      "NEW_SKU_ID": "LOTUS__30__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+
+   "BADHA-KOPI_1250P_2": {
+      "SKU_ID": "BADHA-KOPI_1250P_2",
+      "NEW_SKU_ID": "CABBAGE__1250__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 1250
+   },
+   "ful_ko_phi_100p_2": {
+      "SKU_ID": "ful_ko_phi_100p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__100__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "lo_tus_pcs-5": {
+      "SKU_ID": "lo_tus_pcs-5",
+      "NEW_SKU_ID": "LOTUS__5__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "BEGUN_20P_2": {
+      "SKU_ID": "BEGUN_20P_2",
+      "NEW_SKU_ID": "BRINJAL__20__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "BADHA-KOPI_270P_1": {
+      "SKU_ID": "BADHA-KOPI_270P_1",
+      "NEW_SKU_ID": "CABBAGE__270__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 270
+   },
+   "pa-la-ng_70P_2": {
+      "SKU_ID": "pa-la-ng_70P_2",
+      "NEW_SKU_ID": "SPINACH__70__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "l_ot_u_s35pcs": {
+      "SKU_ID": "l_ot_u_s35pcs",
+      "NEW_SKU_ID": "LOTUS__35__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "t_o_ma_toH470": {
+      "SKU_ID": "t_o_ma_toH470",
+      "NEW_SKU_ID": "TOMATO__470__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 470
+   },
+   "pe-pe_185P_1": {
+      "SKU_ID": "pe-pe_185P_1",
+      "NEW_SKU_ID": "PAPAYA__185__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 185
+   },
+   "ONION__100__PIECE__SN5W29": {
+      "SKU_ID": "ONION__100__PIECE__SN5W29",
+      "NEW_SKU_ID": "ONION__100__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "pa-la-ng_70P_1": {
+      "SKU_ID": "pa-la-ng_70P_1",
+      "NEW_SKU_ID": "SPINACH__70__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "ho-lud_200G_1": {
+      "SKU_ID": "ho-lud_200G_1",
+      "NEW_SKU_ID": "TURMERIC__200__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 200
+   },
+   "LOTUS_29P_1": {
+      "SKU_ID": "LOTUS_29P_1",
+      "NEW_SKU_ID": "LOTUS__29__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 29
+   },
+   "ma_ri_25_go_ld": {
+      "SKU_ID": "ma_ri_25_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__25__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "BADHA-KOPI_10P_1": {
+      "SKU_ID": "BADHA-KOPI_10P_1",
+      "NEW_SKU_ID": "CABBAGE__10__G__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "G",
+      "QUANTITY": 10
+   },
+   "pa-la-ng_150P_1": {
+      "SKU_ID": "pa-la-ng_150P_1",
+      "NEW_SKU_ID": "SPINACH__150__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "CAPSICUM_100P_3": {
+      "SKU_ID": "CAPSICUM_100P_3",
+      "NEW_SKU_ID": "CAPSICUM__100__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "ho-lud_50G_1": {
+      "SKU_ID": "ho-lud_50G_1",
+      "NEW_SKU_ID": "TURMERIC__50__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 50
+   },
+   "CAPSICUM_70P_1": {
+      "SKU_ID": "CAPSICUM_70P_1",
+      "NEW_SKU_ID": "CAPSICUM__70__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "ca_bb_age_50p": {
+      "SKU_ID": "ca_bb_age_50p",
+      "NEW_SKU_ID": "CABBAGE__50__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "LOTUS_8P_1": {
+      "SKU_ID": "LOTUS_8P_1",
+      "NEW_SKU_ID": "LOTUS__8__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 8
+   },
+   "br_in_40_jal": {
+      "SKU_ID": "br_in_40_jal",
+      "NEW_SKU_ID": "BRINJAL__40__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "ch_il_l_inn150": {
+      "SKU_ID": "ch_il_l_inn150",
+      "NEW_SKU_ID": "CHILLI__150__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "BEGUN_49P_1": {
+      "SKU_ID": "BEGUN_49P_1",
+      "NEW_SKU_ID": "BRINJAL__49__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 49
+   },
+   "l_ot_u_s25pcs": {
+      "SKU_ID": "l_ot_u_s25pcs",
+      "NEW_SKU_ID": "LOTUS__25__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "HALUD__65__G__SN528D": {
+      "SKU_ID": "HALUD__65__G__SN528D",
+      "NEW_SKU_ID": "TURMERIC__65__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 65
+   },
+   "lo_t_20_us": {
+      "SKU_ID": "lo_t_20_us",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "BADHA-KOPI_20G_1": {
+      "SKU_ID": "BADHA-KOPI_20G_1",
+      "NEW_SKU_ID": "CABBAGE__20__G__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "G",
+      "QUANTITY": 20
+   },
+   "BADHA-KOPI_200P_1": {
+      "SKU_ID": "BADHA-KOPI_200P_1",
+      "NEW_SKU_ID": "CABBAGE__200__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "SOJ-NE_21P_1": {
+      "SKU_ID": "SOJ-NE_21P_1",
+      "NEW_SKU_ID": "MORINGA__21__PIECE__MODIFY",
+      "NAME": "MORINGA",
+      "TYPE": "PIECE",
+      "QUANTITY": 21
+   },
+   "ONION__70__PIECE__SN5W3X": {
+      "SKU_ID": "ONION__70__PIECE__SN5W3X",
+      "NEW_SKU_ID": "ONION__70__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "pa-la-ng_55P_2": {
+      "SKU_ID": "pa-la-ng_55P_2",
+      "NEW_SKU_ID": "SPINACH__55__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "lo_tus_pcs-10": {
+      "SKU_ID": "lo_tus_pcs-10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "UCHCHHE_26P_1": {
+      "SKU_ID": "UCHCHHE_26P_1",
+      "NEW_SKU_ID": "BITTER GOURD__26__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 26
+   },
+   "LOTUS_20P_2": {
+      "SKU_ID": "LOTUS_20P_2",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "lo_tu_s_pcs-50": {
+      "SKU_ID": "lo_tu_s_pcs-50",
+      "NEW_SKU_ID": "LOTUS__50__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ho-lud_100G_1": {
+      "SKU_ID": "ho-lud_100G_1",
+      "NEW_SKU_ID": "TURMERIC__100__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 100
+   },
+   "lo_tu_s_pcs-10": {
+      "SKU_ID": "lo_tu_s_pcs-10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "BADHA-KOPI_1250P_1": {
+      "SKU_ID": "BADHA-KOPI_1250P_1",
+      "NEW_SKU_ID": "CABBAGE__1250__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 1250
+   },
+   "CHILLI_575P_1": {
+      "SKU_ID": "CHILLI_575P_1",
+      "NEW_SKU_ID": "CHILLI__575__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 575
+   },
+   "CHILLI_300P_2": {
+      "SKU_ID": "CHILLI_300P_2",
+      "NEW_SKU_ID": "CHILLI__300__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "t_o_ma_to4000pcs": {
+      "SKU_ID": "t_o_ma_to4000pcs",
+      "NEW_SKU_ID": "TOMATO__4000__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 4000
+   },
+   "lo_tus_pcs-39": {
+      "SKU_ID": "lo_tus_pcs-39",
+      "NEW_SKU_ID": "LOTUS__39__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 39
+   },
+   "UCHCHHE_40P_1": {
+      "SKU_ID": "UCHCHHE_40P_1",
+      "NEW_SKU_ID": "BITTER GOURD__40__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "ful_ko_phi_20p_2": {
+      "SKU_ID": "ful_ko_phi_20p_2",
+      "NEW_SKU_ID": "CAULIFLOWER__20__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "l_ot_u_s50grm": {
+      "SKU_ID": "l_ot_u_s50grm",
+      "NEW_SKU_ID": "LOTUS__50__G__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "G",
+      "QUANTITY": 50
+   },
+   "LOTUS_19P_1": {
+      "SKU_ID": "LOTUS_19P_1",
+      "NEW_SKU_ID": "LOTUS__19__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 19
+   },
+   "ful_ko_phi_200p_3": {
+      "SKU_ID": "ful_ko_phi_200p_3",
+      "NEW_SKU_ID": "CAULIFLOWER__200__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "HALUD__5__PIECE__SN4U35": {
+      "SKU_ID": "HALUD__5__PIECE__SN4U35",
+      "NEW_SKU_ID": "TURMERIC__5__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "cu_cum_82_ber": {
+      "SKU_ID": "cu_cum_82_ber",
+      "NEW_SKU_ID": "CUCUMBER__82__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 82
+   },
+   "pa-la-ng_1000P_1": {
+      "SKU_ID": "pa-la-ng_1000P_1",
+      "NEW_SKU_ID": "SPINACH__1000__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "t_o_ma_to50pc_s": {
+      "SKU_ID": "t_o_ma_to50pc_s",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "l_ot_u_s9pcs": {
+      "SKU_ID": "l_ot_u_s9pcs",
+      "NEW_SKU_ID": "LOTUS__9__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 9
+   },
+   "TOM-ATO_150P_1": {
+      "SKU_ID": "TOM-ATO_150P_1",
+      "NEW_SKU_ID": "TOMATO__150__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "t_o_ma_to-600": {
+      "SKU_ID": "t_o_ma_to-600",
+      "NEW_SKU_ID": "TOMATO__600__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 600
+   },
+
+   "SOSA_215P_1": {
+      "SKU_ID": "SOSA_215P_1",
+      "NEW_SKU_ID": "CUCUMBER__215__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 215
+   },
+   "pa-la-ng_15P_2": {
+      "SKU_ID": "pa-la-ng_15P_2",
+      "NEW_SKU_ID": "SPINACH__15__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "cu_cum_20_ber": {
+      "SKU_ID": "cu_cum_20_ber",
+      "NEW_SKU_ID": "CUCUMBER__20__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+
+   "da_liy_a_pcs-50": {
+      "SKU_ID": "da_liy_a_pcs-50",
+      "NEW_SKU_ID": "DAHLIA__50__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "SOSA_56P_1": {
+      "SKU_ID": "SOSA_56P_1",
+      "NEW_SKU_ID": "CUCUMBER__56__PIECE__MODIFY",
+      "NAME": "CUCUMBER",
+      "TYPE": "PIECE",
+      "QUANTITY": 56
+   },
+   "ho-lud_150G_1": {
+      "SKU_ID": "ho-lud_150G_1",
+      "NEW_SKU_ID": "TURMERIC__150__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 150
+   },
+   "l_ot_u_s18pcs": {
+      "SKU_ID": "l_ot_u_s18pcs",
+      "NEW_SKU_ID": "LOTUS__18__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 18
+   },
+   "ONI-ON_500P_1": {
+      "SKU_ID": "ONI-ON_500P_1",
+      "NEW_SKU_ID": "ONION__500__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "HOLUD_5P_1": {
+      "SKU_ID": "HOLUD_5P_1",
+      "NEW_SKU_ID": "TURMERIC__5__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "ho-lud_1P_3": {
+      "SKU_ID": "ho-lud_1P_3",
+      "NEW_SKU_ID": "TURMERIC__1__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 1
+   },
+   "lo_tu_s_10": {
+      "SKU_ID": "lo_tu_s_10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "LOTUS_10P_1": {
+      "SKU_ID": "LOTUS_10P_1",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "BEGUN_500P_1": {
+      "SKU_ID": "BEGUN_500P_1",
+      "NEW_SKU_ID": "BRINJAL__500__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "lo_tu_s39": {
+      "SKU_ID": "lo_tu_s39",
+      "NEW_SKU_ID": "LOTUS__39__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 39
+   },
+   "l_ot_u_s21pcs": {
+      "SKU_ID": "l_ot_u_s21pcs",
+      "NEW_SKU_ID": "LOTUS__21__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 21
+   },
+   "HOLUD_5P_2": {
+      "SKU_ID": "HOLUD_5P_2",
+      "NEW_SKU_ID": "TURMERIC__5__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "br_in_200_jal": {
+      "SKU_ID": "br_in_200_jal",
+      "NEW_SKU_ID": "BRINJAL__200__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "CAPSICUM_30P_1": {
+      "SKU_ID": "CAPSICUM_30P_1",
+      "NEW_SKU_ID": "CAPSICUM__30__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "ho-lud_1P_2": {
+      "SKU_ID": "ho-lud_1P_2",
+      "NEW_SKU_ID": "TURMERIC__1__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 1
+   },
+   "ch_il_l_in200": {
+      "SKU_ID": "ch_il_l_in200",
+      "NEW_SKU_ID": "CHILLI__200__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "t_o_ma_to75pp": {
+      "SKU_ID": "t_o_ma_to75pp",
+      "NEW_SKU_ID": "TOMATO__75__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "l_ot_u_s24p_cs": {
+      "SKU_ID": "l_ot_u_s24p_cs",
+      "NEW_SKU_ID": "LOTUS__24__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 24
+   },
+   "lo_t_u_s_10": {
+      "SKU_ID": "lo_t_u_s_10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "ho-lud_1P_4": {
+      "SKU_ID": "ho-lud_1P_4",
+      "NEW_SKU_ID": "TURMERIC__1__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 1
+   },
+   "ho-lud_1P_1": {
+      "SKU_ID": "ho-lud_1P_1",
+      "NEW_SKU_ID": "TURMERIC__1__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 1
+   },
+   "ch_i75l_l_in": {
+      "SKU_ID": "ch_i75l_l_in",
+      "NEW_SKU_ID": "CHILLI__75__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 75
+   },
+   "lo2_tus_p10": {
+      "SKU_ID": "lo2_tus_p10",
+      "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "l_ot_u_s12pcs": {
+      "SKU_ID": "l_ot_u_s12pcs",
+      "NEW_SKU_ID": "LOTUS__12__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 12
+   },
+   "lo_t_u_s20": {
+      "SKU_ID": "lo_t_u_s20",
+      "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ch_i35l_l_in": {
+      "SKU_ID": "ch_i35l_l_in",
+      "NEW_SKU_ID": "CHILLI__35__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "l_ot_u_s250grm": {
+      "SKU_ID": "l_ot_u_s250grm",
+      "NEW_SKU_ID": "LOTUS__250__G__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "G",
+      "QUANTITY": 250
+   },
+   "da_liy_a_pcs-99": {
+      "SKU_ID": "da_liy_a_pcs-99",
+      "NEW_SKU_ID": "DAHLIA__99__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 99
+   },
+   "d_a_l_iya_pcs-150": {
+      "SKU_ID": "d_a_l_iya_pcs-150",
+      "NEW_SKU_ID": "DAHLIA__150__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "silmla100mirch": {
+      "SKU_ID": "silmla100mirch",
+      "NEW_SKU_ID": "CAPSICUM__100__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "l_ot_u_s1_p": {
+      "SKU_ID": "l_ot_u_s1_p",
+      "NEW_SKU_ID": "LOTUS__1__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 1
+   },
+   "pa_py 185": {
+      "SKU_ID": "pa_py 185",
+      "NEW_SKU_ID": "PAPAYA__185__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 185
+   },
+   "pa-la-ng_400P_1": {
+      "SKU_ID": "pa-la-ng_400P_1",
+      "NEW_SKU_ID": "SPINACH__400__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "l_ot_u_s54pcs": {
+      "SKU_ID": "l_ot_u_s54pcs",
+      "NEW_SKU_ID": "LOTUS__54__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 54
+   },
+   "t_o_ma_to50": {
+      "SKU_ID": "t_o_ma_to50",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ch_il_l_in35": {
+      "SKU_ID": "ch_il_l_in35",
+      "NEW_SKU_ID": "CHILLI__35__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "br_in_45_jal": {
+      "SKU_ID": "br_in_45_jal",
+      "NEW_SKU_ID": "BRINJAL__45__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 45
+   },
+   "ful_ko_phi_1500p": {
+      "SKU_ID": "ful_ko_phi_1500p",
+      "NEW_SKU_ID": "CAULIFLOWER__1500__PIECE__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "PIECE",
+      "QUANTITY": 1500
+   },
+
+   "ful_ko_phi_5g_2": {
+      "SKU_ID": "ful_ko_phi_5g_2",
+      "NEW_SKU_ID": "CAULIFLOWER__5__G__MODIFY",
+      "NAME": "CAULIFLOWER",
+      "TYPE": "G",
+      "QUANTITY": 5
+   },
+   "ONI-ON_410P_1": {
+      "SKU_ID": "ONI-ON_410P_1",
+      "NEW_SKU_ID": "ONION__410__PIECE__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "PIECE",
+      "QUANTITY": 410
+   },
+   "pa-la-ng_500p_1": {
+      "SKU_ID": "pa-la-ng_500p_1",
+      "NEW_SKU_ID": "SPINACH__190__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 190
+   },
+   "u_c_16_che": {
+      "SKU_ID": "u_c_16_che",
+      "NEW_SKU_ID": "BITTER GOURD__16__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "da_liy_a_pcs-105": {
+      "SKU_ID": "da_liy_a_pcs-105",
+      "NEW_SKU_ID": "DAHLIA__105__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 105
+   },
+   "r_ch_illi_2500": {
+      "SKU_ID": "r_ch_illi_2500",
+      "NEW_SKU_ID": "CHILLI__2500__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 2500
+   },
+   "l_ot_u_s24pcs": {
+      "SKU_ID": "l_ot_u_s24pcs",
+      "NEW_SKU_ID": "LOTUS__24__PIECE__MODIFY",
+      "NAME": "LOTUS",
+      "TYPE": "PIECE",
+      "QUANTITY": 24
+   },
+   "pa_py 240": {
+      "SKU_ID": "pa_py 240",
+      "NEW_SKU_ID": "PAPAYA__240__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 240
+   },
+   "r_ch_illi_200": {
+      "SKU_ID": "r_ch_illi_200",
+      "NEW_SKU_ID": "CHILLI__200__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "HOLUD_25P_1": {
+      "SKU_ID": "HOLUD_25P_1",
+      "NEW_SKU_ID": "TURMERIC__25__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "da_liy_a-pcs-30": {
+      "SKU_ID": "da_liy_a-pcs-30",
+      "NEW_SKU_ID": "DAHLIA__30__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "br_in_150_jal": {
+      "SKU_ID": "br_in_150_jal",
+      "NEW_SKU_ID": "BRINJAL__150__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "ho-lud_500G_1": {
+      "SKU_ID": "ho-lud_500G_1",
+      "NEW_SKU_ID": "TURMERIC__500__G__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "G",
+      "QUANTITY": 500
+   },
+   "HOLUD_55P_1": {
+      "SKU_ID": "HOLUD_55P_1",
+      "NEW_SKU_ID": "TURMERIC__55__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "br_in_500_jal": {
+      "SKU_ID": "br_in_500_jal",
+      "NEW_SKU_ID": "BRINJAL__500__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "HOLUD_40P_1": {
+      "SKU_ID": "HOLUD_40P_1",
+      "NEW_SKU_ID": "TURMERIC__40__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "pa-py 320": {
+      "SKU_ID": "pa-py 320",
+      "NEW_SKU_ID": "PAPAYA__320__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 320
+   },
+   "pa_py 56": {
+      "SKU_ID": "pa_py 56",
+      "NEW_SKU_ID": "PAPAYA__56__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 56
+   },
+   "ONI-ON_500GRM_1": {
+      "SKU_ID": "ONI-ON_500GRM_1",
+      "NEW_SKU_ID": "ONION__500__G__MODIFY",
+      "NAME": "ONION",
+      "TYPE": "G",
+      "QUANTITY": 500
+   },
+   "ma_ri_255_go_ld": {
+      "SKU_ID": "ma_ri_255_go_ld",
+      "NEW_SKU_ID": "MARIGOLD__255__PIECE__MODIFY",
+      "NAME": "MARIGOLD",
+      "TYPE": "PIECE",
+      "QUANTITY": 255
+   },
+   "r2_ch_illi_2500": {
+      "SKU_ID": "r2_ch_illi_2500",
+      "NEW_SKU_ID": "CHILLI__2500__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 2500
+   },
+   "pe-pe_600P_1": {
+      "SKU_ID": "pe-pe_600P_1",
+      "NEW_SKU_ID": "PAPAYA__600__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 600
+   },
+   "pa-la-ng_50p_1": {
+      "SKU_ID": "pa-la-ng_50p_1",
+      "NEW_SKU_ID": "SPINACH__50__PIECE__MODIFY",
+      "NAME": "SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "u_c_26_che": {
+      "SKU_ID": "u_c_26_che",
+      "NEW_SKU_ID": "BITTER GOURD__26__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 26
+   },
+   "da_l_iy_a_pcs-150": {
+      "SKU_ID": "da_l_iy_a_pcs-150",
+      "NEW_SKU_ID": "DAHLIA__150__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "HOLUD_30P_1": {
+      "SKU_ID": "HOLUD_30P_1",
+      "NEW_SKU_ID": "TURMERIC__30__PIECE__MODIFY",
+      "NAME": "TURMERIC",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "TOM-ATO_450P_1": {
+      "SKU_ID": "TOM-ATO_450P_1",
+      "NEW_SKU_ID": "TOMATO__450__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 450
+   },
+   "r_ch_ili_400": {
+      "SKU_ID": "r_ch_ili_400",
+      "NEW_SKU_ID": "CHILLI__400__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "ca_bb_age_1000p": {
+      "SKU_ID": "ca_bb_age_1000p",
+      "NEW_SKU_ID": "CABBAGE__1000__PIECE__MODIFY",
+      "NAME": "CABBAGE",
+      "TYPE": "PIECE",
+      "QUANTITY": 1000
+   },
+   "br_in_10_jal": {
+      "SKU_ID": "br_in_10_jal",
+      "NEW_SKU_ID": "BRINJAL__10__PIECE__MODIFY",
+      "NAME": "BRINJAL",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "silmla101mirch": {
+      "SKU_ID": "silmla101mirch",
+      "NEW_SKU_ID": "CAPSICUM__101__PIECE__MODIFY",
+      "NAME": "CAPSICUM",
+      "TYPE": "PIECE",
+      "QUANTITY": 101
+   },
+   "da_liy_a_pcs-17": {
+      "SKU_ID": "da_liy_a_pcs-17",
+      "NEW_SKU_ID": "DAHLIA__17__PIECE__MODIFY",
+      "NAME": "DAHLIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+   "jhi_nge 50": {
+      "SKU_ID": "jhi_nge 50",
+      "NEW_SKU_ID": "PAPAYA__50__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "pa_py 30": {
+      "SKU_ID": "pa_py 30",
+      "NEW_SKU_ID": "PAPAYA__30__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "t_o_ma_to800pcs": {
+      "SKU_ID": "t_o_ma_to800pcs",
+      "NEW_SKU_ID": "TOMATO__800__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 800
+   },
+   "r_ch_illi_100": {
+      "SKU_ID": "r_ch_illi_100",
+      "NEW_SKU_ID": "CHILLI__100__PIECE__MODIFY",
+      "NAME": "CHILLI",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "k-a-k-r-o-l_15p_1": {
+      "SKU_ID": "k-a-k-r-o-l_15p_1",
+      "NEW_SKU_ID": "Kantola__15__PIECE__MODIFY",
+      "NAME": "Kantola",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "r_os_120_e": {
+      "SKU_ID": "r_os_120_e",
+      "NEW_SKU_ID": "Rose__120__PIECE__MODIFY",
+      "NAME": "Rose",
+      "TYPE": "PIECE",
+      "QUANTITY": 120
+   },
+   "pa-py 360": {
+      "SKU_ID": "pa-py 360",
+      "NEW_SKU_ID": "PAPAYA__360__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 360
+   },
+   "ra_jani_16_gan_dha": {
+      "SKU_ID": "ra_jani_16_gan_dha",
+      "NEW_SKU_ID": "Tuberose__16__PIECE__MODIFY",
+      "NAME": "Tuberose",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "pa_py 108": {
+      "SKU_ID": "pa_py 108",
+      "NEW_SKU_ID": "PAPAYA__108__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 108
+   },
+   "r_os_20_e": {
+      "SKU_ID": "r_os_20_e",
+      "NEW_SKU_ID": "Rose__20__PIECE__MODIFY",
+      "NAME": "Rose",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "ra_jani_15_gan_dha": {
+      "SKU_ID": "ra_jani_15_gan_dha",
+      "NEW_SKU_ID": "Tuberose__15__PIECE__MODIFY",
+      "NAME": "Tuberose",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "t_oma_50_to": {
+      "SKU_ID": "t_oma_50_to",
+      "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
+      "NAME": "TOMATO",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "ra_jan_iga_5_nd_ha": {
+      "SKU_ID": "ra_jan_iga_5_nd_ha",
+      "NEW_SKU_ID": "Tuberose__5__PIECE__MODIFY",
+      "NAME": "Tuberose",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "ra1_jani_5_gan_dha": {
+      "SKU_ID": "ra1_jani_5_gan_dha",
+      "NEW_SKU_ID": "Tuberose__5__PIECE__MODIFY",
+      "NAME": "Tuberose",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "r_os_10_e": {
+      "SKU_ID": "r_os_10_e",
+      "NEW_SKU_ID": "Rose__10__PIECE__MODIFY",
+      "NAME": "Rose",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "ra_jani_5_gan_dha": {
+      "SKU_ID": "ra_jani_5_gan_dha",
+      "NEW_SKU_ID": "Tuberose__5__PIECE__MODIFY",
+      "NAME": "Tuberose",
+      "TYPE": "PIECE",
+      "QUANTITY": 5
+   },
+   "ra_jan_iga_10_nd_ha": {
+      "SKU_ID": "ra_jan_iga_10_nd_ha",
+      "NEW_SKU_ID": "Tuberose__10__PIECE__MODIFY",
+      "NAME": "Tuberose",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+
+   "SUNFLOWER__555__PIECE__IFRD": {
+      "SKU_ID": "SUNFLOWER__555__PIECE__IFRD",
+      "NEW_SKU_ID": "DHANIA__555__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 555
+   },
+   "SUNFLOWER__1955__PIECE__IG50": {
+      "SKU_ID": "SUNFLOWER__1955__PIECE__IG50",
+      "NEW_SKU_ID": "DHANIA__1955__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1955
+   },
+   "SUNFLOWER__955__PIECE__IFT6": {
+      "SKU_ID": "SUNFLOWER__955__PIECE__IFT6",
+      "NEW_SKU_ID": "DHANIA__955__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 955
+   },
+   "SUNFLOWER__1355__PIECE__IG4K": {
+      "SKU_ID": "SUNFLOWER__1355__PIECE__IG4K",
+      "NEW_SKU_ID": "DHANIA__1355__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1355
+   },
+   "SUNFLOWER__1255__PIECE__IFYD": {
+      "SKU_ID": "SUNFLOWER__1255__PIECE__IFYD",
+      "NEW_SKU_ID": "DHANIA__1255__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1255
+   },
+   "SUNFLOWER__2055__PIECE__IG0B": {
+      "SKU_ID": "SUNFLOWER__2055__PIECE__IG0B",
+      "NEW_SKU_ID": "DHANIA__2055__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 2055
+   },
+   "SUNFLOWER__1455__PIECE__IG47": {
+      "SKU_ID": "SUNFLOWER__1455__PIECE__IG47",
+      "NEW_SKU_ID": "DHANIA__1455__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1455
+   },
+   "SUNFLOWER__755__PIECE__IFRY": {
+      "SKU_ID": "SUNFLOWER__755__PIECE__IFRY",
+      "NEW_SKU_ID": "DHANIA__755__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 755
+   },
+   "SUNFLOWER__655__PIECE__IFXQ": {
+      "SKU_ID": "SUNFLOWER__655__PIECE__IFXQ",
+      "NEW_SKU_ID": "DHANIA__655__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 655
+   },
+   "SUNFLOWER__755__PIECE__IG0Y": {
+      "SKU_ID": "SUNFLOWER__755__PIECE__IG0Y",
+      "NEW_SKU_ID": "DHANIA__755__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 755
+   },
+   "SUNFLOWER__1455__PIECE__IG0O": {
+      "SKU_ID": "SUNFLOWER__1455__PIECE__IG0O",
+      "NEW_SKU_ID": "DHANIA__1455__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1455
+   },
+   "SUNFLOWER__1755__PIECE__IFWJ": {
+      "SKU_ID": "SUNFLOWER__1755__PIECE__IFWJ",
+      "NEW_SKU_ID": "DHANIA__1755__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1755
+   },
+   "SUNFLOWER__1055__PIECE__IFVT": {
+      "SKU_ID": "SUNFLOWER__1055__PIECE__IFVT",
+      "NEW_SKU_ID": "DHANIA__1055__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1055
+   },
+   "SUNFLOWER__1055__PIECE__IFUJ": {
+      "SKU_ID": "SUNFLOWER__1055__PIECE__IFUJ",
+      "NEW_SKU_ID": "DHANIA__1055__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1055
+   },
+   "SUNFLOWER__555__PIECE__IFZY": {
+      "SKU_ID": "SUNFLOWER__555__PIECE__IFZY",
+      "NEW_SKU_ID": "DHANIA__555__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 555
+   },
+   "SUNFLOWER__1755__PIECE__IFVF": {
+      "SKU_ID": "SUNFLOWER__1755__PIECE__IFVF",
+      "NEW_SKU_ID": "DHANIA__1755__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1755
+   },
+   "SUNFLOWER__855__PIECE__IFU5": {
+      "SKU_ID": "SUNFLOWER__855__PIECE__IFU5",
+      "NEW_SKU_ID": "DHANIA__855__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 855
+   },
+   "SUNFLOWER__1655__PIECE__IG3T": {
+      "SKU_ID": "SUNFLOWER__1655__PIECE__IG3T",
+      "NEW_SKU_ID": "DHANIA__1655__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1655
+   },
+   "SUNFLOWER__1855__PIECE__IFXB": {
+      "SKU_ID": "SUNFLOWER__1855__PIECE__IFXB",
+      "NEW_SKU_ID": "DHANIA__1855__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1855
+   },
+   "SUNFLOWER__1555__PIECE__IFTH": {
+      "SKU_ID": "SUNFLOWER__1555__PIECE__IFTH",
+      "NEW_SKU_ID": "DHANIA__1555__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1555
+   },
+   "SUNFLOWER__655__PIECE__IFSQ": {
+      "SKU_ID": "SUNFLOWER__655__PIECE__IFSQ",
+      "NEW_SKU_ID": "DHANIA__655__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 655
+   },
+   "SUNFLOWER__1655__PIECE__IFWZ": {
+      "SKU_ID": "SUNFLOWER__1655__PIECE__IFWZ",
+      "NEW_SKU_ID": "DHANIA__1655__PIECE__MODIFY",
+      "NAME": "DHANIA",
+      "TYPE": "PIECE",
+      "QUANTITY": 1655
+   },
+   "PAPAYA__5__PIECE__SNFQ8S": {
+      "SKU_ID": "PAPAYA__5__PIECE__SNFQ8S",
+      "NEW_SKU_ID": "PAPAYA__5__G__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "G",
+      "QUANTITY": 5
+   },
+   "PAPAYA__10__PIECE__SNFR5S": {
+      "SKU_ID": "PAPAYA__10__PIECE__SNFR5S",
+      "NEW_SKU_ID": "PAPAYA__120__PIECE__MODIFY",
+      "NAME": "PAPAYA",
+      "TYPE": "PIECE",
+      "QUANTITY": 120
+   },
+
+   "MALABAR SPINACH__50__PIECE__SNEWSV": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNEWSV",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__15__PIECE__SNEWRS": {
+      "SKU_ID": "MALABAR SPINACH__15__PIECE__SNEWRS",
+      "NEW_SKU_ID": "BITTER GOURD__15__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "MALABAR SPINACH__50__PIECE__SNEWNC": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNEWNC",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__21__PIECE__SNEX0D": {
+      "SKU_ID": "MALABAR SPINACH__21__PIECE__SNEX0D",
+      "NEW_SKU_ID": "BITTER GOURD__21__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 21
+   },
+   "MALABAR SPINACH__15__PIECE__SNEX19": {
+      "SKU_ID": "MALABAR SPINACH__15__PIECE__SNEX19",
+      "NEW_SKU_ID": "BITTER GOURD__15__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "MALABAR SPINACH__26__PIECE__SNEWYU": {
+      "SKU_ID": "MALABAR SPINACH__26__PIECE__SNEWYU",
+      "NEW_SKU_ID": "BITTER GOURD__26__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 26
+   },
+   "MALABAR SPINACH__61__PIECE__SNEWWA": {
+      "SKU_ID": "MALABAR SPINACH__61__PIECE__SNEWWA",
+      "NEW_SKU_ID": "BITTER GOURD__61__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 61
+   },
+   "MALABAR SPINACH__109__PIECE__SNEWHE": {
+      "SKU_ID": "MALABAR SPINACH__109__PIECE__SNEWHE",
+      "NEW_SKU_ID": "BITTER GOURD__109__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 109
+   },
+   "MALABAR SPINACH__20__PIECE__SNEWLO": {
+      "SKU_ID": "MALABAR SPINACH__20__PIECE__SNEWLO",
+      "NEW_SKU_ID": "BITTER GOURD__20__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "MALABAR SPINACH__100__PIECE__SNEWXL": {
+      "SKU_ID": "MALABAR SPINACH__100__PIECE__SNEWXL",
+      "NEW_SKU_ID": "BITTER GOURD__100__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__55__PIECE__SNEVZ0": {
+      "SKU_ID": "MALABAR SPINACH__55__PIECE__SNEVZ0",
+      "NEW_SKU_ID": "BITTER GOURD__55__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "MALABAR SPINACH__10__PIECE__SNEW5A": {
+      "SKU_ID": "MALABAR SPINACH__10__PIECE__SNEW5A",
+      "NEW_SKU_ID": "BITTER GOURD__10__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "MALABAR SPINACH__35__PIECE__SNEWDY": {
+      "SKU_ID": "MALABAR SPINACH__35__PIECE__SNEWDY",
+      "NEW_SKU_ID": "BITTER GOURD__35__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "MALABAR SPINACH__41__PIECE__SNEW6P": {
+      "SKU_ID": "MALABAR SPINACH__41__PIECE__SNEW6P",
+      "NEW_SKU_ID": "BITTER GOURD__41__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 41
+   },
+   "MALABAR SPINACH__200__PIECE__SNEVXE": {
+      "SKU_ID": "MALABAR SPINACH__200__PIECE__SNEVXE",
+      "NEW_SKU_ID": "BITTER GOURD__200__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "MALABAR SPINACH__50__PIECE__SNEW5X": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNEW5X",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__147__PIECE__SNEW12": {
+      "SKU_ID": "MALABAR SPINACH__147__PIECE__SNEW12",
+      "NEW_SKU_ID": "BITTER GOURD__147__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 147
+   },
+   "MALABAR SPINACH__50__PIECE__SNEW7Q": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNEW7Q",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__82__PIECE__SNEWDB": {
+      "SKU_ID": "MALABAR SPINACH__82__PIECE__SNEWDB",
+      "NEW_SKU_ID": "BITTER GOURD__82__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 82
+   },
+   "MALABAR SPINACH__88__PIECE__SNEWAT": {
+      "SKU_ID": "MALABAR SPINACH__88__PIECE__SNEWAT",
+      "NEW_SKU_ID": "BITTER GOURD__88__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 88
+   },
+   "MALABAR SPINACH__136__PIECE__SNEVVQ": {
+      "SKU_ID": "MALABAR SPINACH__136__PIECE__SNEVVQ",
+      "NEW_SKU_ID": "BITTER GOURD__136__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 136
+   },
+   "MALABAR SPINACH__15__PIECE__SNEVSE": {
+      "SKU_ID": "MALABAR SPINACH__15__PIECE__SNEVSE",
+      "NEW_SKU_ID": "BITTER GOURD__15__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "MALABAR SPINACH__400__PIECE__SNEVFS": {
+      "SKU_ID": "MALABAR SPINACH__400__PIECE__SNEVFS",
+      "NEW_SKU_ID": "BITTER GOURD__400__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "MALABAR SPINACH__35__PIECE__SNEV7D": {
+      "SKU_ID": "MALABAR SPINACH__35__PIECE__SNEV7D",
+      "NEW_SKU_ID": "BITTER GOURD__35__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "MALABAR SPINACH__34__PIECE__SNEVV9": {
+      "SKU_ID": "MALABAR SPINACH__34__PIECE__SNEVV9",
+      "NEW_SKU_ID": "BITTER GOURD__34__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 34
+   },
+   "MALABAR SPINACH__40__PIECE__SNEVU9": {
+      "SKU_ID": "MALABAR SPINACH__40__PIECE__SNEVU9",
+      "NEW_SKU_ID": "BITTER GOURD__40__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "MALABAR SPINACH__25__PIECE__SNEVWL": {
+      "SKU_ID": "MALABAR SPINACH__25__PIECE__SNEVWL",
+      "NEW_SKU_ID": "BITTER GOURD__25__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "MALABAR SPINACH__80__PIECE__SNEVQO": {
+      "SKU_ID": "MALABAR SPINACH__80__PIECE__SNEVQO",
+      "NEW_SKU_ID": "BITTER GOURD__80__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 80
+   },
+   "MALABAR SPINACH__70__PIECE__SNEVAI": {
+      "SKU_ID": "MALABAR SPINACH__70__PIECE__SNEVAI",
+      "NEW_SKU_ID": "BITTER GOURD__70__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "MALABAR SPINACH__72__PIECE__SNEVIJ": {
+      "SKU_ID": "MALABAR SPINACH__72__PIECE__SNEVIJ",
+      "NEW_SKU_ID": "BITTER GOURD__72__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 72
+   },
+   "MALABAR SPINACH__100__G__SNDZ0T": {
+      "SKU_ID": "MALABAR SPINACH__100__G__SNDZ0T",
+      "NEW_SKU_ID": "BITTER GOURD__100__G__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "G",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__56__PIECE__SNDZ2T": {
+      "SKU_ID": "MALABAR SPINACH__56__PIECE__SNDZ2T",
+      "NEW_SKU_ID": "BITTER GOURD__56__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 56
+   },
+   "MALABAR SPINACH__13__PIECE__SNDYSV": {
+      "SKU_ID": "MALABAR SPINACH__13__PIECE__SNDYSV",
+      "NEW_SKU_ID": "BITTER GOURD__13__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 13
+   },
+   "MALABAR SPINACH__50__PIECE__SNDYTY": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNDYTY",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__106__PIECE__SNDYRY": {
+      "SKU_ID": "MALABAR SPINACH__106__PIECE__SNDYRY",
+      "NEW_SKU_ID": "BITTER GOURD__106__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 106
+   },
+   "MALABAR SPINACH__28__PIECE__SNDYX6": {
+      "SKU_ID": "MALABAR SPINACH__28__PIECE__SNDYX6",
+      "NEW_SKU_ID": "BITTER GOURD__28__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+   "MALABAR SPINACH__11__PIECE__SNDYR9": {
+      "SKU_ID": "MALABAR SPINACH__11__PIECE__SNDYR9",
+      "NEW_SKU_ID": "BITTER GOURD__11__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 11
+   },
+   "MALABAR SPINACH__108__PIECE__SNDZ3M": {
+      "SKU_ID": "MALABAR SPINACH__108__PIECE__SNDZ3M",
+      "NEW_SKU_ID": "BITTER GOURD__108__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 108
+   },
+   "MALABAR SPINACH__70__PIECE__SNDZ4D": {
+      "SKU_ID": "MALABAR SPINACH__70__PIECE__SNDZ4D",
+      "NEW_SKU_ID": "BITTER GOURD__70__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "MALABAR SPINACH__16__PIECE__SNDYYU": {
+      "SKU_ID": "MALABAR SPINACH__16__PIECE__SNDYYU",
+      "NEW_SKU_ID": "BITTER GOURD__16__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 16
+   },
+   "MALABAR SPINACH__25__PIECE__SNDYOS": {
+      "SKU_ID": "MALABAR SPINACH__25__PIECE__SNDYOS",
+      "NEW_SKU_ID": "BITTER GOURD__25__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "MALABAR SPINACH__35__PIECE__SNDYN1": {
+      "SKU_ID": "MALABAR SPINACH__35__PIECE__SNDYN1",
+      "NEW_SKU_ID": "BITTER GOURD__35__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "MALABAR SPINACH__58__PIECE__SNDYKQ": {
+      "SKU_ID": "MALABAR SPINACH__58__PIECE__SNDYKQ",
+      "NEW_SKU_ID": "BITTER GOURD__58__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 58
+   },
+   "MALABAR SPINACH__30__PIECE__SNDYGU": {
+      "SKU_ID": "MALABAR SPINACH__30__PIECE__SNDYGU",
+      "NEW_SKU_ID": "BITTER GOURD__30__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "MALABAR SPINACH__25__PIECE__SNDYPJ": {
+      "SKU_ID": "MALABAR SPINACH__25__PIECE__SNDYPJ",
+      "NEW_SKU_ID": "BITTER GOURD__25__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "MALABAR SPINACH__44__PIECE__SNDYLP": {
+      "SKU_ID": "MALABAR SPINACH__44__PIECE__SNDYLP",
+      "NEW_SKU_ID": "BITTER GOURD__44__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 44
+   },
+   "MALABAR SPINACH__50__PIECE__SNDYQL": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNDYQL",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__107__PIECE__SNDYQ2": {
+      "SKU_ID": "MALABAR SPINACH__107__PIECE__SNDYQ2",
+      "NEW_SKU_ID": "BITTER GOURD__107__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 107
+   },
+   "MALABAR SPINACH__100__PIECE__SNDYJH": {
+      "SKU_ID": "MALABAR SPINACH__100__PIECE__SNDYJH",
+      "NEW_SKU_ID": "BITTER GOURD__100__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__15__PIECE__SNDYIZ": {
+      "SKU_ID": "MALABAR SPINACH__15__PIECE__SNDYIZ",
+      "NEW_SKU_ID": "BITTER GOURD__15__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "MALABAR SPINACH__100__PIECE__SNDYBY": {
+      "SKU_ID": "MALABAR SPINACH__100__PIECE__SNDYBY",
+      "NEW_SKU_ID": "BITTER GOURD__100__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__35__PIECE__SNDY5L": {
+      "SKU_ID": "MALABAR SPINACH__35__PIECE__SNDY5L",
+      "NEW_SKU_ID": "BITTER GOURD__35__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "MALABAR SPINACH__40__PIECE__SNDY88": {
+      "SKU_ID": "MALABAR SPINACH__40__PIECE__SNDY88",
+      "NEW_SKU_ID": "BITTER GOURD__40__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "MALABAR SPINACH__20__PIECE__SNDYBB": {
+      "SKU_ID": "MALABAR SPINACH__20__PIECE__SNDYBB",
+      "NEW_SKU_ID": "BITTER GOURD__20__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "MALABAR SPINACH__28__PIECE__SNDY95": {
+      "SKU_ID": "MALABAR SPINACH__28__PIECE__SNDY95",
+      "NEW_SKU_ID": "BITTER GOURD__28__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   },
+   "MALABAR SPINACH__58__PIECE__SNDY17": {
+      "SKU_ID": "MALABAR SPINACH__58__PIECE__SNDY17",
+      "NEW_SKU_ID": "BITTER GOURD__58__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 58
+   },
+   "MALABAR SPINACH__100__PIECE__SNDY6Y": {
+      "SKU_ID": "MALABAR SPINACH__100__PIECE__SNDY6Y",
+      "NEW_SKU_ID": "BITTER GOURD__100__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__100__PIECE__SNDY3N": {
+      "SKU_ID": "MALABAR SPINACH__100__PIECE__SNDY3N",
+      "NEW_SKU_ID": "BITTER GOURD__100__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__14__PIECE__SNDXX9": {
+      "SKU_ID": "MALABAR SPINACH__14__PIECE__SNDXX9",
+      "NEW_SKU_ID": "BITTER GOURD__14__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 14
+   },
+   "MALABAR SPINACH__100__PIECE__SNDYAK": {
+      "SKU_ID": "MALABAR SPINACH__100__PIECE__SNDYAK",
+      "NEW_SKU_ID": "BITTER GOURD__100__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__25__PIECE__SNDTJV": {
+      "SKU_ID": "MALABAR SPINACH__25__PIECE__SNDTJV",
+      "NEW_SKU_ID": "BITTER GOURD__25__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 25
+   },
+   "MALABAR SPINACH__40__PIECE__SNDTW3": {
+      "SKU_ID": "MALABAR SPINACH__40__PIECE__SNDTW3",
+      "NEW_SKU_ID": "BITTER GOURD__40__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "MALABAR SPINACH__29__PIECE__SNDTNT": {
+      "SKU_ID": "MALABAR SPINACH__29__PIECE__SNDTNT",
+      "NEW_SKU_ID": "BITTER GOURD__29__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 29
+   },
+   "MALABAR SPINACH__12__PIECE__SNDTQH": {
+      "SKU_ID": "MALABAR SPINACH__12__PIECE__SNDTQH",
+      "NEW_SKU_ID": "BITTER GOURD__12__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 12
+   },
+   "MALABAR SPINACH__20__PIECE__SNDTHS": {
+      "SKU_ID": "MALABAR SPINACH__20__PIECE__SNDTHS",
+      "NEW_SKU_ID": "BITTER GOURD__20__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "MALABAR SPINACH__54__PIECE__SNDTD4": {
+      "SKU_ID": "MALABAR SPINACH__54__PIECE__SNDTD4",
+      "NEW_SKU_ID": "BITTER GOURD__54__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 54
+   },
+   "MALABAR SPINACH__20__PIECE__SNDTPM": {
+      "SKU_ID": "MALABAR SPINACH__20__PIECE__SNDTPM",
+      "NEW_SKU_ID": "BITTER GOURD__20__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "MALABAR SPINACH__40__PIECE__SNDTIY": {
+      "SKU_ID": "MALABAR SPINACH__40__PIECE__SNDTIY",
+      "NEW_SKU_ID": "BITTER GOURD__40__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "MALABAR SPINACH__13__PIECE__SNDTFP": {
+      "SKU_ID": "MALABAR SPINACH__13__PIECE__SNDTFP",
+      "NEW_SKU_ID": "BITTER GOURD__13__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 13
+   },
+   "MALABAR SPINACH__51__PIECE__SNDU16": {
+      "SKU_ID": "MALABAR SPINACH__51__PIECE__SNDU16",
+      "NEW_SKU_ID": "BITTER GOURD__51__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 51
+   },
+   "MALABAR SPINACH__5__G__SNDTBV": {
+      "SKU_ID": "MALABAR SPINACH__5__G__SNDTBV",
+      "NEW_SKU_ID": "BITTER GOURD__5__G__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "G",
+      "QUANTITY": 5
+   },
+   "MALABAR SPINACH__30__PIECE__SNDS4K": {
+      "SKU_ID": "MALABAR SPINACH__30__PIECE__SNDS4K",
+      "NEW_SKU_ID": "BITTER GOURD__30__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "MALABAR SPINACH__55__PIECE__SNDT49": {
+      "SKU_ID": "MALABAR SPINACH__55__PIECE__SNDT49",
+      "NEW_SKU_ID": "BITTER GOURD__55__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "MALABAR SPINACH__50__PIECE__SNDT1V": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNDT1V",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__61__PIECE__SNDSOX": {
+      "SKU_ID": "MALABAR SPINACH__61__PIECE__SNDSOX",
+      "NEW_SKU_ID": "BITTER GOURD__61__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 61
+   },
+   "MALABAR SPINACH__40__PIECE__SNDSUK": {
+      "SKU_ID": "MALABAR SPINACH__40__PIECE__SNDSUK",
+      "NEW_SKU_ID": "BITTER GOURD__40__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "MALABAR SPINACH__100__PIECE__SNDSQJ": {
+      "SKU_ID": "MALABAR SPINACH__100__PIECE__SNDSQJ",
+      "NEW_SKU_ID": "BITTER GOURD__100__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "MALABAR SPINACH__30__PIECE__SNDSPN": {
+      "SKU_ID": "MALABAR SPINACH__30__PIECE__SNDSPN",
+      "NEW_SKU_ID": "BITTER GOURD__30__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "MALABAR SPINACH__55__PIECE__SNDSWB": {
+      "SKU_ID": "MALABAR SPINACH__55__PIECE__SNDSWB",
+      "NEW_SKU_ID": "BITTER GOURD__55__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 55
+   },
+   "MALABAR SPINACH__30__PIECE__SNDS5Y": {
+      "SKU_ID": "MALABAR SPINACH__30__PIECE__SNDS5Y",
+      "NEW_SKU_ID": "BITTER GOURD__30__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "MALABAR SPINACH__50__PIECE__SNDRXP": {
+      "SKU_ID": "MALABAR SPINACH__50__PIECE__SNDRXP",
+      "NEW_SKU_ID": "BITTER GOURD__50__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 50
+   },
+   "MALABAR SPINACH__10__PIECE__SNDRWJ": {
+      "SKU_ID": "MALABAR SPINACH__10__PIECE__SNDRWJ",
+      "NEW_SKU_ID": "BITTER GOURD__10__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "MALABAR SPINACH__108__PIECE__SNDRV6": {
+      "SKU_ID": "MALABAR SPINACH__108__PIECE__SNDRV6",
+      "NEW_SKU_ID": "BITTER GOURD__108__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 108
+   },
+   "pui-shak_60P_1": {
+      "SKU_ID": "pui-shak_60P_1",
+      "NEW_SKU_ID": "MALABAR SPINACH__60__PIECE__MODIFY",
+      "NAME": "MALABAR SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 60
+   },
+   "UCHCHHE_24P_1": {
+      "SKU_ID": "UCHCHHE_24P_1",
+      "NEW_SKU_ID": "BITTER GOURD__24__PIECE__MODIFY",
+      "NAME": "BITTER GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 24
+   },
+   "pui-shak_88P_1": {
+      "SKU_ID": "pui-shak_88P_1",
+      "NEW_SKU_ID": "MALABAR SPINACH__88__PIECE__MODIFY",
+      "NAME": "MALABAR SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 88
+   },
+   "la-o-w_400p_1": {
+      "SKU_ID": "la-o-w_400p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__400__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 400
+   },
+   "la-o-w_300p_1": {
+      "SKU_ID": "la-o-w_300p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__300__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "la-o-w_15p_1": {
+      "SKU_ID": "la-o-w_15p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__15__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "la-o-w_150p_1": {
+      "SKU_ID": "la-o-w_150p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__150__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "la-o-w-GOL_19p_1": {
+      "SKU_ID": "la-o-w-GOL_19p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__19__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 19
+   },
+   "la-o-w_105p_1": {
+      "SKU_ID": "la-o-w_105p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__105__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 105
+   },
+   "la-o-w_105p_3": {
+      "SKU_ID": "la-o-w_105p_3",
+      "NEW_SKU_ID": "BOTTLE GOURD__105__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 105
+   },
+   "la-o-w_300p_2": {
+      "SKU_ID": "la-o-w_300p_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__300__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 300
+   },
+   "la-o-w_100p_2": {
+      "SKU_ID": "la-o-w_100p_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__100__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "la-o-w_137p_1": {
+      "SKU_ID": "la-o-w_137p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__137__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 137
+   },
+   "la-o-w_50G_1": {
+      "SKU_ID": "la-o-w_50G_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__50__G__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "G",
+      "QUANTITY": 50
+   },
+   "la-o-w-gol_27p_1": {
+      "SKU_ID": "la-o-w-gol_27p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__27__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 27
+   },
+   "la-o-w_83p_1": {
+      "SKU_ID": "la-o-w_83p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__83__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 83
+   },
+   "la-o-w-gol_70p_1": {
+      "SKU_ID": "la-o-w-gol_70p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__70__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 70
+   },
+   "la-o-w_15p_2": {
+      "SKU_ID": "la-o-w_15p_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__15__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "la-o-w-gol_29p_1": {
+      "SKU_ID": "la-o-w-gol_29p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__29__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 29
+   },
+   "la-o-w_80p_1": {
+      "SKU_ID": "la-o-w_80p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__80__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 80
+   },
+   "la-o-w_38p_1": {
+      "SKU_ID": "la-o-w_38p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__38__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 38
+   },
+   "la-o-w_100p_3": {
+      "SKU_ID": "la-o-w_100p_3",
+      "NEW_SKU_ID": "BOTTLE GOURD__100__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "la-o-w_17p_1": {
+      "SKU_ID": "la-o-w_17p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__17__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 17
+   },
+   "la-o-w-gol_10G_1": {
+      "SKU_ID": "la-o-w-gol_10G_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__10__G__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "G",
+      "QUANTITY": 10
+   },
+   "la-o-w-gol_20p_1": {
+      "SKU_ID": "la-o-w-gol_20p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__20__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 20
+   },
+   "la-o-w_15p_3": {
+      "SKU_ID": "la-o-w_15p_3",
+      "NEW_SKU_ID": "BOTTLE GOURD__15__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 15
+   },
+   "la-o-w_100p_6": {
+      "SKU_ID": "la-o-w_100p_6",
+      "NEW_SKU_ID": "BOTTLE GOURD__100__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "la-o-w_90p_2": {
+      "SKU_ID": "la-o-w_90p_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__90__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 90
+   },
+   "la-o-w_95p_1": {
+      "SKU_ID": "la-o-w_95p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__95__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 95
+   },
+   "LAOW_67P_1": {
+      "SKU_ID": "LAOW_67P_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__67__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 67
+   },
+   "la-o-w_18p_2": {
+      "SKU_ID": "la-o-w_18p_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__18__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 18
+   },
+   "la-o-w_30p_1": {
+      "SKU_ID": "la-o-w_30p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__30__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "la-o-w_100p_1": {
+      "SKU_ID": "la-o-w_100p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__100__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "la-o-w_10p_2": {
+      "SKU_ID": "la-o-w_10p_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__10__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "la-o-w_136p_1": {
+      "SKU_ID": "la-o-w_136p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__136__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 136
+   },
+   "la-o-w_12p_1": {
+      "SKU_ID": "la-o-w_12p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__12__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 12
+   },
+   "la-o-w_120p_1": {
+      "SKU_ID": "la-o-w_120p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__120__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 120
+   },
+   "la-o-w_100p_5": {
+      "SKU_ID": "la-o-w_100p_5",
+      "NEW_SKU_ID": "BOTTLE GOURD__100__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "la-o-w_44p_1": {
+      "SKU_ID": "la-o-w_44p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__44__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 44
+   },
+   "la-o-w_100p_4": {
+      "SKU_ID": "la-o-w_100p_4",
+      "NEW_SKU_ID": "BOTTLE GOURD__100__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 100
+   },
+   "la-o-w_250p_1": {
+      "SKU_ID": "la-o-w_250p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__250__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 250
+   },
+   "la-o-w-gol_141p_1": {
+      "SKU_ID": "la-o-w-gol_141p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__141__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 141
+   },
+   "la-o-w-gol_30p_1": {
+      "SKU_ID": "la-o-w-gol_30p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__30__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 30
+   },
+   "la-o-w_40P_2": {
+      "SKU_ID": "la-o-w_40P_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__40__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 40
+   },
+   "LAOW_79P_1": {
+      "SKU_ID": "LAOW_79P_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__79__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 79
+   },
+   "la-o-w_18p_1": {
+      "SKU_ID": "la-o-w_18p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__18__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 18
+   },
+   "la-o-w_10p_1": {
+      "SKU_ID": "la-o-w_10p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__10__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "la-o-w_105p_2": {
+      "SKU_ID": "la-o-w_105p_2",
+      "NEW_SKU_ID": "BOTTLE GOURD__105__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 105
+   },
+   "la-o-w_90p_1": {
+      "SKU_ID": "la-o-w_90p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__90__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 90
+   },
+   "la-o-w-gol_10p_1": {
+      "SKU_ID": "la-o-w-gol_10p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__10__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 10
+   },
+   "la-o-w_200p_1": {
+      "SKU_ID": "la-o-w_200p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__200__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 200
+   },
+   "la-o-w_35p_1": {
+      "SKU_ID": "la-o-w_35p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__35__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 35
+   },
+   "la-o-w_1000p_1": {
+      "SKU_ID": "la-o-w_1000p_1",
+      "NEW_SKU_ID": "BOTTLE GOURD__150__PIECE__MODIFY",
+      "NAME": "BOTTLE GOURD",
+      "TYPE": "PIECE",
+      "QUANTITY": 150
+   },
+   "pui-shak_13P_1": {
+      "SKU_ID": "pui-shak_13P_1",
+      "NEW_SKU_ID": "MALABAR SPINACH__13__PIECE__MODIFY",
+      "NAME": "MALABAR SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 13
+   },
+   "pui-shak_43P_1": {
+      "SKU_ID": "pui-shak_43P_1",
+      "NEW_SKU_ID": "MALABAR SPINACH__43__PIECE__MODIFY",
+      "NAME": "MALABAR SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 43
+   },
+   "pui-shak_500P_1": {
+      "SKU_ID": "pui-shak_500P_1",
+      "NEW_SKU_ID": "MALABAR SPINACH__500__PIECE__MODIFY",
+      "NAME": "MALABAR SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 500
+   },
+   "pui-shak_28P_1": {
+      "SKU_ID": "pui-shak_28P_1",
+      "NEW_SKU_ID": "MALABAR SPINACH__28__PIECE__MODIFY",
+      "NAME": "MALABAR SPINACH",
+      "TYPE": "PIECE",
+      "QUANTITY": 28
+   }
+}

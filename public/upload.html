@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>CROPPER PDF READY</title>
+      <link rel="icon" type="image/png" href="./icon.png">
+      <style>
+         * {
+            margin: 0;
+            padding: 0;
+         }
+         :root {
+            color-scheme: light dark;
+         }
+
+         body {
+            position: relative;
+            width: 100svw;
+            height: 100svh;
+            font-family: Arial, sans-serif;
+            background-color: light-dark(white, #000);
+            color: light-dark(#222, #ddd);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            background: light-dark(white, #1a1a1a);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 8px 20px;
+            display: grid;
+            place-items: center;
+            gap: 10px;
+         }
+
+         h1 {
+            color: #ff8010;
+            text-shadow: 0 0 1px #000;
+            font-size: 1.8rem;
+            padding-top: 5px;
+         }
+
+         p {
+            color: #fff;
+            background: #2980b9;
+            padding: 3px 6px;
+            border-radius: 5px;
+         }
+
+         iframe {
+            border: 2px solid #2980b9;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: light-dark(white, #1a1a1a);
+         }
+
+         .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+         }
+
+         .back-button:hover {
+            background-color: #219653;
+         }
+
+         footer {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #999;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <h1>CROPPED PDF READY</h1>
+         <p id="filename"></p>
+         <button class="back-button" onclick="goBack()">Go Back</button>
+         <iframe id="pdfFrame" width="360" height="550"></iframe>
+      </div>
+
+      <footer>&copy; 2025 SouravBarui. All Rights Reserved.</footer>
+
+      <script>
+         // Get URL parameters
+         const urlParams = new URLSearchParams(window.location.search);
+         const filename = urlParams.get('filename');
+         const originalName = urlParams.get('originalName');
+
+         // Set filename and PDF source
+         document.getElementById('filename').textContent = originalName || filename;
+         document.getElementById('pdfFrame').src = `/${filename}`;
+
+         function goBack() {
+            // Use history.back() with a small delay to ensure proper state restoration
+            setTimeout(() => {
+               history.back();
+            }, 50);
+         }
+
+         // Prevent page caching to ensure fresh state
+         window.addEventListener('unload', function() {});
+      </script>
+   </body>
+</html>
