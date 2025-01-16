@@ -10,8 +10,11 @@ const { getDocument } = pkg;
 import {
    drawText,
    getProductInfo,
-   getSKUsToProductInfo
-} from './utils.js';
+   getSKUsToProductInfo,
+   filterProductInformation,
+   getProductQuantity,
+   getDimensions,
+} from "./utils.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -30,12 +33,12 @@ pdfjsLib.GlobalWorkerOptions = { workerSrc: pdfWorkerPath };
 
 // Load products.json
 const productsPath = path.join(__dirname, "products.json");
-let products = {};
+let PRODUCTS = {};
 try {
    const productsData = fs.readFileSync(productsPath, "utf8");
-   products = JSON.parse(productsData);
+   PRODUCTS = JSON.parse(productsData);
 } catch (error) {
-   console.log("Error loading products.json:", error);
+   console.log("Error loading PRODUCTS.json:", error);
 }
 
 // Set up Multer for file uploads
@@ -53,11 +56,6 @@ const cropFiles = {
    type2: null,
 };
 
-function getFontSize(text, fontSize = 7) {
-   const textWidth = (fontSize - 2) * text.length;
-   return textWidth;
-}
-
 // Handle PDF upload and cropping
 app.post("/upload", upload.single("pdf"), async (req, res) => {
    try {
@@ -69,29 +67,9 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
       const page = pdfDoc.getPage(0);
       const { width } = page.getSize();
 
-      // Define crop dimensions for different types
-      const sideMargin = 30;
-      const cropDimensions = {
-         type1: {
-            bottom: 459, // + 40
-            left: 188,
-            width: 219,
-            height: 356, // 58
-            type: 1,
-         },
-         type2: {
-            bottom: 70,
-            left: sideMargin,
-            width: width - 2 * sideMargin,
-            height: 390,
-            type: 2,
-         },
-      };
-
       // Get crop type from form
       const cropType = req.body.cropType;
-
-      const dimensions = cropDimensions[cropType];
+      const dimensions = getDimensions(width)[cropType];
 
       // Get showSerialNumber and startSerial from form
       const showSerialNumber = req.body.showSerialNumber === "on";
@@ -131,18 +109,36 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             const textPage = await pdfDocument.getPage(i + 1);
             const textContent = await textPage.getTextContent();
 
-            const textItems = textContent.items.map((item) => item.str);
-            const productInfo = getProductInfo(textItems);
+            // const textItems = textContent.items.map((item) => item.str);
+            // const productInfo = getProductInfo(textItems);
 
-            if (productInfo) {
-               const quantity = textItems
-                  ?.filter((_, i) => i % 2)
-                  .map((e) => e.split("|")[0]?.trim());
+            const tempText = textContent.items.map((item) => item.str).join("");
+            const text = filterProductInformation(tempText);
+            const productSKU = getProductInfo(text);
+            const quantity = getProductQuantity(text);
 
-               const { name, isMakeable } = getSKUsToProductInfo(productInfo, quantity, products);
+            // console.log(text);
+            // console.log(productSKU);
+            // console.log(quantity);
+
+            if (productSKU.length > 0 && quantity.length > 0) {
+               const { name, isMakeable } = getSKUsToProductInfo(
+                  productSKU,
+                  quantity,
+                  PRODUCTS
+               );
 
                if (isMakeable) {
-                  drawText(page, productFontX, productFontY, size, name, baseFontSize, 1, 0.4);
+                  drawText(
+                     page,
+                     productFontX,
+                     productFontY,
+                     size,
+                     name,
+                     baseFontSize,
+                     1,
+                     0.4
+                  );
                }
             }
          }
