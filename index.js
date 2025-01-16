@@ -5,7 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import fs from "fs";
-import pkg from 'pdfjs-dist/build/pdf.js';
+import pkg from "pdfjs-dist/build/pdf.js";
 const { getDocument } = pkg;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,7 +17,10 @@ const PORT = 3000;
 // Initialize PDF.js
 const pdfjsLib = { getDocument };
 
-const pdfWorkerPath = new URL('pdfjs-dist/build/pdf.worker.js', import.meta.url).toString();
+const pdfWorkerPath = new URL(
+   "pdfjs-dist/build/pdf.worker.js",
+   import.meta.url
+).toString();
 pdfjsLib.GlobalWorkerOptions = { workerSrc: pdfWorkerPath };
 
 // Load products.json
@@ -61,9 +64,6 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
       const page = pdfDoc.getPage(0);
       const { width } = page.getSize();
 
-      // Get crop type from form
-      const cropType = req.body.cropType;
-
       // Define crop dimensions for different types
       const sideMargin = 30;
       const cropDimensions = {
@@ -82,6 +82,9 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             type: 2,
          },
       };
+
+      // Get crop type from form
+      const cropType = req.body.cropType;
 
       const dimensions = cropDimensions[cropType];
 
@@ -119,67 +122,60 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             dimensions.height
          );
 
-         // Handle text extraction (must use pdfjs-dist)
-         const textPage = await pdfDocument.getPage(i + 1);
-         const textContent = await textPage.getTextContent();
-         const extractedText = textContent.items
-            .map((item) => item.str)
-            .join("");
+         if (showProductName && !isBill) {
+            // Handle text extraction (must use pdfjs-dist)
+            const textPage = await pdfDocument.getPage(i + 1);
+            const textContent = await textPage.getTextContent();
+            const extractedText = textContent.items
+               .map((item) => item.str)
+               .join("");
 
-         // Process extracted text
-         const startIndex = extractedText.indexOf("QTY1");
-         const endIndex = extractedText.indexOf("FMP");
-         if (startIndex !== -1 && endIndex !== -1) {
-            const text = extractedText.substring(startIndex + 4, endIndex);
-            const lastNumber = parseInt(text.match(/\d+(?!.*\d)/));
-            let sku = text.split("|")[0]?.trim().toUpperCase();
-            sku = products[sku] ? products[sku].NEW_SKU_ID.toUpperCase() : sku;
-            const newSku = sku?.split("__");
-            const name = newSku?.[0]?.split("-");
-            const newName =
-               name?.length > 1 ? `*${name[name.length - 1]}` : newSku?.[0];
-            const type = newSku[2] == "PIECE" ? "P" : newSku[2];
-            const quantityAndType = `${newSku[1]} ${type}`;
-            const multiple = lastNumber > 1 ? ` *${lastNumber}` : "";
-            const NAME = `${newName}  ${quantityAndType}${multiple}`;
+            // Process extracted text
+            const startIndex = extractedText.indexOf("QTY1");
+            const endIndex = extractedText.indexOf("FMP");
+            if (startIndex !== -1 && endIndex !== -1) {
+               const text = extractedText.substring(startIndex + 4, endIndex);
+               const { sku, quantity } = getTextSKUId(text);
+               const { name, isMakeable } = getSKUToProductInfo(sku, quantity);
 
-            // Handle serial number
-            if (showSerialNumber) {
-               const serialNumber = startSerial + i;
-               page.drawRectangle({
-                  x: serialFontX - 0.5,
-                  y: serialFontY,
-                  width: getFontSize(serialNumber.toString(), baseFontSize),
-                  height: size,
-                  color: white,
-               });
+               // Handle product name
+               if (isMakeable) {
+                  const productFontSize = baseFontSize - 0.3;
+                  page.drawRectangle({
+                     x: productFontX - 1,
+                     y: productFontY,
+                     width: getFontSize(name, productFontSize),
+                     height: size,
+                     color: white,
+                  });
 
-               page.drawText(serialNumber.toString(), {
-                  x: serialFontX,
-                  y: serialFontY,
-                  size: size,
-                  color: black,
-               });
+                  page.drawText(name, {
+                     x: productFontX,
+                     y: productFontY,
+                     size: size,
+                     color: black,
+                  });
+               }
             }
+         }
 
-            // Handle product name
-            if (showProductName && newSku.length > 2 && !isBill) {
-               const productFontSize = baseFontSize - 0.3;
-               page.drawRectangle({
-                  x: productFontX - 1,
-                  y: productFontY,
-                  width: getFontSize(NAME, productFontSize),
-                  height: size,
-                  color: white,
-               });
+         // Handle serial number
+         if (showSerialNumber) {
+            const serialNumber = startSerial + i;
+            page.drawRectangle({
+               x: serialFontX - 0.5,
+               y: serialFontY,
+               width: getFontSize(serialNumber.toString(), baseFontSize),
+               height: size,
+               color: white,
+            });
 
-               page.drawText(NAME, {
-                  x: productFontX,
-                  y: productFontY,
-                  size: size,
-                  color: black,
-               });
-            }
+            page.drawText(serialNumber.toString(), {
+               x: serialFontX,
+               y: serialFontY,
+               size: size,
+               color: black,
+            });
          }
       }
       const pdfBytes = await pdfDoc.save();
@@ -232,3 +228,27 @@ app.get("/:filename", (req, res) => {
 app.listen(PORT, () => {
    console.log(`Server running at http://localhost:${PORT}`);
 });
+
+function getTextSKUId(text) {
+   const startIndex = text.indexOf("QTY -");
+   text = text.slice(startIndex === -1 ? 0 : startIndex + 5);
+   const sku = text.split("|")[0]?.trim().toUpperCase();
+   const lastNumber = parseInt(text.match(/\d+(?!.*\d)/));
+   const newSku = products[sku] ? products[sku].NEW_SKU_ID.toUpperCase() : sku;
+   return { sku: newSku, quantity: lastNumber };
+}
+
+function getSKUToProductInfo(sku, quantity) {
+   const newSku = sku?.split("__");
+
+   const nm = newSku?.[0]?.split("-");
+   const newName = nm?.length > 1 ? `*${nm[nm.length - 1]}` : newSku?.[0];
+
+   const type = newSku[2] == "PIECE" ? "P" : newSku[2];
+
+   const quantityAndType = `${newSku[1]} ${type}`;
+   const multiple = quantity > 1 ? ` *${quantity}` : "";
+
+   const name = `${newName}  ${quantityAndType}${multiple}`;
+   return { name, isMakeable: newSku.length > 2};
+}
