@@ -1,12 +1,17 @@
 import express from "express";
-import multer from "multer";
-import { PDFDocument, rgb } from "pdf-lib";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 import fs from "fs";
+import multer from "multer";
+import path, { dirname } from "path";
+import { PDFDocument } from "pdf-lib";
 import pkg from "pdfjs-dist/build/pdf.js";
+import { fileURLToPath } from "url";
 const { getDocument } = pkg;
+
+import {
+   drawText,
+   getProductInfo,
+   getSKUsToProductInfo
+} from './utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -107,11 +112,10 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
       const serialFontY = dimensions.bottom + 1 * (isBill ? 8 : 1);
       const productFontX = dimensions.left + 10;
       const productFontY = serialFontY;
-      const white = rgb(1, 1, 1);
-      const black = rgb(0, 0, 0);
 
       // Process each page
       for (let i = 0; i < pdfDoc.getPageCount(); i++) {
+         // for (let i = 2; i < 4; i++) {
          const page = pdfDoc.getPage(i);
 
          // Handle cropping
@@ -126,35 +130,19 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
             // Handle text extraction (must use pdfjs-dist)
             const textPage = await pdfDocument.getPage(i + 1);
             const textContent = await textPage.getTextContent();
-            const extractedText = textContent.items
-               .map((item) => item.str)
-               .join("");
 
-            // Process extracted text
-            const startIndex = extractedText.indexOf("QTY1");
-            const endIndex = extractedText.indexOf("FMP");
-            if (startIndex !== -1 && endIndex !== -1) {
-               const text = extractedText.substring(startIndex + 4, endIndex);
-               const { sku, quantity } = getTextSKUId(text);
-               const { name, isMakeable } = getSKUToProductInfo(sku, quantity);
+            const textItems = textContent.items.map((item) => item.str);
+            const productInfo = getProductInfo(textItems);
 
-               // Handle product name
+            if (productInfo) {
+               const quantity = textItems
+                  ?.filter((_, i) => i % 2)
+                  .map((e) => e.split("|")[0]?.trim());
+
+               const { name, isMakeable } = getSKUsToProductInfo(productInfo, quantity, products);
+
                if (isMakeable) {
-                  const productFontSize = baseFontSize - 0.3;
-                  page.drawRectangle({
-                     x: productFontX - 1,
-                     y: productFontY,
-                     width: getFontSize(name, productFontSize),
-                     height: size,
-                     color: white,
-                  });
-
-                  page.drawText(name, {
-                     x: productFontX,
-                     y: productFontY,
-                     size: size,
-                     color: black,
-                  });
+                  drawText(page, productFontX, productFontY, size, name, baseFontSize, 1, 0.4);
                }
             }
          }
@@ -162,20 +150,14 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
          // Handle serial number
          if (showSerialNumber) {
             const serialNumber = startSerial + i;
-            page.drawRectangle({
-               x: serialFontX - 0.5,
-               y: serialFontY,
-               width: getFontSize(serialNumber.toString(), baseFontSize),
-               height: size,
-               color: white,
-            });
-
-            page.drawText(serialNumber.toString(), {
-               x: serialFontX,
-               y: serialFontY,
-               size: size,
-               color: black,
-            });
+            drawText(
+               page,
+               serialFontX,
+               serialFontY,
+               size,
+               serialNumber.toString(),
+               baseFontSize
+            );
          }
       }
       const pdfBytes = await pdfDoc.save();
@@ -228,27 +210,3 @@ app.get("/:filename", (req, res) => {
 app.listen(PORT, () => {
    console.log(`Server running at http://localhost:${PORT}`);
 });
-
-function getTextSKUId(text) {
-   const startIndex = text.indexOf("QTY -");
-   text = text.slice(startIndex === -1 ? 0 : startIndex + 5);
-   const sku = text.split("|")[0]?.trim().toUpperCase();
-   const lastNumber = parseInt(text.match(/\d+(?!.*\d)/));
-   const newSku = products[sku] ? products[sku].NEW_SKU_ID.toUpperCase() : sku;
-   return { sku: newSku, quantity: lastNumber };
-}
-
-function getSKUToProductInfo(sku, quantity) {
-   const newSku = sku?.split("__");
-
-   const nm = newSku?.[0]?.split("-");
-   const newName = nm?.length > 1 ? `*${nm[nm.length - 1]}` : newSku?.[0];
-
-   const type = newSku[2] == "PIECE" ? "P" : newSku[2];
-
-   const quantityAndType = `${newSku[1]} ${type}`;
-   const multiple = quantity > 1 ? ` *${quantity}` : "";
-
-   const name = `${newName}  ${quantityAndType}${multiple}`;
-   return { name, isMakeable: newSku.length > 2};
-}
