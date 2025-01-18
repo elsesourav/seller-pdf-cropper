@@ -152,7 +152,7 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
                serialFontY,
                size,
                serialNumber.toString(),
-               baseFontSize
+               size
             );
          }
       }
