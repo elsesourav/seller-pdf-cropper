@@ -29,28 +29,50 @@ export function getDimensions(width) {
    };
 }
 
-export function getTextSKUId(text, PRODUCTS) {
-   const startIndex = text.indexOf("QTY -");
-   text = text.slice(startIndex === -1 ? 0 : startIndex + 5);
+export function getMatchSKU(CHANGES_SKU, CHANGES_NAME, _sku) {
+   if (CHANGES_SKU[_sku]) return CHANGES_SKU[_sku].NEW_SKU_ID;
 
-   const sku = text.split("|")[0]?.trim().toUpperCase();
-   const lastNumber = parseInt(text.match(/\d+(?!.*\d)/));
-   const splitSku = sku?.split("|");
-   const _sku_ = splitSku.length > 1 ? splitSku[0].trim() : sku;
-   const newSku = PRODUCTS[_sku_]
-      ? PRODUCTS[_sku_].NEW_SKU_ID.toUpperCase()
-      : _sku_;
-   return { sku: newSku, quantity: lastNumber };
+   const sku = _sku?.split("__");
+   if (sku.length < 3) return _sku;
+
+   const _name = sku[0].split("-");
+   const name1 = _name[_name.length - 1];
+   const _nameLen = _name.length;
+   if (_nameLen > 1) _name.pop();
+   const name0 = _name.length > 1 ? _name.join("-") : "";
+   sku.shift();
+
+   // if name exists in CHANGES_NAME      
+   if (CHANGES_NAME[name1]) {
+      const newName = _nameLen > 1 ? [name0, CHANGES_NAME[name1]].join("-") : CHANGES_NAME[name1];
+      const newSku = [newName, ...sku].join("__");
+      if (CHANGES_SKU[newSku]) return CHANGES_SKU[newSku].NEW_SKU_ID;
+   }
+
+   // if name not exists in CHANGES_NAME
+   for (let i = 1; i < name1.length; i++) {
+      const nm = `${name1.slice(0, i)} ${name1.slice(i)}`;
+      const newSku = [nm, ...sku].join("__");
+      if (CHANGES_SKU[newSku]) return CHANGES_SKU[newSku].NEW_SKU_ID;
+   }
+
+   // if name exists in CHANGES_NAME but not in CHANGES_SKU
+   if (CHANGES_NAME[name1]) {
+      const newName = _nameLen > 1 ? [name0, CHANGES_NAME[name1]].join("-") : CHANGES_NAME[name1];
+      return [newName, ...sku].join("__");
+   }
+
+   return _sku;
 }
 
-export function checkAndUpdateSKU(text, PRODUCTS) {
+export function checkAndUpdateSKU(CHANGES_SKU, CHANGES_NAME, text) {
    const sku = text?.trim();
    const splitSku = sku?.split("|");
    const _sku_ = splitSku.length > 1 ? splitSku[0].trim() : sku;
-//    console.log(_sku_);
-//    console.log(PRODUCTS[_sku_]?.NEW_SKU_ID);
-//    console.log(`----------------------------------\n`);
-   return PRODUCTS[_sku_] ? PRODUCTS[_sku_].NEW_SKU_ID.toUpperCase() : _sku_;
+   // console.log(_sku_);
+   // console.log(CHANGES_SKU[_sku_]?.NEW_SKU_ID);
+   // console.log(`----------------------------------\n`);
+   return getMatchSKU(CHANGES_SKU, CHANGES_NAME, _sku_);
 }
 
 export function getSKUToProductInfo(sku, quantity) {
@@ -68,7 +90,7 @@ export function getSKUToProductInfo(sku, quantity) {
    return { name, isMakeable: newSku.length > 2 };
 }
 
-export function getSKUsToProductInfo(product, quantity, PRODUCTS) {
+export function getSKUsToProductInfo(product, quantity, CHANGES_SKU, CHANGES_NAME) {
    if (product.length !== quantity.length)
       return { name: "", isMakeable: false };
    const obj = {};
@@ -77,7 +99,8 @@ export function getSKUsToProductInfo(product, quantity, PRODUCTS) {
       const text = product[j];
       const multi = parseInt(quantity[j]);
 
-      const sku = checkAndUpdateSKU(text, PRODUCTS);
+      const sku = checkAndUpdateSKU(CHANGES_SKU, CHANGES_NAME, text);
+      // console.log(sku);
       const newSku = sku?.split("__");
       if (newSku.length < 3) return { name: "", isMakeable: false };
 
@@ -97,8 +120,8 @@ export function getSKUsToProductInfo(product, quantity, PRODUCTS) {
       }
    }
 
-//    console.log(product);
-//    console.log(obj);
+   //    console.log(product);
+   //    console.log(obj);
    const objLen = Object.keys(obj).length;
 
    let string = "";

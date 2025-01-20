@@ -9,11 +9,11 @@ const { getDocument } = pkg;
 
 import {
    drawText,
-   getProductInfo,
-   getSKUsToProductInfo,
    filterProductInformation,
-   getProductQuantity,
    getDimensions,
+   getProductInfo,
+   getProductQuantity,
+   getSKUsToProductInfo,
 } from "./utils.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -31,14 +31,21 @@ const pdfWorkerPath = new URL(
 ).toString();
 pdfjsLib.GlobalWorkerOptions = { workerSrc: pdfWorkerPath };
 
-// Load products.json
-const productsPath = path.join(__dirname, "products.json");
-let PRODUCTS = {};
+// Load changes sku.name.json
+const sbaruiSKUs = path.join(__dirname, "changes", "sku.sbarui.json");
+const puravSKUs = path.join(__dirname, "changes", "sku.purav.json");
+const skuName = path.join(__dirname, "changes", "sku.name.json");
+
+let CHANGES_SKU = {};
+let CHANGES_NAME = {};
 try {
-   const productsData = fs.readFileSync(productsPath, "utf8");
-   PRODUCTS = JSON.parse(productsData);
+   CHANGES_SKU = {
+      ...JSON.parse(fs.readFileSync(sbaruiSKUs, "utf8")),
+      ...JSON.parse(fs.readFileSync(puravSKUs, "utf8")),
+   };
+   CHANGES_NAME = JSON.parse(fs.readFileSync(skuName, "utf8"));
 } catch (error) {
-   console.log("Error loading PRODUCTS.json:", error);
+   console.log("Error loading CHANGES_SKU.json:", error);
 }
 
 // Set up Multer for file uploads
@@ -125,7 +132,8 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
                const { name, isMakeable } = getSKUsToProductInfo(
                   productSKU,
                   quantity,
-                  PRODUCTS
+                  CHANGES_SKU,
+                  CHANGES_NAME
                );
 
                if (isMakeable) {
