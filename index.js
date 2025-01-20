@@ -90,7 +90,7 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
       const pdfDocument = await loadingTask.promise;
 
       const isBill = dimensions.type === 2;
-      const baseFontSize = 6;
+      const baseFontSize = 7;
       const size = baseFontSize * (isBill ? 1.5 : 1);
       const serialFontX =
          dimensions.left + (isBill ? 10 : dimensions.width - 14);
@@ -141,7 +141,7 @@ app.post("/upload", upload.single("pdf"), async (req, res) => {
                      page,
                      productFontX,
                      productFontY,
-                     size,
+                     size - 1,
                      name,
                      baseFontSize,
                      1,
