@@ -108,13 +108,12 @@ function drawText(
    text,
    fontSize,
    offset = 1,
-   sizeMakeSmall = 0
 ) {
    // Draw white rectangle behind text
    page.drawRectangle({
       x: x - offset,
       y,
-      width: getFontSize(text, fontSize - sizeMakeSmall) + 2 * offset,
+      width: getFontSize(text, fontSize) + 2 * offset,
       height: h,
       color: white,
    });

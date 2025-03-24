@@ -21,7 +21,6 @@
 
 body {
    font-family: Arial, sans-serif;
-   background-color: light-dark(white, #000);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -29,6 +28,11 @@ body {
    margin: 0;
    color: light-dark(#222, #ddd);
    flex-direction: column;
+
+   background-color: light-dark(#cbcde2, #282a38);
+   background-image: radial-gradient(light-dark(#fff5, #0003) 1px, transparent 1px),
+                     radial-gradient(light-dark(#fff7, #0005) 1px, transparent 1px);
+   background-size: 20px 20px, 40px 40px;
 }
 
 h1 {
@@ -40,7 +44,7 @@ h1 {
 }
 
 .container {
-   background: light-dark(white, #1a1a1a);
+   background: light-dark(#ffffff99, #1a1a1a99);
    border-radius: 8px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    padding: 40px 30px;

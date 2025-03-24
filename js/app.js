@@ -12,19 +12,19 @@ const serialNumberCheckbox = document.getElementById("serialNumber");
 
 console.log("Using embedded JSON data");
 
-serialNumberCheckbox.addEventListener("change", () => {
-   serialInputContainer.classList.toggle("hidden", !this.checked);
+serialNumberCheckbox.addEventListener("change", (e) => {
+   serialInputContainer.classList.toggle("hidden", !e.target.checked);
 });
 
 fileInput.addEventListener("change", () => {
-   console.log(fileInput.files);
-   fileNameDisplay.textContent = fileInput.files?.[0].name || "No file selected";
+   fileNameDisplay.textContent =
+      fileInput.files?.[0].name || "No file selected";
 });
 
 document.querySelectorAll(`input[name="crop"]`).forEach((radio) => {
    radio.addEventListener("change", () => {
-      localStorage.setItem("selectedType", this.value);
-      productNameContainer.classList.toggle("hidden", this.value === "type2");
+      localStorage.setItem("selectedType", radio.value);
+      productNameContainer.classList.toggle("hidden", radio.value === "type2");
    });
 });
 
@@ -44,14 +44,14 @@ serialNumberCheckbox.checked =
 productNameContainer.querySelector('input[type="checkbox"]').checked =
    localStorage.getItem("showProductName") === "true";
 
-serialNumberCheckbox.addEventListener("change", () => {
-   localStorage.setItem("showSerialNumber", this.checked);
+serialNumberCheckbox.addEventListener("change", (e) => {
+   localStorage.setItem("showSerialNumber", e.target.checked);
 });
 
 productNameContainer
    .querySelector('input[type="checkbox"]')
-   .addEventListener("change", () => {
-      localStorage.setItem("showProductName", this.checked);
+   .addEventListener("change", (e) => {
+      localStorage.setItem("showProductName", e.target.checked);
    });
 
 function showAlert(message) {
@@ -94,13 +94,11 @@ async function processPDF(file) {
 
       const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 
-      const cropType = document.querySelector(
-         `input[name="crop"]:checked`
-      ).value;
+      const type = document.querySelector(`input[name="crop"]:checked`).value;
 
       const page = pdfDoc.getPages()[0];
       const { width } = page.getSize();
-      const dimensions = getDimensions(width)[cropType];
+      const dimensions = getDimensions(width)[type];
 
       const showSerialNumber = document.getElementById("serialNumber").checked;
       const startSerial =
@@ -155,8 +153,7 @@ async function processPDF(file) {
                      size - 1,
                      name,
                      baseFontSize,
-                     1,
-                     0.2
+                     1
                   );
                }
             }

@@ -20,8 +20,7 @@ h1 {
    grid-template-rows: 60px 50px 50px 1fr;
    height: 100%;
    width: 100%;
-   max-width: 600px;
-   background: light-dark(white, #000);
+   max-width: 650px;
    transition: all 0.3s ease-in-out;
 }
 
@@ -32,8 +31,8 @@ h1 {
    width: auto;
    border-radius: 8px;
    overflow: hidden;
-   background: light-dark(white, #1a1a1a);
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+   box-shadow: 0 4px 8px #0000001a;
    transition: all 0.3s ease-in-out;
 }
 
