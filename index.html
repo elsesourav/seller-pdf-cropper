@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/png" href="./src/icon.png" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>PDF Scanner & Cropper</title>
+      <link rel="stylesheet" href="./css/index.css" />
+
+      <script src="./js/libs/pdf.min.js"></script>
+      <script src="./js/libs/pdf-lib.min.js"></script>
+      <script src="./js/libs/download.min.js"></script>
+
+      <script src="./js/utils.js" defer></script>
+      <script src="./js/app.js" defer></script>
+   </head>
+   <body>
+      <!-- Custom alert HTML -->
+      <div class="alert-overlay" id="alertOverlay"></div>
+      <div class="custom-alert" id="customAlert">
+         <div class="alert-content">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-message" id="alertMessage"></div>
+            <button class="alert-button" onclick="closeAlert()">OK</button>
+         </div>
+      </div>
+
+      <div class="container">
+         <h1>SELLER PDF CROPPER</h1>
+         <form id="pdfForm" novalidate>
+            <label class="file-upload" for="file-upload">Choose PDF</label>
+            <input type="file" id="file-upload" name="pdf" accept=".pdf" />
+            <span id="selectedFileName"></span>
+            <div class="select-container">
+               <label>Select Type</label>
+               <div class="toggle-container">
+                  <input
+                     type="radio"
+                     id="type1"
+                     name="crop"
+                     value="type1"
+                     checked
+                  />
+                  <label for="type1" class="toggle-label">Label</label>
+                  <input
+                     type="radio"
+                     id="type2"
+                     name="crop"
+                     value="type2"
+                  />
+                  <label for="type2" class="toggle-label">Bill</label>
+               </div>
+            </div>
+            <div class="checkbox-container">
+               <input
+                  type="checkbox"
+                  id="serialNumber"
+                  name="showSerialNumber"
+                  checked
+               />
+               <p>Show Serial Number</p>
+            </div>
+
+            <div class="serial-input-container" id="serialInputContainer">
+               <p>Start From:</p>
+               <input
+                  type="number"
+                  id="startSerial"
+                  name="startSerial"
+                  class="serial-input"
+                  value="1"
+                  min="1"
+               />
+            </div>
+
+            <div class="checkbox-container" id="productNameContainer">
+               <input
+                  type="checkbox"
+                  id="showProductName"
+                  name="showProductName"
+                  checked
+               />
+               <p>Show Product Name</p>
+            </div>
+
+            <button type="submit">Process PDF</button>
+            <p class="upload-label">* Only PDF files allowed</p>
+         </form>
+      </div>
+
+      <footer>&copy; 2025 SouravBarui. All Rights Reserved.</footer>
+   </body>
+</html>

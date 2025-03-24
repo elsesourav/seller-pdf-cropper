@@ -27,7 +27,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 100
    },
-   "pa_py 100": {
+   "pa_py100": {
       "SKU_ID": "pa_py 100",
       "NEW_SKU_ID": "PAPAYA__100__PIECE__MODIFY",
       "NAME": "PAPAYA",
@@ -62,7 +62,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 1
    },
-
    "ful_ko_phi_20p_5": {
       "SKU_ID": "ful_ko_phi_20p_5",
       "NEW_SKU_ID": "CAULIFLOWER__20__PIECE__MODIFY",
@@ -77,7 +76,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 28
    },
-
    "lo_tus_pcs-46": {
       "SKU_ID": "lo_tus_pcs-46",
       "NEW_SKU_ID": "LOTUS__46__PIECE__MODIFY",
@@ -484,7 +482,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 1200
    },
-   "tomato seed 50": {
+   "tomatoseed50": {
       "SKU_ID": "tomato seed 50",
       "NEW_SKU_ID": "TOMATO__30__PIECE__MODIFY",
       "NAME": "TOMATO",
@@ -498,7 +496,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 130
    },
-   "jhi_nge 35": {
+   "jhi_nge35": {
       "SKU_ID": "jhi_nge 35",
       "NEW_SKU_ID": "RIDGE GOURD__35__PIECE__MODIFY",
       "NAME": "RIDGE GOURD",
@@ -617,7 +615,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 20
    },
-
    "br2_in_1000_jal": {
       "SKU_ID": "br2_in_1000_jal",
       "NEW_SKU_ID": "BRINJAL__1000__PIECE__MODIFY",
@@ -1073,7 +1070,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 108
    },
-
    "ONI-ON_200P_2": {
       "SKU_ID": "ONI-ON_200P_2",
       "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
@@ -1214,7 +1210,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 150
    },
-
    "BOR-BOTI_65P_1": {
       "SKU_ID": "BOR-BOTI_65P_1",
       "NEW_SKU_ID": "BEAN__65__PIECE__MODIFY",
@@ -1432,7 +1427,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 280
    },
-
    "lo_tu_s13": {
       "SKU_ID": "lo_tu_s13",
       "NEW_SKU_ID": "LOTUS__13__PIECE__MODIFY",
@@ -1454,7 +1448,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 24
    },
-
    "pe-pe_10G_1": {
       "SKU_ID": "pe-pe_10G_1",
       "NEW_SKU_ID": "PAPAYA__10__G__MODIFY",
@@ -1483,7 +1476,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 29
    },
-
    "da_li_y_a_pcs-10": {
       "SKU_ID": "da_li_y_a_pcs-10",
       "NEW_SKU_ID": "DAHLIA__10__PIECE__MODIFY",
@@ -1666,7 +1658,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 250
    },
-
    "ga-da-ph-ul-Y_80p_1": {
       "SKU_ID": "ga-da-ph-ul-Y_80p_1",
       "NEW_SKU_ID": "MARIGOLD__80__PIECE__MODIFY",
@@ -1688,7 +1679,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 180
    },
-
    "u_c_10_che": {
       "SKU_ID": "u_c_10_che",
       "NEW_SKU_ID": "BITTER GOURD__10__PIECE__MODIFY",
@@ -1717,7 +1707,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 25
    },
-
    "lo-tu-s_18p_1": {
       "SKU_ID": "lo-tu-s_18p_1",
       "NEW_SKU_ID": "LOTUS__18__PIECE__MODIFY",
@@ -1774,7 +1763,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 20
    },
-
    "ful_ko_phi_200p_5": {
       "SKU_ID": "ful_ko_phi_200p_5",
       "NEW_SKU_ID": "CAULIFLOWER__200__PIECE__MODIFY",
@@ -1817,7 +1805,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 7
    },
-
    "SOSA_200P_1": {
       "SKU_ID": "SOSA_200P_1",
       "NEW_SKU_ID": "CUCUMBER__200__PIECE__MODIFY",
@@ -1846,7 +1833,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 200
    },
-
    "da_liy_a_pcs-66": {
       "SKU_ID": "da_liy_a_pcs-66",
       "NEW_SKU_ID": "DAHLIA__66__PIECE__MODIFY",
@@ -2120,7 +2106,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 36
    },
-
    "ONI-ON_200P_19": {
       "SKU_ID": "ONI-ON_200P_19",
       "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
@@ -2135,7 +2120,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 16000
    },
-
    "BADHA-KOPI_130P_1": {
       "SKU_ID": "BADHA-KOPI_130P_1",
       "NEW_SKU_ID": "CABBAGE__130__PIECE__MODIFY",
@@ -2150,7 +2134,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 17
    },
-
    "BADHA-KOPI_449P_1": {
       "SKU_ID": "BADHA-KOPI_449P_1",
       "NEW_SKU_ID": "CABBAGE__240__PIECE__MODIFY",
@@ -2312,7 +2295,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 16
    },
-
    "pa-la-ng_175P_3": {
       "SKU_ID": "pa-la-ng_175P_3",
       "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
@@ -2460,7 +2442,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 50
    },
-
    "ONI-ON_200P_10": {
       "SKU_ID": "ONI-ON_200P_10",
       "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
@@ -2965,7 +2946,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 100
    },
-
    "BEGUN_500P_3": {
       "SKU_ID": "BEGUN_500P_3",
       "NEW_SKU_ID": "BRINJAL__500__PIECE__MODIFY",
@@ -3120,7 +3100,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 28
    },
-
    "ONI-ON_200P_12": {
       "SKU_ID": "ONI-ON_200P_12",
       "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
@@ -3142,7 +3121,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 235
    },
-
    "pa-la-ng_260p_1": {
       "SKU_ID": "pa-la-ng_260p_1",
       "NEW_SKU_ID": "SPINACH__260__PIECE__MODIFY",
@@ -3171,7 +3149,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 30
    },
-
    "pe-pe_200p_1": {
       "SKU_ID": "pe-pe_200p_1",
       "NEW_SKU_ID": "PAPAYA__200__PIECE__MODIFY",
@@ -3235,7 +3212,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 25
    },
-
    "lo_tu_s10pcs": {
       "SKU_ID": "lo_tu_s10pcs",
       "NEW_SKU_ID": "LOTUS__10__PIECE__MODIFY",
@@ -3271,7 +3247,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 21
    },
-
    "BEGUN_45P_1": {
       "SKU_ID": "BEGUN_45P_1",
       "NEW_SKU_ID": "BRINJAL__45__PIECE__MODIFY",
@@ -3279,7 +3254,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 45
    },
-
    "pa-la-ng_360P_1": {
       "SKU_ID": "pa-la-ng_360P_1",
       "NEW_SKU_ID": "SPINACH__360__PIECE__MODIFY",
@@ -3308,7 +3282,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 150
    },
-
    "l_ot_u_s20p_cs": {
       "SKU_ID": "l_ot_u_s20p_cs",
       "NEW_SKU_ID": "LOTUS__20__PIECE__MODIFY",
@@ -3379,7 +3352,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 150
    },
-
    "SOSA_155P_1": {
       "SKU_ID": "SOSA_155P_1",
       "NEW_SKU_ID": "CUCUMBER__155__PIECE__MODIFY",
@@ -3394,7 +3366,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 444
    },
-
    "ONI-ON_200P_16": {
       "SKU_ID": "ONI-ON_200P_16",
       "NEW_SKU_ID": "ONION__200__PIECE__MODIFY",
@@ -3402,7 +3373,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 200
    },
-
    "CHILLI_300P_1": {
       "SKU_ID": "CHILLI_300P_1",
       "NEW_SKU_ID": "CHILLI__300__PIECE__MODIFY",
@@ -3431,7 +3401,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 250
    },
-
    "pa-la-ng_175P_1": {
       "SKU_ID": "pa-la-ng_175P_1",
       "NEW_SKU_ID": "SPINACH__175__PIECE__MODIFY",
@@ -3446,7 +3415,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 20
    },
-
    "BADHA-KOPI_290P_2": {
       "SKU_ID": "BADHA-KOPI_290P_2",
       "NEW_SKU_ID": "CABBAGE__290__PIECE__MODIFY",
@@ -3545,7 +3513,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 150
    },
-
    "t_o_ma_to50p": {
       "SKU_ID": "t_o_ma_to50p",
       "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
@@ -3560,7 +3527,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 10
    },
-
    "ONI-ON_500P_3": {
       "SKU_ID": "ONI-ON_500P_3",
       "NEW_SKU_ID": "ONION__500__PIECE__MODIFY",
@@ -3589,7 +3555,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 30
    },
-
    "pa-la-ng_2G_2": {
       "SKU_ID": "pa-la-ng_2G_2",
       "NEW_SKU_ID": "SPINACH__2__G__MODIFY",
@@ -3849,11 +3814,10 @@
       "TYPE": "PIECE",
       "QUANTITY": 150
    },
-
    "jhi_nge50": {
-      "SKU_ID": "jhi_nge50",
-      "NEW_SKU_ID": "RIDGE GOURD__50__PIECE__MODIFY",
-      "NAME": "RIDGE GOURD",
+      "SKU_ID": "jhi_nge 50",
+      "NEW_SKU_ID": "PAPAYA__50__PIECE__MODIFY",
+      "NAME": "PAPAYA",
       "TYPE": "PIECE",
       "QUANTITY": 50
    },
@@ -3955,8 +3919,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 300
    },
-
-   "TOMATO SEED 50P": {
+   "TOMATOSEED50P": {
       "SKU_ID": "TOMATO SEED 50P",
       "NEW_SKU_ID": "TOMATO__50__PIECE__MODIFY",
       "NAME": "TOMATO",
@@ -3970,7 +3933,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 200
    },
-
    "t_o_ma_to_1000pcs": {
       "SKU_ID": "t_o_ma_to_1000pcs",
       "NEW_SKU_ID": "TOMATO__1000__PIECE__MODIFY",
@@ -4153,7 +4115,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 40
    },
-
    "BEGUN_100P_2": {
       "SKU_ID": "BEGUN_100P_2",
       "NEW_SKU_ID": "BRINJAL__100__PIECE__MODIFY",
@@ -4217,7 +4178,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 100
    },
-
    "CAPSICUM_95P_1": {
       "SKU_ID": "CAPSICUM_95P_1",
       "NEW_SKU_ID": "CAPSICUM__95__PIECE__MODIFY",
@@ -4302,7 +4262,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 30
    },
-
    "BADHA-KOPI_1250P_2": {
       "SKU_ID": "BADHA-KOPI_1250P_2",
       "NEW_SKU_ID": "CABBAGE__1250__PIECE__MODIFY",
@@ -4681,7 +4640,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 600
    },
-
    "SOSA_215P_1": {
       "SKU_ID": "SOSA_215P_1",
       "NEW_SKU_ID": "CUCUMBER__215__PIECE__MODIFY",
@@ -4703,7 +4661,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 20
    },
-
    "da_liy_a_pcs-50": {
       "SKU_ID": "da_liy_a_pcs-50",
       "NEW_SKU_ID": "DAHLIA__50__PIECE__MODIFY",
@@ -4928,7 +4885,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 1
    },
-   "pa_py 185": {
+   "pa_py185": {
       "SKU_ID": "pa_py 185",
       "NEW_SKU_ID": "PAPAYA__185__PIECE__MODIFY",
       "NAME": "PAPAYA",
@@ -4977,7 +4934,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 1500
    },
-
    "ful_ko_phi_5g_2": {
       "SKU_ID": "ful_ko_phi_5g_2",
       "NEW_SKU_ID": "CAULIFLOWER__5__G__MODIFY",
@@ -5027,7 +4983,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 24
    },
-   "pa_py 240": {
+   "pa_py240": {
       "SKU_ID": "pa_py 240",
       "NEW_SKU_ID": "PAPAYA__240__PIECE__MODIFY",
       "NAME": "PAPAYA",
@@ -5090,14 +5046,14 @@
       "TYPE": "PIECE",
       "QUANTITY": 40
    },
-   "pa-py 320": {
+   "pa-py320": {
       "SKU_ID": "pa-py 320",
       "NEW_SKU_ID": "PAPAYA__320__PIECE__MODIFY",
       "NAME": "PAPAYA",
       "TYPE": "PIECE",
       "QUANTITY": 320
    },
-   "pa_py 56": {
+   "pa_py56": {
       "SKU_ID": "pa_py 56",
       "NEW_SKU_ID": "PAPAYA__56__PIECE__MODIFY",
       "NAME": "PAPAYA",
@@ -5202,14 +5158,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 17
    },
-   "jhi_nge 50": {
-      "SKU_ID": "jhi_nge 50",
-      "NEW_SKU_ID": "PAPAYA__50__PIECE__MODIFY",
-      "NAME": "PAPAYA",
-      "TYPE": "PIECE",
-      "QUANTITY": 50
-   },
-   "pa_py 30": {
+   "pa_py30": {
       "SKU_ID": "pa_py 30",
       "NEW_SKU_ID": "PAPAYA__30__PIECE__MODIFY",
       "NAME": "PAPAYA",
@@ -5244,7 +5193,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 120
    },
-   "pa-py 360": {
+   "pa-py360": {
       "SKU_ID": "pa-py 360",
       "NEW_SKU_ID": "PAPAYA__360__PIECE__MODIFY",
       "NAME": "PAPAYA",
@@ -5258,7 +5207,7 @@
       "TYPE": "PIECE",
       "QUANTITY": 16
    },
-   "pa_py 108": {
+   "pa_py108": {
       "SKU_ID": "pa_py 108",
       "NEW_SKU_ID": "PAPAYA__108__PIECE__MODIFY",
       "NAME": "PAPAYA",
@@ -5321,7 +5270,6 @@
       "TYPE": "PIECE",
       "QUANTITY": 10
    },
-
    "pui-shak_60P_1": {
       "SKU_ID": "pui-shak_60P_1",
       "NEW_SKU_ID": "MALABAR SPINACH__60__PIECE__MODIFY",
