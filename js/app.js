@@ -18,7 +18,7 @@ serialNumberCheckbox.addEventListener("change", (e) => {
 
 fileInput.addEventListener("change", () => {
    fileNameDisplay.textContent =
-      fileInput.files?.[0].name || "No file selected";
+      fileInput?.files?.[0].name || "No file selected";
 });
 
 document.querySelectorAll(`input[name="crop"]`).forEach((radio) => {
@@ -177,19 +177,30 @@ async function processPDF(file) {
          type: "application/pdf",
       });
 
+      currentPdfBlob = pdfBlob;
+
       const reader = new FileReader();
       reader.readAsDataURL(pdfBlob);
       reader.onloadend = () => {
-         const pdfDataUrl = reader.result;
-         sessionStorage.setItem("pdfDataUrl", pdfDataUrl);
+         const pdfViewer = document.getElementById("pdf-viewer");
+         const viewerFileName = document.getElementById("viewerFileName");
+         const pdfViewerModal = document.getElementById("pdfViewerModal");
 
-         if (
-            !sessionStorage.getItem("selectedFileName") &&
-            fileInput.files[0]
-         ) {
-            sessionStorage.setItem("selectedFileName", fileInput.files[0].name);
+         const blobUrl = URL.createObjectURL(pdfBlob);
+         pdfViewer.src = blobUrl;
+
+         if (fileInput.files[0]) {
+            viewerFileName.textContent = fileInput.files[0].name;
          }
-         window.location.href = "./viewer.html";
+
+         const cleanupBlobUrl = () => {
+            URL.revokeObjectURL(blobUrl);
+            pdfViewerModal.removeEventListener("hidden", cleanupBlobUrl);
+         };
+         pdfViewerModal.addEventListener("hidden", cleanupBlobUrl);
+
+         // Show the modal
+         pdfViewerModal.classList.add("show");
       };
    } catch (error) {
       console.error("Error processing PDF:", error);
@@ -197,24 +208,64 @@ async function processPDF(file) {
    }
 }
 
-window.addEventListener("load", () => {
-   sessionStorage.removeItem("isNavigatingBack");
+// Initialize modal functionality
+const pdfViewerModal = document.getElementById("pdfViewerModal");
+const closeModal = document.getElementById("closeModal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const downloadPdfBtn = document.getElementById("downloadPdfBtn");
+let currentPdfBlob = null;
 
-   const savedFileName = sessionStorage.getItem("selectedFileName");
-   if (savedFileName) {
-      fileNameDisplay.textContent = savedFileName;
-   }
+// Function to close the PDF viewer modal
+function closePdfViewerModal() {
+   pdfViewerModal.classList.remove("show");
+   document.getElementById("pdf-viewer").src = "";
+   currentPdfBlob = null;
+   pdfViewerModal.dispatchEvent(new CustomEvent('hidden'));
+}
 
-   if (performance.navigation && performance.navigation.type === 1) {
-      sessionStorage.removeItem("selectedFileName");
-      fileNameDisplay.textContent = "No file selected";
+// Event listener for the close buttons
+closeModal.addEventListener("click", closePdfViewerModal);
+closeModalBtn.addEventListener("click", closePdfViewerModal);
+
+// Close modal when clicking outside the content
+pdfViewerModal.addEventListener("click", (e) => {
+   if (e.target === pdfViewerModal) {
+      closePdfViewerModal();
    }
 });
 
-window.addEventListener("beforeunload", (event) => {
-   if (event.currentTarget.location.href.includes("viewer.html")) {
-      sessionStorage.setItem("isNavigatingBack", "true");
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+   if (e.key === "Escape" && pdfViewerModal.classList.contains("show")) {
+      closePdfViewerModal();
    }
+});
+
+// Download PDF button functionality
+downloadPdfBtn.addEventListener("click", () => {
+   if (currentPdfBlob && fileInput.files[0]) {
+      const fileName = fileInput.files[0].name.replace(
+         ".pdf",
+         "_processed.pdf"
+      );
+      const url = URL.createObjectURL(currentPdfBlob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+   }
+});
+
+window.addEventListener("load", () => {
+   // Clear any previous session data
+   sessionStorage.removeItem("isNavigatingBack");
+   sessionStorage.removeItem("pdfDataUrl");
+   sessionStorage.removeItem("selectedFileName");
+
+   fileNameDisplay.textContent = "No file selected";
 });
 
 form.addEventListener("submit", async (e) => {

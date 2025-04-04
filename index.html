@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>PDF Scanner & Cropper</title>
       <link rel="stylesheet" href="./css/index.css" />
+      <link rel="stylesheet" href="./css/modal.css" />
 
       <script src="./js/libs/pdf.min.js"></script>
       <script src="./js/libs/pdf-lib.min.js"></script>
@@ -22,6 +23,26 @@
             <div class="alert-icon">⚠️</div>
             <div class="alert-message" id="alertMessage"></div>
             <button class="alert-button" onclick="closeAlert()">OK</button>
+         </div>
+      </div>
+
+      <!-- PDF Viewer Modal -->
+      <div class="pdf-viewer-modal" id="pdfViewerModal">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h2>PDF VIEWER</h2>
+               <span class="close-modal" id="closeModal">&times;</span>
+            </div>
+            <div class="file-info">
+               <p id="viewerFileName">No file selected</p>
+            </div>
+            <div class="pdf-container">
+               <iframe id="pdf-viewer"></iframe>
+            </div>
+            <div class="modal-footer">
+               <button id="downloadPdfBtn" class="modal-button download-button">Download PDF</button>
+               <button id="closeModalBtn" class="modal-button close-button">Close</button>
+            </div>
          </div>
       </div>
 
