@@ -15,23 +15,43 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
+  type MouseEvent as ReactMouseEvent,
   type ReactNode,
 } from "react";
+import { flushSync } from "react-dom";
 
 const THEME_MODE_KEY = "seller-theme-mode";
-const COLORS_KEY = "es-theme-colors";
 const TACTILE_KEY = "es-tactile-shadows";
+
+export interface ThemeTransitionOrigin {
+  clientX?: number;
+  clientY?: number;
+}
+
+interface ViewTransitionHandle {
+  skipTransition?: () => void;
+  ready?: Promise<void>;
+  finished?: Promise<void>;
+}
 
 interface ThemeModeContextValue {
   themeMode: ThemeMode;
-  setThemeMode: (mode: ThemeMode) => void;
+  setThemeMode: (
+    mode: ThemeMode,
+    origin?: ThemeTransitionOrigin | ReactMouseEvent | MouseEvent,
+  ) => void;
+  cycleThemeMode: (
+    origin?: ThemeTransitionOrigin | ReactMouseEvent | MouseEvent,
+  ) => void;
   resolvedDark: boolean;
 }
 
 const ThemeModeContext = createContext<ThemeModeContextValue>({
   themeMode: "auto",
   setThemeMode: () => {},
+  cycleThemeMode: () => {},
   resolvedDark: true,
 });
 
@@ -47,13 +67,9 @@ function getSystemPrefersDark(): boolean {
 function applyThemeTokens(colors: ThemeColors, isDark: boolean) {
   if (typeof document === "undefined") return;
   const root = document.documentElement;
-  if (isDark) {
-    root.classList.add("dark");
-    root.setAttribute("data-theme", "dark");
-  } else {
-    root.classList.remove("dark");
-    root.setAttribute("data-theme", "light");
-  }
+  root.classList.remove("dark", "light");
+  root.classList.add(isDark ? "dark" : "light");
+  root.setAttribute("data-theme", isDark ? "dark" : "light");
 
   const primary = hexToHslString(colors.primary);
   const background = hexToHslString(colors.background);
@@ -106,8 +122,15 @@ function applyThemeTokens(colors: ThemeColors, isDark: boolean) {
   root.style.setProperty("--radius-2xl", `${colors.radius + 8}px`);
 }
 
+function getColorsForDarkState(dark: boolean): ThemeColors {
+  return dark
+    ? THEME_PRESETS.midnight.colors
+    : THEME_PRESETS["minimal-light"].colors;
+}
+
 /**
- * Provides 3-state (auto / light / dark) theme support without modifying window.location.
+ * Provides 3-state (auto / light / dark) theme support with elsesourav's circular
+ * View Transitions reveal animation, without mutating window.location.
  */
 export function SafeThemeProvider({ children }: { children: ReactNode }) {
   const [themeMode, setThemeModeState] = useState<ThemeMode>(() => {
@@ -128,16 +151,123 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
     return saved !== null ? saved === "true" : true;
   });
 
-  useEffect(() => {
-    if (typeof window === "undefined" || !window.matchMedia) return;
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = (event: MediaQueryListEvent) => setSystemDark(event.matches);
-    setSystemDark(media.matches);
-    media.addEventListener("change", onChange);
-    return () => media.removeEventListener("change", onChange);
-  }, []);
+  const themeModeRef = useRef<ThemeMode>(themeMode);
+  themeModeRef.current = themeMode;
+  const activeTransitionRef = useRef<ViewTransitionHandle | null>(null);
 
-  // Ensure ?theme= URL parameter is never retained
+  const runCircularTransition = useCallback(
+    (
+      applyMutation: () => void,
+      origin?: ThemeTransitionOrigin | ReactMouseEvent | MouseEvent,
+    ) => {
+      const supportsViewTransitions =
+        typeof document !== "undefined" &&
+        "startViewTransition" in document &&
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+
+      let originX =
+        origin && typeof origin.clientX === "number" && origin.clientX > 0
+          ? Math.round(origin.clientX)
+          : null;
+      let originY =
+        origin && typeof origin.clientY === "number" && origin.clientY > 0
+          ? Math.round(origin.clientY)
+          : null;
+
+      if (typeof window !== "undefined" && (originX === null || originY === null)) {
+        const triggerEl = document.querySelector('[aria-label="Change theme"]');
+        if (triggerEl) {
+          const rect = triggerEl.getBoundingClientRect();
+          originX = Math.round(rect.left + rect.width / 2);
+          originY = Math.round(rect.top + rect.height / 2);
+        } else {
+          originX = Math.round(window.innerWidth * 0.85);
+          originY = 28;
+        }
+      }
+
+      const x = originX ?? 100;
+      const y = originY ?? 28;
+      const endRadius =
+        typeof window !== "undefined"
+          ? Math.ceil(
+              Math.hypot(
+                Math.max(x, window.innerWidth - x),
+                Math.max(y, window.innerHeight - y),
+              ),
+            ) + 32
+          : 2500;
+
+      if (!supportsViewTransitions) {
+        applyMutation();
+        return;
+      }
+
+      try {
+        if (activeTransitionRef.current?.skipTransition) {
+          try {
+            activeTransitionRef.current.skipTransition();
+          } catch {
+            // Ignore in-flight skip errors
+          }
+        }
+
+        const doc = document as Document & {
+          startViewTransition?: (cb: () => void) => ViewTransitionHandle;
+        };
+        const transition = doc.startViewTransition?.(() => {
+          flushSync(() => {
+            applyMutation();
+          });
+        });
+
+        if (!transition) {
+          applyMutation();
+          return;
+        }
+
+        activeTransitionRef.current = transition;
+
+        transition.ready
+          ?.then(() => {
+            try {
+              const anim = document.documentElement.animate(
+                {
+                  clipPath: [
+                    `circle(0px at ${x}px ${y}px)`,
+                    `circle(${endRadius}px at ${x}px ${y}px)`,
+                  ],
+                },
+                {
+                  duration: 500,
+                  easing: "ease-in-out",
+                  pseudoElement: "::view-transition-new(root)",
+                  fill: "forwards",
+                },
+              );
+              anim.addEventListener("error", () => {});
+            } catch {
+              // Ignore animate fallback
+            }
+          })
+          .catch(() => {});
+
+        transition.finished
+          ?.catch(() => {})
+          .finally(() => {
+            if (activeTransitionRef.current === transition) {
+              activeTransitionRef.current = null;
+            }
+          });
+      } catch {
+        applyMutation();
+      }
+    },
+    [],
+  );
+
+  // Strip ?theme= param on mount
   useEffect(() => {
     if (typeof window === "undefined") return;
     const url = new URL(window.location.href);
@@ -147,14 +277,36 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // Follow system preference with circular reveal when in auto mode
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (event: MediaQueryListEvent) => {
+      const nextDark = event.matches;
+      if (themeModeRef.current === "auto") {
+        const originX = Math.round(window.innerWidth / 2);
+        runCircularTransition(
+          () => {
+            setSystemDark(nextDark);
+            applyThemeTokens(getColorsForDarkState(nextDark), nextDark);
+          },
+          { clientX: originX, clientY: 0 },
+        );
+      } else {
+        setSystemDark(nextDark);
+      }
+    };
+    setSystemDark(media.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, [runCircularTransition]);
+
   const isDark = themeMode === "auto" ? systemDark : themeMode === "dark";
   const preset: ThemePresetKey =
     customPreset || (isDark ? "midnight" : "minimal-light");
   const colors: ThemeColors = useMemo(() => {
     if (customColors) return customColors;
-    return isDark
-      ? THEME_PRESETS.midnight.colors
-      : THEME_PRESETS["minimal-light"].colors;
+    return getColorsForDarkState(isDark);
   }, [customColors, isDark]);
 
   useEffect(() => {
@@ -167,22 +319,41 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
     }
     try {
       window.localStorage.setItem(THEME_MODE_KEY, themeMode);
-      if (customColors) {
-        window.localStorage.setItem(COLORS_KEY, JSON.stringify(customColors));
-      } else {
-        window.localStorage.removeItem(COLORS_KEY);
-      }
       window.localStorage.setItem(TACTILE_KEY, String(tactileShadows));
     } catch {
       // Ignore storage errors
     }
-  }, [themeMode, colors, isDark, customColors, tactileShadows]);
+  }, [themeMode, colors, isDark, tactileShadows]);
 
-  const setThemeMode = useCallback((mode: ThemeMode) => {
-    setCustomPreset(null);
-    setCustomColors(null);
-    setThemeModeState(mode);
-  }, []);
+  const setThemeMode = useCallback(
+    (
+      mode: ThemeMode,
+      origin?: ThemeTransitionOrigin | ReactMouseEvent | MouseEvent,
+    ) => {
+      if (mode === themeModeRef.current && !customPreset) return;
+      themeModeRef.current = mode;
+      const nextDark = mode === "auto" ? getSystemPrefersDark() : mode === "dark";
+      const nextColors = getColorsForDarkState(nextDark);
+
+      runCircularTransition(() => {
+        setCustomPreset(null);
+        setCustomColors(null);
+        setThemeModeState(mode);
+        applyThemeTokens(nextColors, nextDark);
+      }, origin);
+    },
+    [customPreset, runCircularTransition],
+  );
+
+  const cycleThemeMode = useCallback(
+    (origin?: ThemeTransitionOrigin | ReactMouseEvent | MouseEvent) => {
+      const order: ThemeMode[] = ["auto", "light", "dark"];
+      const idx = order.indexOf(themeModeRef.current);
+      const nextMode = order[(idx + 1) % order.length];
+      setThemeMode(nextMode, origin);
+    },
+    [setThemeMode],
+  );
 
   const setPreset = useCallback((nextPreset: ThemePresetKey) => {
     setCustomPreset(nextPreset);
@@ -202,14 +373,8 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
   );
 
   const toggleDark = useCallback(() => {
-    setCustomPreset(null);
-    setCustomColors(null);
-    setThemeModeState((prev) => {
-      if (prev === "auto") return "dark";
-      if (prev === "dark") return "light";
-      return "auto";
-    });
-  }, []);
+    cycleThemeMode();
+  }, [cycleThemeMode]);
 
   const resetTheme = useCallback(() => {
     setThemeMode("auto");
@@ -234,7 +399,7 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
 
   return (
     <ThemeModeContext.Provider
-      value={{ themeMode, setThemeMode, resolvedDark: isDark }}
+      value={{ themeMode, setThemeMode, cycleThemeMode, resolvedDark: isDark }}
     >
       <ThemeContext.Provider value={themeContextValue}>
         {children}

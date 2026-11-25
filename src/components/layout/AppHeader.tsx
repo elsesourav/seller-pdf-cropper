@@ -1,6 +1,7 @@
 import { useThemeMode } from "@/components/common/SafeThemeProvider";
 import type { AppSection, ThemeMode } from "@/types";
-import { SegmentedControl } from "@elsesourav/react-ui";
+import { Button, SegmentedControl } from "@elsesourav/react-ui";
+import { Monitor, Moon, Sun } from "lucide-react";
 
 interface AppHeaderProps {
   activeSection: AppSection;
@@ -9,11 +10,14 @@ interface AppHeaderProps {
   compareFileCount: number;
 }
 
-const THEME_OPTIONS = [
-  { value: "auto", label: "Auto" },
-  { value: "light", label: "Light" },
-  { value: "dark", label: "Dark" },
-];
+const THEME_META: Record<
+  ThemeMode,
+  { title: string; Icon: typeof Monitor }
+> = {
+  auto: { title: "Theme: Auto (System)", Icon: Monitor },
+  light: { title: "Theme: Light", Icon: Sun },
+  dark: { title: "Theme: Dark", Icon: Moon },
+};
 
 export function AppHeader({
   activeSection,
@@ -21,7 +25,8 @@ export function AppHeader({
   cropperFileCount,
   compareFileCount,
 }: AppHeaderProps) {
-  const { themeMode, setThemeMode } = useThemeMode();
+  const { themeMode, cycleThemeMode } = useThemeMode();
+  const { title, Icon } = THEME_META[themeMode];
 
   const sectionOptions = [
     {
@@ -60,13 +65,18 @@ export function AppHeader({
         </div>
 
         <div className="order-2 shrink-0 sm:order-3">
-          <SegmentedControl
-            variant="primary"
-            label="Theme mode"
-            value={themeMode}
-            onValueChange={(val) => setThemeMode(val as ThemeMode)}
-            options={THEME_OPTIONS}
-          />
+          <Button
+            type="button"
+            variant="outline"
+            size="icon"
+            onClick={(e) => cycleThemeMode(e)}
+            title={title}
+            aria-label="Change theme"
+            data-theme-mode={themeMode}
+            className="h-9 w-9 rounded-xl border-border/80 bg-surface-elevated/80"
+          >
+            <Icon className="h-4 w-4 transition-transform duration-200" />
+          </Button>
         </div>
       </div>
     </header>

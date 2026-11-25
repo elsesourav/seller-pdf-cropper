@@ -1,6 +1,8 @@
 import {
   DEFAULT_MARGINS,
   STANDARD_A4_WIDTH,
+  TEXT_BG_PADDING_X,
+  TEXT_BG_PADDING_Y,
   UI_YIELD_INTERVAL,
 } from "@/constants/pdf";
 import type {
@@ -328,8 +330,8 @@ export async function processUploadedPdfs(params: {
           cropBox,
           isBill,
           serialFontSize: config.serialFontSize,
-          bgPaddingX: config.textBgPaddingX,
-          bgPaddingY: config.textBgPaddingY,
+          bgPaddingX: TEXT_BG_PADDING_X,
+          bgPaddingY: TEXT_BG_PADDING_Y,
         });
       }
 

@@ -5,6 +5,10 @@ export const STANDARD_A4_HEIGHT = 842;
 
 export const CROP_CONFIG_STORAGE_KEY = "seller_pdf_cropper_config_v2";
 
+/** Fixed white backdrop padding behind bottom-left Unique Code and bottom-right Serial */
+export const TEXT_BG_PADDING_X = 3;
+export const TEXT_BG_PADDING_Y = 1;
+
 /** Bounded concurrency & UI-yield intervals tuned for 5,000–10,000 PDFs */
 export const UPLOAD_INSPECT_CONCURRENCY = 10;
 export const PDF_TEXT_CONCURRENCY = 6;
@@ -22,8 +26,6 @@ export const DEFAULT_CROP_CONFIG: CropConfiguration = {
   serialFontSize: 8,
   includeUniqueCode: false,
   uniqueCode: "A",
-  textBgPaddingX: 4,
-  textBgPaddingY: 3,
   skipDuplicatePages: true,
   margins: DEFAULT_MARGINS,
 };

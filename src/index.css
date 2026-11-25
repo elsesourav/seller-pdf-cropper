@@ -162,17 +162,32 @@ body {
   overflow: visible;
 }
 
-/* Smooth theme, button hover, and UI transitions across Light / Dark / Auto */
-html,
-body,
-.app-canvas-bg,
-header,
-[role="radiogroup"],
-[role="button"],
+/* ==========================================================================
+   Circular Theme Switch Transition (W3C View Transitions API + Web Animations)
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-image-pair(root) {
+    isolation: auto;
+  }
+
+  ::view-transition-old(root) {
+    animation: none;
+    z-index: 1;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-new(root) {
+    animation: none;
+    z-index: 9999;
+    mix-blend-mode: normal;
+  }
+}
+
+/* Tactile hover/active transitions for buttons and interactive surfaces */
 button,
-input {
-  transition-property: background-color, border-color, color, fill, stroke, box-shadow, opacity, transform;
-  transition-duration: 220ms;
+[role="button"] {
+  transition-property: transform, border-color, box-shadow, opacity, background-color;
+  transition-duration: 180ms;
   transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 

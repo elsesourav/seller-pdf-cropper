@@ -22,7 +22,6 @@ import {
   type TopLeftBox,
 } from "@/utils/cropGeometry";
 import {
-  Badge,
   Button,
   Modal,
   SegmentedControl,
@@ -33,7 +32,6 @@ import {
   Check,
   Crop,
   RotateCcw,
-  SlidersHorizontal,
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
@@ -69,7 +67,6 @@ export function PdfCropAdjustModal({
   const [isLoadingPreview, setIsLoadingPreview] = useState(false);
   const [zoom, setZoom] = useState<number>(1);
   const [crop, setCrop] = useState<ReactCropType>();
-  const [showManual, setShowManual] = useState(true);
   const [justSaved, setJustSaved] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -122,7 +119,7 @@ export function PdfCropAdjustModal({
     const ro = new ResizeObserver(updateSize);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [open, preview, showManual]);
+  }, [open, preview]);
 
   // Sync editingType when modal opens
   useEffect(() => {
@@ -132,7 +129,6 @@ export function PdfCropAdjustModal({
     setBox(vals);
     setZoom(1);
     setJustSaved(false);
-    setShowManual(true);
   }, [open, documentType]);
 
   // Sync box & ReactCrop when switching Label/Bill tab inside modal or preview loads
@@ -256,8 +252,8 @@ export function PdfCropAdjustModal({
         </div>
       }
       maxWidth="min(1040px, 97vw)"
-      maxHeight="95dvh"
-      className="flex flex-col"
+      maxHeight="94dvh"
+      className="flex h-[90dvh] flex-col sm:h-[94dvh]"
       footer={
         <div className="flex w-full flex-wrap items-center justify-between gap-2">
           <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-muted-foreground">
@@ -283,7 +279,7 @@ export function PdfCropAdjustModal({
         </div>
       }
     >
-      <div className="flex h-[min(76dvh,740px)] min-h-[300px] flex-col gap-2 overflow-hidden">
+      <div className="flex h-full min-h-0 flex-col gap-2 overflow-hidden">
         {/* Top Toolbar */}
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-2">
@@ -337,10 +333,6 @@ export function PdfCropAdjustModal({
               </button>
             </div>
 
-            <Badge variant="outline" size="sm" className="font-mono text-[11px]">
-              T:{topLeftBox.top} L:{topLeftBox.left} • {topLeftBox.width}×{topLeftBox.height}
-            </Badge>
-
             {previewCandidateFiles.length > 1 && (
               <div className="w-40 sm:w-52">
                 <Select
@@ -355,32 +347,21 @@ export function PdfCropAdjustModal({
             )}
           </div>
 
-          <div className="flex items-center gap-1.5">
-            <Button
-              type="button"
-              variant={showManual ? "primary" : "outline"}
-              size="xs"
-              leftIcon={<SlidersHorizontal className="h-3.5 w-3.5" />}
-              onClick={() => setShowManual((v) => !v)}
-            >
-              Inputs
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="xs"
-              leftIcon={<RotateCcw className="h-3.5 w-3.5" />}
-              onClick={handleReset}
-            >
-              Reset
-            </Button>
-          </div>
+          <Button
+            type="button"
+            variant="outline"
+            size="xs"
+            leftIcon={<RotateCcw className="h-3.5 w-3.5" />}
+            onClick={handleReset}
+          >
+            Reset
+          </Button>
         </div>
 
         {/* Interactive Crop Canvas */}
         <div
           ref={containerRef}
-          className="pdf-crop-wrapper custom-scrollbar relative flex min-h-[200px] flex-1 items-start justify-center overflow-auto rounded-2xl border border-border bg-surface-sunken/70 p-2 sm:p-3"
+          className="pdf-crop-wrapper custom-scrollbar relative flex min-h-0 flex-1 items-start justify-center overflow-auto rounded-2xl border border-border bg-surface-sunken/70 p-2 sm:p-3"
         >
           {isLoadingPreview ? (
             <div className="flex h-full w-full flex-col items-center justify-center gap-3">
@@ -417,31 +398,29 @@ export function PdfCropAdjustModal({
         </div>
 
         {/* Compact Top / Left / Width / Height Numeric Inputs */}
-        {showManual && (
-          <div className="grid shrink-0 grid-cols-4 gap-2 rounded-xl border border-border bg-surface-elevated/60 p-2 sm:gap-3 sm:p-2.5">
-            {manualFields.map(({ key, label, min, max }) => (
-              <div key={key} className="flex flex-col gap-1">
-                <label
-                  htmlFor={`crop-${key}`}
-                  className="text-center text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
-                >
-                  {label}
-                </label>
-                <input
-                  id={`crop-${key}`}
-                  type="number"
-                  inputMode="numeric"
-                  min={min}
-                  max={max}
-                  value={topLeftBox[key]}
-                  onChange={(e) => handleManualField(key, e.target.value)}
-                  aria-label={`Crop ${label}`}
-                  className="h-8 w-full rounded-lg border border-border bg-surface px-1 text-center font-mono text-xs font-bold text-foreground shadow-well focus:border-primary focus:outline-none"
-                />
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="grid shrink-0 grid-cols-4 gap-2 rounded-xl border border-border bg-surface-elevated/60 p-2 sm:gap-3 sm:p-2.5">
+          {manualFields.map(({ key, label, min, max }) => (
+            <div key={key} className="flex flex-col gap-1">
+              <label
+                htmlFor={`crop-${key}`}
+                className="text-center text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
+              >
+                {label}
+              </label>
+              <input
+                id={`crop-${key}`}
+                type="number"
+                inputMode="numeric"
+                min={min}
+                max={max}
+                value={topLeftBox[key]}
+                onChange={(e) => handleManualField(key, e.target.value)}
+                aria-label={`Crop ${label}`}
+                className="h-8 w-full rounded-lg border border-border bg-surface px-1 text-center font-mono text-xs font-bold text-foreground shadow-well focus:border-primary focus:outline-none"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </Modal>
   );

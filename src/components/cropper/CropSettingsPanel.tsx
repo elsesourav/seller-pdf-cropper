@@ -1,6 +1,4 @@
-import { STANDARD_A4_HEIGHT, STANDARD_A4_WIDTH } from "@/constants/pdf";
 import type { CropConfiguration, DocumentType } from "@/types";
-import { boxToTopLeft, updateBoxFromTopLeft, type TopLeftBox } from "@/utils/cropGeometry";
 import {
   Badge,
   Button,
@@ -20,42 +18,14 @@ interface CropSettingsPanelProps {
 
 const ALPHABET_KEYS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-const CROP_FIELDS: Array<{ key: keyof TopLeftBox; label: string; min: number; max: number }> = [
-  { key: "top", label: "Top", min: 0, max: STANDARD_A4_HEIGHT - 10 },
-  { key: "left", label: "Left", min: 0, max: STANDARD_A4_WIDTH - 10 },
-  { key: "width", label: "Width", min: 10, max: STANDARD_A4_WIDTH },
-  { key: "height", label: "Height", min: 10, max: STANDARD_A4_HEIGHT },
-];
-
 export function CropSettingsPanel({
   config,
   onUpdate,
   onOpenCropAdjust,
   totalOutputPagesPreview = 0,
 }: CropSettingsPanelProps) {
-  const activeMargins = config.margins[config.documentType];
-  const topLeftBox = boxToTopLeft(activeMargins, STANDARD_A4_HEIGHT);
-
   const selectDocType = (docType: DocumentType) => {
     onUpdate({ documentType: docType });
-  };
-
-  const handleCropFieldChange = (field: keyof TopLeftBox, raw: string) => {
-    const parsed = Number(raw);
-    if (Number.isNaN(parsed)) return;
-    const nextMargins = updateBoxFromTopLeft(
-      activeMargins,
-      field,
-      parsed,
-      STANDARD_A4_WIDTH,
-      STANDARD_A4_HEIGHT,
-    );
-    onUpdate({
-      margins: {
-        ...config.margins,
-        [config.documentType]: nextMargins,
-      },
-    });
   };
 
   const serialRangeText =
@@ -65,7 +35,7 @@ export function CropSettingsPanel({
 
   return (
     <div className="space-y-3">
-      {/* Crop Type (Label / Bill), Top/Left/Width/Height inputs & Visual Adjust */}
+      {/* Crop Type (Label / Bill sliding switch) & Visual Crop Modal Trigger */}
       <Card variant="default" className="space-y-2.5 border-border/80 bg-card/95 p-3.5 sm:p-4">
         <SegmentedControl
           variant="primary"
@@ -79,30 +49,6 @@ export function CropSettingsPanel({
           className="block w-full"
         />
 
-        <div className="grid grid-cols-4 gap-1.5">
-          {CROP_FIELDS.map(({ key, label, min, max }) => (
-            <div key={key} className="flex flex-col gap-1">
-              <label
-                htmlFor={`crop-card-${key}`}
-                className="text-center text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
-              >
-                {label}
-              </label>
-              <input
-                id={`crop-card-${key}`}
-                type="number"
-                inputMode="numeric"
-                min={min}
-                max={max}
-                value={topLeftBox[key]}
-                onChange={(e) => handleCropFieldChange(key, e.target.value)}
-                aria-label={`Crop ${label}`}
-                className="h-8 w-full rounded-lg border border-border bg-surface px-1 text-center font-mono text-xs font-bold text-foreground shadow-well focus:border-primary focus:outline-none"
-              />
-            </div>
-          ))}
-        </div>
-
         <Button
           type="button"
           variant="outline"
@@ -115,8 +61,8 @@ export function CropSettingsPanel({
         </Button>
       </Card>
 
-      {/* Right Side: Serial Number & Size */}
-      <Card variant="default" className="space-y-3 border-border/80 bg-card/95 p-3.5 sm:p-4">
+      {/* Right Side: Serial Number & Size (Smooth Height Accordion) */}
+      <Card variant="default" className="border-border/80 bg-card/95 p-3.5 sm:p-4">
         <div
           role="button"
           tabIndex={0}
@@ -152,9 +98,16 @@ export function CropSettingsPanel({
           </div>
         </div>
 
-        {config.includeSerial && (
-          <div className="animate-ui-enter space-y-2 border-t border-border/70 pt-3">
-            <div className="grid grid-cols-1 gap-2">
+        <div
+          aria-hidden={!config.includeSerial}
+          className={`grid transition-[grid-template-rows,opacity,margin] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            config.includeSerial
+              ? "mt-3 grid-rows-[1fr] opacity-100"
+              : "pointer-events-none mt-0 grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="min-h-0 overflow-hidden">
+            <div className="grid grid-cols-1 gap-2 border-t border-border/70 pt-3">
               <div className="flex items-center justify-between gap-2 rounded-xl border border-border/70 bg-surface-subtle/60 px-3 py-2">
                 <label
                   htmlFor="serial-start-input"
@@ -167,6 +120,7 @@ export function CropSettingsPanel({
                   value={config.startingSerial}
                   min={1}
                   max={999999}
+                  disabled={!config.includeSerial}
                   onChange={(val) => onUpdate({ startingSerial: val })}
                   ariaLabel="Starting serial number"
                 />
@@ -185,17 +139,18 @@ export function CropSettingsPanel({
                   min={5}
                   max={24}
                   unit="pt"
+                  disabled={!config.includeSerial}
                   onChange={(val) => onUpdate({ serialFontSize: val })}
                   ariaLabel="Serial number font size"
                 />
               </div>
             </div>
           </div>
-        )}
+        </div>
       </Card>
 
-      {/* Left Side: Unique Code (A-Z Alphabet Keypad, Default OFF) */}
-      <Card variant="default" className="space-y-3 border-border/80 bg-card/95 p-3.5 sm:p-4">
+      {/* Left Side: Unique Code (A-Z Keypad, Default OFF, Smooth Height Accordion) */}
+      <Card variant="default" className="border-border/80 bg-card/95 p-3.5 sm:p-4">
         <div
           role="button"
           tabIndex={0}
@@ -231,101 +186,67 @@ export function CropSettingsPanel({
           </div>
         </div>
 
-        {config.includeUniqueCode && (
-          <div className="animate-ui-enter space-y-2.5 border-t border-border/70 pt-3">
-            <div
-              role="radiogroup"
-              aria-label="Unique Code Letter"
-              className="grid grid-cols-7 gap-1.5 sm:grid-cols-9"
-            >
-              {ALPHABET_KEYS.map((letter) => {
-                const selected = config.uniqueCode === letter;
-                return (
-                  <button
-                    key={letter}
-                    type="button"
-                    role="radio"
-                    aria-checked={selected}
-                    onClick={() => onUpdate({ uniqueCode: letter })}
-                    className={`flex h-8 items-center justify-center rounded-lg border font-mono text-xs font-bold transition-all duration-150 hover:scale-105 active:scale-95 ${
-                      selected
-                        ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                        : "border-border bg-surface-elevated text-foreground hover:border-primary/50 hover:bg-primary/10"
-                    }`}
-                  >
-                    {letter}
-                  </button>
-                );
-              })}
-            </div>
-
-            {!config.includeSerial && (
-              <div className="flex items-center justify-between gap-2 rounded-xl border border-border/70 bg-surface-subtle/60 px-3 py-2">
-                <label
-                  htmlFor="unique-code-size-input"
-                  className="text-xs font-semibold text-foreground"
-                >
-                  Size
-                </label>
-                <NumberStepper
-                  id="unique-code-size-input"
-                  value={config.serialFontSize}
-                  min={5}
-                  max={24}
-                  unit="pt"
-                  onChange={(val) => onUpdate({ serialFontSize: val })}
-                  ariaLabel="Unique code font size"
-                />
+        <div
+          aria-hidden={!config.includeUniqueCode}
+          className={`grid transition-[grid-template-rows,opacity,margin] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            config.includeUniqueCode
+              ? "mt-3 grid-rows-[1fr] opacity-100"
+              : "pointer-events-none mt-0 grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="min-h-0 overflow-hidden">
+            <div className="space-y-2.5 border-t border-border/70 pt-3">
+              <div
+                role="radiogroup"
+                aria-label="Unique Code Letter"
+                className="grid grid-cols-7 gap-1.5 sm:grid-cols-9"
+              >
+                {ALPHABET_KEYS.map((letter) => {
+                  const selected = config.uniqueCode === letter;
+                  return (
+                    <button
+                      key={letter}
+                      type="button"
+                      role="radio"
+                      aria-checked={selected}
+                      tabIndex={config.includeUniqueCode ? 0 : -1}
+                      onClick={() => onUpdate({ uniqueCode: letter })}
+                      className={`flex h-8 items-center justify-center rounded-lg border font-mono text-xs font-bold transition-all duration-150 hover:scale-105 active:scale-95 ${
+                        selected
+                          ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                          : "border-border bg-surface-elevated text-foreground hover:border-primary/50 hover:bg-primary/10"
+                      }`}
+                    >
+                      {letter}
+                    </button>
+                  );
+                })}
               </div>
-            )}
-          </div>
-        )}
-      </Card>
 
-      {/* Per-Text White Background Padding X & Y (no full-width line wipe) */}
-      {(config.includeSerial || config.includeUniqueCode) && (
-        <Card variant="default" className="animate-ui-enter space-y-2 border-border/80 bg-card/95 p-3.5 sm:p-4">
-          <span className="block text-xs font-semibold text-muted-foreground">
-            Text Background Padding
-          </span>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="flex items-center justify-between gap-1.5 rounded-xl border border-border/70 bg-surface-subtle/60 px-2.5 py-1.5">
-              <label
-                htmlFor="bg-pad-x-input"
-                className="text-xs font-semibold text-foreground"
-              >
-                Pad X
-              </label>
-              <NumberStepper
-                id="bg-pad-x-input"
-                compact
-                value={config.textBgPaddingX}
-                min={0}
-                max={30}
-                onChange={(val) => onUpdate({ textBgPaddingX: val })}
-                ariaLabel="Text background padding X"
-              />
-            </div>
-            <div className="flex items-center justify-between gap-1.5 rounded-xl border border-border/70 bg-surface-subtle/60 px-2.5 py-1.5">
-              <label
-                htmlFor="bg-pad-y-input"
-                className="text-xs font-semibold text-foreground"
-              >
-                Pad Y
-              </label>
-              <NumberStepper
-                id="bg-pad-y-input"
-                compact
-                value={config.textBgPaddingY}
-                min={0}
-                max={20}
-                onChange={(val) => onUpdate({ textBgPaddingY: val })}
-                ariaLabel="Text background padding Y"
-              />
+              {!config.includeSerial && (
+                <div className="flex items-center justify-between gap-2 rounded-xl border border-border/70 bg-surface-subtle/60 px-3 py-2">
+                  <label
+                    htmlFor="unique-code-size-input"
+                    className="text-xs font-semibold text-foreground"
+                  >
+                    Size
+                  </label>
+                  <NumberStepper
+                    id="unique-code-size-input"
+                    value={config.serialFontSize}
+                    min={5}
+                    max={24}
+                    unit="pt"
+                    disabled={!config.includeUniqueCode}
+                    onChange={(val) => onUpdate({ serialFontSize: val })}
+                    ariaLabel="Unique code font size"
+                  />
+                </div>
+              )}
             </div>
           </div>
-        </Card>
-      )}
+        </div>
+      </Card>
 
       {/* Duplicate Page Protection */}
       <Card variant="default" className="border-border/80 bg-card/95 p-3.5 sm:p-4">

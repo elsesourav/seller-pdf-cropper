@@ -148,7 +148,8 @@ export function PdfViewerModal({
         </div>
       }
       maxWidth="min(1260px, 98vw)"
-      maxHeight="97dvh"
+      maxHeight="95dvh"
+      className="flex h-[92dvh] flex-col sm:h-[95dvh]"
       footer={
         <div className="flex w-full flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
@@ -190,7 +191,7 @@ export function PdfViewerModal({
         </div>
       }
     >
-      <div className="flex h-[78dvh] min-h-[380px] flex-col gap-2 overflow-hidden sm:h-[83dvh]">
+      <div className="flex h-full min-h-0 flex-col gap-2 overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-1.5">
           <div className="flex flex-wrap items-center gap-1.5">
             {stats.map((stat) => (
