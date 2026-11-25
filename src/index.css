@@ -1,0 +1,124 @@
+@import "@elsesourav/react-ui/style.css";
+@import "react-image-crop/dist/ReactCrop.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Hide native number input spinners for clean custom steppers */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+/* Tactile dot-grid canvas inspired by es-platform & classic seller-pdf-cropper */
+.app-canvas-bg {
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(hsl(var(--foreground) / 0.08) 1px, transparent 1px),
+    radial-gradient(hsl(var(--primary) / 0.06) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Custom subtle scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--border-strong) / 0.65);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.65);
+}
+
+/* ES-Platform PDF Crop Handle & Selection Styling */
+.pdf-crop-wrapper,
+.pdf-crop-wrapper .ReactCrop {
+  --rc-drag-handle-size: 12px !important;
+  --rc-drag-handle-mobile-size: 14px !important;
+}
+
+.pdf-crop-wrapper .ReactCrop__crop-selection {
+  border: 1.5px solid hsl(var(--primary)) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 4px 14px rgba(0, 0, 0, 0.45) !important;
+  background-image: none !important;
+  animation: none !important;
+}
+
+.pdf-crop-wrapper .ReactCrop__crop-mask {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+.pdf-crop-wrapper .ReactCrop__drag-handle {
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  min-height: 12px !important;
+  max-width: 12px !important;
+  max-height: 12px !important;
+  background-color: #ffffff !important;
+  border: 2px solid hsl(var(--primary)) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4) !important;
+  box-sizing: border-box !important;
+  touch-action: none !important;
+}
+
+.pdf-crop-wrapper .ReactCrop__drag-handle:hover,
+.pdf-crop-wrapper .ReactCrop__drag-handle:focus {
+  background-color: hsl(var(--primary)) !important;
+  border-color: #ffffff !important;
+}
+
+.pdf-crop-wrapper .ReactCrop__drag-handle::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 34px !important;
+  height: 34px !important;
+  transform: translate(-50%, -50%) !important;
+  background: transparent !important;
+}
+
+.pdf-crop-wrapper .ReactCrop .ord-n,
+.pdf-crop-wrapper .ReactCrop .ord-e,
+.pdf-crop-wrapper .ReactCrop .ord-s,
+.pdf-crop-wrapper .ReactCrop .ord-w {
+  display: none !important;
+}
+
+@media (pointer: coarse) {
+  .pdf-crop-wrapper .ReactCrop__drag-handle {
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 14px !important;
+    min-height: 14px !important;
+    max-width: 14px !important;
+    max-height: 14px !important;
+  }
+}

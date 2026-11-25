@@ -1,76 +1,41 @@
-# PDF Scanner and Cropper (Client-Only Version)
+# Seller PDF Cropper & Compare
 
-Created and maintained by Sourav Barui
+Client-side React + Vite + TypeScript + Tailwind CSS application powered by `@elsesourav/react-ui` for cropping shipping labels/invoices, stamping sequential serial numbers, and comparing multiple PDF sets directly in the browser.
 
-## Overview
-This is a client-side only version of the PDF Scanner and Cropper application. It allows you to crop PDFs, add serial numbers, and display product names directly in your browser without requiring a server. The application features a professional PDF viewer with light/dark mode support and advanced text measurement capabilities for optimal document processing.
-
-## How to Use
-
-1. Simply open the `index.html` file in your web browser
-2. Upload a PDF file using the "Choose PDF" button
-3. Select the crop type (Label or Bill)
-4. Configure options:
-   - Show Serial Number: Adds sequential numbering to each page
-   - Start From: Sets the starting number for serial numbering
-   - Show Product Name: Displays product information on each page (only for Label type)
-5. Click "Process PDF" to generate and download the cropped PDF
+> Legacy vanilla JS v1 code has been preserved on the `legacy-v1` branch.
 
 ## Features
 
-- Crop PDFs to predefined dimensions with precise accuracy
-- Add serial numbers to pages with optimized font sizing
-- Extract and display product information with enhanced text measurement
-- Process PDFs entirely in the browser - no server required
-- Automatic download of processed PDFs
-- Professional PDF viewer with light/dark mode support
-- Responsive design with dynamic iframe sizing
-- Canvas-based text measurement for perfect font scaling
-- Improved UI/UX with modern styling
+- **Multi-PDF & N-Set Cropper**:
+  - Upload 1 to 10,000+ PDFs per set with streaming memory-safe file inspection, duplicate-file detection, and virtualized queue rendering.
+  - Add multiple PDF sets (`PDF Set 1`, `PDF Set 2`, ..., `PDF Set N`) with continuous sequential serial numbering (`Start From` + `Serial Size`).
+  - Interactive visual **Crop Area** editor (`Label` and `Bill / Invoice` presets) with zoom, fit, and manual coordinate controls (`Left`, `Bottom`, `Width`, `Height`).
+  - Optional automatic duplicate-page removal across overlapping PDFs.
+- **Compare 2 or N PDF Sets (`Set 1 − (Set 2 ∪ ... ∪ Set N)`)**:
+  - Upload multiple PDFs into **Set 1** and **Set 2** (plus **Add Subtract Set** for 3..N sets).
+  - One-click **Switch ① ⇄ ②** button (and **Make ①** on extra sets) to reverse comparison direction.
+  - Supports Smart ID + Text (`OD*`, `FMPP*`, `FMPC*` + fuzzy fallback), OD ID Only, Fuzzy Match (80%), and Exact Text matching.
+  - Export **Raw Unique PDF** or **Cropped + Serial Numbered PDF** directly from comparison results.
+- **Mobile Responsive & Private**:
+  - Responsive layout, touch-friendly crop handles, mobile canvas page preview with Share & Download, and 100% browser-only processing.
 
-## Technical Details
+## Architecture
 
-- Uses pdf-lib for PDF manipulation
-- Uses PDF.js for text extraction and rendering
-- Uses download.js for file saving
-- All processing happens in the browser
-- User preferences saved in localStorage
-- Advanced canvas-based text measurement system
-- Dynamic iframe sizing for viewer integration
-- Session storage for secure PDF data transfer
-- Optimized rendering with WebGL acceleration
-
-## Dependencies
-
-- pdf-lib: ^1.17.1 - PDF manipulation
-- pdfjs-dist: ^3.11.174 - PDF processing and text extraction
-- downloadjs: ^1.4.7 - File download handling
-
-## Project Structure
-
-```
-seller-pdf-cropper/
-├── index.html     # Main application page
-├── viewer.html    # PDF viewer page
-├── css/
-│   ├── index.css  # Main application styles
-│   └── viewer.css # PDF viewer styles
-├── js/
-│   ├── app.js     # Main application logic
-│   ├── utils.js   # Utility functions for PDF processing
-│   ├── viewer.js  # PDF viewer logic
-│   └── libs/      # JavaScript libraries
-├── src/           # Static assets
-├── changes/       # SKU mapping files
-└── README.md      # Documentation
+```text
+src/
+├── types/          # Domain-separated TypeScript interfaces (crop, upload, matching, compare, ui)
+├── constants/      # PDF dimensions, defaults, concurrency tuning, matching options
+├── utils/          # Formatting, SHA-256/text hashing, localStorage persistence
+├── services/pdf/   # Bounded-concurrency streaming inspection, text extraction, compare & crop engines
+├── hooks/          # useCropConfig, useCompareWorkflow, useVirtualList
+└── components/     # Modular UI components (common, cropper, compare, viewer, layout), all <= 500 lines
 ```
 
-## Online Access
-You can access the application directly through your web browser at: [https://elsesourav.github.io/seller-pdf-corpper](https://elsesourav.github.io/seller-pdf-corpper)
+## Commands
 
-## License
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
-
-Copyright (c) 2025 Sourav Barui. All rights reserved.
-
-Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+```bash
+npm install
+npm run dev
+npm run typecheck
+npm run build
+```

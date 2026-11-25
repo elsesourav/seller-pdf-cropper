@@ -1,114 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <link rel="icon" type="image/png" href="./src/icon.png" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>PDF Scanner & Cropper</title>
-      <link rel="stylesheet" href="./css/index.css" />
-      <link rel="stylesheet" href="./css/modal.css" />
-
-      <script src="./js/libs/pdf.min.js"></script>
-      <script src="./js/libs/pdf-lib.min.js"></script>
-      <script src="./js/libs/download.min.js"></script>
-
-      <script src="./js/utils.js" defer></script>
-      <script src="./js/app.js" defer></script>
-   </head>
-   <body>
-      <!-- Custom alert HTML -->
-      <div class="alert-overlay" id="alertOverlay"></div>
-      <div class="custom-alert" id="customAlert">
-         <div class="alert-content">
-            <div class="alert-icon">⚠️</div>
-            <div class="alert-message" id="alertMessage"></div>
-            <button class="alert-button" onclick="closeAlert()">OK</button>
-         </div>
-      </div>
-
-      <!-- PDF Viewer Modal -->
-      <div class="pdf-viewer-modal" id="pdfViewerModal">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h2>PDF VIEWER</h2>
-               <span class="close-modal" id="closeModal">&times;</span>
-            </div>
-            <div class="file-info">
-               <p id="viewerFileName">No file selected</p>
-            </div>
-            <div class="pdf-container">
-               <iframe id="pdf-viewer"></iframe>
-            </div>
-            <div class="modal-footer">
-               <button id="downloadPdfBtn" class="modal-button download-button">Download PDF</button>
-               <button id="closeModalBtn" class="modal-button close-button">Close</button>
-            </div>
-         </div>
-      </div>
-
-      <div class="container">
-         <h1>SELLER PDF CROPPER</h1>
-         <form id="pdfForm" novalidate>
-            <label class="file-upload" for="file-upload">Choose PDF</label>
-            <input type="file" id="file-upload" name="pdf" accept=".pdf" />
-            <span id="selectedFileName"></span>
-            <div class="select-container">
-               <label>Select Type</label>
-               <div class="toggle-container">
-                  <input
-                     type="radio"
-                     id="type1"
-                     name="crop"
-                     value="type1"
-                     checked
-                  />
-                  <label for="type1" class="toggle-label">Label</label>
-                  <input
-                     type="radio"
-                     id="type2"
-                     name="crop"
-                     value="type2"
-                  />
-                  <label for="type2" class="toggle-label">Bill</label>
-               </div>
-            </div>
-            <div class="checkbox-container">
-               <input
-                  type="checkbox"
-                  id="serialNumber"
-                  name="showSerialNumber"
-                  checked
-               />
-               <p>Show Serial Number</p>
-            </div>
-
-            <div class="serial-input-container" id="serialInputContainer">
-               <p>Start From:</p>
-               <input
-                  type="number"
-                  id="startSerial"
-                  name="startSerial"
-                  class="serial-input"
-                  value="1"
-                  min="1"
-               />
-            </div>
-
-            <div class="checkbox-container" id="productNameContainer">
-               <input
-                  type="checkbox"
-                  id="showProductName"
-                  name="showProductName"
-                  checked
-               />
-               <p>Show Product Name</p>
-            </div>
-
-            <button type="submit">Process PDF</button>
-            <p class="upload-label">* Only PDF files allowed</p>
-         </form>
-      </div>
-
-      <footer>&copy; 2025 SouravBarui. All Rights Reserved.</footer>
-   </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="./icon.png" />
+    <title>Seller PDF Cropper &amp; Compare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
