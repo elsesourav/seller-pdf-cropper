@@ -2,6 +2,8 @@ export type AppSection = "cropper" | "compare";
 
 export type ThemeMode = "auto" | "light" | "dark";
 
+export type PdfChunkSizeSetting = "all" | "50" | "100" | "200" | "500";
+
 export type BadgeTone =
   | "default"
   | "primary"

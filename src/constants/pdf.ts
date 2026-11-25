@@ -4,6 +4,7 @@ export const STANDARD_A4_WIDTH = 595;
 export const STANDARD_A4_HEIGHT = 842;
 
 export const CROP_CONFIG_STORAGE_KEY = "seller_pdf_cropper_config_v2";
+export const VIEWER_CHUNK_SIZE_STORAGE_KEY = "seller_pdf_cropper_chunk_size_v1";
 
 /** Fixed white backdrop padding behind bottom-left Unique Code and bottom-right Serial */
 export const TEXT_BG_PADDING_X = 3;

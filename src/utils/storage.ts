@@ -2,8 +2,13 @@ import {
   CROP_CONFIG_STORAGE_KEY,
   DEFAULT_CROP_CONFIG,
   DEFAULT_MARGINS,
+  VIEWER_CHUNK_SIZE_STORAGE_KEY,
 } from "@/constants/pdf";
-import type { CropConfiguration, PdfMarginsConfig } from "@/types";
+import type {
+  CropConfiguration,
+  PdfChunkSizeSetting,
+  PdfMarginsConfig,
+} from "@/types";
 
 function sanitizeInt(
   value: unknown,
@@ -107,6 +112,36 @@ export function saveCropConfiguration(config: CropConfiguration): void {
       CROP_CONFIG_STORAGE_KEY,
       JSON.stringify(config),
     );
+  } catch {
+    // Ignore storage quota or private mode failures
+  }
+}
+
+const VALID_CHUNK_SIZES = new Set<PdfChunkSizeSetting>([
+  "all",
+  "50",
+  "100",
+  "200",
+  "500",
+]);
+
+export function loadViewerChunkSize(): PdfChunkSizeSetting {
+  if (typeof window === "undefined") return "all";
+  try {
+    const raw = window.localStorage.getItem(VIEWER_CHUNK_SIZE_STORAGE_KEY);
+    if (raw && VALID_CHUNK_SIZES.has(raw as PdfChunkSizeSetting)) {
+      return raw as PdfChunkSizeSetting;
+    }
+  } catch {
+    // Ignore storage read errors
+  }
+  return "all";
+}
+
+export function saveViewerChunkSize(size: PdfChunkSizeSetting): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(VIEWER_CHUNK_SIZE_STORAGE_KEY, size);
   } catch {
     // Ignore storage quota or private mode failures
   }

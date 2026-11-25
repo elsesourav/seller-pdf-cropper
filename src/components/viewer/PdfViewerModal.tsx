@@ -7,8 +7,9 @@ import {
   type PdfChunkRange,
 } from "@/services/pdf/pdfChunks";
 import { renderPdfPagesToImages } from "@/services/pdf/preview";
-import type { RenderedPageThumbnail } from "@/types";
+import type { PdfChunkSizeSetting, RenderedPageThumbnail } from "@/types";
 import { formatCount, formatFileSize } from "@/utils/format";
+import { loadViewerChunkSize, saveViewerChunkSize } from "@/utils/storage";
 import {
   Button,
   Dropdown,
@@ -20,8 +21,6 @@ import {
 import { Download, ExternalLink, FileCheck2, Scissors } from "lucide-react";
 import type { PDFDocument } from "pdf-lib";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-
-type ChunkOption = "all" | "50" | "100" | "200" | "500";
 
 const CHUNK_OPTIONS: DropdownItem[] = [
   { value: "all", label: "All" },
@@ -51,7 +50,9 @@ export function PdfViewerModal({
   extraAction,
 }: PdfViewerModalProps) {
   const isMobile = useIsMobile(768);
-  const [chunkSize, setChunkSize] = useState<ChunkOption>("all");
+  const [chunkSize, setChunkSize] = useState<PdfChunkSizeSetting>(() =>
+    loadViewerChunkSize(),
+  );
   const [activeChunkIndex, setActiveChunkIndex] = useState(0);
   const [totalSourcePages, setTotalSourcePages] = useState(0);
   const [isSplitting, setIsSplitting] = useState(false);
@@ -66,11 +67,10 @@ export function PdfViewerModal({
   const sourceDocRef = useRef<PDFDocument | null>(null);
   const chunkCacheRef = useRef<Map<string, Blob>>(new Map());
 
-  // Reset split selection cleanly whenever modal opens with a new PDF
+  // Reset active chunk page index cleanly when modal opens with a new PDF while preserving user's saved chunkSize
   useEffect(() => {
     sourceDocRef.current = null;
     chunkCacheRef.current.clear();
-    setChunkSize("all");
     setActiveChunkIndex(0);
     setTotalSourcePages(0);
 
@@ -245,6 +245,13 @@ export function PdfViewerModal({
     }
   };
 
+  const handleChunkSizeChange = useCallback((val: string) => {
+    const next = (val || "all") as PdfChunkSizeSetting;
+    setChunkSize(next);
+    setActiveChunkIndex(0);
+    saveViewerChunkSize(next);
+  }, []);
+
   return (
     <Modal
       open={open}
@@ -261,14 +268,14 @@ export function PdfViewerModal({
           </div>
 
           {blob && (
-            <div className="shrink-0 [&_button]:h-8 [&_button]:px-2.5 [&_button]:text-xs">
+            <div
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+              className="shrink-0 [&_button]:h-8 [&_button]:px-2.5 [&_button]:text-xs"
+            >
               <Dropdown
-                aria-label="Chunk size"
                 value={chunkSize}
-                onChange={(val) => {
-                  setChunkSize(val as ChunkOption);
-                  setActiveChunkIndex(0);
-                }}
+                onChange={handleChunkSizeChange}
                 items={CHUNK_OPTIONS}
               />
             </div>
