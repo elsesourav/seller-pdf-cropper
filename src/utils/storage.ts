@@ -28,13 +28,25 @@ function sanitizeMargins(raw: unknown): PdfMarginsConfig {
       ? (obj.bill as Record<string, unknown>)
       : {};
 
+  const rawLabelLeft = sanitizeInt(label.left, DEFAULT_MARGINS.label.left, 0, 2000);
+  const rawLabelBottom = sanitizeInt(label.bottom, DEFAULT_MARGINS.label.bottom, 0, 2000);
+  const rawLabelWidth = sanitizeInt(label.width, DEFAULT_MARGINS.label.width, 10, 2000);
+  const rawLabelHeight = sanitizeInt(label.height, DEFAULT_MARGINS.label.height, 10, 2000);
+  const isOutdatedDefaultLabel =
+    rawLabelLeft === 188 &&
+    rawLabelBottom === 435 &&
+    rawLabelWidth === 219 &&
+    rawLabelHeight === 380;
+
   return {
-    label: {
-      left: sanitizeInt(label.left, DEFAULT_MARGINS.label.left, 0, 2000),
-      bottom: sanitizeInt(label.bottom, DEFAULT_MARGINS.label.bottom, 0, 2000),
-      width: sanitizeInt(label.width, DEFAULT_MARGINS.label.width, 10, 2000),
-      height: sanitizeInt(label.height, DEFAULT_MARGINS.label.height, 10, 2000),
-    },
+    label: isOutdatedDefaultLabel
+      ? { ...DEFAULT_MARGINS.label }
+      : {
+          left: rawLabelLeft,
+          bottom: rawLabelBottom,
+          width: rawLabelWidth,
+          height: rawLabelHeight,
+        },
     bill: {
       left: sanitizeInt(bill.left, DEFAULT_MARGINS.bill.left, 0, 2000),
       bottom: sanitizeInt(bill.bottom, DEFAULT_MARGINS.bill.bottom, 0, 2000),

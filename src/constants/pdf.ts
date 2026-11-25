@@ -15,7 +15,7 @@ export const PDF_TEXT_CONCURRENCY = 6;
 export const UI_YIELD_INTERVAL = 40;
 
 export const DEFAULT_MARGINS: PdfMarginsConfig = {
-  label: { left: 188, bottom: 435, width: 219, height: 380 },
+  label: { left: 188, bottom: 459, width: 219, height: 356 },
   bill: { left: 30, bottom: 70, width: 535, height: 390 },
 };
 

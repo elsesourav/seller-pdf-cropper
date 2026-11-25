@@ -132,7 +132,7 @@ export function CropperSection({
               {progress.active
                 ? "Processing..."
                 : files.length > 0
-                  ? `Crop PDF (${formatCount(totalInputPages)}p)`
+                  ? `Crop PDF (${formatCount(totalInputPages)})`
                   : "Crop PDF"}
             </Button>
 
@@ -145,7 +145,7 @@ export function CropperSection({
                 onClick={() => setViewerOpen(true)}
                 className="w-full"
               >
-                Open Output ({formatCount(result.outputPages)}p)
+                Open Output ({formatCount(result.outputPages)})
               </Button>
             )}
           </Card>
@@ -157,38 +157,6 @@ export function CropperSection({
         onClose={() => setViewerOpen(false)}
         blob={result?.blob || null}
         fileName={result?.fileName || "cropped.pdf"}
-        duplicateDetails={result?.duplicateDetails || []}
-        stats={
-          result
-            ? [
-                { label: "Files", value: formatCount(result.inputFileCount) },
-                { label: "Input", value: `${formatCount(result.totalInputPages)}p` },
-                ...(result.duplicatePagesSkipped > 0
-                  ? [
-                      {
-                        label: "Duplicates Skipped",
-                        value: formatCount(result.duplicatePagesSkipped),
-                        tone: "warning" as const,
-                      },
-                    ]
-                  : []),
-                {
-                  label: "Output",
-                  value: `${formatCount(result.outputPages)}p`,
-                  tone: "success",
-                },
-                ...(result.serialStart !== undefined && result.serialEnd !== undefined
-                  ? [
-                      {
-                        label: "Serial",
-                        value: `#${formatCount(result.serialStart)}–#${formatCount(result.serialEnd)}`,
-                        tone: "primary" as const,
-                      },
-                    ]
-                  : []),
-              ]
-            : []
-        }
       />
     </div>
   );

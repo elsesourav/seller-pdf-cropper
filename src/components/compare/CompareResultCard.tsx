@@ -202,7 +202,7 @@ export function CompareResultCard({
               onClick={onPreviewRaw}
               className="whitespace-nowrap"
             >
-              View PDF ({formatCount(selectedCount)}p)
+              View PDF ({formatCount(selectedCount)})
             </Button>
             <Button
               type="button"
@@ -213,7 +213,7 @@ export function CompareResultCard({
               onClick={onMoveToCropper}
               className="whitespace-nowrap"
             >
-              Crop Label / Bill ({formatCount(selectedCount)}p)
+              Crop Label / Bill ({formatCount(selectedCount)})
             </Button>
           </div>
         </>

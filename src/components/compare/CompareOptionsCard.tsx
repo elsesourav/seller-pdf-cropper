@@ -62,7 +62,7 @@ export function CompareOptionsCard({
         >
           {progress.active
             ? "Comparing..."
-            : `Compare (${formatCount(set1TotalPages)}p − ${formatCount(excludeTotalPages)}p)`}
+            : `Compare (${formatCount(set1TotalPages)} − ${formatCount(excludeTotalPages)})`}
         </Button>
       </div>
 

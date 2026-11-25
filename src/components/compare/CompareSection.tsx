@@ -129,33 +129,6 @@ export function CompareSection({
               }
             : undefined
         }
-        stats={
-          workflow.result
-            ? [
-                {
-                  label: "Set 1",
-                  value: `${formatCount(workflow.result.set1TotalPages)}p`,
-                },
-                {
-                  label: "Set 2",
-                  value: `${formatCount(workflow.result.excludeTotalPages)}p`,
-                },
-                {
-                  label: "Excluded",
-                  value: `${formatCount(workflow.result.excludedCount)}p`,
-                  tone: "warning",
-                },
-                {
-                  label: "Output",
-                  value: `${formatCount(
-                    workflow.selectedUniquePages.length ||
-                      workflow.result.uniquePages.length,
-                  )}p`,
-                  tone: "success",
-                },
-              ]
-            : []
-        }
       />
     </div>
   );

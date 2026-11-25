@@ -1,18 +1,7 @@
 import { renderPdfPagesToImages } from "@/services/pdf/preview";
-import type {
-  DuplicatePageInfo,
-  RenderedPageThumbnail,
-  ViewerStatBadge,
-} from "@/types";
+import type { RenderedPageThumbnail } from "@/types";
 import { formatCount, formatFileSize } from "@/utils/format";
-import {
-  Badge,
-  Button,
-  Modal,
-  SegmentedControl,
-  Spinner,
-  useIsMobile,
-} from "@elsesourav/react-ui";
+import { Button, Modal, Spinner, useIsMobile } from "@elsesourav/react-ui";
 import { Download, ExternalLink, FileCheck2, Scissors } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -21,8 +10,6 @@ interface PdfViewerModalProps {
   onClose: () => void;
   blob: Blob | null;
   fileName: string;
-  stats?: ViewerStatBadge[];
-  duplicateDetails?: DuplicatePageInfo[];
   extraAction?: {
     label: string;
     onClick: () => void;
@@ -35,30 +22,19 @@ export function PdfViewerModal({
   onClose,
   blob,
   fileName,
-  stats = [],
-  duplicateDetails = [],
   extraAction,
 }: PdfViewerModalProps) {
   const isMobile = useIsMobile(768);
   const [blobUrl, setBlobUrl] = useState<string>("");
-  const [viewMode, setViewMode] = useState<"pages" | "embed">(
-    isMobile ? "pages" : "embed",
-  );
   const [renderedPages, setRenderedPages] = useState<RenderedPageThumbnail[]>([]);
   const [totalPdfPages, setTotalPdfPages] = useState<number>(0);
   const [isLoadingPages, setIsLoadingPages] = useState(false);
-  const [showDuplicates, setShowDuplicates] = useState(false);
-
-  useEffect(() => {
-    setViewMode(isMobile ? "pages" : "embed");
-  }, [isMobile, open]);
 
   useEffect(() => {
     if (!open || !blob) {
       setBlobUrl("");
       setRenderedPages([]);
       setTotalPdfPages(0);
-      setShowDuplicates(false);
       return;
     }
 
@@ -70,14 +46,14 @@ export function PdfViewerModal({
   }, [open, blob]);
 
   useEffect(() => {
-    if (!open || !blob || viewMode !== "pages" || renderedPages.length > 0) {
+    if (!open || !blob || !isMobile || renderedPages.length > 0) {
       return;
     }
 
     let cancelled = false;
     setIsLoadingPages(true);
 
-    renderPdfPagesToImages(blob, 1, 10, isMobile ? 1.25 : 1.5)
+    renderPdfPagesToImages(blob, 1, 10, 1.25)
       .then((res) => {
         if (!cancelled) {
           setTotalPdfPages(res.totalPages);
@@ -85,7 +61,7 @@ export function PdfViewerModal({
         }
       })
       .catch(() => {
-        // Ignore thumbnail fallback errors
+        // Ignore mobile canvas fallback errors
       })
       .finally(() => {
         if (!cancelled) setIsLoadingPages(false);
@@ -94,7 +70,7 @@ export function PdfViewerModal({
     return () => {
       cancelled = true;
     };
-  }, [open, blob, viewMode, renderedPages.length, isMobile]);
+  }, [open, blob, renderedPages.length, isMobile]);
 
   const handleLoadMorePages = async () => {
     if (!blob || isLoadingPages) return;
@@ -103,12 +79,7 @@ export function PdfViewerModal({
 
     setIsLoadingPages(true);
     try {
-      const res = await renderPdfPagesToImages(
-        blob,
-        nextStart,
-        10,
-        isMobile ? 1.25 : 1.5,
-      );
+      const res = await renderPdfPagesToImages(blob, nextStart, 10, 1.25);
       setRenderedPages((prev) => [...prev, ...res.pages]);
     } finally {
       setIsLoadingPages(false);
@@ -191,78 +162,16 @@ export function PdfViewerModal({
         </div>
       }
     >
-      <div className="flex h-full min-h-0 flex-col gap-2 overflow-hidden">
-        <div className="flex flex-wrap items-center justify-between gap-1.5">
-          <div className="flex flex-wrap items-center gap-1.5">
-            {stats.map((stat) => (
-              <Badge
-                key={stat.label}
-                variant={stat.tone || "outline"}
-                size="sm"
-                className="font-mono text-[11px]"
-              >
-                {stat.label}: {stat.value}
-              </Badge>
-            ))}
-
-            {duplicateDetails.length > 0 && (
-              <button
-                type="button"
-                onClick={() => setShowDuplicates((s) => !s)}
-                className="rounded-full border border-warning/40 bg-warning/10 px-2 py-0.5 text-[11px] font-semibold text-warning transition-colors hover:bg-warning/20"
-              >
-                {showDuplicates
-                  ? "Hide Skipped"
-                  : `${formatCount(duplicateDetails.length)} Skipped`}
-              </button>
-            )}
-          </div>
-
-          {!isMobile && (
-            <SegmentedControl
-              label="Viewer Mode"
-              value={viewMode}
-              onValueChange={(val) => setViewMode(val as "pages" | "embed")}
-              options={[
-                { value: "embed", label: "PDF Viewer" },
-                { value: "pages", label: "Thumbnails" },
-              ]}
-            />
-          )}
-        </div>
-
-        {showDuplicates && duplicateDetails.length > 0 && (
-          <div className="custom-scrollbar max-h-24 shrink-0 overflow-y-auto rounded-xl border border-warning/30 bg-warning/5 p-2 text-xs">
-            <div className="space-y-1 font-mono text-[11px] text-muted-foreground">
-              {duplicateDetails.slice(0, 200).map((d, i) => (
-                <div
-                  key={`${d.fileName}-${d.pageNumber}-${i}`}
-                  className="flex justify-between gap-2"
-                >
-                  <span className="truncate">
-                    {d.fileName} • p{d.pageNumber}
-                  </span>
-                  <span className="shrink-0 text-foreground">{d.matchedKey}</span>
-                </div>
-              ))}
-              {duplicateDetails.length > 200 && (
-                <p className="pt-1 text-center text-[10px]">
-                  + {formatCount(duplicateDetails.length - 200)} more
-                </p>
-              )}
-            </div>
-          </div>
-        )}
-
+      <div className="flex h-full min-h-0 flex-col overflow-hidden">
         <div className="relative min-h-0 flex-1 overflow-hidden rounded-xl border border-border bg-surface-sunken/70">
-          {viewMode === "embed" && blobUrl ? (
+          {!isMobile && blobUrl ? (
             <iframe
               src={blobUrl}
               title={fileName}
               className="h-full w-full border-0 bg-white"
             />
           ) : (
-            <div className="custom-scrollbar h-full overflow-y-auto p-2 sm:p-2.5">
+            <div className="custom-scrollbar h-full overflow-y-auto p-2">
               {renderedPages.length === 0 && isLoadingPages ? (
                 <div className="flex h-full flex-col items-center justify-center gap-2">
                   <Spinner size="lg" />
