@@ -20,6 +20,8 @@ export const DEFAULT_CROP_CONFIG: CropConfiguration = {
   includeSerial: true,
   startingSerial: 1,
   serialFontSize: 8,
+  includeUniqueCode: false,
+  uniqueCode: "A",
   clearBottomLine: true,
   skipDuplicatePages: true,
   duplicateMatchMethod: "smart",

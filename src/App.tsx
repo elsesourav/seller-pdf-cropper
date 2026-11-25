@@ -16,7 +16,7 @@ function AppShell() {
 
   const [cropperFiles, setCropperFiles] = useState<UploadedPdfFile[]>([]);
 
-  const compareWorkflow = useCompareWorkflow(config);
+  const compareWorkflow = useCompareWorkflow();
 
   const [cropModalOpen, setCropModalOpen] = useState(false);
   const [cropPreviewFiles, setCropPreviewFiles] = useState<UploadedPdfFile[]>([]);
@@ -24,6 +24,11 @@ function AppShell() {
   const handleOpenCropAdjust = useCallback((previewFiles: UploadedPdfFile[]) => {
     setCropPreviewFiles(previewFiles);
     setCropModalOpen(true);
+  }, []);
+
+  const handleMoveOutputToCropper = useCallback((file: UploadedPdfFile) => {
+    setCropperFiles([file]);
+    setActiveSection("cropper");
   }, []);
 
   const compareFileCount = useMemo(
@@ -60,9 +65,7 @@ function AppShell() {
         >
           <CompareSection
             workflow={compareWorkflow}
-            config={config}
-            onUpdateConfig={updateConfig}
-            onOpenCropAdjust={handleOpenCropAdjust}
+            onMoveOutputToCropper={handleMoveOutputToCropper}
           />
         </section>
       </main>

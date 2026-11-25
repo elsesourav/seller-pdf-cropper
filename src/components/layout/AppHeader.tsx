@@ -1,7 +1,6 @@
 import { useThemeMode } from "@/components/common/SafeThemeProvider";
 import type { AppSection, ThemeMode } from "@/types";
-import { Tabs } from "@elsesourav/react-ui";
-import { Crop, GitCompareArrows, Monitor, Moon, Sun } from "lucide-react";
+import { SegmentedControl } from "@elsesourav/react-ui";
 
 interface AppHeaderProps {
   activeSection: AppSection;
@@ -10,14 +9,10 @@ interface AppHeaderProps {
   compareFileCount: number;
 }
 
-const THEME_OPTIONS: Array<{
-  mode: ThemeMode;
-  label: string;
-  Icon: typeof Monitor;
-}> = [
-  { mode: "auto", label: "Auto", Icon: Monitor },
-  { mode: "light", label: "Light", Icon: Sun },
-  { mode: "dark", label: "Dark", Icon: Moon },
+const THEME_OPTIONS = [
+  { value: "auto", label: "Auto" },
+  { value: "light", label: "Light" },
+  { value: "dark", label: "Dark" },
 ];
 
 export function AppHeader({
@@ -27,6 +22,17 @@ export function AppHeader({
   compareFileCount,
 }: AppHeaderProps) {
   const { themeMode, setThemeMode } = useThemeMode();
+
+  const sectionOptions = [
+    {
+      value: "cropper",
+      label: cropperFileCount > 0 ? `PDF Cropper (${cropperFileCount})` : "PDF Cropper",
+    },
+    {
+      value: "compare",
+      label: compareFileCount > 0 ? `Compare PDFs (${compareFileCount})` : "Compare PDFs",
+    },
+  ];
 
   return (
     <header className="sticky top-0 z-30 border-b border-border/80 bg-card/85 backdrop-blur-xl">
@@ -43,81 +49,35 @@ export function AppHeader({
             </h1>
           </div>
 
-          <div
-            role="radiogroup"
-            aria-label="Theme mode"
-            className="inline-flex shrink-0 items-center rounded-lg border border-border bg-surface-subtle p-0.5 sm:hidden"
-          >
-            {THEME_OPTIONS.map(({ mode, label }) => {
-              const active = themeMode === mode;
-              return (
-                <button
-                  key={mode}
-                  type="button"
-                  role="radio"
-                  aria-checked={active}
-                  onClick={() => setThemeMode(mode)}
-                  className={`rounded-md px-2 py-1 text-[11px] font-semibold transition-colors ${
-                    active
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
+          <div className="shrink-0 sm:hidden">
+            <SegmentedControl
+              variant="primary"
+              label="Theme mode"
+              value={themeMode}
+              onValueChange={(val) => setThemeMode(val as ThemeMode)}
+              options={THEME_OPTIONS}
+            />
           </div>
         </div>
 
         <div className="flex items-center justify-between gap-2.5 sm:justify-end">
-          <Tabs
-            variant="pills"
+          <SegmentedControl
+            variant="primary"
+            label="PDF Tools Navigation"
             value={activeSection}
             onValueChange={(val) => onSectionChange(val as AppSection)}
-            label="PDF Tools Navigation"
-            className="w-full sm:w-auto"
-            items={[
-              {
-                value: "cropper",
-                label: "PDF Cropper",
-                icon: <Crop className="h-3.5 w-3.5" />,
-                badge: cropperFileCount > 0 ? cropperFileCount : undefined,
-              },
-              {
-                value: "compare",
-                label: "Compare PDFs",
-                icon: <GitCompareArrows className="h-3.5 w-3.5" />,
-                badge: compareFileCount > 0 ? compareFileCount : undefined,
-              },
-            ]}
+            options={sectionOptions}
+            className="block w-full sm:inline-block sm:w-auto"
           />
 
-          <div
-            role="radiogroup"
-            aria-label="Theme mode"
-            className="hidden shrink-0 items-center rounded-xl border border-border bg-surface-subtle p-0.5 sm:inline-flex"
-          >
-            {THEME_OPTIONS.map(({ mode, label, Icon }) => {
-              const active = themeMode === mode;
-              return (
-                <button
-                  key={mode}
-                  type="button"
-                  role="radio"
-                  aria-checked={active}
-                  onClick={() => setThemeMode(mode)}
-                  className={`inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-1 text-xs font-semibold transition-colors ${
-                    active
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  <Icon className="h-3 w-3" />
-                  <span>{label}</span>
-                </button>
-              );
-            })}
+          <div className="hidden shrink-0 sm:block">
+            <SegmentedControl
+              variant="primary"
+              label="Theme mode"
+              value={themeMode}
+              onValueChange={(val) => setThemeMode(val as ThemeMode)}
+              options={THEME_OPTIONS}
+            />
           </div>
         </div>
       </div>

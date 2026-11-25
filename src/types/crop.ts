@@ -17,6 +17,8 @@ export interface CropConfiguration {
   includeSerial: boolean;
   startingSerial: number;
   serialFontSize: number;
+  includeUniqueCode: boolean;
+  uniqueCode: string;
   clearBottomLine: boolean;
   skipDuplicatePages: boolean;
   duplicateMatchMethod: import("./matching").MatchingMethod;

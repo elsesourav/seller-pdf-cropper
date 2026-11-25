@@ -13,7 +13,7 @@ import {
   Spinner,
   useIsMobile,
 } from "@elsesourav/react-ui";
-import { Download, ExternalLink, FileCheck2, Share2 } from "lucide-react";
+import { Download, ExternalLink, FileCheck2, Scissors, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface PdfViewerModalProps {
@@ -23,6 +23,11 @@ interface PdfViewerModalProps {
   fileName: string;
   stats?: ViewerStatBadge[];
   duplicateDetails?: DuplicatePageInfo[];
+  extraAction?: {
+    label: string;
+    onClick: () => void;
+    disabled?: boolean;
+  };
 }
 
 export function PdfViewerModal({
@@ -32,6 +37,7 @@ export function PdfViewerModal({
   fileName,
   stats = [],
   duplicateDetails = [],
+  extraAction,
 }: PdfViewerModalProps) {
   const isMobile = useIsMobile(768);
   const [blobUrl, setBlobUrl] = useState<string>("");
@@ -186,13 +192,25 @@ export function PdfViewerModal({
             </Button>
             <Button
               type="button"
-              variant="primary"
+              variant="outline"
               size="sm"
               leftIcon={<Download className="h-3.5 w-3.5" />}
               onClick={handleDownload}
             >
               Download PDF
             </Button>
+            {extraAction ? (
+              <Button
+                type="button"
+                variant="primary"
+                size="sm"
+                disabled={extraAction.disabled}
+                leftIcon={<Scissors className="h-3.5 w-3.5" />}
+                onClick={extraAction.onClick}
+              >
+                {extraAction.label}
+              </Button>
+            ) : null}
           </div>
         </div>
       }

@@ -80,10 +80,11 @@ export function getEffectiveCropBox(
   return clampCropBox(margins.label, pageWidth, pageHeight);
 }
 
-function drawSerialNumberOnPage(params: {
+function drawFooterMarksOnPage(params: {
   page: PDFPage;
   font: PDFFont;
-  serialText: string;
+  serialText?: string;
+  uniqueCodeText?: string;
   cropBox: CropBoxMargins;
   isBill: boolean;
   serialFontSize: number;
@@ -93,11 +94,14 @@ function drawSerialNumberOnPage(params: {
     page,
     font,
     serialText,
+    uniqueCodeText,
     cropBox,
     isBill,
     serialFontSize,
     clearBottomLine,
   } = params;
+
+  if (!serialText && !uniqueCodeText) return;
 
   const bandHeight = isBill
     ? Math.max(12, serialFontSize + 4)
@@ -118,46 +122,72 @@ function drawSerialNumberOnPage(params: {
     });
   }
 
-  // Generous region width supports 5-6 digit serial numbers (e.g. 10000+) cleanly
-  const regionWidth = isBill ? 110 : 88;
-  const regionX = isBill
-    ? cropBox.left + 8
-    : cropBox.left + cropBox.width - regionWidth - 8;
+  // Left side: Unique Code (single capital alphabet A-Z)
+  if (uniqueCodeText) {
+    const codeSize = Math.max(5, Math.min(24, serialFontSize));
+    const codeWidth = measureTextWidth(uniqueCodeText, codeSize);
+    const codeX = cropBox.left + 8;
+    const codeY = bandY + (bandHeight - codeSize) / 2 + (isBill ? 0.5 : 0.2);
 
-  let finalSize = Math.max(5, Math.min(24, serialFontSize));
-  const minFont = Math.max(5, Math.floor(finalSize * 0.7));
-  while (
-    finalSize > minFont &&
-    measureTextWidth(serialText, finalSize) > regionWidth - 2
-  ) {
-    finalSize -= 1;
-  }
+    if (isBill || !clearBottomLine) {
+      const padX = 2.5;
+      const padY = 1.5;
+      page.drawRectangle({
+        x: codeX - padX,
+        y: codeY - padY,
+        width: codeWidth + padX * 2,
+        height: codeSize + padY * 2,
+        color: WHITE,
+      });
+    }
 
-  const textWidth = measureTextWidth(serialText, finalSize);
-  const textX = isBill
-    ? regionX
-    : Math.max(regionX, regionX + regionWidth - textWidth);
-  const textY = bandY + (bandHeight - finalSize) / 2 + (isBill ? 0.5 : 0.2);
-
-  if (isBill || !clearBottomLine) {
-    const padX = 2.5;
-    const padY = 1.5;
-    page.drawRectangle({
-      x: textX - padX,
-      y: textY - padY,
-      width: textWidth + padX * 2,
-      height: finalSize + padY * 2,
-      color: WHITE,
+    page.drawText(uniqueCodeText, {
+      x: codeX,
+      y: codeY,
+      size: codeSize,
+      font,
+      color: BLACK,
     });
   }
 
-  page.drawText(serialText, {
-    x: textX,
-    y: textY,
-    size: finalSize,
-    font,
-    color: BLACK,
-  });
+  // Right side: Sequential Serial Number
+  if (serialText) {
+    const regionWidth = isBill ? 110 : 88;
+    const regionX = cropBox.left + cropBox.width - regionWidth - 8;
+
+    let finalSize = Math.max(5, Math.min(24, serialFontSize));
+    const minFont = Math.max(5, Math.floor(finalSize * 0.7));
+    while (
+      finalSize > minFont &&
+      measureTextWidth(serialText, finalSize) > regionWidth - 2
+    ) {
+      finalSize -= 1;
+    }
+
+    const textWidth = measureTextWidth(serialText, finalSize);
+    const textX = Math.max(regionX, regionX + regionWidth - textWidth);
+    const textY = bandY + (bandHeight - finalSize) / 2 + (isBill ? 0.5 : 0.2);
+
+    if (isBill || !clearBottomLine) {
+      const padX = 2.5;
+      const padY = 1.5;
+      page.drawRectangle({
+        x: textX - padX,
+        y: textY - padY,
+        width: textWidth + padX * 2,
+        height: finalSize + padY * 2,
+        color: WHITE,
+      });
+    }
+
+    page.drawText(serialText, {
+      x: textX,
+      y: textY,
+      size: finalSize,
+      font,
+      color: BLACK,
+    });
+  }
 }
 
 /**
@@ -289,11 +319,18 @@ export async function processUploadedPdfs(params: {
       copiedPage.setTrimBox(cropBox.left, cropBox.bottom, cropBox.width, cropBox.height);
       copiedPage.setArtBox(cropBox.left, cropBox.bottom, cropBox.width, cropBox.height);
 
-      if (config.includeSerial) {
-        drawSerialNumberOnPage({
+      const uniqueCodeText = config.includeUniqueCode
+        ? config.uniqueCode.trim().toUpperCase().slice(0, 1)
+        : undefined;
+
+      if (config.includeSerial || uniqueCodeText) {
+        drawFooterMarksOnPage({
           page: copiedPage,
           font: helveticaBold,
-          serialText: String(startSerial + serialOffset),
+          serialText: config.includeSerial
+            ? String(startSerial + serialOffset)
+            : undefined,
+          uniqueCodeText,
           cropBox,
           isBill,
           serialFontSize: config.serialFontSize,

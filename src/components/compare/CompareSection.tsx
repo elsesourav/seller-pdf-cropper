@@ -1,7 +1,7 @@
 import type { useCompareWorkflow } from "@/hooks/useCompareWorkflow";
-import type { CropConfiguration, UploadedPdfFile } from "@/types";
+import type { UploadedPdfFile } from "@/types";
 import { formatCount } from "@/utils/format";
-import { Button } from "@elsesourav/react-ui";
+import { Button, useToast } from "@elsesourav/react-ui";
 import { ArrowLeftRight } from "lucide-react";
 import { useMemo } from "react";
 import { PdfDropzone } from "../common/PdfDropzone";
@@ -11,17 +11,14 @@ import { CompareResultCard } from "./CompareResultCard";
 
 interface CompareSectionProps {
   workflow: ReturnType<typeof useCompareWorkflow>;
-  config: CropConfiguration;
-  onUpdateConfig: (partial: Partial<CropConfiguration>) => void;
-  onOpenCropAdjust: (previewFiles: UploadedPdfFile[]) => void;
+  onMoveOutputToCropper: (file: UploadedPdfFile) => void;
 }
 
 export function CompareSection({
   workflow,
-  config,
-  onUpdateConfig,
-  onOpenCropAdjust,
+  onMoveOutputToCropper,
 }: CompareSectionProps) {
+  const { addToast } = useToast();
   const { sets } = workflow;
   const primarySet = sets[0];
   const secondSet = sets[1];
@@ -44,7 +41,18 @@ export function CompareSection({
     [secondSet.files],
   );
 
-  const canSwap = primarySet.files.length > 0 || secondSet.files.length > 0;
+  const canSwitch = primarySet.files.length > 0 || secondSet.files.length > 0;
+
+  const handleMoveToCropper = async () => {
+    const outputFile = await workflow.createCropperInputFile();
+    if (!outputFile) return;
+    onMoveOutputToCropper(outputFile);
+    addToast({
+      type: "success",
+      title: "Sent to PDF Cropper",
+      description: `Loaded ${formatCount(outputFile.pageCount)} pages into PDF Cropper.`,
+    });
+  };
 
   return (
     <div className="space-y-4">
@@ -62,13 +70,13 @@ export function CompareSection({
             type="button"
             variant="outline"
             size="sm"
-            disabled={!canSwap}
-            onClick={() => workflow.swapSets(false)}
+            disabled={!canSwitch}
+            onClick={workflow.swapSets}
             leftIcon={<ArrowLeftRight className="h-3.5 w-3.5 shrink-0" />}
             className="w-full shrink-0 whitespace-nowrap border-primary/40 bg-surface-elevated font-semibold text-primary hover:border-primary hover:bg-primary/10 lg:w-auto"
-            title="Swap Set 1 and Set 2"
+            title="Switch Set 1 and Set 2"
           >
-            Swap
+            Switch
           </Button>
         </div>
 
@@ -82,22 +90,14 @@ export function CompareSection({
       </div>
 
       <CompareOptionsCard
-        config={config}
-        onUpdateConfig={onUpdateConfig}
-        onOpenCropAdjust={onOpenCropAdjust}
-        set1Files={primarySet.files}
         set1TotalPages={set1TotalPages}
         excludeTotalPages={set2TotalPages}
         matchingMethod={workflow.matchingMethod}
         onMatchingMethodChange={workflow.setMatchingMethod}
         deduplicateSet1={workflow.deduplicateSet1}
         onDeduplicateSet1Change={workflow.setDeduplicateSet1}
-        applyCropOnCompare={workflow.applyCropOnCompare}
-        onApplyCropOnCompareChange={workflow.setApplyCropOnCompare}
         progress={workflow.progress}
-        canSwap={canSwap}
         onRunCompare={() => void workflow.runCompare()}
-        onSwapAndCompare={() => workflow.swapSets(true)}
       />
 
       {workflow.result && (
@@ -111,8 +111,8 @@ export function CompareSection({
           onTogglePage={workflow.togglePageSelection}
           onSelectAll={workflow.selectAllPages}
           onClearAll={workflow.clearAllPages}
-          onSwapAndRecompare={() => workflow.swapSets(true)}
-          onExport={(cropOutput) => void workflow.exportSelectedPages(cropOutput)}
+          onPreviewRaw={() => void workflow.previewRawOutput()}
+          onMoveToCropper={() => void handleMoveToCropper()}
           isBusy={workflow.progress.active}
         />
       )}
@@ -122,6 +122,15 @@ export function CompareSection({
         onClose={() => workflow.setViewerOpen(false)}
         blob={workflow.viewerBlob}
         fileName={workflow.viewerFileName}
+        extraAction={
+          workflow.selectedUniquePages.length > 0
+            ? {
+                label: "Crop Label / Bill",
+                onClick: () => void handleMoveToCropper(),
+                disabled: workflow.progress.active,
+              }
+            : undefined
+        }
         stats={
           workflow.result
             ? [
@@ -146,26 +155,6 @@ export function CompareSection({
                   )}p`,
                   tone: "success",
                 },
-                ...(workflow.viewerIsCropped
-                  ? [
-                      {
-                        label: "Mode",
-                        value: `${config.documentType === "bill" ? "Bill" : "Label"} Cropped`,
-                        tone: "primary" as const,
-                      },
-                    ]
-                  : []),
-                ...(workflow.viewerIsCropped &&
-                workflow.result.serialStart !== undefined &&
-                workflow.result.serialEnd !== undefined
-                  ? [
-                      {
-                        label: "Serial",
-                        value: `#${formatCount(workflow.result.serialStart)}–#${formatCount(workflow.result.serialEnd)}`,
-                        tone: "primary" as const,
-                      },
-                    ]
-                  : []),
               ]
             : []
         }

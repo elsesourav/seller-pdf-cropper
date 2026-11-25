@@ -10,7 +10,6 @@ import {
   Input,
 } from "@elsesourav/react-ui";
 import {
-  ArrowLeftRight,
   CheckCheck,
   Eye,
   Scissors,
@@ -28,8 +27,8 @@ interface CompareResultCardProps {
   onTogglePage: (id: string) => void;
   onSelectAll: () => void;
   onClearAll: () => void;
-  onSwapAndRecompare: () => void;
-  onExport: (cropOutput: boolean) => void;
+  onPreviewRaw: () => void;
+  onMoveToCropper: () => void;
   isBusy: boolean;
 }
 
@@ -46,8 +45,8 @@ export function CompareResultCard({
   onTogglePage,
   onSelectAll,
   onClearAll,
-  onSwapAndRecompare,
-  onExport,
+  onPreviewRaw,
+  onMoveToCropper,
   isBusy,
 }: CompareResultCardProps) {
   const virtual = useVirtualList({
@@ -76,7 +75,7 @@ export function CompareResultCard({
           <div className="mt-1.5 flex flex-wrap items-center gap-1.5 font-mono text-[11px] text-muted-foreground">
             <span>Set 1: {formatCount(result.set1TotalPages)}p</span>
             <span>•</span>
-            <span>Subtract: {formatCount(result.excludeTotalPages)}p</span>
+            <span>Set 2: {formatCount(result.excludeTotalPages)}p</span>
             <span>•</span>
             <span className="text-warning">
               Excluded: {formatCount(result.excludedCount)}p
@@ -85,52 +84,41 @@ export function CompareResultCard({
               <>
                 <span>•</span>
                 <span>
-                  Set 1 Duplicates: {formatCount(result.internalDuplicatesRemoved)}p
+                  Dupes: {formatCount(result.internalDuplicatesRemoved)}p
                 </span>
               </>
             )}
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            size="xs"
-            leftIcon={<ArrowLeftRight className="h-3.5 w-3.5 text-primary" />}
-            onClick={onSwapAndRecompare}
-            className="whitespace-nowrap"
-          >
-            Swap &amp; Re-compare
-          </Button>
-          {result.uniquePages.length > 0 && (
-            <>
-              <Button
-                type="button"
-                variant="secondary"
-                size="xs"
-                leftIcon={<CheckCheck className="h-3.5 w-3.5" />}
-                onClick={onSelectAll}
-              >
-                All
-              </Button>
-              <Button
-                type="button"
-                variant="ghost"
-                size="xs"
-                leftIcon={<Trash2 className="h-3.5 w-3.5" />}
-                onClick={onClearAll}
-              >
-                None
-              </Button>
-            </>
-          )}
-        </div>
+        {result.uniquePages.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2">
+            <Button
+              type="button"
+              variant="secondary"
+              size="xs"
+              leftIcon={<CheckCheck className="h-3.5 w-3.5" />}
+              onClick={onSelectAll}
+            >
+              All
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              size="xs"
+              leftIcon={<Trash2 className="h-3.5 w-3.5" />}
+              onClick={onClearAll}
+            >
+              None
+            </Button>
+          </div>
+        )}
       </div>
 
       {result.uniquePages.length === 0 ? (
         <Alert variant="info" title="No unique pages found">
-          Try <strong>Swap &amp; Re-compare</strong> above for the opposite direction.
+          Every page in Set 1 matched Set 2. Use the <strong>Switch</strong> button
+          between Set 1 and Set 2 to check the reverse direction.
         </Alert>
       ) : (
         <>
@@ -139,7 +127,7 @@ export function CompareResultCard({
               <Input
                 variant="standard"
                 sizeVariant="sm"
-                placeholder="Filter by Order ID, filename, text..."
+                placeholder="Filter Order ID, file..."
                 value={searchQuery}
                 onChange={(e) => onSearchQueryChange(e.target.value)}
                 leftIcon={<Search className="h-3.5 w-3.5 text-muted-foreground" />}
@@ -245,9 +233,10 @@ export function CompareResultCard({
               size="md"
               disabled={!selectedCount || isBusy}
               leftIcon={<Eye className="h-4 w-4" />}
-              onClick={() => onExport(false)}
+              onClick={onPreviewRaw}
+              className="whitespace-nowrap"
             >
-              Preview / Download Raw ({formatCount(selectedCount)}p)
+              View / Download PDF ({formatCount(selectedCount)}p)
             </Button>
             <Button
               type="button"
@@ -255,9 +244,10 @@ export function CompareResultCard({
               size="md"
               disabled={!selectedCount || isBusy}
               leftIcon={<Scissors className="h-4 w-4" />}
-              onClick={() => onExport(true)}
+              onClick={onMoveToCropper}
+              className="whitespace-nowrap"
             >
-              Crop &amp; Number Output ({formatCount(selectedCount)}p)
+              Crop Label / Bill ({formatCount(selectedCount)}p)
             </Button>
           </div>
         </>

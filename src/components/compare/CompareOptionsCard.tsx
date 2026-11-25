@@ -1,56 +1,34 @@
 import { MATCH_METHOD_ITEMS } from "@/constants/matching";
-import type {
-  CropConfiguration,
-  MatchingMethod,
-  ProcessingProgress,
-  UploadedPdfFile,
-} from "@/types";
+import type { MatchingMethod, ProcessingProgress } from "@/types";
 import { formatCount } from "@/utils/format";
 import { Button, Card, Select, SquishSwitch } from "@elsesourav/react-ui";
-import { ArrowLeftRight, Crop, GitCompareArrows } from "lucide-react";
+import { GitCompareArrows } from "lucide-react";
 import { ProgressBanner } from "../common/ProgressBanner";
-import { CropSettingsPanel } from "../cropper/CropSettingsPanel";
 
 interface CompareOptionsCardProps {
-  config: CropConfiguration;
-  onUpdateConfig: (partial: Partial<CropConfiguration>) => void;
-  onOpenCropAdjust: (previewFiles: UploadedPdfFile[]) => void;
-  set1Files: UploadedPdfFile[];
   set1TotalPages: number;
   excludeTotalPages: number;
   matchingMethod: MatchingMethod;
   onMatchingMethodChange: (method: MatchingMethod) => void;
   deduplicateSet1: boolean;
   onDeduplicateSet1Change: (value: boolean) => void;
-  applyCropOnCompare: boolean;
-  onApplyCropOnCompareChange: (value: boolean) => void;
   progress: ProcessingProgress;
-  canSwap: boolean;
   onRunCompare: () => void;
-  onSwapAndCompare: () => void;
 }
 
 export function CompareOptionsCard({
-  config,
-  onUpdateConfig,
-  onOpenCropAdjust,
-  set1Files,
   set1TotalPages,
   excludeTotalPages,
   matchingMethod,
   onMatchingMethodChange,
   deduplicateSet1,
   onDeduplicateSet1Change,
-  applyCropOnCompare,
-  onApplyCropOnCompareChange,
   progress,
-  canSwap,
   onRunCompare,
-  onSwapAndCompare,
 }: CompareOptionsCardProps) {
   return (
     <Card variant="default" className="space-y-3 border-border/80 bg-card/95 p-3.5 sm:p-4">
-      <div className="grid grid-cols-1 gap-2.5 md:grid-cols-3 md:items-center">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:items-center">
         <div>
           <Select
             variant="animated"
@@ -84,89 +62,26 @@ export function CompareOptionsCard({
             />
           </div>
         </div>
-
-        <div
-          role="button"
-          tabIndex={0}
-          onClick={() => onApplyCropOnCompareChange(!applyCropOnCompare)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              onApplyCropOnCompareChange(!applyCropOnCompare);
-            }
-          }}
-          className="flex cursor-pointer items-center justify-between gap-2 rounded-xl border border-border/70 bg-surface-subtle/50 px-3 py-2.5 select-none"
-        >
-          <span className="truncate text-xs font-bold text-foreground">
-            Crop &amp; Serial
-          </span>
-          <div
-            className="flex shrink-0 items-center gap-2"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => onOpenCropAdjust(set1Files)}
-              className="rounded-lg border border-border bg-surface-elevated p-1 text-primary transition-colors hover:border-primary/50"
-              title="Adjust crop"
-              aria-label="Adjust crop"
-            >
-              <Crop className="h-3.5 w-3.5" />
-            </button>
-            <SquishSwitch
-              checked={applyCropOnCompare}
-              onChange={onApplyCropOnCompareChange}
-              size="sm"
-              variant="primary"
-              ariaLabel="Crop and number compare output"
-            />
-          </div>
-        </div>
       </div>
-
-      {applyCropOnCompare && (
-        <div className="border-t border-border/70 pt-3">
-          <CropSettingsPanel
-            config={config}
-            onUpdate={onUpdateConfig}
-            onOpenCropAdjust={() => onOpenCropAdjust(set1Files)}
-            isCompareOutputMode
-          />
-        </div>
-      )}
 
       <ProgressBanner progress={progress} />
 
-      <div className="flex flex-col gap-2 sm:flex-row">
-        <Button
-          type="button"
-          variant="primary"
-          size="lg"
-          isLoading={progress.active}
-          disabled={progress.active}
-          leftIcon={
-            progress.active ? undefined : <GitCompareArrows className="h-4 w-4" />
-          }
-          onClick={onRunCompare}
-          className="flex-1 whitespace-nowrap font-bold"
-        >
-          {progress.active
-            ? "Comparing..."
-            : `Compare (${formatCount(set1TotalPages)}p − ${formatCount(excludeTotalPages)}p)`}
-        </Button>
-
-        <Button
-          type="button"
-          variant="outline"
-          size="lg"
-          disabled={progress.active || !canSwap}
-          leftIcon={<ArrowLeftRight className="h-4 w-4" />}
-          onClick={onSwapAndCompare}
-          className="whitespace-nowrap sm:w-auto"
-        >
-          Swap &amp; Compare
-        </Button>
-      </div>
+      <Button
+        type="button"
+        variant="primary"
+        size="lg"
+        isLoading={progress.active}
+        disabled={progress.active}
+        leftIcon={
+          progress.active ? undefined : <GitCompareArrows className="h-4 w-4" />
+        }
+        onClick={onRunCompare}
+        className="w-full whitespace-nowrap font-bold"
+      >
+        {progress.active
+          ? "Comparing..."
+          : `Compare (${formatCount(set1TotalPages)}p − ${formatCount(excludeTotalPages)}p)`}
+      </Button>
     </Card>
   );
 }

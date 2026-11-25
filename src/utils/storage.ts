@@ -44,6 +44,14 @@ function sanitizeMargins(raw: unknown): PdfMarginsConfig {
   };
 }
 
+function sanitizeUniqueCode(value: unknown): string {
+  if (typeof value === "string") {
+    const clean = value.trim().toUpperCase().replace(/[^A-Z]/g, "");
+    if (clean.length > 0) return clean[0];
+  }
+  return "A";
+}
+
 export function loadCropConfiguration(): CropConfiguration {
   if (typeof window === "undefined") {
     return DEFAULT_CROP_CONFIG;
@@ -70,6 +78,11 @@ export function loadCropConfiguration(): CropConfiguration {
           : true,
       startingSerial: sanitizeInt(parsed.startingSerial, 1, 1, 999999),
       serialFontSize: sanitizeInt(parsed.serialFontSize, 8, 5, 24),
+      includeUniqueCode:
+        parsed.includeUniqueCode !== undefined
+          ? Boolean(parsed.includeUniqueCode)
+          : false,
+      uniqueCode: sanitizeUniqueCode(parsed.uniqueCode),
       clearBottomLine:
         parsed.clearBottomLine !== undefined
           ? Boolean(parsed.clearBottomLine)
