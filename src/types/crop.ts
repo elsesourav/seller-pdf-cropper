@@ -21,7 +21,6 @@ export interface CropConfiguration {
   uniqueCode: string;
   clearBottomLine: boolean;
   skipDuplicatePages: boolean;
-  duplicateMatchMethod: import("./matching").MatchingMethod;
   margins: PdfMarginsConfig;
 }
 

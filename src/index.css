@@ -161,3 +161,63 @@ body {
   max-width: 100%;
   overflow: visible;
 }
+
+/* Smooth theme, button hover, and UI transitions across Light / Dark / Auto */
+html,
+body,
+.app-canvas-bg,
+header,
+[role="radiogroup"],
+[role="button"],
+button,
+input {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, opacity, transform;
+  transition-duration: 220ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+button:not(:disabled):active {
+  transform: translateY(0) scale(0.98);
+}
+
+@keyframes uiEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes itemPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-ui-enter {
+  animation: uiEnter 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-item-pop {
+  animation: itemPopIn 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Keep crop box drag & resize handles responsive at 60fps without transition lag */
+.pdf-crop-wrapper *,
+.pdf-crop-wrapper .ReactCrop__crop-selection,
+.pdf-crop-wrapper .ReactCrop__drag-handle {
+  transition: none !important;
+  transform: none;
+}

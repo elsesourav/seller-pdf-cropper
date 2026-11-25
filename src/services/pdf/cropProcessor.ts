@@ -213,20 +213,16 @@ export async function processUploadedPdfs(params: {
   let fingerprintsByKey = new Map<string, PageFingerprint>();
 
   if (!explicitPages && config.skipDuplicatePages) {
-    onProgress?.(4, "Scanning PDF pages for duplicates...");
-    const fps = await extractAllFingerprints(
-      files,
-      config.duplicateMatchMethod,
-      (done, total, label) => {
-        const pct = total > 0 ? 4 + Math.round((done / total) * 40) : 44;
-        onProgress?.(pct, label);
-      },
-    );
+    onProgress?.(4, "Scanning Order IDs...");
+    const fps = await extractAllFingerprints(files, (done, total, label) => {
+      const pct = total > 0 ? 4 + Math.round((done / total) * 40) : 44;
+      onProgress?.(pct, label);
+    });
     fingerprintsByKey = new Map(fps.map((fp) => [fp.id, fp]));
   }
 
   const fileOrder = new Map(files.map((f, idx) => [f.id, { file: f, order: idx }]));
-  const duplicateMatcher = new PageFingerprintMatcher(config.duplicateMatchMethod);
+  const duplicateMatcher = new PageFingerprintMatcher();
   const duplicateDetails: DuplicatePageInfo[] = [];
   const keptPagesByFile = new Map<string, number[]>();
   let keptTotal = 0;

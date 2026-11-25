@@ -32,8 +32,8 @@ interface CompareResultCardProps {
   isBusy: boolean;
 }
 
-const ROW_HEIGHT = 72;
-const VIEWPORT_HEIGHT = 300;
+const ROW_HEIGHT = 50;
+const VIEWPORT_HEIGHT = 280;
 
 export function CompareResultCard({
   result,
@@ -57,42 +57,26 @@ export function CompareResultCard({
   });
 
   return (
-    <Card variant="elevated" className="space-y-3 border-border/80 p-3.5 sm:p-4">
-      <div className="flex flex-col justify-between gap-2.5 border-b border-border/70 pb-3 sm:flex-row sm:items-center">
-        <div>
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className="font-display text-base font-bold text-foreground">
-              Comparison Result
-            </h3>
-            <Badge
-              variant={result.uniquePages.length > 0 ? "success" : "warning"}
-              size="sm"
-              className="font-mono"
-            >
-              {formatCount(result.uniquePages.length)} unique
-            </Badge>
-          </div>
-          <div className="mt-1.5 flex flex-wrap items-center gap-1.5 font-mono text-[11px] text-muted-foreground">
-            <span>Set 1: {formatCount(result.set1TotalPages)}p</span>
-            <span>•</span>
-            <span>Set 2: {formatCount(result.excludeTotalPages)}p</span>
-            <span>•</span>
-            <span className="text-warning">
-              Excluded: {formatCount(result.excludedCount)}p
-            </span>
-            {result.internalDuplicatesRemoved > 0 && (
-              <>
-                <span>•</span>
-                <span>
-                  Dupes: {formatCount(result.internalDuplicatesRemoved)}p
-                </span>
-              </>
-            )}
-          </div>
+    <Card
+      variant="elevated"
+      className="animate-ui-enter space-y-3 border-border/80 p-3.5 sm:p-4"
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/70 pb-2.5">
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge
+            variant={result.uniquePages.length > 0 ? "success" : "warning"}
+            size="sm"
+            className="font-mono"
+          >
+            {formatCount(result.uniquePages.length)} unique
+          </Badge>
+          <span className="font-mono text-xs text-muted-foreground">
+            Excluded: {formatCount(result.excludedCount)}p
+          </span>
         </div>
 
         {result.uniquePages.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <Button
               type="button"
               variant="secondary"
@@ -116,9 +100,8 @@ export function CompareResultCard({
       </div>
 
       {result.uniquePages.length === 0 ? (
-        <Alert variant="info" title="No unique pages found">
-          Every page in Set 1 matched Set 2. Use the <strong>Switch</strong> button
-          between Set 1 and Set 2 to check the reverse direction.
+        <Alert variant="info" title="No unique orders">
+          All Order IDs in Set 1 matched Set 2.
         </Alert>
       ) : (
         <>
@@ -127,16 +110,14 @@ export function CompareResultCard({
               <Input
                 variant="standard"
                 sizeVariant="sm"
-                placeholder="Filter Order ID, file..."
+                placeholder="Search Order ID..."
                 value={searchQuery}
                 onChange={(e) => onSearchQueryChange(e.target.value)}
                 leftIcon={<Search className="h-3.5 w-3.5 text-muted-foreground" />}
               />
             </div>
             <span className="font-mono text-xs text-muted-foreground">
-              Selected:{" "}
-              <strong className="text-primary">{formatCount(selectedCount)}</strong>{" "}
-              / {formatCount(result.uniquePages.length)} pages
+              {formatCount(selectedCount)} / {formatCount(result.uniquePages.length)}
             </span>
           </div>
 
@@ -153,7 +134,7 @@ export function CompareResultCard({
           >
             {filteredPages.length === 0 ? (
               <p className="py-6 text-center text-xs text-muted-foreground">
-                No matching unique pages.
+                No matches
               </p>
             ) : (
               <div style={{ height: virtual.totalHeight, position: "relative" }}>
@@ -183,41 +164,26 @@ export function CompareResultCard({
                               onTogglePage(page.id);
                             }
                           }}
-                          className={`mb-1.5 flex cursor-pointer items-start gap-3 rounded-xl border px-3 py-2 transition-colors select-none ${
+                          className={`mb-1.5 flex cursor-pointer items-center gap-2.5 rounded-xl border px-3 transition-colors select-none ${
                             selected
                               ? "border-primary/60 bg-primary/10"
                               : "border-border/80 bg-surface-subtle/40 hover:border-border-strong"
                           }`}
                         >
-                          <div
-                            className="pt-0.5"
-                            onClick={(e) => e.stopPropagation()}
-                          >
+                          <div onClick={(e) => e.stopPropagation()}>
                             <Checkbox
                               checked={selected}
                               onChange={() => onTogglePage(page.id)}
                             />
                           </div>
 
-                          <div className="min-w-0 flex-1">
-                            <div className="flex flex-wrap items-center justify-between gap-1.5">
-                              <span className="font-mono text-xs font-bold text-foreground">
-                                {page.orderId ||
-                                  page.trackingIds[0] ||
-                                  `Page ${page.displayPageNumber}`}
-                              </span>
-                              <Badge
-                                variant="outline"
-                                size="sm"
-                                className="max-w-full truncate font-mono text-[10px]"
-                              >
-                                {page.fileName} • p{page.displayPageNumber}
-                              </Badge>
-                            </div>
-                            <p className="mt-1 line-clamp-1 text-xs text-muted-foreground">
-                              {page.snippet}
-                            </p>
-                          </div>
+                          <span className="min-w-0 flex-1 truncate font-mono text-xs font-bold text-foreground">
+                            {page.orderId || `Page ${page.displayPageNumber}`}
+                          </span>
+
+                          <span className="shrink-0 truncate font-mono text-[11px] text-muted-foreground">
+                            p{page.displayPageNumber}
+                          </span>
                         </div>
                       );
                     })}
@@ -236,7 +202,7 @@ export function CompareResultCard({
               onClick={onPreviewRaw}
               className="whitespace-nowrap"
             >
-              View / Download PDF ({formatCount(selectedCount)}p)
+              View PDF ({formatCount(selectedCount)}p)
             </Button>
             <Button
               type="button"

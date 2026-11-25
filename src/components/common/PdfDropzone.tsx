@@ -238,8 +238,8 @@ export function PdfDropzone({
             compact ? "px-3 py-3.5" : "px-4 py-5"
           } ${
             isDragging
-              ? "border-primary bg-primary/10 scale-[0.995]"
-              : "border-border-strong/70 bg-surface-subtle/50 hover:border-primary/60 hover:bg-primary/5"
+              ? "border-primary bg-primary/10 scale-[0.985] shadow-lift"
+              : "border-border-strong/70 bg-surface-subtle/50 hover:scale-[1.005] hover:border-primary/60 hover:bg-primary/5"
           }`}
         >
           {inspectProgress ? (
@@ -267,7 +267,7 @@ export function PdfDropzone({
           ) : (
             <>
               <div
-                className={`mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl border transition-colors ${
+                className={`mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl border transition-all duration-200 group-hover:scale-110 ${
                   isDragging
                     ? "border-primary bg-primary text-primary-foreground"
                     : "border-border bg-surface-elevated text-primary shadow-lift group-hover:border-primary/40"
@@ -340,7 +340,7 @@ export function PdfDropzone({
                           <div
                             key={item.id}
                             style={{ height: FILE_ROW_HEIGHT - 6 }}
-                            className="mb-1.5 flex items-center gap-2 rounded-xl border border-border/80 bg-surface-elevated/70 px-2.5 transition-colors hover:border-border-strong"
+                            className="animate-item-pop mb-1.5 flex items-center gap-2 rounded-xl border border-border/80 bg-surface-elevated/70 px-2.5 transition-colors hover:border-border-strong"
                           >
                             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                               <FileText className="h-4 w-4" />

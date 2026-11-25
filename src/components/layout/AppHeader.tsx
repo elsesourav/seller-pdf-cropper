@@ -36,31 +36,19 @@ export function AppHeader({
 
   return (
     <header className="sticky top-0 z-30 border-b border-border/80 bg-card/85 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-2.5">
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex min-w-0 items-center gap-2">
-            <img
-              src="./icon.png"
-              alt="Seller PDF Cropper"
-              className="h-8 w-8 shrink-0 rounded-lg border border-border/70 bg-surface-elevated object-cover"
-            />
-            <h1 className="truncate font-display text-sm font-bold tracking-tight text-foreground sm:text-base">
-              Seller PDF Cropper
-            </h1>
-          </div>
-
-          <div className="shrink-0 sm:hidden">
-            <SegmentedControl
-              variant="primary"
-              label="Theme mode"
-              value={themeMode}
-              onValueChange={(val) => setThemeMode(val as ThemeMode)}
-              options={THEME_OPTIONS}
-            />
-          </div>
+      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-2.5 px-3 py-2 sm:px-6 sm:py-2.5">
+        <div className="flex min-w-0 items-center gap-2">
+          <img
+            src="./icon.png"
+            alt="Seller PDF Cropper"
+            className="h-8 w-8 shrink-0 rounded-lg border border-border/70 bg-surface-elevated object-cover transition-transform duration-200 hover:scale-105"
+          />
+          <h1 className="truncate font-display text-sm font-bold tracking-tight text-foreground sm:text-base">
+            Seller PDF Cropper
+          </h1>
         </div>
 
-        <div className="flex items-center justify-between gap-2.5 sm:justify-end">
+        <div className="order-3 w-full sm:order-2 sm:ml-auto sm:w-auto">
           <SegmentedControl
             variant="primary"
             label="PDF Tools Navigation"
@@ -69,16 +57,16 @@ export function AppHeader({
             options={sectionOptions}
             className="block w-full sm:inline-block sm:w-auto"
           />
+        </div>
 
-          <div className="hidden shrink-0 sm:block">
-            <SegmentedControl
-              variant="primary"
-              label="Theme mode"
-              value={themeMode}
-              onValueChange={(val) => setThemeMode(val as ThemeMode)}
-              options={THEME_OPTIONS}
-            />
-          </div>
+        <div className="order-2 shrink-0 sm:order-3">
+          <SegmentedControl
+            variant="primary"
+            label="Theme mode"
+            value={themeMode}
+            onValueChange={(val) => setThemeMode(val as ThemeMode)}
+            options={THEME_OPTIONS}
+          />
         </div>
       </div>
     </header>

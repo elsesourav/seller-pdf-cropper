@@ -2,7 +2,6 @@ import { SafeThemeProvider } from "@/components/common/SafeThemeProvider";
 import { CompareSection } from "@/components/compare/CompareSection";
 import { CropperSection } from "@/components/cropper/CropperSection";
 import { PdfCropAdjustModal } from "@/components/cropper/PdfCropAdjustModal";
-import { AppFooter } from "@/components/layout/AppFooter";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { useCompareWorkflow } from "@/hooks/useCompareWorkflow";
 import { useCropConfig } from "@/hooks/useCropConfig";
@@ -48,7 +47,7 @@ function AppShell() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-3 py-4 sm:px-6 sm:py-6">
         <section
           aria-hidden={activeSection !== "cropper"}
-          className={activeSection === "cropper" ? "block" : "hidden"}
+          className={activeSection === "cropper" ? "animate-ui-enter block" : "hidden"}
         >
           <CropperSection
             config={config}
@@ -61,7 +60,7 @@ function AppShell() {
 
         <section
           aria-hidden={activeSection !== "compare"}
-          className={activeSection === "compare" ? "block" : "hidden"}
+          className={activeSection === "compare" ? "animate-ui-enter block" : "hidden"}
         >
           <CompareSection
             workflow={compareWorkflow}
@@ -69,8 +68,6 @@ function AppShell() {
           />
         </section>
       </main>
-
-      <AppFooter />
 
       <PdfCropAdjustModal
         open={cropModalOpen}

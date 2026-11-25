@@ -92,8 +92,6 @@ export function CompareSection({
       <CompareOptionsCard
         set1TotalPages={set1TotalPages}
         excludeTotalPages={set2TotalPages}
-        matchingMethod={workflow.matchingMethod}
-        onMatchingMethodChange={workflow.setMatchingMethod}
         deduplicateSet1={workflow.deduplicateSet1}
         onDeduplicateSet1Change={workflow.setDeduplicateSet1}
         progress={workflow.progress}

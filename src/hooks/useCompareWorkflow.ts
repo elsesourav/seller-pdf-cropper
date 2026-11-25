@@ -6,7 +6,6 @@ import type {
   ComparePageResult,
   CompareProcessResult,
   CompareSetBucket,
-  MatchingMethod,
   ProcessingProgress,
   UploadedPdfFile,
 } from "@/types";
@@ -25,7 +24,6 @@ export function useCompareWorkflow() {
   const { addToast } = useToast();
 
   const [sets, setSets] = useState<CompareSetBucket[]>(createInitialSets);
-  const [matchingMethod, setMatchingMethod] = useState<MatchingMethod>("smart");
   const [deduplicateSet1, setDeduplicateSet1] = useState(true);
 
   const [progress, setProgress] = useState<ProcessingProgress>({
@@ -62,8 +60,8 @@ export function useCompareWorkflow() {
       if (!primarySet || primarySet.files.length === 0) {
         addToast({
           type: "warning",
-          title: "Set 1 is Empty",
-          description: "Upload at least one PDF in Set 1.",
+          title: "Set 1 Empty",
+          description: "Upload PDFs in Set 1.",
         });
         return;
       }
@@ -71,19 +69,18 @@ export function useCompareWorkflow() {
       if (excludeFilesCount === 0) {
         addToast({
           type: "warning",
-          title: "Set 2 is Empty",
-          description: "Upload at least one PDF in Set 2.",
+          title: "Set 2 Empty",
+          description: "Upload PDFs in Set 2.",
         });
         return;
       }
 
-      setProgress({ active: true, percent: 2, stage: "Comparing PDFs..." });
+      setProgress({ active: true, percent: 2, stage: "Comparing Order IDs..." });
 
       try {
         const res = await comparePdfSets({
           primarySet,
           excludeSets,
-          matchingMethod,
           deduplicateSet1,
           onProgress: (percent, stage) =>
             setProgress({ active: true, percent, stage }),
@@ -96,8 +93,8 @@ export function useCompareWorkflow() {
         if (res.uniquePages.length === 0) {
           addToast({
             type: "info",
-            title: "No Unique Pages Found",
-            description: "Every page in Set 1 matches Set 2.",
+            title: "No Unique Orders",
+            description: "All Order IDs in Set 1 matched Set 2.",
           });
         } else {
           setViewerBlob(res.blob);
@@ -106,7 +103,7 @@ export function useCompareWorkflow() {
           addToast({
             type: "success",
             title: "Comparison Complete",
-            description: `Found ${res.uniquePages.length.toLocaleString()} unique pages (excluded ${res.excludedCount.toLocaleString()}).`,
+            description: `${res.uniquePages.length.toLocaleString()} unique pages found.`,
           });
         }
       } catch (err) {
@@ -114,13 +111,13 @@ export function useCompareWorkflow() {
           type: "error",
           title: "Compare Failed",
           description:
-            err instanceof Error ? err.message : "Failed to compare PDF sets.",
+            err instanceof Error ? err.message : "Failed to compare PDFs.",
         });
       } finally {
         setProgress({ active: false, percent: 0, stage: "" });
       }
     },
-    [addToast, deduplicateSet1, matchingMethod, sets],
+    [addToast, deduplicateSet1, sets],
   );
 
   const swapSets = useCallback(() => {
@@ -131,13 +128,7 @@ export function useCompareWorkflow() {
     setSets(next);
     setResult(null);
     setDeselectedIds(new Set());
-
-    addToast({
-      type: "info",
-      title: "Switched Set 1 ⇄ Set 2",
-      description: "Set 1 and Set 2 have been swapped.",
-    });
-  }, [addToast, sets]);
+  }, [sets]);
 
   const selectedUniquePages = useMemo(() => {
     const pages = result?.uniquePages || [];
@@ -152,9 +143,7 @@ export function useCompareWorkflow() {
     return pages.filter(
       (p) =>
         (p.orderId || "").toLowerCase().includes(q) ||
-        p.trackingIds.some((t) => t.toLowerCase().includes(q)) ||
-        p.fileName.toLowerCase().includes(q) ||
-        p.snippet.toLowerCase().includes(q),
+        p.fileName.toLowerCase().includes(q),
     );
   }, [result, searchQuery]);
 
@@ -191,7 +180,7 @@ export function useCompareWorkflow() {
       addToast({
         type: "warning",
         title: "No Pages Selected",
-        description: "Select at least one unique page first.",
+        description: "Select at least one page.",
       });
       return null;
     }
@@ -221,7 +210,7 @@ export function useCompareWorkflow() {
   }, [addToast, result, selectedUniquePages, sets]);
 
   const previewRawOutput = useCallback(async () => {
-    setProgress({ active: true, percent: 15, stage: "Building output PDF..." });
+    setProgress({ active: true, percent: 15, stage: "Building PDF..." });
     try {
       const built = await buildSelectedBlob();
       if (!built) return;
@@ -233,7 +222,7 @@ export function useCompareWorkflow() {
         type: "error",
         title: "Export Failed",
         description:
-          err instanceof Error ? err.message : "Could not generate PDF.",
+          err instanceof Error ? err.message : "Could not build PDF.",
       });
     } finally {
       setProgress({ active: false, percent: 0, stage: "" });
@@ -245,7 +234,7 @@ export function useCompareWorkflow() {
       setProgress({
         active: true,
         percent: 20,
-        stage: "Preparing PDF for Cropper...",
+        stage: "Preparing PDF...",
       });
       try {
         const built = await buildSelectedBlob();
@@ -273,7 +262,7 @@ export function useCompareWorkflow() {
           description:
             err instanceof Error
               ? err.message
-              : "Could not prepare output PDF for cropping.",
+              : "Could not move output PDF.",
         });
         return null;
       } finally {
@@ -285,8 +274,6 @@ export function useCompareWorkflow() {
     sets,
     updateSetFiles,
     swapSets,
-    matchingMethod,
-    setMatchingMethod,
     deduplicateSet1,
     setDeduplicateSet1,
     progress,

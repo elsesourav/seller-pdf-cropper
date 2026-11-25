@@ -23,16 +23,3 @@ export async function computeBytesHash(bytes: Uint8Array): Promise<string> {
   }
   return `fnv-${bytes.length}-${(h1 >>> 0).toString(16)}-${(h2 >>> 0).toString(16)}`;
 }
-
-export function hashNormalizedText(text: string): string {
-  let h1 = 0x811c9dc5;
-  let h2 = 0x9e3779b9;
-  for (let i = 0; i < text.length; i++) {
-    const code = text.charCodeAt(i);
-    h1 ^= code;
-    h1 = Math.imul(h1, 0x01000193);
-    h2 ^= code + i;
-    h2 = Math.imul(h2, 0x85ebca6b);
-  }
-  return `${text.length}:${(h1 >>> 0).toString(36)}-${(h2 >>> 0).toString(36)}`;
-}

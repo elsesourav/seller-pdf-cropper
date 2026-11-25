@@ -1,16 +1,10 @@
-import type { MatchingMethod, PageFingerprint } from "./matching";
+import type { PageFingerprint } from "./matching";
 import type { UploadedPdfFile } from "./upload";
 
 export interface CompareSetBucket {
   id: string;
   label: string;
   files: UploadedPdfFile[];
-}
-
-export interface CompareOptions {
-  matchingMethod: MatchingMethod;
-  deduplicateSet1: boolean;
-  applyCropAndSerial: boolean;
 }
 
 export interface ComparePageResult extends PageFingerprint {

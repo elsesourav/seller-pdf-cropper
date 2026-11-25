@@ -13,7 +13,7 @@ import {
   Spinner,
   useIsMobile,
 } from "@elsesourav/react-ui";
-import { Download, ExternalLink, FileCheck2, Scissors, Share2 } from "lucide-react";
+import { Download, ExternalLink, FileCheck2, Scissors } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface PdfViewerModalProps {
@@ -133,20 +133,6 @@ export function PdfViewerModal({
     }
   };
 
-  const handleShare = async () => {
-    if (!blob) return;
-    if (typeof navigator !== "undefined" && navigator.share) {
-      try {
-        const file = new File([blob], fileName, { type: "application/pdf" });
-        await navigator.share({ files: [file], title: fileName });
-        return;
-      } catch {
-        // Fallback to download
-      }
-    }
-    handleDownload();
-  };
-
   return (
     <Modal
       open={open}
@@ -166,20 +152,9 @@ export function PdfViewerModal({
       footer={
         <div className="flex w-full flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
-            {blob && <span>Size: {formatFileSize(blob.size)}</span>}
+            {blob && <span>{formatFileSize(blob.size)}</span>}
           </div>
           <div className="ml-auto flex flex-wrap items-center gap-2">
-            {typeof navigator !== "undefined" && "share" in navigator && (
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                leftIcon={<Share2 className="h-3.5 w-3.5" />}
-                onClick={() => void handleShare()}
-              >
-                Share
-              </Button>
-            )}
             <Button
               type="button"
               variant="outline"

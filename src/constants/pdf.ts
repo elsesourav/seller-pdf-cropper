@@ -24,6 +24,5 @@ export const DEFAULT_CROP_CONFIG: CropConfiguration = {
   uniqueCode: "A",
   clearBottomLine: true,
   skipDuplicatePages: true,
-  duplicateMatchMethod: "smart",
   margins: DEFAULT_MARGINS,
 };

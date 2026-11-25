@@ -63,12 +63,6 @@ export function loadCropConfiguration(): CropConfiguration {
     const parsed = JSON.parse(raw) as Record<string, unknown>;
 
     const documentType = parsed.documentType === "bill" ? "bill" : "label";
-    const duplicateMatchMethod =
-      parsed.duplicateMatchMethod === "od-id" ||
-      parsed.duplicateMatchMethod === "fuzzy" ||
-      parsed.duplicateMatchMethod === "exact"
-        ? parsed.duplicateMatchMethod
-        : "smart";
 
     return {
       documentType,
@@ -91,7 +85,6 @@ export function loadCropConfiguration(): CropConfiguration {
         parsed.skipDuplicatePages !== undefined
           ? Boolean(parsed.skipDuplicatePages)
           : true,
-      duplicateMatchMethod,
       margins: sanitizeMargins(parsed.margins),
     };
   } catch {

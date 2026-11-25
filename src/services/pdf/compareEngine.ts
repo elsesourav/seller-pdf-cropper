@@ -4,7 +4,6 @@ import type {
   CompareProcessResult,
   CompareSetBucket,
   CompareSetSummary,
-  MatchingMethod,
   UploadedPdfFile,
 } from "@/types";
 import { yieldToMain } from "@/utils/format";
@@ -77,17 +76,10 @@ export async function buildPdfFromSelectedPages(
 export async function comparePdfSets(params: {
   primarySet: CompareSetBucket;
   excludeSets: CompareSetBucket[];
-  matchingMethod: MatchingMethod;
   deduplicateSet1: boolean;
   onProgress?: (percent: number, stage: string) => void;
 }): Promise<CompareProcessResult> {
-  const {
-    primarySet,
-    excludeSets,
-    matchingMethod,
-    deduplicateSet1,
-    onProgress,
-  } = params;
+  const { primarySet, excludeSets, deduplicateSet1, onProgress } = params;
 
   const set1TotalPages = primarySet.files.reduce((s, f) => s + f.pageCount, 0);
   const excludeFiles = excludeSets.flatMap((s) => s.files);
@@ -108,19 +100,18 @@ export async function comparePdfSets(params: {
     })),
   ];
 
-  // Stream all exclude sets (Set 2..Set N) directly into matcher without retaining raw page lists
-  const excludeMatcher = new PageFingerprintMatcher(matchingMethod);
+  // Stream exclude Set 2 Order IDs directly into O(1) Set matcher
+  const excludeMatcher = new PageFingerprintMatcher();
   if (excludeFiles.length > 0) {
-    onProgress?.(4, `Indexing ${excludeSets.length} exclude set${excludeSets.length > 1 ? "s" : ""}...`);
+    onProgress?.(4, "Indexing Set 2 Order IDs...");
     await streamExtractFingerprints({
       files: excludeFiles,
-      method: matchingMethod,
       onFileFingerprints: (fps) => {
         for (const fp of fps) excludeMatcher.add(fp);
       },
       onProgress: (done, total, label) => {
         const pct = total > 0 ? 4 + Math.round((done / total) * 40) : 44;
-        onProgress?.(pct, `Exclude sets: ${label}`);
+        onProgress?.(pct, `Set 2: ${label}`);
       },
     });
   }
@@ -128,15 +119,14 @@ export async function comparePdfSets(params: {
   onProgress?.(46, `Scanning ${primarySet.label}...`);
   const set1Pages = await extractAllFingerprints(
     primarySet.files,
-    matchingMethod,
     (done, total, label) => {
       const pct = total > 0 ? 46 + Math.round((done / total) * 34) : 80;
       onProgress?.(pct, `${primarySet.label}: ${label}`);
     },
   );
 
-  onProgress?.(82, "Computing unique pages...");
-  const set1SeenMatcher = new PageFingerprintMatcher(matchingMethod);
+  onProgress?.(82, "Comparing Order IDs...");
+  const set1SeenMatcher = new PageFingerprintMatcher();
   const uniquePages: ComparePageResult[] = [];
   let excludedCount = 0;
   let internalDuplicatesRemoved = 0;
