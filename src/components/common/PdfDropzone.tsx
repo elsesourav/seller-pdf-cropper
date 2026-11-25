@@ -76,10 +76,14 @@ export function PdfDropzone({
     try {
       const merged = await mergeUploadedPdfs(files);
       triggerBlobDownload(merged.blob, merged.fileName);
+      const skippedText =
+        merged.skippedDuplicates > 0
+          ? ` • Skipped ${formatCount(merged.skippedDuplicates)} duplicates`
+          : "";
       addToast({
         type: "success",
         title: "Merged PDF Ready",
-        description: `${formatCount(files.length)} files • ${formatCount(merged.pageCount)} pages`,
+        description: `${formatCount(files.length)} files • ${formatCount(merged.pageCount)} unique pages${skippedText}`,
       });
     } catch (error) {
       addToast({

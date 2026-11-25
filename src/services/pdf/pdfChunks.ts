@@ -2,6 +2,8 @@ import { UI_YIELD_INTERVAL } from "@/constants/pdf";
 import type { UploadedPdfFile } from "@/types";
 import { yieldToMain } from "@/utils/format";
 import { PDFDocument } from "pdf-lib";
+import { filterUniqueOrderPages } from "./matching";
+import { extractAllFingerprints } from "./textExtractor";
 
 export interface PdfChunkRange {
   index: number;
@@ -22,25 +24,38 @@ export function triggerBlobDownload(blob: Blob, fileName: string): void {
 }
 
 /**
- * Merges multiple uploaded PDFs sequentially into one PDF while yielding periodically
- * so large multi-file sets never lock the main thread or exceed memory limits.
+ * Merges uploaded PDFs sequentially while always skipping duplicate Order IDs
+ * (both within each file and across files) so only unique-Order-ID pages are output.
  */
 export async function mergeUploadedPdfs(files: UploadedPdfFile[]): Promise<{
   blob: Blob;
   pageCount: number;
+  totalInputPages: number;
+  skippedDuplicates: number;
   fileName: string;
 }> {
+  const totalInputPages = files.reduce((sum, f) => sum + f.pageCount, 0);
+  const fps = await extractAllFingerprints(files);
+  const fingerprintsByKey = new Map(fps.map((fp) => [fp.id, fp]));
+  const { keptPagesByFile, keptTotal, duplicateDetails } = filterUniqueOrderPages(
+    files,
+    fingerprintsByKey,
+  );
+  fingerprintsByKey.clear();
+
   const outputDoc = await PDFDocument.create();
   let totalCopied = 0;
 
   for (const item of files) {
+    const indices = keptPagesByFile.get(item.id);
+    if (!indices?.length) continue;
+
     const buffer = await item.file.arrayBuffer();
     const srcDoc = await PDFDocument.load(new Uint8Array(buffer), {
       ignoreEncryption: true,
       updateMetadata: false,
     });
 
-    const indices = srcDoc.getPageIndices();
     const copied = await outputDoc.copyPages(srcDoc, indices);
     for (const page of copied) {
       outputDoc.addPage(page);
@@ -57,8 +72,10 @@ export async function mergeUploadedPdfs(files: UploadedPdfFile[]): Promise<{
 
   return {
     blob: new Blob([safeBuf], { type: "application/pdf" }),
-    pageCount: totalCopied,
-    fileName: `merged_${files.length}_pdfs_${totalCopied}p.pdf`,
+    pageCount: keptTotal,
+    totalInputPages,
+    skippedDuplicates: duplicateDetails.length,
+    fileName: `merged_${files.length}_pdfs_${keptTotal}p.pdf`,
   };
 }
 

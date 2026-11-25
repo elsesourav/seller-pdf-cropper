@@ -22,7 +22,7 @@ import {
   type PDFFont,
   type PDFPage,
 } from "pdf-lib";
-import { PageFingerprintMatcher } from "./matching";
+import { filterUniqueOrderPages } from "./matching";
 import { extractAllFingerprints } from "./textExtractor";
 
 const WHITE = rgb(1, 1, 1);
@@ -222,9 +222,8 @@ export async function processUploadedPdfs(params: {
   }
 
   const fileOrder = new Map(files.map((f, idx) => [f.id, { file: f, order: idx }]));
-  const duplicateMatcher = new PageFingerprintMatcher();
-  const duplicateDetails: DuplicatePageInfo[] = [];
-  const keptPagesByFile = new Map<string, number[]>();
+  let duplicateDetails: DuplicatePageInfo[] = [];
+  let keptPagesByFile = new Map<string, number[]>();
   let keptTotal = 0;
 
   if (explicitPages) {
@@ -238,32 +237,17 @@ export async function processUploadedPdfs(params: {
       list.push(item.pageIndex);
       keptTotal++;
     }
+  } else if (config.skipDuplicatePages) {
+    const filtered = filterUniqueOrderPages(files, fingerprintsByKey);
+    keptPagesByFile = filtered.keptPagesByFile;
+    keptTotal = filtered.keptTotal;
+    duplicateDetails = filtered.duplicateDetails;
   } else {
     for (const file of files) {
-      for (let idx = 0; idx < file.pageCount; idx++) {
-        if (config.skipDuplicatePages) {
-          const fp = fingerprintsByKey.get(`${file.id}:${idx}`);
-          if (fp) {
-            const matchedKey = duplicateMatcher.hasMatch(fp);
-            if (matchedKey) {
-              duplicateDetails.push({
-                fileName: file.name,
-                pageNumber: idx + 1,
-                matchedKey,
-              });
-              continue;
-            }
-            duplicateMatcher.add(fp);
-          }
-        }
-
-        let list = keptPagesByFile.get(file.id);
-        if (!list) {
-          list = [];
-          keptPagesByFile.set(file.id, list);
-        }
-        list.push(idx);
-        keptTotal++;
+      const allIndices = Array.from({ length: file.pageCount }, (_, i) => i);
+      if (allIndices.length > 0) {
+        keptPagesByFile.set(file.id, allIndices);
+        keptTotal += allIndices.length;
       }
     }
   }
