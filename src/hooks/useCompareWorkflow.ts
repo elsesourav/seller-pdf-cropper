@@ -22,13 +22,6 @@ function createInitialSets(): CompareSetBucket[] {
   ];
 }
 
-function relabelSets(sets: CompareSetBucket[]): CompareSetBucket[] {
-  return sets.map((s, index) => ({
-    ...s,
-    label: `Set ${index + 1}`,
-  }));
-}
-
 export function useCompareWorkflow(config: CropConfiguration) {
   const { addToast } = useToast();
 
@@ -58,28 +51,6 @@ export function useCompareWorkflow(config: CropConfiguration) {
     );
     setResult(null);
     setDeselectedIds(new Set());
-  }, []);
-
-  const addExcludeSet = useCallback(() => {
-    setSets((prev) =>
-      relabelSets([
-        ...prev,
-        {
-          id: `set-${Date.now()}-${prev.length + 1}`,
-          label: `Set ${prev.length + 1}`,
-          files: [],
-        },
-      ]),
-    );
-    setResult(null);
-  }, []);
-
-  const removeExcludeSet = useCallback((setId: string) => {
-    setSets((prev) => {
-      if (prev.length <= 2) return prev;
-      return relabelSets(prev.filter((s) => s.id !== setId));
-    });
-    setResult(null);
   }, []);
 
   const runCompare = useCallback(
@@ -198,26 +169,24 @@ export function useCompareWorkflow(config: CropConfiguration) {
     [addToast, applyCropOnCompare, config, deduplicateSet1, matchingMethod, sets],
   );
 
-  const swapWithPrimary = useCallback(
-    (targetIndex = 1, recompareImmediately = false) => {
-      if (targetIndex < 1 || targetIndex >= sets.length) return;
-      const next = [...sets];
-      const temp = next[0];
-      next[0] = next[targetIndex];
-      next[targetIndex] = temp;
-      const relabeled = relabelSets(next);
-      setSets(relabeled);
+  const swapSets = useCallback(
+    (recompareImmediately = false) => {
+      const next = [
+        { ...sets[1], label: "Set 1" },
+        { ...sets[0], label: "Set 2" },
+      ];
+      setSets(next);
       setResult(null);
       setDeselectedIds(new Set());
 
       addToast({
         type: "info",
-        title: `Swapped Set 1 ⇄ Set ${targetIndex + 1}`,
+        title: "Swapped Set 1 ⇄ Set 2",
         description: "Primary and subtract sets switched.",
       });
 
       if (recompareImmediately) {
-        void runCompare(relabeled);
+        void runCompare(next);
       }
     },
     [addToast, runCompare, sets],
@@ -344,9 +313,7 @@ export function useCompareWorkflow(config: CropConfiguration) {
   return {
     sets,
     updateSetFiles,
-    addExcludeSet,
-    removeExcludeSet,
-    swapWithPrimary,
+    swapSets,
     matchingMethod,
     setMatchingMethod,
     deduplicateSet1,

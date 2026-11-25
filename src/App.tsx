@@ -6,7 +6,7 @@ import { AppFooter } from "@/components/layout/AppFooter";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { useCompareWorkflow } from "@/hooks/useCompareWorkflow";
 import { useCropConfig } from "@/hooks/useCropConfig";
-import type { AppSection, CropSetGroup, UploadedPdfFile } from "@/types";
+import type { AppSection, UploadedPdfFile } from "@/types";
 import { ToastProvider } from "@elsesourav/react-ui";
 import { useCallback, useMemo, useState } from "react";
 
@@ -14,9 +14,7 @@ function AppShell() {
   const { config, updateConfig } = useCropConfig();
   const [activeSection, setActiveSection] = useState<AppSection>("cropper");
 
-  const [cropperSets, setCropperSets] = useState<CropSetGroup[]>([
-    { id: "crop-set-1", label: "PDF Set 1", files: [] },
-  ]);
+  const [cropperFiles, setCropperFiles] = useState<UploadedPdfFile[]>([]);
 
   const compareWorkflow = useCompareWorkflow(config);
 
@@ -28,11 +26,6 @@ function AppShell() {
     setCropModalOpen(true);
   }, []);
 
-  const cropperFileCount = useMemo(
-    () => cropperSets.reduce((sum, s) => sum + s.files.length, 0),
-    [cropperSets],
-  );
-
   const compareFileCount = useMemo(
     () => compareWorkflow.sets.reduce((sum, s) => sum + s.files.length, 0),
     [compareWorkflow.sets],
@@ -43,7 +36,7 @@ function AppShell() {
       <AppHeader
         activeSection={activeSection}
         onSectionChange={setActiveSection}
-        cropperFileCount={cropperFileCount}
+        cropperFileCount={cropperFiles.length}
         compareFileCount={compareFileCount}
       />
 
@@ -56,8 +49,8 @@ function AppShell() {
             config={config}
             onUpdateConfig={updateConfig}
             onOpenCropAdjust={handleOpenCropAdjust}
-            sets={cropperSets}
-            onSetsChange={setCropperSets}
+            files={cropperFiles}
+            onFilesChange={setCropperFiles}
           />
         </section>
 

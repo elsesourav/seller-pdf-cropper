@@ -29,12 +29,6 @@ export interface DuplicatePageInfo {
   matchedKey: string;
 }
 
-export interface CropSetGroup {
-  id: string;
-  label: string;
-  files: import("./upload").UploadedPdfFile[];
-}
-
 export interface CropProcessResult {
   blob: Blob;
   fileName: string;
