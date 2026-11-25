@@ -14,8 +14,22 @@ import type {
   PdfPreviewData,
   UploadedPdfFile,
 } from "@/types";
-import { Badge, Button, Modal, Select, Spinner } from "@elsesourav/react-ui";
-import { Crop, RotateCcw, SlidersHorizontal, ZoomIn, ZoomOut } from "lucide-react";
+import {
+  Badge,
+  Button,
+  Modal,
+  SegmentedControl,
+  Select,
+  Spinner,
+} from "@elsesourav/react-ui";
+import {
+  Check,
+  Crop,
+  RotateCcw,
+  SlidersHorizontal,
+  ZoomIn,
+  ZoomOut,
+} from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactCrop, {
   type Crop as ReactCropType,
@@ -32,6 +46,34 @@ interface PdfCropAdjustModalProps {
   uploadedFiles: UploadedPdfFile[];
 }
 
+function toPercentCrop(
+  box: CropBoxMargins,
+  pageW: number,
+  pageH: number,
+): ReactCropType {
+  const x = Math.max(0, Math.min(100, (box.left / pageW) * 100));
+  const y = Math.max(
+    0,
+    Math.min(100, ((pageH - box.bottom - box.height) / pageH) * 100),
+  );
+  const width = Math.max(1, Math.min(100 - x, (box.width / pageW) * 100));
+  const height = Math.max(1, Math.min(100 - y, (box.height / pageH) * 100));
+  return { unit: "%", x, y, width, height };
+}
+
+function fromPercentCrop(
+  pct: PercentCrop,
+  pageW: number,
+  pageH: number,
+): CropBoxMargins {
+  const left = Math.max(0, Math.round((pct.x / 100) * pageW));
+  const width = Math.max(10, Math.min(pageW - left, Math.round((pct.width / 100) * pageW)));
+  const height = Math.max(10, Math.round((pct.height / 100) * pageH));
+  const topOffsetPt = (pct.y / 100) * pageH;
+  const bottom = Math.max(0, Math.min(pageH - height, Math.round(pageH - topOffsetPt - height)));
+  return { left, bottom, width, height };
+}
+
 export function PdfCropAdjustModal({
   open,
   onClose,
@@ -40,23 +82,23 @@ export function PdfCropAdjustModal({
   onSave,
   uploadedFiles,
 }: PdfCropAdjustModalProps) {
-  const defaultValues = DEFAULT_MARGINS[documentType];
-  const initialValues = currentMargins?.[documentType] || defaultValues;
+  const [editingType, setEditingType] = useState<DocumentType>(documentType);
+  const activeSavedBox = currentMargins?.[editingType] || DEFAULT_MARGINS[editingType];
 
-  const [left, setLeft] = useState(initialValues.left);
-  const [bottom, setBottom] = useState(initialValues.bottom);
-  const [width, setWidth] = useState(initialValues.width);
-  const [height, setHeight] = useState(initialValues.height);
-
+  const [box, setBox] = useState<CropBoxMargins>(activeSavedBox);
   const [selectedFileId, setSelectedFileId] = useState<string>("auto");
   const [preview, setPreview] = useState<PdfPreviewData | null>(null);
   const [isLoadingPreview, setIsLoadingPreview] = useState(false);
   const [zoom, setZoom] = useState<number>(1);
   const [crop, setCrop] = useState<ReactCropType>();
   const [showManual, setShowManual] = useState(false);
+  const [justSaved, setJustSaved] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const [containerInnerHeight, setContainerInnerHeight] = useState<number>(0);
+  const [containerSize, setContainerSize] = useState<{ width: number; height: number }>({
+    width: 300,
+    height: 400,
+  });
 
   const previewCandidateFiles = useMemo(
     () => uploadedFiles.slice(0, 50),
@@ -72,6 +114,10 @@ export function PdfCropAdjustModal({
     );
   }, [selectedFileId, previewCandidateFiles]);
 
+  const pageWidthPt = preview?.pageWidthPt || STANDARD_A4_WIDTH;
+  const pageHeightPt = preview?.pageHeightPt || STANDARD_A4_HEIGHT;
+
+  // Measure container width AND height for distortion-free Fit + Zoom on mobile & desktop
   useEffect(() => {
     if (!open) return;
     const el = containerRef.current;
@@ -79,12 +125,15 @@ export function PdfCropAdjustModal({
 
     const updateSize = () => {
       const computed = window.getComputedStyle(el);
-      const padTop = parseFloat(computed.paddingTop) || 12;
-      const padBottom = parseFloat(computed.paddingBottom) || 12;
-      const availableH = el.clientHeight - padTop - padBottom;
-      if (availableH > 80) {
-        setContainerInnerHeight(availableH);
-      }
+      const padX =
+        (parseFloat(computed.paddingLeft) || 8) +
+        (parseFloat(computed.paddingRight) || 8);
+      const padY =
+        (parseFloat(computed.paddingTop) || 8) +
+        (parseFloat(computed.paddingBottom) || 8);
+      const availW = Math.max(120, el.clientWidth - padX);
+      const availH = Math.max(120, el.clientHeight - padY);
+      setContainerSize({ width: availW, height: availH });
     };
 
     updateSize();
@@ -93,25 +142,34 @@ export function PdfCropAdjustModal({
     return () => ro.disconnect();
   }, [open, preview, showManual]);
 
+  // Sync editingType when modal opens
   useEffect(() => {
     if (!open) return;
+    setEditingType(documentType);
     const vals = currentMargins?.[documentType] || DEFAULT_MARGINS[documentType];
-    setLeft(vals.left);
-    setBottom(vals.bottom);
-    setWidth(vals.width);
-    setHeight(vals.height);
+    setBox(vals);
     setZoom(1);
-    setCrop(undefined);
+    setJustSaved(false);
     if (!uploadedFiles.length) {
       setShowManual(true);
     }
-  }, [open, currentMargins, documentType, uploadedFiles.length]);
+  }, [open, documentType]);
+
+  // Sync box & ReactCrop when switching Label/Bill tab inside modal or preview loads
+  useEffect(() => {
+    if (!open) return;
+    const vals = currentMargins?.[editingType] || DEFAULT_MARGINS[editingType];
+    setBox(vals);
+    if (preview) {
+      setCrop(toPercentCrop(vals, pageWidthPt, pageHeightPt));
+    }
+  }, [editingType, open, preview, pageWidthPt, pageHeightPt]);
 
   const loadPreview = useCallback(async () => {
     if (!open) return;
 
     if (!activeFile) {
-      setPreview(generateFallbackLabelPreviewData(documentType));
+      setPreview(generateFallbackLabelPreviewData(editingType));
       return;
     }
 
@@ -120,73 +178,63 @@ export function PdfCropAdjustModal({
       const rendered = await renderPdfPagePreview(activeFile.file, 1, 2);
       setPreview(rendered);
     } catch {
-      setPreview(generateFallbackLabelPreviewData(documentType));
+      setPreview(generateFallbackLabelPreviewData(editingType));
     } finally {
       setIsLoadingPreview(false);
     }
-  }, [activeFile, documentType, open]);
+  }, [activeFile, editingType, open]);
 
   useEffect(() => {
     void loadPreview();
   }, [loadPreview]);
 
-  const pageWidthPt = preview?.pageWidthPt || STANDARD_A4_WIDTH;
-  const pageHeightPt = preview?.pageHeightPt || STANDARD_A4_HEIGHT;
+  const persistMargins = useCallback(
+    (nextBox: CropBoxMargins) => {
+      setBox(nextBox);
+      onSave({
+        ...currentMargins,
+        [editingType]: nextBox,
+      });
+      setJustSaved(true);
+    },
+    [currentMargins, editingType, onSave],
+  );
 
-  useEffect(() => {
-    if (!preview) return;
-    const xPct = Math.max(0, Math.min(100, (left / pageWidthPt) * 100));
-    const yPct = Math.max(
-      0,
-      Math.min(100, ((pageHeightPt - bottom - height) / pageHeightPt) * 100),
-    );
-    const wPct = Math.max(1, Math.min(100 - xPct, (width / pageWidthPt) * 100));
-    const hPct = Math.max(1, Math.min(100 - yPct, (height / pageHeightPt) * 100));
+  const handleManualChange = (field: keyof CropBoxMargins, value: number) => {
+    const nextBox: CropBoxMargins = {
+      ...box,
+      [field]: Math.max(field === "width" || field === "height" ? 10 : 0, value),
+    };
+    persistMargins(nextBox);
+    setCrop(toPercentCrop(nextBox, pageWidthPt, pageHeightPt));
+  };
 
-    setCrop({ unit: "%", x: xPct, y: yPct, width: wPct, height: hPct });
-  }, [left, bottom, width, height, preview, pageWidthPt, pageHeightPt]);
+  const handleCropChange = (_pixelCrop: unknown, percentCrop: PercentCrop) => {
+    setCrop(percentCrop);
+    if (percentCrop.width > 0 && percentCrop.height > 0) {
+      setBox(fromPercentCrop(percentCrop, pageWidthPt, pageHeightPt));
+    }
+  };
 
   const handleCropComplete = (_pixelCrop: unknown, percentCrop: PercentCrop) => {
     if (percentCrop.width <= 0 || percentCrop.height <= 0) return;
-
-    const newLeft = Math.round((percentCrop.x / 100) * pageWidthPt);
-    const newWidth = Math.max(
-      10,
-      Math.round((percentCrop.width / 100) * pageWidthPt),
-    );
-    const newHeight = Math.max(
-      10,
-      Math.round((percentCrop.height / 100) * pageHeightPt),
-    );
-    const topOffsetPt = (percentCrop.y / 100) * pageHeightPt;
-    const newBottom = Math.max(0, Math.round(pageHeightPt - topOffsetPt - newHeight));
-
-    setLeft(newLeft);
-    setWidth(newWidth);
-    setHeight(newHeight);
-    setBottom(newBottom);
+    const nextBox = fromPercentCrop(percentCrop, pageWidthPt, pageHeightPt);
+    persistMargins(nextBox);
+    setCrop(toPercentCrop(nextBox, pageWidthPt, pageHeightPt));
   };
 
   const handleReset = () => {
-    setLeft(defaultValues.left);
-    setBottom(defaultValues.bottom);
-    setWidth(defaultValues.width);
-    setHeight(defaultValues.height);
+    const defaults = DEFAULT_MARGINS[editingType];
+    persistMargins(defaults);
+    setCrop(toPercentCrop(defaults, pageWidthPt, pageHeightPt));
   };
 
-  const handleSave = () => {
-    const nextBox: CropBoxMargins = {
-      left: Math.max(0, left),
-      bottom: Math.max(0, bottom),
-      width: Math.max(10, width),
-      height: Math.max(10, height),
-    };
-    onSave({
-      ...currentMargins,
-      [documentType]: nextBox,
-    });
-    onClose();
-  };
+  const fitScale = Math.min(
+    containerSize.width / pageWidthPt,
+    containerSize.height / pageHeightPt,
+  );
+  const displayWidth = Math.max(120, Math.round(pageWidthPt * fitScale * zoom));
+  const displayHeight = Math.max(120, Math.round(pageHeightPt * fitScale * zoom));
 
   const fileOptions = useMemo(
     () =>
@@ -207,34 +255,52 @@ export function PdfCropAdjustModal({
           <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/15 text-primary">
             <Crop className="h-4 w-4" />
           </div>
-          <span>
-            Crop Area — {documentType === "bill" ? "Invoice / Bill" : "Shipping Label"}
-          </span>
+          <span>Crop Area Preset</span>
         </div>
       }
       maxWidth="min(960px, 96vw)"
       maxHeight="94dvh"
       className="flex flex-col"
       footer={
-        <div className="flex w-full items-center justify-between gap-2">
-          <span className="hidden font-mono text-xs text-muted-foreground sm:inline">
-            Page: {pageWidthPt}×{pageHeightPt} pt{" "}
-            {preview?.isFallback ? "(Template)" : ""}
+        <div className="flex w-full flex-wrap items-center justify-between gap-2">
+          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-muted-foreground">
+            {justSaved ? (
+              <span className="inline-flex items-center gap-1 font-sans font-semibold text-success">
+                <Check className="h-3.5 w-3.5" />
+                Saved to browser storage
+              </span>
+            ) : (
+              <span>
+                Page: {pageWidthPt}×{pageHeightPt} pt
+                {preview?.isFallback ? " (Template)" : ""}
+              </span>
+            )}
           </span>
           <div className="ml-auto flex items-center gap-2">
-            <Button type="button" variant="ghost" size="sm" onClick={onClose}>
-              Cancel
+            <Button type="button" variant="outline" size="sm" onClick={handleReset}>
+              Reset Default
             </Button>
-            <Button type="button" variant="primary" size="sm" onClick={handleSave}>
-              Save Crop
+            <Button type="button" variant="primary" size="sm" onClick={onClose}>
+              Done
             </Button>
           </div>
         </div>
       }
     >
-      <div className="flex h-[70dvh] min-h-[360px] flex-col gap-2.5 overflow-hidden sm:h-[72dvh]">
+      <div className="flex h-[min(74dvh,700px)] min-h-[300px] flex-col gap-2.5 overflow-hidden">
+        {/* Top Toolbar */}
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-2">
+            <SegmentedControl
+              label="Crop Preset Type"
+              value={editingType}
+              onValueChange={(val) => setEditingType(val as DocumentType)}
+              options={[
+                { value: "label", label: "Label" },
+                { value: "bill", label: "Bill" },
+              ]}
+            />
+
             <div className="inline-flex items-center rounded-xl border border-border bg-surface-elevated p-0.5 shadow-well">
               <Button
                 type="button"
@@ -247,7 +313,7 @@ export function PdfCropAdjustModal({
               >
                 <ZoomOut className="h-3.5 w-3.5" />
               </Button>
-              <span className="min-w-[44px] select-none text-center font-mono text-xs font-bold text-foreground">
+              <span className="min-w-[42px] select-none text-center font-mono text-xs font-bold text-foreground">
                 {Math.round(zoom * 100)}%
               </span>
               <Button
@@ -275,12 +341,12 @@ export function PdfCropAdjustModal({
               </button>
             </div>
 
-            <Badge variant="outline" size="sm" className="hidden font-mono sm:inline-flex">
-              {width}×{height} • L:{left} B:{bottom}
+            <Badge variant="outline" size="sm" className="font-mono text-[11px]">
+              {box.width}×{box.height} • L:{box.left} B:{box.bottom}
             </Badge>
 
             {previewCandidateFiles.length > 1 && (
-              <div className="w-44 sm:w-56">
+              <div className="w-40 sm:w-52">
                 <Select
                   variant="animated"
                   items={fileOptions}
@@ -315,9 +381,10 @@ export function PdfCropAdjustModal({
           </div>
         </div>
 
+        {/* Interactive Crop Canvas */}
         <div
           ref={containerRef}
-          className="pdf-crop-wrapper custom-scrollbar relative flex min-h-0 flex-1 items-start justify-center overflow-auto rounded-2xl border border-border bg-surface-sunken/70 p-2 sm:p-4"
+          className="pdf-crop-wrapper custom-scrollbar relative flex min-h-[200px] flex-1 items-start justify-center overflow-auto rounded-2xl border border-border bg-surface-sunken/70 p-2 sm:p-4"
         >
           {isLoadingPreview ? (
             <div className="flex h-full w-full flex-col items-center justify-center gap-3">
@@ -328,36 +395,24 @@ export function PdfCropAdjustModal({
             </div>
           ) : preview?.dataUrl ? (
             <div
-              className="relative m-auto flex items-center justify-center transition-[height] duration-150"
-              style={{
-                height:
-                  containerInnerHeight > 0
-                    ? `${Math.round(containerInnerHeight * zoom)}px`
-                    : undefined,
-              }}
+              className="relative m-auto shrink-0"
+              style={{ width: `${displayWidth}px`, height: `${displayHeight}px` }}
             >
               <ReactCrop
                 crop={crop}
-                onChange={(_, percentCrop) => setCrop(percentCrop)}
+                onChange={handleCropChange}
                 onComplete={handleCropComplete}
                 className="block"
-                style={{
-                  height:
-                    containerInnerHeight > 0
-                      ? `${Math.round(containerInnerHeight * zoom)}px`
-                      : undefined,
-                }}
+                style={{ width: `${displayWidth}px`, height: `${displayHeight}px` }}
               >
                 <img
                   src={preview.dataUrl}
                   alt="PDF Page Crop Preview"
-                  className="block rounded-sm bg-white object-contain shadow-float select-none"
+                  className="block rounded-sm bg-white shadow-float select-none"
                   style={{
-                    height:
-                      containerInnerHeight > 0
-                        ? `${Math.round(containerInnerHeight * zoom)}px`
-                        : undefined,
-                    width: "auto",
+                    width: `${displayWidth}px`,
+                    height: `${displayHeight}px`,
+                    maxWidth: "none",
                   }}
                 />
               </ReactCrop>
@@ -365,8 +420,9 @@ export function PdfCropAdjustModal({
           ) : null}
         </div>
 
+        {/* Manual Numeric Inputs (auto-saved to localStorage on change) */}
         {showManual && (
-          <div className="grid shrink-0 grid-cols-2 gap-2.5 rounded-xl border border-border bg-surface-elevated/60 p-3 sm:grid-cols-4 sm:gap-3">
+          <div className="grid shrink-0 grid-cols-2 gap-2 rounded-xl border border-border bg-surface-elevated/60 p-2.5 sm:grid-cols-4 sm:gap-3 sm:p-3">
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="crop-left"
@@ -376,10 +432,11 @@ export function PdfCropAdjustModal({
               </label>
               <NumberStepper
                 id="crop-left"
-                value={left}
+                compact
+                value={box.left}
                 min={0}
                 max={pageWidthPt - 10}
-                onChange={setLeft}
+                onChange={(val) => handleManualChange("left", val)}
                 ariaLabel="Left margin"
               />
             </div>
@@ -392,10 +449,11 @@ export function PdfCropAdjustModal({
               </label>
               <NumberStepper
                 id="crop-bottom"
-                value={bottom}
+                compact
+                value={box.bottom}
                 min={0}
                 max={pageHeightPt - 10}
-                onChange={setBottom}
+                onChange={(val) => handleManualChange("bottom", val)}
                 ariaLabel="Bottom margin"
               />
             </div>
@@ -408,10 +466,11 @@ export function PdfCropAdjustModal({
               </label>
               <NumberStepper
                 id="crop-width"
-                value={width}
+                compact
+                value={box.width}
                 min={10}
                 max={pageWidthPt}
-                onChange={setWidth}
+                onChange={(val) => handleManualChange("width", val)}
                 ariaLabel="Crop width"
               />
             </div>
@@ -424,10 +483,11 @@ export function PdfCropAdjustModal({
               </label>
               <NumberStepper
                 id="crop-height"
-                value={height}
+                compact
+                value={box.height}
                 min={10}
                 max={pageHeightPt}
-                onChange={setHeight}
+                onChange={(val) => handleManualChange("height", val)}
                 ariaLabel="Crop height"
               />
             </div>

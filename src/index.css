@@ -67,6 +67,7 @@
     0 4px 14px rgba(0, 0, 0, 0.45) !important;
   background-image: none !important;
   animation: none !important;
+  touch-action: none !important;
 }
 
 .pdf-crop-wrapper .ReactCrop__crop-mask {

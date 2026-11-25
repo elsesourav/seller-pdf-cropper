@@ -11,6 +11,7 @@ interface NumberStepperProps {
   onChange: (value: number) => void;
   disabled?: boolean;
   ariaLabel?: string;
+  compact?: boolean;
 }
 
 export function NumberStepper({
@@ -23,11 +24,12 @@ export function NumberStepper({
   onChange,
   disabled = false,
   ariaLabel,
+  compact = false,
 }: NumberStepperProps) {
   const clamp = (val: number) => Math.max(min, Math.min(max, Math.round(val)));
 
   return (
-    <div className="inline-flex items-center gap-1.5">
+    <div className={`inline-flex items-center ${compact ? "gap-1" : "gap-1.5"}`}>
       <Button
         type="button"
         variant="outline"
@@ -37,7 +39,7 @@ export function NumberStepper({
           e.stopPropagation();
           onChange(clamp(value - step));
         }}
-        className="h-8 w-8 rounded-lg border-border/80 bg-surface-elevated"
+        className={`${compact ? "h-7 w-7" : "h-8 w-8"} rounded-lg border-border/80 bg-surface-elevated`}
         aria-label={`Decrease ${ariaLabel || "value"}`}
       >
         <Minus className="h-3.5 w-3.5" />
@@ -59,7 +61,7 @@ export function NumberStepper({
             onChange(clamp(parsed));
           }
         }}
-        className="h-8 w-16 rounded-lg border border-border bg-surface px-1.5 text-center font-mono text-sm font-bold text-foreground shadow-well focus:border-border-strong focus:outline-none disabled:opacity-50"
+        className={`${compact ? "h-7 w-12 text-xs" : "h-8 w-16 text-sm"} rounded-lg border border-border bg-surface px-1 text-center font-mono font-bold text-foreground shadow-well focus:border-border-strong focus:outline-none disabled:opacity-50`}
       />
 
       <Button
@@ -71,7 +73,7 @@ export function NumberStepper({
           e.stopPropagation();
           onChange(clamp(value + step));
         }}
-        className="h-8 w-8 rounded-lg border-border/80 bg-surface-elevated"
+        className={`${compact ? "h-7 w-7" : "h-8 w-8"} rounded-lg border-border/80 bg-surface-elevated`}
         aria-label={`Increase ${ariaLabel || "value"}`}
       >
         <Plus className="h-3.5 w-3.5" />
