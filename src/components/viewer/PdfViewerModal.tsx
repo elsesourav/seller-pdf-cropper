@@ -147,8 +147,8 @@ export function PdfViewerModal({
           </span>
         </div>
       }
-      maxWidth="min(1040px, 96vw)"
-      maxHeight="94dvh"
+      maxWidth="min(1260px, 98vw)"
+      maxHeight="97dvh"
       footer={
         <div className="flex w-full flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
@@ -190,15 +190,15 @@ export function PdfViewerModal({
         </div>
       }
     >
-      <div className="flex h-[68dvh] min-h-[340px] flex-col gap-3 overflow-hidden sm:h-[72dvh]">
-        <div className="flex flex-wrap items-center justify-between gap-2">
+      <div className="flex h-[78dvh] min-h-[380px] flex-col gap-2 overflow-hidden sm:h-[83dvh]">
+        <div className="flex flex-wrap items-center justify-between gap-1.5">
           <div className="flex flex-wrap items-center gap-1.5">
             {stats.map((stat) => (
               <Badge
                 key={stat.label}
                 variant={stat.tone || "outline"}
                 size="sm"
-                className="font-mono"
+                className="font-mono text-[11px]"
               >
                 {stat.label}: {stat.value}
               </Badge>
@@ -208,11 +208,11 @@ export function PdfViewerModal({
               <button
                 type="button"
                 onClick={() => setShowDuplicates((s) => !s)}
-                className="rounded-full border border-warning/40 bg-warning/10 px-2.5 py-0.5 text-[11px] font-semibold text-warning transition-colors hover:bg-warning/20"
+                className="rounded-full border border-warning/40 bg-warning/10 px-2 py-0.5 text-[11px] font-semibold text-warning transition-colors hover:bg-warning/20"
               >
                 {showDuplicates
                   ? "Hide Skipped"
-                  : `View ${formatCount(duplicateDetails.length)} Skipped`}
+                  : `${formatCount(duplicateDetails.length)} Skipped`}
               </button>
             )}
           </div>
@@ -224,17 +224,14 @@ export function PdfViewerModal({
               onValueChange={(val) => setViewMode(val as "pages" | "embed")}
               options={[
                 { value: "embed", label: "PDF Viewer" },
-                { value: "pages", label: "Page Thumbnails" },
+                { value: "pages", label: "Thumbnails" },
               ]}
             />
           )}
         </div>
 
         {showDuplicates && duplicateDetails.length > 0 && (
-          <div className="custom-scrollbar max-h-28 shrink-0 overflow-y-auto rounded-xl border border-warning/30 bg-warning/5 p-2.5 text-xs">
-            <p className="mb-1.5 font-semibold text-warning">
-              Skipped Duplicate Pages ({formatCount(duplicateDetails.length)})
-            </p>
+          <div className="custom-scrollbar max-h-24 shrink-0 overflow-y-auto rounded-xl border border-warning/30 bg-warning/5 p-2 text-xs">
             <div className="space-y-1 font-mono text-[11px] text-muted-foreground">
               {duplicateDetails.slice(0, 200).map((d, i) => (
                 <div
@@ -242,21 +239,21 @@ export function PdfViewerModal({
                   className="flex justify-between gap-2"
                 >
                   <span className="truncate">
-                    {d.fileName} • Page {d.pageNumber}
+                    {d.fileName} • p{d.pageNumber}
                   </span>
                   <span className="shrink-0 text-foreground">{d.matchedKey}</span>
                 </div>
               ))}
               {duplicateDetails.length > 200 && (
                 <p className="pt-1 text-center text-[10px]">
-                  + {formatCount(duplicateDetails.length - 200)} more skipped duplicates
+                  + {formatCount(duplicateDetails.length - 200)} more
                 </p>
               )}
             </div>
           </div>
         )}
 
-        <div className="relative min-h-0 flex-1 overflow-hidden rounded-2xl border border-border bg-surface-sunken/70">
+        <div className="relative min-h-0 flex-1 overflow-hidden rounded-xl border border-border bg-surface-sunken/70">
           {viewMode === "embed" && blobUrl ? (
             <iframe
               src={blobUrl}
@@ -264,24 +261,24 @@ export function PdfViewerModal({
               className="h-full w-full border-0 bg-white"
             />
           ) : (
-            <div className="custom-scrollbar h-full overflow-y-auto p-3 sm:p-4">
+            <div className="custom-scrollbar h-full overflow-y-auto p-2 sm:p-2.5">
               {renderedPages.length === 0 && isLoadingPages ? (
                 <div className="flex h-full flex-col items-center justify-center gap-2">
                   <Spinner size="lg" />
                   <span className="text-xs text-muted-foreground">
-                    Rendering PDF pages...
+                    Rendering pages...
                   </span>
                 </div>
               ) : (
-                <div className="mx-auto flex max-w-xl flex-col items-center gap-4">
+                <div className="mx-auto grid max-w-5xl grid-cols-1 gap-2.5 sm:grid-cols-2">
                   {renderedPages.map((pg) => (
                     <div
                       key={pg.pageNumber}
-                      className="w-full overflow-hidden rounded-xl border border-border bg-white shadow-lift"
+                      className="w-full overflow-hidden rounded-lg border border-border bg-white shadow-lift"
                     >
-                      <div className="flex items-center justify-between border-b border-border/60 bg-surface-elevated px-3 py-1.5 font-mono text-[11px] text-muted-foreground">
+                      <div className="flex items-center justify-between border-b border-border/60 bg-surface-elevated px-2.5 py-1 font-mono text-[10px] text-muted-foreground">
                         <span>Page {pg.pageNumber}</span>
-                        <span>of {formatCount(totalPdfPages)}</span>
+                        <span>/ {formatCount(totalPdfPages)}</span>
                       </div>
                       <img
                         src={pg.dataUrl}
@@ -292,16 +289,17 @@ export function PdfViewerModal({
                   ))}
 
                   {renderedPages.length < totalPdfPages && (
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      isLoading={isLoadingPages}
-                      onClick={() => void handleLoadMorePages()}
-                    >
-                      Load More Pages (
-                      {formatCount(totalPdfPages - renderedPages.length)} remaining)
-                    </Button>
+                    <div className="flex justify-center py-1 sm:col-span-2">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        isLoading={isLoadingPages}
+                        onClick={() => void handleLoadMorePages()}
+                      >
+                        Load More ({formatCount(totalPdfPages - renderedPages.length)})
+                      </Button>
+                    </div>
                   )}
                 </div>
               )}

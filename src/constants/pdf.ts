@@ -22,7 +22,8 @@ export const DEFAULT_CROP_CONFIG: CropConfiguration = {
   serialFontSize: 8,
   includeUniqueCode: false,
   uniqueCode: "A",
-  clearBottomLine: true,
+  textBgPaddingX: 4,
+  textBgPaddingY: 3,
   skipDuplicatePages: true,
   margins: DEFAULT_MARGINS,
 };

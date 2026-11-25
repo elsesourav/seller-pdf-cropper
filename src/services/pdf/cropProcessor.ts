@@ -80,6 +80,37 @@ export function getEffectiveCropBox(
   return clampCropBox(margins.label, pageWidth, pageHeight);
 }
 
+function drawPaddedLabel(params: {
+  page: PDFPage;
+  font: PDFFont;
+  text: string;
+  x: number;
+  y: number;
+  fontSize: number;
+  padX: number;
+  padY: number;
+}): void {
+  const { page, font, text, x, y, fontSize, padX, padY } = params;
+  const textWidth = measureTextWidth(text, fontSize);
+  const glyphHeight = Math.ceil(fontSize * 0.74);
+
+  page.drawRectangle({
+    x: x - padX,
+    y: y - padY,
+    width: textWidth + padX * 2,
+    height: glyphHeight + padY * 2,
+    color: WHITE,
+  });
+
+  page.drawText(text, {
+    x,
+    y,
+    size: fontSize,
+    font,
+    color: BLACK,
+  });
+}
+
 function drawFooterMarksOnPage(params: {
   page: PDFPage;
   font: PDFFont;
@@ -88,7 +119,8 @@ function drawFooterMarksOnPage(params: {
   cropBox: CropBoxMargins;
   isBill: boolean;
   serialFontSize: number;
-  clearBottomLine: boolean;
+  bgPaddingX: number;
+  bgPaddingY: number;
 }): void {
   const {
     page,
@@ -98,64 +130,37 @@ function drawFooterMarksOnPage(params: {
     cropBox,
     isBill,
     serialFontSize,
-    clearBottomLine,
+    bgPaddingX,
+    bgPaddingY,
   } = params;
 
   if (!serialText && !uniqueCodeText) return;
 
-  const bandHeight = isBill
-    ? Math.max(12, serialFontSize + 4)
-    : Math.max(11, serialFontSize + 3);
-  const bandY = cropBox.bottom + 2;
+  const padX = Math.max(0, bgPaddingX);
+  const padY = Math.max(0, bgPaddingY);
+  const baseFontSize = Math.max(5, Math.min(24, serialFontSize));
+  const sideMargin = Math.max(5, padX + 2);
+  const textY = cropBox.bottom + 2 + padY;
 
-  if (!isBill && clearBottomLine) {
-    const clearHeight =
-      cropBox.bottom < 458
-        ? Math.min(25, Math.max(bandHeight + 6, 458 - cropBox.bottom))
-        : Math.max(bandHeight + 3, 12);
-    page.drawRectangle({
-      x: cropBox.left,
-      y: Math.max(0, cropBox.bottom - 1),
-      width: cropBox.width,
-      height: clearHeight,
-      color: WHITE,
-    });
-  }
-
-  // Left side: Unique Code (single capital alphabet A-Z)
+  // Left side: Unique Code (capital alphabet A-Z) with localized white backdrop only
   if (uniqueCodeText) {
-    const codeSize = Math.max(5, Math.min(24, serialFontSize));
-    const codeWidth = measureTextWidth(uniqueCodeText, codeSize);
-    const codeX = cropBox.left + 8;
-    const codeY = bandY + (bandHeight - codeSize) / 2 + (isBill ? 0.5 : 0.2);
-
-    if (isBill || !clearBottomLine) {
-      const padX = 2.5;
-      const padY = 1.5;
-      page.drawRectangle({
-        x: codeX - padX,
-        y: codeY - padY,
-        width: codeWidth + padX * 2,
-        height: codeSize + padY * 2,
-        color: WHITE,
-      });
-    }
-
-    page.drawText(uniqueCodeText, {
-      x: codeX,
-      y: codeY,
-      size: codeSize,
+    const codeX = cropBox.left + sideMargin;
+    drawPaddedLabel({
+      page,
       font,
-      color: BLACK,
+      text: uniqueCodeText,
+      x: codeX,
+      y: textY,
+      fontSize: baseFontSize,
+      padX,
+      padY,
     });
   }
 
-  // Right side: Sequential Serial Number
+  // Right side: Sequential Serial Number with localized white backdrop only
   if (serialText) {
     const regionWidth = isBill ? 110 : 88;
-    const regionX = cropBox.left + cropBox.width - regionWidth - 8;
-
-    let finalSize = Math.max(5, Math.min(24, serialFontSize));
+    let finalSize = baseFontSize;
     const minFont = Math.max(5, Math.floor(finalSize * 0.7));
     while (
       finalSize > minFont &&
@@ -165,27 +170,20 @@ function drawFooterMarksOnPage(params: {
     }
 
     const textWidth = measureTextWidth(serialText, finalSize);
-    const textX = Math.max(regionX, regionX + regionWidth - textWidth);
-    const textY = bandY + (bandHeight - finalSize) / 2 + (isBill ? 0.5 : 0.2);
+    const textX = Math.max(
+      cropBox.left + sideMargin,
+      cropBox.left + cropBox.width - sideMargin - textWidth,
+    );
 
-    if (isBill || !clearBottomLine) {
-      const padX = 2.5;
-      const padY = 1.5;
-      page.drawRectangle({
-        x: textX - padX,
-        y: textY - padY,
-        width: textWidth + padX * 2,
-        height: finalSize + padY * 2,
-        color: WHITE,
-      });
-    }
-
-    page.drawText(serialText, {
+    drawPaddedLabel({
+      page,
+      font,
+      text: serialText,
       x: textX,
       y: textY,
-      size: finalSize,
-      font,
-      color: BLACK,
+      fontSize: finalSize,
+      padX,
+      padY,
     });
   }
 }
@@ -330,7 +328,8 @@ export async function processUploadedPdfs(params: {
           cropBox,
           isBill,
           serialFontSize: config.serialFontSize,
-          clearBottomLine: config.clearBottomLine,
+          bgPaddingX: config.textBgPaddingX,
+          bgPaddingY: config.textBgPaddingY,
         });
       }
 

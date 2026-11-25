@@ -19,7 +19,8 @@ export interface CropConfiguration {
   serialFontSize: number;
   includeUniqueCode: boolean;
   uniqueCode: string;
-  clearBottomLine: boolean;
+  textBgPaddingX: number;
+  textBgPaddingY: number;
   skipDuplicatePages: boolean;
   margins: PdfMarginsConfig;
 }

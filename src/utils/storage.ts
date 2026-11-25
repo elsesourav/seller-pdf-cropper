@@ -77,10 +77,8 @@ export function loadCropConfiguration(): CropConfiguration {
           ? Boolean(parsed.includeUniqueCode)
           : false,
       uniqueCode: sanitizeUniqueCode(parsed.uniqueCode),
-      clearBottomLine:
-        parsed.clearBottomLine !== undefined
-          ? Boolean(parsed.clearBottomLine)
-          : true,
+      textBgPaddingX: sanitizeInt(parsed.textBgPaddingX, 4, 0, 30),
+      textBgPaddingY: sanitizeInt(parsed.textBgPaddingY, 3, 0, 20),
       skipDuplicatePages:
         parsed.skipDuplicatePages !== undefined
           ? Boolean(parsed.skipDuplicatePages)

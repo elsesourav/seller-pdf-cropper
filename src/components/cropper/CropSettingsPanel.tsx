@@ -1,4 +1,6 @@
+import { STANDARD_A4_HEIGHT, STANDARD_A4_WIDTH } from "@/constants/pdf";
 import type { CropConfiguration, DocumentType } from "@/types";
+import { boxToTopLeft, updateBoxFromTopLeft, type TopLeftBox } from "@/utils/cropGeometry";
 import {
   Badge,
   Button,
@@ -18,6 +20,13 @@ interface CropSettingsPanelProps {
 
 const ALPHABET_KEYS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
+const CROP_FIELDS: Array<{ key: keyof TopLeftBox; label: string; min: number; max: number }> = [
+  { key: "top", label: "Top", min: 0, max: STANDARD_A4_HEIGHT - 10 },
+  { key: "left", label: "Left", min: 0, max: STANDARD_A4_WIDTH - 10 },
+  { key: "width", label: "Width", min: 10, max: STANDARD_A4_WIDTH },
+  { key: "height", label: "Height", min: 10, max: STANDARD_A4_HEIGHT },
+];
+
 export function CropSettingsPanel({
   config,
   onUpdate,
@@ -25,9 +34,28 @@ export function CropSettingsPanel({
   totalOutputPagesPreview = 0,
 }: CropSettingsPanelProps) {
   const activeMargins = config.margins[config.documentType];
+  const topLeftBox = boxToTopLeft(activeMargins, STANDARD_A4_HEIGHT);
 
   const selectDocType = (docType: DocumentType) => {
     onUpdate({ documentType: docType });
+  };
+
+  const handleCropFieldChange = (field: keyof TopLeftBox, raw: string) => {
+    const parsed = Number(raw);
+    if (Number.isNaN(parsed)) return;
+    const nextMargins = updateBoxFromTopLeft(
+      activeMargins,
+      field,
+      parsed,
+      STANDARD_A4_WIDTH,
+      STANDARD_A4_HEIGHT,
+    );
+    onUpdate({
+      margins: {
+        ...config.margins,
+        [config.documentType]: nextMargins,
+      },
+    });
   };
 
   const serialRangeText =
@@ -37,7 +65,7 @@ export function CropSettingsPanel({
 
   return (
     <div className="space-y-3">
-      {/* Crop Type (Label / Bill sliding switch) & Interactive Crop Trigger */}
+      {/* Crop Type (Label / Bill), Top/Left/Width/Height inputs & Visual Adjust */}
       <Card variant="default" className="space-y-2.5 border-border/80 bg-card/95 p-3.5 sm:p-4">
         <SegmentedControl
           variant="primary"
@@ -51,6 +79,30 @@ export function CropSettingsPanel({
           className="block w-full"
         />
 
+        <div className="grid grid-cols-4 gap-1.5">
+          {CROP_FIELDS.map(({ key, label, min, max }) => (
+            <div key={key} className="flex flex-col gap-1">
+              <label
+                htmlFor={`crop-card-${key}`}
+                className="text-center text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
+              >
+                {label}
+              </label>
+              <input
+                id={`crop-card-${key}`}
+                type="number"
+                inputMode="numeric"
+                min={min}
+                max={max}
+                value={topLeftBox[key]}
+                onChange={(e) => handleCropFieldChange(key, e.target.value)}
+                aria-label={`Crop ${label}`}
+                className="h-8 w-full rounded-lg border border-border bg-surface px-1 text-center font-mono text-xs font-bold text-foreground shadow-well focus:border-primary focus:outline-none"
+              />
+            </div>
+          ))}
+        </div>
+
         <Button
           type="button"
           variant="outline"
@@ -59,12 +111,7 @@ export function CropSettingsPanel({
           onClick={onOpenCropAdjust}
           className="w-full"
         >
-          <span>
-            Adjust Crop{" "}
-            <span className="ml-1 font-mono text-[11px] text-muted-foreground">
-              {activeMargins.width}×{activeMargins.height}
-            </span>
-          </span>
+          Adjust Crop
         </Button>
       </Card>
 
@@ -143,34 +190,6 @@ export function CropSettingsPanel({
                 />
               </div>
             </div>
-
-            {config.documentType === "label" && (
-              <div
-                role="button"
-                tabIndex={0}
-                onClick={() => onUpdate({ clearBottomLine: !config.clearBottomLine })}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    onUpdate({ clearBottomLine: !config.clearBottomLine });
-                  }
-                }}
-                className="flex cursor-pointer items-center justify-between gap-2 rounded-xl border border-border/70 bg-surface-subtle/40 px-3 py-2 select-none"
-              >
-                <span className="text-xs font-medium text-foreground/90">
-                  Clean bottom line
-                </span>
-                <div onClick={(e) => e.stopPropagation()}>
-                  <SquishSwitch
-                    checked={config.clearBottomLine}
-                    onChange={(checked) => onUpdate({ clearBottomLine: checked })}
-                    size="sm"
-                    variant="primary"
-                    ariaLabel="Clean bottom line"
-                  />
-                </div>
-              </div>
-            )}
           </div>
         )}
       </Card>
@@ -263,7 +282,52 @@ export function CropSettingsPanel({
         )}
       </Card>
 
-      {/* Duplicate Page Protection (Order ID based automatically) */}
+      {/* Per-Text White Background Padding X & Y (no full-width line wipe) */}
+      {(config.includeSerial || config.includeUniqueCode) && (
+        <Card variant="default" className="animate-ui-enter space-y-2 border-border/80 bg-card/95 p-3.5 sm:p-4">
+          <span className="block text-xs font-semibold text-muted-foreground">
+            Text Background Padding
+          </span>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="flex items-center justify-between gap-1.5 rounded-xl border border-border/70 bg-surface-subtle/60 px-2.5 py-1.5">
+              <label
+                htmlFor="bg-pad-x-input"
+                className="text-xs font-semibold text-foreground"
+              >
+                Pad X
+              </label>
+              <NumberStepper
+                id="bg-pad-x-input"
+                compact
+                value={config.textBgPaddingX}
+                min={0}
+                max={30}
+                onChange={(val) => onUpdate({ textBgPaddingX: val })}
+                ariaLabel="Text background padding X"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-1.5 rounded-xl border border-border/70 bg-surface-subtle/60 px-2.5 py-1.5">
+              <label
+                htmlFor="bg-pad-y-input"
+                className="text-xs font-semibold text-foreground"
+              >
+                Pad Y
+              </label>
+              <NumberStepper
+                id="bg-pad-y-input"
+                compact
+                value={config.textBgPaddingY}
+                min={0}
+                max={20}
+                onChange={(val) => onUpdate({ textBgPaddingY: val })}
+                ariaLabel="Text background padding Y"
+              />
+            </div>
+          </div>
+        </Card>
+      )}
+
+      {/* Duplicate Page Protection */}
       <Card variant="default" className="border-border/80 bg-card/95 p-3.5 sm:p-4">
         <div
           role="button"
