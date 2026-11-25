@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elsesourav.github.io/seller-pdf-cropper/sitemap.xml
+Sitemap: https://sellerpdfcropper.elsesourav.com/sitemap.xml
