@@ -99,8 +99,9 @@ export function CompareResultCard({
             size="xs"
             leftIcon={<ArrowLeftRight className="h-3.5 w-3.5 text-primary" />}
             onClick={onSwapAndRecompare}
+            className="whitespace-nowrap"
           >
-            Swap ① ⇄ ② &amp; Re-compare
+            Swap &amp; Re-compare
           </Button>
           {result.uniquePages.length > 0 && (
             <>
@@ -128,10 +129,8 @@ export function CompareResultCard({
       </div>
 
       {result.uniquePages.length === 0 ? (
-        <Alert variant="info" title="No Unique Pages Found in Set 1">
-          Every page in Set 1 matched the subtract sets. Click{" "}
-          <strong>Swap ① ⇄ ② &amp; Re-compare</strong> above to compare the reverse
-          direction.
+        <Alert variant="info" title="No unique pages found">
+          Try <strong>Swap &amp; Re-compare</strong> above for the opposite direction.
         </Alert>
       ) : (
         <>

@@ -40,7 +40,7 @@ const LIST_VIEWPORT_HEIGHT = 240;
 
 export function PdfDropzone({
   title,
-  subtitle = "Drop multiple PDFs (supports up to 10,000+ files)",
+  subtitle,
   badgeText,
   badgeVariant = "primary",
   serialRangeBadge,
@@ -61,10 +61,6 @@ export function PdfDropzone({
 
   const totalPages = useMemo(
     () => files.reduce((sum, f) => sum + f.pageCount, 0),
-    [files],
-  );
-  const totalBytes = useMemo(
-    () => files.reduce((sum, f) => sum + f.size, 0),
     [files],
   );
 
@@ -146,30 +142,27 @@ export function PdfDropzone({
       className="flex flex-col overflow-hidden border-border/80 bg-card/95 backdrop-blur-sm"
     >
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/70 px-3.5 py-3 sm:px-4">
+      <div className="flex items-center justify-between gap-2 border-b border-border/70 px-3.5 py-2.5 sm:px-4">
         <div className="flex min-w-0 items-center gap-2">
           {badgeText && (
             <Badge variant={badgeVariant} size="sm" className="shrink-0 font-mono font-bold">
               {badgeText}
             </Badge>
           )}
-          <h3 className="truncate font-display text-sm font-bold text-foreground sm:text-base">
+          <h3 className="truncate font-display text-sm font-bold text-foreground">
             {title}
           </h3>
         </div>
 
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex shrink-0 items-center gap-1.5">
           {serialRangeBadge && (
-            <Badge variant="success" size="sm" className="font-mono">
+            <Badge variant="success" size="sm" className="font-mono text-[11px]">
               {serialRangeBadge}
             </Badge>
           )}
-          <Badge variant="outline" size="sm" className="font-mono">
-            {formatCount(files.length)} {files.length === 1 ? "file" : "files"}
-          </Badge>
-          <Badge variant="info" size="sm" className="font-mono">
-            {formatCount(totalPages)} {totalPages === 1 ? "page" : "pages"}
-          </Badge>
+          <span className="font-mono text-xs text-muted-foreground">
+            {formatCount(files.length)}f • {formatCount(totalPages)}p
+          </span>
           {headerAction}
           {files.length > 0 && (
             <Button
@@ -180,7 +173,7 @@ export function PdfDropzone({
                 setFilterQuery("");
                 onFilesChange([]);
               }}
-              className="h-6 px-2 text-destructive hover:bg-destructive/10 hover:text-destructive"
+              className="h-6 px-1.5 text-destructive hover:bg-destructive/10 hover:text-destructive"
               title="Clear files"
             >
               <Trash2 className="h-3.5 w-3.5" />
@@ -242,7 +235,7 @@ export function PdfDropzone({
             void handleIncoming(e.dataTransfer.files);
           }}
           className={`group flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed transition-all duration-200 focus:outline-none ${
-            compact ? "px-3 py-4" : "px-4 py-6 sm:py-7"
+            compact ? "px-3 py-3.5" : "px-4 py-5"
           } ${
             isDragging
               ? "border-primary bg-primary/10 scale-[0.995]"
@@ -254,7 +247,7 @@ export function PdfDropzone({
               <Spinner size="md" />
               <span className="text-xs font-semibold text-foreground">
                 Inspecting {formatCount(inspectProgress.processed)} /{" "}
-                {formatCount(inspectProgress.total)} PDFs...
+                {formatCount(inspectProgress.total)}
               </span>
               <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-sunken">
                 <div
@@ -274,38 +267,33 @@ export function PdfDropzone({
           ) : (
             <>
               <div
-                className={`mb-2 flex h-10 w-10 items-center justify-center rounded-xl border transition-colors ${
+                className={`mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl border transition-colors ${
                   isDragging
                     ? "border-primary bg-primary text-primary-foreground"
                     : "border-border bg-surface-elevated text-primary shadow-lift group-hover:border-primary/40"
                 }`}
               >
                 {files.length > 0 ? (
-                  <FolderPlus className="h-5 w-5" />
+                  <FolderPlus className="h-4 w-4" />
                 ) : (
-                  <UploadCloud className="h-5 w-5" />
+                  <UploadCloud className="h-4 w-4" />
                 )}
               </div>
               <p className="text-center text-xs font-semibold text-foreground sm:text-sm">
-                {files.length > 0 ? "Add more PDF files" : "Choose or drop PDF files"}
+                {files.length > 0 ? "Add PDFs" : "Drop or choose PDFs"}
               </p>
-              <p className="mt-0.5 text-center text-[11px] text-muted-foreground">
-                {subtitle}
-              </p>
+              {subtitle && (
+                <p className="mt-0.5 text-center text-[11px] text-muted-foreground">
+                  {subtitle}
+                </p>
+              )}
             </>
           )}
         </div>
 
         {/* Virtualized File List */}
         {files.length > 0 && (
-          <div className="mt-3 space-y-2">
-            <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] font-medium text-muted-foreground">
-              <span>
-                Queue: {formatCount(files.length)} PDF{files.length > 1 ? "s" : ""}
-              </span>
-              <span className="font-mono">{formatFileSize(totalBytes)}</span>
-            </div>
-
+          <div className="mt-2.5 space-y-2">
             {files.length > 10 && (
               <Input
                 variant="standard"

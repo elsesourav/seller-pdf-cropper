@@ -6,7 +6,6 @@ import { ArrowLeftRight, FolderPlus } from "lucide-react";
 import { useMemo } from "react";
 import { PdfDropzone } from "../common/PdfDropzone";
 import { PdfViewerModal } from "../viewer/PdfViewerModal";
-import { CompareFormulaBanner } from "./CompareFormulaBanner";
 import { CompareOptionsCard } from "./CompareOptionsCard";
 import { CompareResultCard } from "./CompareResultCard";
 
@@ -60,41 +59,33 @@ export function CompareSection({
 
   return (
     <div className="space-y-4">
-      <CompareFormulaBanner sets={sets} />
-
-      {/* Set 1 | Switch | Set 2 */}
+      {/* Set 1 | Swap | Set 2 */}
       <div className="grid grid-cols-1 items-stretch gap-3 lg:grid-cols-[1fr_auto_1fr]">
         <PdfDropzone
           title={primarySet.label}
-          subtitle="Upload 1 to 10,000+ PDFs for the primary set"
-          badgeText="① SET 1"
-          badgeVariant="primary"
           files={primarySet.files}
           onFilesChange={(next) => workflow.updateSetFiles(primarySet.id, next)}
           overlappingHashes={allExcludeHashes}
           compact
         />
 
-        <div className="flex items-center justify-center py-0.5 lg:flex-col lg:px-1">
+        <div className="flex items-center justify-center">
           <Button
             type="button"
             variant="outline"
-            size="md"
+            size="sm"
             disabled={!canSwapPrimarySecond}
             onClick={() => workflow.swapWithPrimary(1, false)}
-            className="w-full flex-row gap-2 border-primary/40 bg-surface-elevated font-bold text-primary shadow-lift hover:border-primary hover:bg-primary/10 lg:h-full lg:max-h-36 lg:w-auto lg:flex-col lg:px-3"
-            title="Switch Set 1 and Set 2"
+            leftIcon={<ArrowLeftRight className="h-3.5 w-3.5 shrink-0" />}
+            className="w-full shrink-0 whitespace-nowrap border-primary/40 bg-surface-elevated font-semibold text-primary hover:border-primary hover:bg-primary/10 lg:w-auto"
+            title="Swap Set 1 and Set 2"
           >
-            <ArrowLeftRight className="h-4 w-4 shrink-0" />
-            <span className="text-xs">Switch ① ⇄ ②</span>
+            Swap
           </Button>
         </div>
 
         <PdfDropzone
           title={secondSet.label}
-          subtitle="Upload 1 to 10,000+ PDFs to subtract from Set 1"
-          badgeText="② SET 2"
-          badgeVariant="warning"
           files={secondSet.files}
           onFilesChange={(next) => workflow.updateSetFiles(secondSet.id, next)}
           overlappingHashes={primaryHashes}
@@ -102,7 +93,7 @@ export function CompareSection({
         />
       </div>
 
-      {/* Additional Exclude Sets (Set 3..Set N) */}
+      {/* Additional Subtract Sets (Set 3..Set N) */}
       {extraExcludeSets.length > 0 && (
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           {extraExcludeSets.map((bucket, idx) => {
@@ -111,9 +102,6 @@ export function CompareSection({
               <PdfDropzone
                 key={bucket.id}
                 title={bucket.label}
-                subtitle="Additional subtract set (excluded from Set 1)"
-                badgeText={`SET ${setIdx + 1}`}
-                badgeVariant="warning"
                 files={bucket.files}
                 onFilesChange={(next) => workflow.updateSetFiles(bucket.id, next)}
                 overlappingHashes={primaryHashes}
@@ -124,11 +112,10 @@ export function CompareSection({
                     variant="ghost"
                     size="xs"
                     onClick={() => workflow.swapWithPrimary(setIdx, false)}
-                    className="h-6 px-2 text-[11px] font-semibold text-primary"
-                    title={`Make Set ${setIdx + 1} the Primary Set 1`}
+                    className="h-6 whitespace-nowrap px-2 text-[11px] font-semibold text-primary"
+                    title={`Swap Set ${setIdx + 1} with Set 1`}
                   >
-                    <ArrowLeftRight className="mr-1 h-3 w-3" />
-                    Make ①
+                    Make Set 1
                   </Button>
                 }
                 compact
@@ -146,11 +133,11 @@ export function CompareSection({
           leftIcon={<FolderPlus className="h-4 w-4 text-primary" />}
           onClick={workflow.addExcludeSet}
         >
-          Add Subtract Set ({sets.length + 1})
+          Add Subtract Set
         </Button>
         {sets.length > 2 && (
           <span className="font-mono text-xs text-muted-foreground">
-            {sets.length} sets active
+            Set 1 − ({sets.slice(1).map((_, i) => `Set ${i + 2}`).join(" ∪ ")})
           </span>
         )}
       </div>

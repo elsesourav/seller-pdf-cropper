@@ -50,11 +50,8 @@ export function CompareOptionsCard({
 }: CompareOptionsCardProps) {
   return (
     <Card variant="default" className="space-y-3 border-border/80 bg-card/95 p-3.5 sm:p-4">
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:items-center">
-        <div className="space-y-1">
-          <span className="block text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-            Matching Method
-          </span>
+      <div className="grid grid-cols-1 gap-2.5 md:grid-cols-3 md:items-center">
+        <div>
           <Select
             variant="animated"
             items={MATCH_METHOD_ITEMS}
@@ -76,12 +73,7 @@ export function CompareOptionsCard({
           }}
           className="flex cursor-pointer items-center justify-between gap-2 rounded-xl border border-border/70 bg-surface-subtle/50 px-3 py-2.5 select-none"
         >
-          <div>
-            <p className="text-xs font-bold text-foreground">Deduplicate Set 1</p>
-            <p className="text-[11px] text-muted-foreground">
-              Remove repeated pages inside Set 1
-            </p>
-          </div>
+          <span className="text-xs font-bold text-foreground">Dedupe Set 1</span>
           <div onClick={(e) => e.stopPropagation()}>
             <SquishSwitch
               checked={deduplicateSet1}
@@ -105,17 +97,9 @@ export function CompareOptionsCard({
           }}
           className="flex cursor-pointer items-center justify-between gap-2 rounded-xl border border-border/70 bg-surface-subtle/50 px-3 py-2.5 select-none"
         >
-          <div className="min-w-0">
-            <p className="truncate text-xs font-bold text-foreground">
-              Crop &amp; Add Serial
-            </p>
-            <p className="truncate text-[11px] text-muted-foreground">
-              {config.documentType === "bill" ? "Bill" : "Label"} •{" "}
-              {config.includeSerial
-                ? `#${formatCount(config.startingSerial)}+ (${config.serialFontSize}pt)`
-                : "No serial"}
-            </p>
-          </div>
+          <span className="truncate text-xs font-bold text-foreground">
+            Crop &amp; Serial
+          </span>
           <div
             className="flex shrink-0 items-center gap-2"
             onClick={(e) => e.stopPropagation()}
@@ -123,9 +107,9 @@ export function CompareOptionsCard({
             <button
               type="button"
               onClick={() => onOpenCropAdjust(set1Files)}
-              className="rounded-lg border border-border bg-surface-elevated p-1.5 text-primary transition-colors hover:border-primary/50"
-              title="Adjust crop area"
-              aria-label="Adjust crop area"
+              className="rounded-lg border border-border bg-surface-elevated p-1 text-primary transition-colors hover:border-primary/50"
+              title="Adjust crop"
+              aria-label="Adjust crop"
             >
               <Crop className="h-3.5 w-3.5" />
             </button>
@@ -164,11 +148,11 @@ export function CompareOptionsCard({
             progress.active ? undefined : <GitCompareArrows className="h-4 w-4" />
           }
           onClick={onRunCompare}
-          className="flex-1 font-bold"
+          className="flex-1 whitespace-nowrap font-bold"
         >
           {progress.active
-            ? "Comparing PDFs..."
-            : `Compare PDFs (${formatCount(set1TotalPages)}p − ${formatCount(excludeTotalPages)}p)`}
+            ? "Comparing..."
+            : `Compare (${formatCount(set1TotalPages)}p − ${formatCount(excludeTotalPages)}p)`}
         </Button>
 
         <Button
@@ -178,9 +162,9 @@ export function CompareOptionsCard({
           disabled={progress.active || !canSwap}
           leftIcon={<ArrowLeftRight className="h-4 w-4" />}
           onClick={onSwapAndCompare}
-          className="sm:w-auto"
+          className="whitespace-nowrap sm:w-auto"
         >
-          Switch &amp; Compare
+          Swap &amp; Compare
         </Button>
       </div>
     </Card>

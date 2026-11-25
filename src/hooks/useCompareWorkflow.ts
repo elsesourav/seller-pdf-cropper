@@ -17,18 +17,15 @@ import { useCallback, useMemo, useState } from "react";
 
 function createInitialSets(): CompareSetBucket[] {
   return [
-    { id: "set-1", label: "Set 1 (Keep From)", files: [] },
-    { id: "set-2", label: "Set 2 (Subtract)", files: [] },
+    { id: "set-1", label: "Set 1", files: [] },
+    { id: "set-2", label: "Set 2", files: [] },
   ];
 }
 
 function relabelSets(sets: CompareSetBucket[]): CompareSetBucket[] {
   return sets.map((s, index) => ({
     ...s,
-    label:
-      index === 0
-        ? "Set 1 (Keep From)"
-        : `Set ${index + 1} (Subtract)`,
+    label: `Set ${index + 1}`,
   }));
 }
 
@@ -69,7 +66,7 @@ export function useCompareWorkflow(config: CropConfiguration) {
         ...prev,
         {
           id: `set-${Date.now()}-${prev.length + 1}`,
-          label: `Set ${prev.length + 1} (Subtract)`,
+          label: `Set ${prev.length + 1}`,
           files: [],
         },
       ]),

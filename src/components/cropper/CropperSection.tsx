@@ -7,7 +7,7 @@ import type {
   UploadedPdfFile,
 } from "@/types";
 import { formatCount } from "@/utils/format";
-import { Alert, Button, Card, useToast } from "@elsesourav/react-ui";
+import { Button, Card, useToast } from "@elsesourav/react-ui";
 import { ArrowDown, ArrowUp, FolderPlus, Play, Sparkles } from "lucide-react";
 import { useMemo, useState } from "react";
 import { PdfDropzone } from "../common/PdfDropzone";
@@ -148,9 +148,8 @@ export function CropperSection({
           {sets.map((group, idx) => (
             <PdfDropzone
               key={group.id}
-              title={sets.length === 1 ? "Upload PDFs to Crop" : group.label}
-              subtitle="Upload 1 to 10,000+ PDFs • Duplicate files skipped automatically"
-              badgeText={sets.length === 1 ? "MULTI-PDF" : `SET ${idx + 1}`}
+              title={sets.length === 1 ? "Upload PDFs" : group.label}
+              badgeText={sets.length > 1 ? `SET ${idx + 1}` : undefined}
               badgeVariant="primary"
               serialRangeBadge={serialRangesBySetId.get(group.id)}
               files={group.files}
@@ -192,23 +191,15 @@ export function CropperSection({
               leftIcon={<FolderPlus className="h-4 w-4 text-primary" />}
               onClick={handleAddSet}
             >
-              Add Another PDF Set ({sets.length + 1})
+              Add Set
             </Button>
 
             {sets.length > 1 && (
               <span className="font-mono text-xs text-muted-foreground">
-                Total across {sets.length} sets: {formatCount(allFiles.length)} files •{" "}
-                {formatCount(totalInputPages)} pages
+                {formatCount(allFiles.length)}f • {formatCount(totalInputPages)}p
               </span>
             )}
           </div>
-
-          {allFiles.length > 1 && (
-            <Alert variant="info" title="Sequential Serial Numbering">
-              Pages across all uploaded files and sets are numbered continuously from{" "}
-              <strong>#{formatCount(config.startingSerial)}</strong> in order.
-            </Alert>
-          )}
         </div>
 
         {/* Right: Crop & Serial Config + Action */}
@@ -234,10 +225,10 @@ export function CropperSection({
               className="w-full font-bold"
             >
               {progress.active
-                ? "Processing PDFs..."
+                ? "Processing..."
                 : allFiles.length > 0
-                  ? `Crop ${formatCount(totalInputPages)} Pages (${formatCount(allFiles.length)} Files)`
-                  : "Process & Crop PDF"}
+                  ? `Crop PDF (${formatCount(totalInputPages)}p)`
+                  : "Crop PDF"}
             </Button>
 
             {result && !progress.active && (
@@ -249,7 +240,7 @@ export function CropperSection({
                 onClick={() => setViewerOpen(true)}
                 className="w-full"
               >
-                Open Last Output ({formatCount(result.outputPages)} pages)
+                Open Output ({formatCount(result.outputPages)}p)
               </Button>
             )}
           </Card>

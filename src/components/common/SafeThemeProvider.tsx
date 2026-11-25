@@ -1,3 +1,4 @@
+import type { ThemeMode } from "@/types";
 import {
   adjustHslLightness,
   getContrastTextColor,
@@ -8,12 +9,40 @@ import {
   type ThemeContextType,
   type ThemePresetKey,
 } from "@elsesourav/react-ui";
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
-const PRESET_KEY = "es-theme-preset";
+const THEME_MODE_KEY = "seller-theme-mode";
 const COLORS_KEY = "es-theme-colors";
-const DARK_KEY = "es-theme-dark";
 const TACTILE_KEY = "es-tactile-shadows";
+
+interface ThemeModeContextValue {
+  themeMode: ThemeMode;
+  setThemeMode: (mode: ThemeMode) => void;
+  resolvedDark: boolean;
+}
+
+const ThemeModeContext = createContext<ThemeModeContextValue>({
+  themeMode: "auto",
+  setThemeMode: () => {},
+  resolvedDark: true,
+});
+
+export function useThemeMode() {
+  return useContext(ThemeModeContext);
+}
+
+function getSystemPrefersDark(): boolean {
+  if (typeof window === "undefined" || !window.matchMedia) return true;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
 
 function applyThemeTokens(colors: ThemeColors, isDark: boolean) {
   if (typeof document === "undefined") return;
@@ -78,38 +107,21 @@ function applyThemeTokens(colors: ThemeColors, isDark: boolean) {
 }
 
 /**
- * Provides @elsesourav/react-ui ThemeContext without ever modifying window.location.
+ * Provides 3-state (auto / light / dark) theme support without modifying window.location.
  */
 export function SafeThemeProvider({ children }: { children: ReactNode }) {
-  const [preset, setPresetState] = useState<ThemePresetKey>(() => {
-    if (typeof window === "undefined") return "midnight";
-    const saved = window.localStorage.getItem(PRESET_KEY) as ThemePresetKey | null;
-    if (saved && (saved in THEME_PRESETS || saved === "custom")) {
+  const [themeMode, setThemeModeState] = useState<ThemeMode>(() => {
+    if (typeof window === "undefined") return "auto";
+    const saved = window.localStorage.getItem(THEME_MODE_KEY);
+    if (saved === "auto" || saved === "light" || saved === "dark") {
       return saved;
     }
-    return "midnight";
+    return "auto";
   });
 
-  const [colors, setColors] = useState<ThemeColors>(() => {
-    if (typeof window !== "undefined") {
-      const saved = window.localStorage.getItem(COLORS_KEY);
-      if (saved) {
-        try {
-          return JSON.parse(saved) as ThemeColors;
-        } catch {
-          // Fallback to preset colors
-        }
-      }
-    }
-    return THEME_PRESETS.midnight.colors;
-  });
-
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === "undefined") return true;
-    const saved = window.localStorage.getItem(DARK_KEY);
-    return saved !== null ? saved === "true" : true;
-  });
-
+  const [systemDark, setSystemDark] = useState<boolean>(getSystemPrefersDark);
+  const [customColors, setCustomColors] = useState<ThemeColors | null>(null);
+  const [customPreset, setCustomPreset] = useState<ThemePresetKey | null>(null);
   const [tactileShadows, setTactileShadows] = useState<boolean>(() => {
     if (typeof window === "undefined") return true;
     const saved = window.localStorage.getItem(TACTILE_KEY);
@@ -117,14 +129,33 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
   });
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const url = new URL(window.location.href);
-      if (url.searchParams.has("theme")) {
-        url.searchParams.delete("theme");
-        window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-      }
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (event: MediaQueryListEvent) => setSystemDark(event.matches);
+    setSystemDark(media.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  // Ensure ?theme= URL parameter is never retained
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    if (url.searchParams.has("theme")) {
+      url.searchParams.delete("theme");
+      window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
     }
   }, []);
+
+  const isDark = themeMode === "auto" ? systemDark : themeMode === "dark";
+  const preset: ThemePresetKey =
+    customPreset || (isDark ? "midnight" : "minimal-light");
+  const colors: ThemeColors = useMemo(() => {
+    if (customColors) return customColors;
+    return isDark
+      ? THEME_PRESETS.midnight.colors
+      : THEME_PRESETS["minimal-light"].colors;
+  }, [customColors, isDark]);
 
   useEffect(() => {
     applyThemeTokens(colors, isDark);
@@ -135,55 +166,60 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
       );
     }
     try {
-      window.localStorage.setItem(PRESET_KEY, preset);
-      window.localStorage.setItem(COLORS_KEY, JSON.stringify(colors));
-      window.localStorage.setItem(DARK_KEY, String(isDark));
+      window.localStorage.setItem(THEME_MODE_KEY, themeMode);
+      if (customColors) {
+        window.localStorage.setItem(COLORS_KEY, JSON.stringify(customColors));
+      } else {
+        window.localStorage.removeItem(COLORS_KEY);
+      }
       window.localStorage.setItem(TACTILE_KEY, String(tactileShadows));
     } catch {
-      // Ignore storage failures
+      // Ignore storage errors
     }
-  }, [preset, colors, isDark, tactileShadows]);
+  }, [themeMode, colors, isDark, customColors, tactileShadows]);
+
+  const setThemeMode = useCallback((mode: ThemeMode) => {
+    setCustomPreset(null);
+    setCustomColors(null);
+    setThemeModeState(mode);
+  }, []);
 
   const setPreset = useCallback((nextPreset: ThemePresetKey) => {
-    setPresetState(nextPreset);
+    setCustomPreset(nextPreset);
     if (nextPreset !== "custom") {
       const cfg = THEME_PRESETS[nextPreset];
-      setColors(cfg.colors);
-      setIsDark(cfg.isDark);
+      setCustomColors(cfg.colors);
+      setThemeModeState(cfg.isDark ? "dark" : "light");
     }
   }, []);
 
   const updateColor = useCallback(
     (key: keyof ThemeColors, value: string | number) => {
-      setPresetState("custom");
-      setColors((prev) => ({ ...prev, [key]: value }));
+      setCustomPreset("custom");
+      setCustomColors((prev) => ({ ...(prev || colors), [key]: value }));
     },
-    [],
+    [colors],
   );
 
   const toggleDark = useCallback(() => {
-    setIsDark((prevDark) => {
-      const nextDark = !prevDark;
-      if (nextDark && preset === "minimal-light") {
-        setPresetState("midnight");
-        setColors(THEME_PRESETS.midnight.colors);
-      } else if (!nextDark && preset === "midnight") {
-        setPresetState("minimal-light");
-        setColors(THEME_PRESETS["minimal-light"].colors);
-      }
-      return nextDark;
+    setCustomPreset(null);
+    setCustomColors(null);
+    setThemeModeState((prev) => {
+      if (prev === "auto") return "dark";
+      if (prev === "dark") return "light";
+      return "auto";
     });
-  }, [preset]);
+  }, []);
 
   const resetTheme = useCallback(() => {
-    setPreset("midnight");
-  }, [setPreset]);
+    setThemeMode("auto");
+  }, [setThemeMode]);
 
   const toggleTactileShadows = useCallback(() => {
     setTactileShadows((prev) => !prev);
   }, []);
 
-  const value: ThemeContextType = {
+  const themeContextValue: ThemeContextType = {
     preset,
     setPreset,
     colors,
@@ -197,6 +233,12 @@ export function SafeThemeProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeModeContext.Provider
+      value={{ themeMode, setThemeMode, resolvedDark: isDark }}
+    >
+      <ThemeContext.Provider value={themeContextValue}>
+        {children}
+      </ThemeContext.Provider>
+    </ThemeModeContext.Provider>
   );
 }
