@@ -14,7 +14,6 @@ import {
   Eye,
   Scissors,
   Search,
-  Trash2,
 } from "lucide-react";
 
 interface CompareResultCardProps {
@@ -49,6 +48,9 @@ export function CompareResultCard({
   onMoveToCropper,
   isBusy,
 }: CompareResultCardProps) {
+  const allSelected =
+    result.uniquePages.length > 0 && selectedCount === result.uniquePages.length;
+
   const virtual = useVirtualList({
     totalCount: filteredPages.length,
     rowHeight: ROW_HEIGHT,
@@ -76,26 +78,25 @@ export function CompareResultCard({
         </div>
 
         {result.uniquePages.length > 0 && (
-          <div className="flex items-center gap-1.5">
-            <Button
-              type="button"
-              variant="secondary"
-              size="xs"
-              leftIcon={<CheckCheck className="h-3.5 w-3.5" />}
-              onClick={onSelectAll}
-            >
-              All
-            </Button>
-            <Button
-              type="button"
-              variant="ghost"
-              size="xs"
-              leftIcon={<Trash2 className="h-3.5 w-3.5" />}
-              onClick={onClearAll}
-            >
-              None
-            </Button>
-          </div>
+          <Button
+            type="button"
+            variant="secondary"
+            size="xs"
+            aria-pressed={allSelected}
+            aria-label={allSelected ? "Unselect all pages" : "Select all pages"}
+            leftIcon={
+              <CheckCheck
+                className={
+                  allSelected
+                    ? "h-3.5 w-3.5 text-emerald-500 transition-colors duration-200"
+                    : "h-3.5 w-3.5 text-muted-foreground transition-colors duration-200"
+                }
+              />
+            }
+            onClick={allSelected ? onClearAll : onSelectAll}
+          >
+            All
+          </Button>
         )}
       </div>
 
