@@ -2,9 +2,138 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <link rel="icon" type="image/png" href="./icon.png" />
-    <title>Seller PDF Cropper &amp; Compare</title>
+
+    <!-- Primary SEO Metadata -->
+    <title>Seller PDF Cropper &amp; Compare — Label, Invoice &amp; Batch PDF Tool</title>
+    <meta
+      name="title"
+      content="Seller PDF Cropper &amp; Compare — Label, Invoice &amp; Batch PDF Tool"
+    />
+    <meta
+      name="description"
+      content="Crop shipping labels &amp; tax invoices, add serial numbers or A–Z codes, skip duplicate orders, and compare thousands of PDFs privately in your browser."
+    />
+    <meta
+      name="keywords"
+      content="seller pdf cropper, shipping label cropper, flipkart label crop, tax invoice pdf cropper, compare pdf sets, batch pdf crop, pdf serial number, ecommerce pdf tool, client side pdf utility"
+    />
+    <meta name="author" content="Sourav Barui (@elsesourav)" />
+    <meta name="creator" content="@elsesourav" />
+    <meta name="publisher" content="ElseSourav" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8fafc" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090d1a" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://elsesourav.github.io/seller-pdf-cropper/" />
+
+    <!-- Web App & Mobile Capabilities -->
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="application-name" content="Seller PDF Cropper" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="PDF Cropper" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Favicons & App Icons -->
+    <link rel="icon" href="./favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+    <!-- Open Graph / Social Share (Facebook, WhatsApp, Discord, LinkedIn, Slack) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Seller PDF Cropper" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://elsesourav.github.io/seller-pdf-cropper/" />
+    <meta property="og:title" content="Seller PDF Cropper &amp; Compare" />
+    <meta
+      property="og:description"
+      content="Crop shipping labels &amp; tax invoices, add serial numbers or A–Z codes, skip duplicate orders, and compare thousands of PDFs privately in your browser."
+    />
+    <meta property="og:image" content="https://elsesourav.github.io/seller-pdf-cropper/og-image.png" />
+    <meta
+      property="og:image:secure_url"
+      content="https://elsesourav.github.io/seller-pdf-cropper/og-image.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Seller PDF Cropper &amp; Compare — Batch shipping label &amp; invoice PDF cropper and comparator"
+    />
+    <link rel="image_src" href="https://elsesourav.github.io/seller-pdf-cropper/og-image.png" />
+
+    <!-- Twitter / X Share Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@elsesourav" />
+    <meta name="twitter:creator" content="@elsesourav" />
+    <meta name="twitter:url" content="https://elsesourav.github.io/seller-pdf-cropper/" />
+    <meta name="twitter:title" content="Seller PDF Cropper &amp; Compare" />
+    <meta
+      name="twitter:description"
+      content="Crop shipping labels &amp; tax invoices, add serial numbers or A–Z codes, skip duplicate orders, and compare thousands of PDFs privately in your browser."
+    />
+    <meta name="twitter:image" content="https://elsesourav.github.io/seller-pdf-cropper/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Seller PDF Cropper &amp; Compare — Batch shipping label &amp; invoice PDF cropper and comparator"
+    />
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Seller PDF Cropper & Compare",
+        "alternateName": "Seller PDF Cropper",
+        "url": "https://elsesourav.github.io/seller-pdf-cropper/",
+        "image": "https://elsesourav.github.io/seller-pdf-cropper/og-image.png",
+        "screenshot": "https://elsesourav.github.io/seller-pdf-cropper/og-image.png",
+        "description": "Free client-side batch PDF utility to crop e-commerce shipping labels and tax invoices, add sequential serial numbers or A–Z unique codes, skip duplicate order pages, and compare multiple PDF sets privately in the browser.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript and HTML5 Canvas. Runs 100% client-side.",
+        "featureList": [
+          "Crop Flipkart and e-commerce shipping labels or tax invoices with adjustable presets",
+          "Process up to 10,000+ PDF pages locally with bounded memory",
+          "Stamp sequential serial numbers and optional A–Z batch codes",
+          "Order-ID duplicate page removal and two-set PDF comparison",
+          "Auto, Light, and Dark theme support"
+        ],
+        "author": {
+          "@type": "Person",
+          "name": "Sourav Barui",
+          "alternateName": "elsesourav",
+          "url": "https://elsesourav.com",
+          "sameAs": [
+            "https://github.com/elsesourav",
+            "https://x.com/elsesourav"
+          ]
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +143,16 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <main style="max-width:720px;margin:48px auto;padding:0 20px;font-family:system-ui,sans-serif;line-height:1.6;">
+        <h1>Seller PDF Cropper &amp; Compare</h1>
+        <p>
+          Crop shipping labels and tax invoices, add sequential serial numbers or A–Z batch codes,
+          remove duplicate order IDs, and compare PDF sets 100% privately inside your browser.
+        </p>
+        <p>Please enable JavaScript to use this client-side PDF tool.</p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

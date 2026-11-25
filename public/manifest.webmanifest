@@ -1,0 +1,42 @@
+{
+  "name": "Seller PDF Cropper & Compare",
+  "short_name": "PDF Cropper",
+  "description": "Crop shipping labels & tax invoices, stamp serial numbers or A–Z codes, deduplicate orders, and compare thousands of PDFs privately in your browser.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090d1a",
+  "theme_color": "#4f46e5",
+  "categories": ["utilities", "business", "productivity"],
+  "icons": [
+    {
+      "src": "./favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "./pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
