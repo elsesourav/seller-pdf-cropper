@@ -124,7 +124,8 @@
   }
 }
 
-/* Unlock native document scrolling locked by @elsesourav/react-ui base stylesheet */
+/* Unlock native document scrolling while keeping body scrollbar completely hidden */
+:root,
 html {
   height: auto;
   min-height: 100%;
@@ -137,6 +138,8 @@ html {
   left: auto;
   overflow-x: clip;
   overflow-y: auto;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 body {
@@ -152,6 +155,17 @@ body {
   overflow-x: clip;
   overflow-y: visible;
   margin: 0;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+:root::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
 #root {
