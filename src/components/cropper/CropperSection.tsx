@@ -108,7 +108,7 @@ export function CropperSection({
           />
         </div>
 
-        <div className="space-y-3 lg:col-span-5">
+        <div className="space-y-2.5 lg:col-span-5">
           <CropSettingsPanel
             config={config}
             onUpdate={onUpdateConfig}
