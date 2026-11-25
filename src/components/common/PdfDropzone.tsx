@@ -1,5 +1,9 @@
 import { useVirtualList } from "@/hooks/useVirtualList";
 import { inspectAndFilterPdfFiles } from "@/services/pdf/fileInspection";
+import {
+  mergeUploadedPdfs,
+  triggerBlobDownload,
+} from "@/services/pdf/pdfChunks";
 import type {
   BadgeTone,
   UploadInspectProgress,
@@ -11,6 +15,7 @@ import {
   AlertTriangle,
   ArrowDown,
   ArrowUp,
+  Download,
   FileText,
   FolderPlus,
   Search,
@@ -57,12 +62,36 @@ export function PdfDropzone({
   const [inspectProgress, setInspectProgress] =
     useState<UploadInspectProgress | null>(null);
   const [filterQuery, setFilterQuery] = useState("");
+  const [isMerging, setIsMerging] = useState(false);
   const { addToast } = useToast();
 
   const totalPages = useMemo(
     () => files.reduce((sum, f) => sum + f.pageCount, 0),
     [files],
   );
+
+  const handleMergeDownload = useCallback(async () => {
+    if (files.length < 2 || isMerging) return;
+    setIsMerging(true);
+    try {
+      const merged = await mergeUploadedPdfs(files);
+      triggerBlobDownload(merged.blob, merged.fileName);
+      addToast({
+        type: "success",
+        title: "Merged PDF Ready",
+        description: `${formatCount(files.length)} files • ${formatCount(merged.pageCount)} pages`,
+      });
+    } catch (error) {
+      addToast({
+        type: "error",
+        title: "Merge Failed",
+        description:
+          error instanceof Error ? error.message : "Could not merge PDFs.",
+      });
+    } finally {
+      setIsMerging(false);
+    }
+  }, [addToast, files, isMerging]);
 
   const filteredFiles = useMemo(() => {
     const q = filterQuery.trim().toLowerCase();
@@ -163,6 +192,21 @@ export function PdfDropzone({
           <span className="font-mono text-xs text-muted-foreground">
             {formatCount(files.length)}f • {formatCount(totalPages)}p
           </span>
+          {files.length > 1 && (
+            <Button
+              type="button"
+              variant="outline"
+              size="xs"
+              isLoading={isMerging}
+              disabled={isMerging}
+              leftIcon={isMerging ? undefined : <Download className="h-3 w-3" />}
+              onClick={() => void handleMergeDownload()}
+              className="h-6 px-2 text-[11px]"
+              title="Merge uploaded PDFs and download"
+            >
+              Merge
+            </Button>
+          )}
           {headerAction}
           {files.length > 0 && (
             <Button
