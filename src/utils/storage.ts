@@ -34,9 +34,9 @@ function sanitizeMargins(raw: unknown): PdfMarginsConfig {
   const rawLabelHeight = sanitizeInt(label.height, DEFAULT_MARGINS.label.height, 10, 2000);
   const isOutdatedDefaultLabel =
     rawLabelLeft === 188 &&
-    rawLabelBottom === 435 &&
     rawLabelWidth === 219 &&
-    rawLabelHeight === 380;
+    ((rawLabelBottom === 435 && rawLabelHeight === 380) ||
+      (rawLabelBottom === 459 && rawLabelHeight === 356));
 
   return {
     label: isOutdatedDefaultLabel
